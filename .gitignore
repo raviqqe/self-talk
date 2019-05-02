@@ -1,3 +1,4 @@
 *.log
 .firebase
+build
 node_modules
