@@ -1,0 +1,5 @@
+# SelfTalk
+
+## License
+
+[MIT](LICENSE)
