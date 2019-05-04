@@ -1,8 +1,10 @@
 import { ApplicationInitializer } from "./application/application-initializer";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
-import { FirebaseAuthenticationController } from "./infrastructure/firebase-authentication-controller";
-import { FirebaseInitializer } from "./infrastructure/firebase-initializer";
+import {
+  FirebaseAuthenticationController,
+  FirebaseInitializer
+} from "./infrastructure/firebase";
 import { ReactRenderer } from "./infrastructure/react";
 
 new FirebaseInitializer().initialize();

@@ -1,7 +1,7 @@
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-import configuration from "../configuration.json";
+import configuration from "../../configuration.json";
 
 export class FirebaseInitializer {
   public initialize() {

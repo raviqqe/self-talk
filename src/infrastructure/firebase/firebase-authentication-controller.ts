@@ -1,7 +1,7 @@
 import * as firebase from "firebase/app";
 import "firebase/auth";
-import { IAuthenticationController } from "../application/authentication-controller";
-import { sleep } from "../domain/utilities";
+import { IAuthenticationController } from "../../application/authentication-controller";
+import { sleep } from "../../domain/utilities";
 
 export class FirebaseAuthenticationController
   implements IAuthenticationController {
