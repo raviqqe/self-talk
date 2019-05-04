@@ -1,16 +1,11 @@
-import { formatDocument, IDocument } from "../document";
+import { formatDocument } from "../document";
 
 describe("formatDocument", () => {
-  it("updates document formatting them", () => {
-    expect(formatDocument({ id: "", text: "foo" }, "bar")).toEqual({
+  it("formats a document", () => {
+    expect(formatDocument({ createdAt: 42, id: "", text: " foo\n" })).toEqual({
+      createdAt: 42,
       id: "",
-      text: "bar"
+      text: "foo"
     });
-  });
-
-  it("does not modify the original", () => {
-    const document: IDocument = { id: "", text: "foo" };
-    formatDocument(document, "bar");
-    expect(document).toEqual({ id: "", text: "foo" });
   });
 });

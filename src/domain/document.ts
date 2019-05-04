@@ -4,6 +4,6 @@ export interface IDocument {
   text: string; // in Markdown
 }
 
-export function formatDocument(document: IDocument, text: string): IDocument {
-  return { ...document, text: text.trim() };
+export function formatDocument(document: IDocument): IDocument {
+  return { ...document, text: document.text.trim() };
 }
