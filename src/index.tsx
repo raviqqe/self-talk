@@ -1,26 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom";
 import { ApplicationInitializer } from "./application/application-initializer";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
 import { FirebaseAuthenticationController } from "./infrastructure/firebase-authentication-controller";
 import { FirebaseInitializer } from "./infrastructure/firebase-initializer";
-import { App } from "./infrastructure/react/App";
+import { ReactRenderer } from "./infrastructure/react";
 
 new FirebaseInitializer().initialize();
 
 const authenticationController = new FirebaseAuthenticationController();
-const applicationInitializer = new ApplicationInitializer(
-  authenticationController
-);
-const signInManager = new SignInManager(authenticationController);
-const signOutManager = new SignOutManager(authenticationController);
+const element = document.getElementById("root");
 
-ReactDOM.render(
-  <App
-    applicationInitializer={applicationInitializer}
-    signInManager={signInManager}
-    signOutManager={signOutManager}
-  />,
-  document.getElementById("root")
-);
+if (!element) {
+  throw new Error("no room element");
+}
+
+new ReactRenderer(
+  new ApplicationInitializer(authenticationController),
+  new SignInManager(authenticationController),
+  new SignOutManager(authenticationController)
+).render(element);

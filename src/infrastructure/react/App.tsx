@@ -1,28 +1,22 @@
 import React, { FC, useEffect, useState } from "react";
-import { ApplicationInitializer } from "../../application/application-initializer";
-import { SignInManager } from "../../application/sign-in-manager";
-import { SignOutManager } from "../../application/sign-out-manager";
+import { IInitialState } from "../../application/application-initializer";
 import { Home } from "./Home";
 import { SignIn } from "./SignIn";
 
 interface IProps {
-  applicationInitializer: ApplicationInitializer;
-  signInManager: SignInManager;
-  signOutManager: SignOutManager;
+  initialize: () => Promise<IInitialState>;
+  signIn: () => Promise<boolean>;
+  signOut: () => Promise<boolean>;
 }
 
-export const App: FC<IProps> = ({
-  signInManager,
-  signOutManager,
-  applicationInitializer
-}: IProps) => {
+export const App: FC<IProps> = ({ initialize, signIn, signOut }: IProps) => {
   const [initialized, setInitialized] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
 
   useEffect(() => {
     (async () => {
       if (!initialized) {
-        const { signedIn } = await applicationInitializer.initialize();
+        const { signedIn } = await initialize();
         setSignedIn(signedIn);
         setInitialized(true);
       }
@@ -32,12 +26,8 @@ export const App: FC<IProps> = ({
   if (!initialized) {
     return <div>Wait a minute ...</div>;
   } else if (!signedIn) {
-    return (
-      <SignIn signIn={async () => setSignedIn(await signInManager.signIn())} />
-    );
+    return <SignIn signIn={async () => setSignedIn(await signIn())} />;
   }
 
-  return (
-    <Home signOut={async () => setSignedIn(await signOutManager.signOut())} />
-  );
+  return <Home signOut={async () => setSignedIn(await signOut())} />;
 };
