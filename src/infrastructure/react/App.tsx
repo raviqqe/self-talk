@@ -25,6 +25,10 @@ export const App: FC<IProps> = ({
     })();
   });
 
+  if (!initialized) {
+    return <div>Wait a minute ...</div>;
+  }
+
   return signedIn ? (
     <div>Hello, world!</div>
   ) : (
