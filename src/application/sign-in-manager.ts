@@ -6,6 +6,6 @@ export class SignInManager {
   ) {}
 
   public async signIn(): Promise<boolean> {
-    return await this.authenticationController.signIn();
+    return this.authenticationController.signIn();
   }
 }

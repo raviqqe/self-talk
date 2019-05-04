@@ -6,6 +6,6 @@ export class SignOutManager {
   ) {}
 
   public async signOut(): Promise<boolean> {
-    return await this.authenticationController.signOut();
+    return this.authenticationController.signOut();
   }
 }
