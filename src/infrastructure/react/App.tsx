@@ -27,15 +27,11 @@ export const App: FC<IProps> = ({
 
   if (!initialized) {
     return <div>Wait a minute ...</div>;
+  } else if (!signedIn) {
+    return (
+      <SignIn signIn={async () => setSignedIn(await signInManager.signIn())} />
+    );
   }
 
-  return signedIn ? (
-    <div>Hello, world!</div>
-  ) : (
-    <SignIn
-      signIn={async () => {
-        setSignedIn(await signInManager.signIn());
-      }}
-    />
-  );
+  return <div>Hello, world!</div>;
 };
