@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useAsync } from "react-use";
 import { IInitialState } from "../../application/application-initializer";
 import { IDocument } from "../../domain/document";
 import { Home } from "./Home";
@@ -19,20 +20,14 @@ export const App = ({
   signIn,
   signOut
 }: IProps) => {
-  const [initialized, setInitialized] = useState(false);
-  const [signedIn, setSignedIn] = useState(false);
+  const [signedIn, setSignedIn] = useState<boolean | null>(null);
 
-  useEffect(() => {
-    (async () => {
-      if (!initialized) {
-        const { signedIn } = await initialize();
-        setSignedIn(signedIn);
-        setInitialized(true);
-      }
-    })();
-  });
+  useAsync(async () => {
+    const { signedIn } = await initialize();
+    setSignedIn(signedIn);
+  }, []);
 
-  if (!initialized) {
+  if (signedIn === null) {
     return <div>Wait a minute ...</div>;
   } else if (!signedIn) {
     return <SignIn signIn={async () => setSignedIn(await signIn())} />;
