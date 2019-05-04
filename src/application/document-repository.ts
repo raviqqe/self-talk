@@ -1,5 +1,5 @@
-import { IDocumentInput } from "../domain/document";
+import { IDocument } from "../domain/document";
 
 export interface IDocumentRepository {
-  create(input: IDocumentInput): Promise<void>;
+  create(document: IDocument): Promise<void>;
 }
