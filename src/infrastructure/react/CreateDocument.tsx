@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 interface IProps {
-  createDocument: (text: string) => void;
+  createDocument: (text: string) => Promise<void>;
 }
 
 export const CreateDocument = ({ createDocument }: IProps) => {
@@ -20,10 +20,10 @@ export const CreateDocument = ({ createDocument }: IProps) => {
         value={text}
       />
       <button
-        onClick={() => {
+        onClick={async () => {
           setCreating(false);
           setText("");
-          createDocument(text);
+          await createDocument(text);
         }}
       >
         Create

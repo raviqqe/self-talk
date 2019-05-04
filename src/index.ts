@@ -1,5 +1,6 @@
 import { ApplicationInitializer } from "./application/application-initializer";
 import { DocumentCreator } from "./application/document-creator";
+import { DocumentLister } from "./application/document-lister";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
 import {
@@ -13,6 +14,7 @@ new FirebaseInitializer().initialize();
 
 const authenticationController = new FirebaseAuthenticationController();
 const documentRepository = new FirebaseDocumentRepository();
+const documentLister = new DocumentLister(documentRepository);
 const element = document.getElementById("root");
 
 if (!element) {
@@ -20,8 +22,9 @@ if (!element) {
 }
 
 new ReactRenderer(
-  new ApplicationInitializer(authenticationController),
+  new ApplicationInitializer(authenticationController, documentLister),
   new SignInManager(authenticationController),
   new SignOutManager(authenticationController),
-  new DocumentCreator(documentRepository)
+  new DocumentCreator(documentRepository),
+  documentLister
 ).render(element);

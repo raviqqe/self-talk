@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { IInitialState } from "../../application/application-initializer";
+import { IDocument } from "../../domain/document";
 import { Home } from "./Home";
 import { SignIn } from "./SignIn";
 
 interface IProps {
-  createDocument: (text: string) => void;
+  createDocument: (text: string) => Promise<void>;
   initialize: () => Promise<IInitialState>;
+  listDocuments: () => Promise<IDocument[]>;
   signIn: () => Promise<boolean>;
   signOut: () => Promise<boolean>;
 }
@@ -13,6 +15,7 @@ interface IProps {
 export const App = ({
   createDocument,
   initialize,
+  listDocuments,
   signIn,
   signOut
 }: IProps) => {
@@ -38,6 +41,7 @@ export const App = ({
   return (
     <Home
       createDocument={createDocument}
+      listDocuments={listDocuments}
       signOut={async () => setSignedIn(await signOut())}
     />
   );

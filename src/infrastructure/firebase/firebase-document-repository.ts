@@ -9,6 +9,12 @@ export class FirebaseDocumentRepository implements IDocumentRepository {
     reference.set(document);
   }
 
+  public async list(): Promise<IDocument[]> {
+    return (await this.collection().get()).docs.map(
+      snapshot => snapshot.data() as IDocument
+    );
+  }
+
   private collection(): firebase.firestore.CollectionReference {
     const user = firebase.auth().currentUser;
 
