@@ -5,7 +5,5 @@ interface IProps {
 }
 
 export const SignIn = ({ signIn }: IProps) => (
-  <div>
-    <button onClick={signIn}>Sign in</button>
-  </div>
+  <button onClick={signIn}>Sign in</button>
 );

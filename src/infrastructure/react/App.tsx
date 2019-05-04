@@ -1,15 +1,19 @@
 import React, { FC, useEffect, useState } from "react";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { SignInManager } from "../../application/sign-in-manager";
+import { SignOutManager } from "../../application/sign-out-manager";
+import { Home } from "./Home";
 import { SignIn } from "./SignIn";
 
 interface IProps {
   applicationInitializer: ApplicationInitializer;
   signInManager: SignInManager;
+  signOutManager: SignOutManager;
 }
 
 export const App: FC<IProps> = ({
   signInManager,
+  signOutManager,
   applicationInitializer
 }: IProps) => {
   const [initialized, setInitialized] = useState(false);
@@ -33,5 +37,7 @@ export const App: FC<IProps> = ({
     );
   }
 
-  return <div>Hello, world!</div>;
+  return (
+    <Home signOut={async () => setSignedIn(await signOutManager.signOut())} />
+  );
 };

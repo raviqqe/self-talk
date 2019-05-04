@@ -5,6 +5,7 @@ import {
   IInitialState
 } from "../../../application/application-initializer";
 import { SignInManager } from "../../../application/sign-in-manager";
+import { SignOutManager } from "../../../application/sign-out-manager";
 import { App } from "../App";
 
 it("renders", () => {
@@ -16,6 +17,7 @@ it("renders", () => {
         } as ApplicationInitializer
       }
       signInManager={{} as SignInManager}
+      signOutManager={{} as SignOutManager}
     />,
     document.createElement("div")
   );

@@ -20,6 +20,7 @@ ReactDOM.render(
   <App
     applicationInitializer={applicationInitializer}
     signInManager={signInManager}
+    signOutManager={signOutManager}
   />,
   document.getElementById("root")
 );
