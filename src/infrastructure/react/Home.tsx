@@ -11,17 +11,11 @@ interface IProps {
 }
 
 export const Home = ({ createDocument, listDocuments, signOut }: IProps) => {
-  const [initialized, setInitialized] = useState(false);
   const [documents, setDocuments] = useState<IDocument[]>([]);
 
   useEffect(() => {
-    (async () => {
-      if (!initialized) {
-        setDocuments(await listDocuments());
-        setInitialized(true);
-      }
-    })();
-  });
+    (async () => setDocuments(await listDocuments()))();
+  }, []);
 
   return (
     <div>
