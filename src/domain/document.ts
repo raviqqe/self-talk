@@ -1,6 +1,9 @@
-export interface IDocument {
-  id: string;
+export interface IDocumentInput {
   text: string;
+}
+
+export interface IDocument extends IDocumentInput {
+  id: string;
 }
 
 export function formatDocument(document: IDocument, text: string): IDocument {
