@@ -3,6 +3,6 @@ export interface IDocument {
   text: string;
 }
 
-export function updateDocument(document: IDocument, text: string): IDocument {
+export function formatDocument(document: IDocument, text: string): IDocument {
   return { ...document, text: text.trim() };
 }
