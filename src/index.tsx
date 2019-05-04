@@ -1,17 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { App } from "./infrastructure/components/App";
-import { PersistGate } from "redux-persist/integration/react";
-import { createStore } from "./infrastructure/store";
-import { Provider } from "react-redux";
+import { ApplicationInitializer } from "./application/application-initializer";
+import { SignInManager } from "./application/sign-in-manager";
+import { SignOutManager } from "./application/sign-out-manager";
+import { FirebaseAuthenticationController } from "./infrastructure/firebase-authentication-controller";
+import { FirebaseInitializer } from "./infrastructure/firebase-initializer";
+import { App } from "./infrastructure/react/App";
 
-const { store, persistor } = createStore();
+new FirebaseInitializer().initialize();
+
+const authenticationController = new FirebaseAuthenticationController();
+const applicationInitializer = new ApplicationInitializer(
+  authenticationController
+);
+const signInManager = new SignInManager(authenticationController);
+const signOutManager = new SignOutManager(authenticationController);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <App />
-    </PersistGate>
-  </Provider>,
+  <App
+    applicationInitializer={applicationInitializer}
+    signInManager={signInManager}
+  />,
   document.getElementById("root")
 );
