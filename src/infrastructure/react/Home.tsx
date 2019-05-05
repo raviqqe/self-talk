@@ -1,5 +1,5 @@
-import React from "react";
-import { useAsyncFn, useEffectOnce } from "react-use";
+import React, { useState } from "react";
+import { useAsync } from "react-use";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { CreateDocument } from "./CreateDocument";
@@ -33,16 +33,16 @@ interface IProps {
 }
 
 export const Home = ({ createDocument, listDocuments, signOut }: IProps) => {
-  const [state, fetchDocuments] = useAsyncFn(listDocuments);
-  useEffectOnce(fetchDocuments);
+  const [documents, setDocuments] = useState<IDocument[]>([]);
+  useAsync(async () => setDocuments(await listDocuments()), []);
 
   return (
     <Container>
-      <Documents documents={state.value || []} />
+      <Documents documents={documents} />
       <CreateDocument
         createDocument={async (text: string) => {
           await createDocument(text);
-          fetchDocuments();
+          setDocuments(await listDocuments());
         }}
       />
       <SignOutContainer>
