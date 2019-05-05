@@ -7,3 +7,9 @@ export interface IDocument {
 export function formatDocument(document: IDocument): IDocument {
   return { ...document, text: document.text.trim() };
 }
+
+export function validateDocument(document: IDocument): void {
+  if (!document.text) {
+    throw new Error("document cannot be empty");
+  }
+}

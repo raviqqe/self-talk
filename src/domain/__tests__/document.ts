@@ -1,4 +1,4 @@
-import { formatDocument } from "../document";
+import { formatDocument, IDocument, validateDocument } from "../document";
 
 describe("formatDocument", () => {
   it("formats a document", () => {
@@ -7,5 +7,11 @@ describe("formatDocument", () => {
       id: "",
       text: "foo"
     });
+  });
+});
+
+describe("validateDocument", () => {
+  it("validates texts", () => {
+    expect(() => validateDocument({ text: "" } as IDocument)).toThrowError();
   });
 });
