@@ -20,6 +20,10 @@ const Container = styled.div`
   }
 `;
 
+const Border = styled.div`
+  border-top: 1px solid darkkhaki;
+`;
+
 const SignOutContainer = styled.div`
   position: absolute;
   top: 0.5em;
@@ -39,6 +43,7 @@ export const Home = ({ createDocument, listDocuments, signOut }: IProps) => {
   return (
     <Container>
       <Documents documents={documents} />
+      <Border />
       <CreateDocument
         createDocument={async (text: string) => {
           await createDocument(text);
