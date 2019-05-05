@@ -1,9 +1,30 @@
 import React from "react";
 import { useAsyncFn, useEffectOnce } from "react-use";
+import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { CreateDocument } from "./CreateDocument";
 import { Documents } from "./Documents";
 import { SignOut } from "./SignOut";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 80ex;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+
+  > :first-child {
+    flex: 1;
+  }
+`;
+
+const SignOutContainer = styled.div`
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+`;
 
 interface IProps {
   createDocument: (text: string) => Promise<void>;
@@ -16,7 +37,7 @@ export const Home = ({ createDocument, listDocuments, signOut }: IProps) => {
   useEffectOnce(fetchDocuments);
 
   return (
-    <div>
+    <Container>
       <Documents documents={state.value || []} />
       <CreateDocument
         createDocument={async (text: string) => {
@@ -24,7 +45,9 @@ export const Home = ({ createDocument, listDocuments, signOut }: IProps) => {
           fetchDocuments();
         }}
       />
-      <SignOut signOut={signOut} />
-    </div>
+      <SignOutContainer>
+        <SignOut signOut={signOut} />
+      </SignOutContainer>
+    </Container>
   );
 };

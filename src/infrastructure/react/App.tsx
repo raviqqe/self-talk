@@ -1,9 +1,19 @@
 import React, { useState } from "react";
+import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
+import styled from "styled-components";
 import { IInitialState } from "../../application/application-initializer";
 import { IDocument } from "../../domain/document";
 import { Home } from "./Home";
-import { SignIn } from "./SignIn";
+import { Landing } from "./Landing";
+
+const LoaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+`;
 
 interface IProps {
   createDocument: (text: string) => Promise<void>;
@@ -28,9 +38,13 @@ export const App = ({
   }, []);
 
   if (signedIn === null) {
-    return <div>Wait a minute ...</div>;
+    return (
+      <LoaderContainer>
+        <PulseLoader color="white" />
+      </LoaderContainer>
+    );
   } else if (!signedIn) {
-    return <SignIn signIn={async () => setSignedIn(await signIn())} />;
+    return <Landing signIn={async () => setSignedIn(await signIn())} />;
   }
 
   return (
