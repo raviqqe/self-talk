@@ -14,7 +14,6 @@ new FirebaseInitializer().initialize();
 
 const authenticationController = new FirebaseAuthenticationController();
 const documentRepository = new FirebaseDocumentRepository();
-const documentLister = new DocumentLister(documentRepository);
 const element = document.getElementById("root");
 
 if (!element) {
@@ -22,9 +21,9 @@ if (!element) {
 }
 
 new ReactRenderer(
-  new ApplicationInitializer(authenticationController, documentLister),
+  new ApplicationInitializer(authenticationController),
   new SignInManager(authenticationController),
   new SignOutManager(authenticationController),
   new DocumentCreator(documentRepository),
-  documentLister
+  new DocumentLister(documentRepository)
 ).render(element);
