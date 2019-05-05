@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MdAdd } from "react-icons/md";
 import styled from "styled-components";
 import { CircleButton } from "./CircleButton";
 import { TextArea } from "./TextArea";
@@ -29,7 +30,7 @@ export const CreateDocument = ({ createDocument }: IProps) => {
           await createDocument(text);
         }}
       >
-        +
+        <MdAdd />
       </CircleButton>
     </Container>
   );
