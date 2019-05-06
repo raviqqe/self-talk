@@ -7,6 +7,7 @@ interface IProps {
 }
 
 const Container = styled.div`
+  background: khaki;
   height: 100vh;
   width: 100vw;
   display: flex;
