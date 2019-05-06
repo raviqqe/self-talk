@@ -31,7 +31,7 @@ const CreateDocumentContainer = styled.div`
 `;
 
 const CreateDocumentBackground = styled.div`
-  background: khaki;
+  background: darkkhaki;
   position: absolute;
   top: 0;
   left: -100vw;
