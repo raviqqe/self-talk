@@ -19,7 +19,7 @@ const messagePresenter = new AlertMessagePresenter();
 const element = document.getElementById("root");
 
 if (!element) {
-  throw new Error("no room element");
+  throw new Error("no root element");
 }
 
 new ReactRenderer(
