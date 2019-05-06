@@ -14,7 +14,6 @@ const Container = styled.div`
   width: 80ex;
   max-width: 100%;
   margin: auto;
-  overflow: hidden;
 
   > :first-child {
     flex: 1;
@@ -27,12 +26,23 @@ const LoaderContainer = styled.div`
   align-items: center;
 `;
 
-const Border = styled.div`
-  border-top: 1px solid darkkhaki;
+const CreateDocumentContainer = styled.div`
+  position: relative;
+`;
+
+const CreateDocumentBackground = styled.div`
+  background: khaki;
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  width: 200vw;
+  height: 100%;
+  z-index: -1;
+  box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
 `;
 
 const SignOutContainer = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0.5em;
   right: 0.5em;
 `;
@@ -56,13 +66,15 @@ export const Home = ({ createDocument, listDocuments, signOut }: IProps) => {
           <PulseLoader color="white" />
         </LoaderContainer>
       )}
-      <Border />
-      <CreateDocument
-        createDocument={async (text: string) => {
-          await createDocument(text);
-          setDocuments(await listDocuments());
-        }}
-      />
+      <CreateDocumentContainer>
+        <CreateDocument
+          createDocument={async (text: string) => {
+            await createDocument(text);
+            setDocuments(await listDocuments());
+          }}
+        />
+        <CreateDocumentBackground />
+      </CreateDocumentContainer>
       <SignOutContainer>
         <SignOut signOut={signOut} />
       </SignOutContainer>
