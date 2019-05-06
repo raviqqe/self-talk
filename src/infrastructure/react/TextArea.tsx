@@ -11,6 +11,10 @@ const StyledTextArea: FC<any> = styled(AutosizeTextArea)`
   resize: none;
   padding: 1em;
   border-radius: 0.5em;
+
+  &::placeholder {
+    color: grey;
+  }
 `;
 
 export const TextArea = (

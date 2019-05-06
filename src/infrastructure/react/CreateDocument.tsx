@@ -23,7 +23,11 @@ export const CreateDocument = ({ createDocument }: IProps) => {
 
   return (
     <Container>
-      <TextArea onChange={event => setText(event.target.value)} value={text} />
+      <TextArea
+        placeholder="Write in Markdown ..."
+        onChange={event => setText(event.target.value)}
+        value={text}
+      />
       <CircleButton
         onClick={async () => {
           setText("");
