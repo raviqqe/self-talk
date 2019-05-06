@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     background: khaki;
     margin: 0;
     padding: 0;
-    color: black;
+    color: #222;
     font-family: "Noto Sans", sans-serif;
     line-height: 1.4;
     font-size: 16px;
