@@ -1,3 +1,4 @@
+import * as firebase from "firebase";
 import React from "react";
 import { render } from "react-dom";
 import { ApplicationInitializer } from "../../application/application-initializer";
@@ -14,7 +15,9 @@ export class ReactRenderer {
     private readonly signInManager: SignInManager,
     private readonly signOutManager: SignOutManager,
     private readonly documentCreator: DocumentCreator,
-    private readonly documentLister: DocumentLister
+    private readonly documentLister: DocumentLister<
+      firebase.firestore.DocumentSnapshot
+    >
   ) {}
 
   public render(element: HTMLElement): void {
@@ -24,6 +27,7 @@ export class ReactRenderer {
           createDocument={(text: string) => this.documentCreator.create(text)}
           initialize={() => this.applicationInitializer.initialize()}
           listDocuments={() => this.documentLister.list()}
+          listMoreDocuments={() => this.documentLister.listMore()}
           signIn={() => this.signInManager.signIn()}
           signOut={() => this.signOutManager.signOut()}
         />

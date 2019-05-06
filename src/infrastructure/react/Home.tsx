@@ -47,20 +47,31 @@ const SignOutContainer = styled.div`
   right: 0.5em;
 `;
 
-interface IProps {
+export interface IProps {
   createDocument: (text: string) => Promise<void>;
   listDocuments: () => Promise<IDocument[]>;
-  signOut: () => void;
+  listMoreDocuments: () => Promise<IDocument[]>;
+  signOut: () => Promise<void>;
 }
 
-export const Home = ({ createDocument, listDocuments, signOut }: IProps) => {
+export const Home = ({
+  createDocument,
+  listDocuments,
+  listMoreDocuments,
+  signOut
+}: IProps) => {
   const [documents, setDocuments] = useState<IDocument[] | null>(null);
   useAsync(async () => setDocuments(await listDocuments()), []);
 
   return (
     <Container>
       {documents ? (
-        <Documents documents={documents} />
+        <Documents
+          documents={documents}
+          listMoreDocuments={async () =>
+            setDocuments([...documents, ...(await listMoreDocuments())])
+          }
+        />
       ) : (
         <LoaderContainer>
           <PulseLoader color="white" />

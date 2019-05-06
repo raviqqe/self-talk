@@ -1,18 +1,49 @@
 import * as firebase from "firebase/app";
 import "firebase/firestore";
-import { IDocumentRepository } from "../../application/document-repository";
+import { last } from "lodash";
+import {
+  IDocumentRepository,
+  IListResult
+} from "../../application/document-repository";
 import { IDocument } from "../../domain/document";
 
-export class FirebaseDocumentRepository implements IDocumentRepository {
+export class FirebaseDocumentRepository
+  implements IDocumentRepository<firebase.firestore.DocumentSnapshot> {
   public async create(document: IDocument): Promise<void> {
     const reference = this.collection().doc(document.id);
     reference.set(document);
   }
 
-  public async list(): Promise<IDocument[]> {
-    return (await this.collection()
-      .orderBy("createdAt", "desc")
-      .get()).docs.map(snapshot => snapshot.data() as IDocument);
+  public async list(
+    limit: number
+  ): Promise<IListResult<firebase.firestore.DocumentSnapshot>> {
+    const snapshots = (await this.query()
+      .limit(limit)
+      .get()).docs;
+
+    return {
+      cursor: last(snapshots) || null,
+      documents: snapshots.map(snapshot => snapshot.data() as IDocument)
+    };
+  }
+
+  public async listFromCursor(
+    cursor: firebase.firestore.DocumentSnapshot,
+    limit: number
+  ): Promise<IListResult<firebase.firestore.DocumentSnapshot>> {
+    const snapshots = (await this.query()
+      .startAfter(cursor)
+      .limit(limit)
+      .get()).docs;
+
+    return {
+      cursor: last(snapshots) || null,
+      documents: snapshots.map(snapshot => snapshot.data() as IDocument)
+    };
+  }
+
+  private query(): firebase.firestore.Query {
+    return this.collection().orderBy("createdAt", "desc");
   }
 
   private collection(): firebase.firestore.CollectionReference {

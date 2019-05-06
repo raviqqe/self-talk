@@ -6,7 +6,7 @@ import { IMessagePresenter } from "./message-presenter";
 
 export class DocumentCreator {
   constructor(
-    private readonly documentRepository: IDocumentRepository,
+    private readonly documentRepository: IDocumentRepository<unknown>,
     private readonly messagePresenter: IMessagePresenter
   ) {}
 

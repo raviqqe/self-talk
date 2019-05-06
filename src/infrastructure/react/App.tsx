@@ -1,10 +1,10 @@
+import { Omit } from "lodash";
 import React, { useState } from "react";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import styled from "styled-components";
 import { IInitialState } from "../../application/application-initializer";
-import { IDocument } from "../../domain/document";
-import { Home } from "./Home";
+import { Home, IProps as IHomeProps } from "./Home";
 import { Landing } from "./Landing";
 
 const LoaderContainer = styled.div`
@@ -15,21 +15,13 @@ const LoaderContainer = styled.div`
   width: 100vw;
 `;
 
-interface IProps {
-  createDocument: (text: string) => Promise<void>;
+interface IProps extends Omit<IHomeProps, "signOut"> {
   initialize: () => Promise<IInitialState>;
-  listDocuments: () => Promise<IDocument[]>;
   signIn: () => Promise<boolean>;
   signOut: () => Promise<boolean>;
 }
 
-export const App = ({
-  createDocument,
-  initialize,
-  listDocuments,
-  signIn,
-  signOut
-}: IProps) => {
+export const App = ({ initialize, signIn, signOut, ...props }: IProps) => {
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
 
   useAsync(async () => {
@@ -47,11 +39,5 @@ export const App = ({
     return <Landing signIn={async () => setSignedIn(await signIn())} />;
   }
 
-  return (
-    <Home
-      createDocument={createDocument}
-      listDocuments={listDocuments}
-      signOut={async () => setSignedIn(await signOut())}
-    />
-  );
+  return <Home {...props} signOut={async () => setSignedIn(await signOut())} />;
 };

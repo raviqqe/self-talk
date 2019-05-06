@@ -14,12 +14,14 @@ const DocumentContainer = styled.div`
 
 interface IProps {
   documents: IDocument[];
+  listMoreDocuments: () => Promise<void>;
 }
 
-export const Documents = ({ documents }: IProps) => (
+export const Documents = ({ documents, listMoreDocuments }: IProps) => (
   <StyledFlatList
     data={documents}
     inverted={true}
+    onEndReached={listMoreDocuments}
     renderItem={({ item: document }) => (
       <DocumentContainer>
         <Document key={document.id} {...document} />
