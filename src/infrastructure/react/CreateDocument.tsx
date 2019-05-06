@@ -14,6 +14,10 @@ const Container = styled.div`
   }
 `;
 
+const OverwrappedTextArea = styled(TextArea)`
+  margin-right: -1.5em;
+`;
+
 interface IProps {
   createDocument: (text: string) => Promise<void>;
 }
@@ -23,7 +27,7 @@ export const CreateDocument = ({ createDocument }: IProps) => {
 
   return (
     <Container>
-      <TextArea
+      <OverwrappedTextArea
         placeholder="Write in Markdown ..."
         onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
           setText(event.target.value)
