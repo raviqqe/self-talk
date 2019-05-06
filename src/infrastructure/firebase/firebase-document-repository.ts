@@ -10,9 +10,9 @@ export class FirebaseDocumentRepository implements IDocumentRepository {
   }
 
   public async list(): Promise<IDocument[]> {
-    return (await this.collection().get()).docs.map(
-      snapshot => snapshot.data() as IDocument
-    );
+    return (await this.collection()
+      .orderBy("createdAt", "desc")
+      .get()).docs.map(snapshot => snapshot.data() as IDocument);
   }
 
   private collection(): firebase.firestore.CollectionReference {
