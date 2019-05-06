@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import { boxShadow } from "./style";
 
 export const CircleButton = styled.button<{ secondary?: boolean }>`
+  ${boxShadow};
   background: ${({ secondary }) => (secondary ? "lightgrey" : "salmon")};
   color: white;
   display: flex;

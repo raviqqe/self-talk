@@ -1,8 +1,10 @@
 import React, { FC, HTMLProps, InputHTMLAttributes } from "react";
 import AutosizeTextArea from "react-autosize-textarea";
 import styled from "styled-components";
+import { boxShadow } from "./style";
 
 const StyledTextArea: FC<any> = styled(AutosizeTextArea)`
+  ${boxShadow};
   border: none;
   outline: none;
   width: 100%;

@@ -1,7 +1,9 @@
 import React, { FC, HTMLAttributes, HTMLProps, ReactNode } from "react";
 import styled from "styled-components";
+import { boxShadow } from "./style";
 
 const Button: FC<any> = styled.button<{ secondary?: boolean }>`
+  ${boxShadow};
   background: ${({ secondary }) => (secondary ? "lightgrey" : "salmon")}
   display: flex;
   justify-content: center;

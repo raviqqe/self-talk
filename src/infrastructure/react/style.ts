@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -10,4 +11,8 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.4;
     font-size: 16px;
   }
+`;
+
+export const boxShadow = css`
+  box-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
 `;
