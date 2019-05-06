@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
+import { Markdown } from "./Markdown";
 
 const Container = styled.div`
   background: white;
@@ -8,4 +9,8 @@ const Container = styled.div`
   border-radius: 0.5em;
 `;
 
-export const Document = ({ text }: IDocument) => <Container>{text}</Container>;
+export const Document = ({ text }: IDocument) => (
+  <Container>
+    <Markdown>{text}</Markdown>
+  </Container>
+);
