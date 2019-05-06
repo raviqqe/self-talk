@@ -3,7 +3,7 @@ import { css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    background: lemonchiffon;
+    background: khaki;
     margin: 0;
     padding: 0;
     color: #222;
