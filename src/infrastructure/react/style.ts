@@ -10,6 +10,9 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Noto Sans", sans-serif;
     line-height: 1.4;
     font-size: 16px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
   }
 `;
 
