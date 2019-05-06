@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
@@ -20,6 +21,12 @@ const Container = styled.div`
   }
 `;
 
+const LoaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Border = styled.div`
   border-top: 1px solid darkkhaki;
 `;
@@ -37,12 +44,18 @@ interface IProps {
 }
 
 export const Home = ({ createDocument, listDocuments, signOut }: IProps) => {
-  const [documents, setDocuments] = useState<IDocument[]>([]);
+  const [documents, setDocuments] = useState<IDocument[] | null>(null);
   useAsync(async () => setDocuments(await listDocuments()), []);
 
   return (
     <Container>
-      <Documents documents={documents} />
+      {documents ? (
+        <Documents documents={documents} />
+      ) : (
+        <LoaderContainer>
+          <PulseLoader color="white" />
+        </LoaderContainer>
+      )}
       <Border />
       <CreateDocument
         createDocument={async (text: string) => {
