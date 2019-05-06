@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { MdAdd } from "react-icons/md";
 import styled from "styled-components";
 import { CircleButton } from "./CircleButton";
@@ -25,7 +25,9 @@ export const CreateDocument = ({ createDocument }: IProps) => {
     <Container>
       <TextArea
         placeholder="Write in Markdown ..."
-        onChange={event => setText(event.target.value)}
+        onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
+          setText(event.target.value)
+        }
         value={text}
       />
       <CircleButton
