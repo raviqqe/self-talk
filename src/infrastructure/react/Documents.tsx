@@ -21,6 +21,7 @@ export const Documents = ({ documents, listMoreDocuments }: IProps) => (
   <StyledFlatList
     data={documents}
     inverted={true}
+    keyExtractor={document => document.id}
     onEndReached={listMoreDocuments}
     renderItem={({ item: document }) => (
       <DocumentContainer>
