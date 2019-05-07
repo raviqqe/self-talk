@@ -14,6 +14,12 @@ export class FirebaseDocumentRepository
     reference.set(document);
   }
 
+  public async delete(documentID: string): Promise<void> {
+    await this.collection()
+      .doc(documentID)
+      .delete();
+  }
+
   public async list(
     limit: number
   ): Promise<IListResult<firebase.firestore.DocumentSnapshot>> {

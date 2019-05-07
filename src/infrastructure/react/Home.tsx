@@ -49,6 +49,7 @@ const SignOutContainer = styled.div`
 
 export interface IProps {
   createDocument: (text: string) => Promise<void>;
+  deleteDocument: (documentID: string) => Promise<void>;
   listDocuments: () => Promise<IDocument[]>;
   listMoreDocuments: () => Promise<IDocument[]>;
   signOut: () => Promise<void>;
@@ -56,6 +57,7 @@ export interface IProps {
 
 export const Home = ({
   createDocument,
+  deleteDocument,
   listDocuments,
   listMoreDocuments,
   signOut
@@ -67,6 +69,12 @@ export const Home = ({
     <Container>
       {documents ? (
         <Documents
+          deleteDocument={async (documentID: string) => {
+            await deleteDocument(documentID);
+            setDocuments(
+              documents.filter(document => document.id !== documentID)
+            );
+          }}
           documents={documents}
           listMoreDocuments={async () =>
             setDocuments([...documents, ...(await listMoreDocuments())])

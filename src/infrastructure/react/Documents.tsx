@@ -13,11 +13,16 @@ const DocumentContainer = styled.div`
 `;
 
 interface IProps {
+  deleteDocument: (documentID: string) => Promise<void>;
   documents: IDocument[];
   listMoreDocuments: () => Promise<void>;
 }
 
-export const Documents = ({ documents, listMoreDocuments }: IProps) => (
+export const Documents = ({
+  documents,
+  listMoreDocuments,
+  deleteDocument
+}: IProps) => (
   <StyledFlatList
     data={documents}
     inverted={true}
@@ -25,7 +30,11 @@ export const Documents = ({ documents, listMoreDocuments }: IProps) => (
     onEndReached={listMoreDocuments}
     renderItem={({ item: document }) => (
       <DocumentContainer>
-        <Document key={document.id} {...document} />
+        <Document
+          key={document.id}
+          document={document}
+          deleteDocument={deleteDocument}
+        />
       </DocumentContainer>
     )}
   />

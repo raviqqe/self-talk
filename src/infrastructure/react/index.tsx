@@ -3,6 +3,7 @@ import React from "react";
 import { render } from "react-dom";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { DocumentCreator } from "../../application/document-creator";
+import { DocumentDeleter } from "../../application/document-deleter";
 import { DocumentLister } from "../../application/document-lister";
 import { SignInManager } from "../../application/sign-in-manager";
 import { SignOutManager } from "../../application/sign-out-manager";
@@ -15,6 +16,7 @@ export class ReactRenderer {
     private readonly signInManager: SignInManager,
     private readonly signOutManager: SignOutManager,
     private readonly documentCreator: DocumentCreator,
+    private readonly documentDeleter: DocumentDeleter,
     private readonly documentLister: DocumentLister<
       firebase.firestore.DocumentSnapshot
     >
@@ -25,6 +27,9 @@ export class ReactRenderer {
       <>
         <App
           createDocument={(text: string) => this.documentCreator.create(text)}
+          deleteDocument={(documentID: string) =>
+            this.documentDeleter.delete(documentID)
+          }
           initialize={() => this.applicationInitializer.initialize()}
           listDocuments={() => this.documentLister.list()}
           listMoreDocuments={() => this.documentLister.listMore()}
