@@ -1,14 +1,13 @@
 import { IDocument } from "../domain/document";
 
-export interface IDocumentRepository<C> {
+export interface IDocumentRepository {
   create(document: IDocument): Promise<void>;
   delete(documentID: string): Promise<void>;
-  list(limit: number): Promise<IListResult<C>>;
-  listFromCursor(cursor: C, limit: number): Promise<IListResult<C>>;
+  list(limit: number): Promise<IListResult>;
   update(document: IDocument): Promise<void>;
 }
 
-export interface IListResult<C> {
+export interface IListResult {
   documents: IDocument[];
-  cursor: C | null;
+  loadMore: ((limit: number) => Promise<IListResult>) | null;
 }

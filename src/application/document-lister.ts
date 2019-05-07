@@ -1,29 +1,26 @@
 import { IDocument } from "../domain/document";
-import { IDocumentRepository } from "./document-repository";
+import { IDocumentRepository, IListResult } from "./document-repository";
 
 const defaultLimit: number = 20;
 
-export class DocumentLister<C> {
-  private cursor: C | null = null;
+export class DocumentLister {
+  private loadMore: ((limit: number) => Promise<IListResult>) | null = null;
 
-  constructor(private readonly documentRepository: IDocumentRepository<C>) {}
+  constructor(private readonly documentRepository: IDocumentRepository) {}
 
   public async list(): Promise<IDocument[]> {
     const result = await this.documentRepository.list(defaultLimit);
-    this.cursor = result.cursor;
+    this.loadMore = result.loadMore;
     return result.documents;
   }
 
   public async listMore(): Promise<IDocument[]> {
-    if (!this.cursor) {
+    if (!this.loadMore) {
       return [];
     }
 
-    const result = await this.documentRepository.listFromCursor(
-      this.cursor,
-      defaultLimit
-    );
-    this.cursor = result.cursor;
+    const result = await this.loadMore(defaultLimit);
+    this.loadMore = result.loadMore;
     return result.documents;
   }
 }

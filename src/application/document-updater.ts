@@ -10,7 +10,7 @@ import { IMessagePresenter } from "./message-presenter";
 export class DocumentUpdater {
   constructor(
     private readonly documentDeleter: DocumentDeleter,
-    private readonly documentRepository: IDocumentRepository<unknown>,
+    private readonly documentRepository: IDocumentRepository,
     private readonly messagePresenter: IMessagePresenter
   ) {}
 

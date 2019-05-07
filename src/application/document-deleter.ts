@@ -3,7 +3,7 @@ import { IDocumentRepository } from "./document-repository";
 
 export class DocumentDeleter {
   constructor(
-    private readonly documentRepository: IDocumentRepository<unknown>,
+    private readonly documentRepository: IDocumentRepository,
     private readonly confirmationController: IConfirmationController
   ) {}
 

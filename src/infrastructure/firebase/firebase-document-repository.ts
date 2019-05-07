@@ -7,8 +7,7 @@ import {
 } from "../../application/document-repository";
 import { IDocument } from "../../domain/document";
 
-export class FirebaseDocumentRepository
-  implements IDocumentRepository<firebase.firestore.DocumentSnapshot> {
+export class FirebaseDocumentRepository implements IDocumentRepository {
   public async create(document: IDocument): Promise<void> {
     const reference = this.collection().doc(document.id);
     reference.set(document);
@@ -21,30 +20,23 @@ export class FirebaseDocumentRepository
   }
 
   public async list(
-    limit: number
-  ): Promise<IListResult<firebase.firestore.DocumentSnapshot>> {
-    const snapshots = (await this.query()
+    limit: number,
+    cursor?: firebase.firestore.DocumentSnapshot
+  ): Promise<IListResult> {
+    const snapshots = (await (cursor
+      ? this.query().startAfter(cursor)
+      : this.query()
+    )
       .limit(limit)
       .get()).docs;
 
     return {
-      cursor: last(snapshots) || null,
-      documents: snapshots.map(snapshot => snapshot.data() as IDocument)
-    };
-  }
-
-  public async listFromCursor(
-    cursor: firebase.firestore.DocumentSnapshot,
-    limit: number
-  ): Promise<IListResult<firebase.firestore.DocumentSnapshot>> {
-    const snapshots = (await this.query()
-      .startAfter(cursor)
-      .limit(limit)
-      .get()).docs;
-
-    return {
-      cursor: last(snapshots) || null,
-      documents: snapshots.map(snapshot => snapshot.data() as IDocument)
+      documents: snapshots.map(snapshot => snapshot.data() as IDocument),
+      loadMore:
+        snapshots.length === 0
+          ? null
+          : (limit: number): Promise<IListResult> =>
+              this.list(limit, last(snapshots))
     };
   }
 

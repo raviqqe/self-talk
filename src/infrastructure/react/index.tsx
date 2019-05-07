@@ -1,4 +1,3 @@
-import * as firebase from "firebase";
 import React from "react";
 import { render } from "react-dom";
 import { ApplicationInitializer } from "../../application/application-initializer";
@@ -17,9 +16,7 @@ export class ReactRenderer {
     private readonly signInManager: SignInManager,
     private readonly signOutManager: SignOutManager,
     private readonly documentCreator: DocumentCreator,
-    private readonly documentLister: DocumentLister<
-      firebase.firestore.DocumentSnapshot
-    >,
+    private readonly documentLister: DocumentLister,
     private readonly documentUpdater: DocumentUpdater
   ) {}
 
