@@ -5,7 +5,7 @@ const Button = styled.div`
   text-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
   color: grey;
   cursor: pointer;
-  font-size: 2em;
+  font-size: 1.5em;
   display: flex;
 `;
 

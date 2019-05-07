@@ -1,6 +1,8 @@
 import { ApplicationInitializer } from "./application/application-initializer";
 import { DocumentCreator } from "./application/document-creator";
+import { DocumentDeleter } from "./application/document-deleter";
 import { DocumentLister } from "./application/document-lister";
+import { DocumentUpdater } from "./application/document-updater";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
 import { AlertMessagePresenter } from "./infrastructure/alert-message-presenter";
@@ -11,7 +13,6 @@ import {
   FirebaseInitializer
 } from "./infrastructure/firebase";
 import { ReactRenderer } from "./infrastructure/react";
-import { DocumentDeleter } from "./application/document-deleter";
 
 new FirebaseInitializer().initialize();
 
@@ -31,6 +32,10 @@ new ReactRenderer(
   new SignInManager(authenticationController),
   new SignOutManager(authenticationController),
   new DocumentCreator(documentRepository, messagePresenter),
-  new DocumentDeleter(documentRepository, confirmationController),
-  new DocumentLister(documentRepository)
+  new DocumentLister(documentRepository),
+  new DocumentUpdater(
+    new DocumentDeleter(documentRepository, confirmationController),
+    documentRepository,
+    messagePresenter
+  )
 ).render(element);

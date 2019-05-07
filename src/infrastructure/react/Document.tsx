@@ -1,9 +1,12 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
+import { MdEdit, MdSave } from "react-icons/md";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
-import { DeleteDocument } from "./DeleteDocument";
+import { CircleButton } from "./CircleButton";
+import { IconButton } from "./IconButton";
 import { Markdown } from "./Markdown";
 import { boxShadow } from "./style";
+import { TextArea } from "./TextArea";
 
 const Container = styled.div`
   ${boxShadow};
@@ -13,23 +16,66 @@ const Container = styled.div`
   position: relative;
 `;
 
-const ButtonsContainer = styled.div`
+const TextAreaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+
+const OverwrappedTextArea = styled(TextArea)`
+  margin-bottom: -1.5em;
+`;
+
+const MarginedCircleButton = styled(CircleButton)`
+  margin-right: 0.5em;
+`;
+
+const ButtonContainer = styled.div`
   display: flex;
   position: absolute;
-  top: 0.3em;
-  right: 0.3em;
+  top: 0.4em;
+  right: 0.4em;
 `;
 
 interface IProps {
-  deleteDocument: (documentID: string) => Promise<void>;
   document: IDocument;
+  updateDocument: (text: string) => Promise<void>;
 }
 
-export const Document = ({ document, deleteDocument }: IProps) => (
-  <Container>
-    <Markdown>{document.text}</Markdown>
-    <ButtonsContainer>
-      <DeleteDocument deleteDocument={() => deleteDocument(document.id)} />
-    </ButtonsContainer>
-  </Container>
-);
+export const Document = ({ document, updateDocument }: IProps) => {
+  const [editing, setEditing] = useState(false);
+  const [text, setText] = useState(document.text);
+
+  if (editing) {
+    return (
+      <TextAreaContainer>
+        <OverwrappedTextArea
+          placeholder="Write in Markdown ..."
+          onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
+            setText(event.target.value)
+          }
+          value={text}
+        />
+        <MarginedCircleButton
+          onClick={async () => {
+            await updateDocument(text);
+            setEditing(false);
+          }}
+        >
+          <MdSave />
+        </MarginedCircleButton>
+      </TextAreaContainer>
+    );
+  }
+
+  return (
+    <Container>
+      <Markdown>{document.text}</Markdown>
+      <ButtonContainer>
+        <IconButton onClick={() => setEditing(true)}>
+          <MdEdit />
+        </IconButton>
+      </ButtonContainer>
+    </Container>
+  );
+};

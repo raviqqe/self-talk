@@ -13,15 +13,15 @@ const DocumentContainer = styled.div`
 `;
 
 interface IProps {
-  deleteDocument: (documentID: string) => Promise<void>;
   documents: IDocument[];
   listMoreDocuments: () => Promise<void>;
+  updateDocument: (document: IDocument, text: string) => Promise<void>;
 }
 
 export const Documents = ({
   documents,
   listMoreDocuments,
-  deleteDocument
+  updateDocument
 }: IProps) => (
   <StyledFlatList
     data={documents}
@@ -33,7 +33,7 @@ export const Documents = ({
         <Document
           key={document.id}
           document={document}
-          deleteDocument={deleteDocument}
+          updateDocument={(text: string) => updateDocument(document, text)}
         />
       </DocumentContainer>
     )}

@@ -48,6 +48,12 @@ export class FirebaseDocumentRepository
     };
   }
 
+  public async update(document: IDocument): Promise<void> {
+    await this.collection()
+      .doc(document.id)
+      .set(document);
+  }
+
   private query(): firebase.firestore.Query {
     return this.collection().orderBy("createdAt", "desc");
   }

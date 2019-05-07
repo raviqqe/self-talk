@@ -5,6 +5,7 @@ import { boxShadow } from "./style";
 
 const StyledTextArea: FC<any> = styled(AutosizeTextArea)`
   ${boxShadow};
+  box-sizing: border-box;
   border: none;
   outline: none;
   width: 100%;

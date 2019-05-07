@@ -49,18 +49,21 @@ const SignOutContainer = styled.div`
 
 export interface IProps {
   createDocument: (text: string) => Promise<void>;
-  deleteDocument: (documentID: string) => Promise<void>;
   listDocuments: () => Promise<IDocument[]>;
   listMoreDocuments: () => Promise<IDocument[]>;
   signOut: () => Promise<void>;
+  updateDocument: (
+    document: IDocument,
+    text: string
+  ) => Promise<IDocument | null>;
 }
 
 export const Home = ({
   createDocument,
-  deleteDocument,
   listDocuments,
   listMoreDocuments,
-  signOut
+  signOut,
+  updateDocument
 }: IProps) => {
   const [documents, setDocuments] = useState<IDocument[] | null>(null);
   useAsync(async () => setDocuments(await listDocuments()), []);
@@ -69,16 +72,28 @@ export const Home = ({
     <Container>
       {documents ? (
         <Documents
-          deleteDocument={async (documentID: string) => {
-            await deleteDocument(documentID);
-            setDocuments(
-              documents.filter(document => document.id !== documentID)
-            );
-          }}
           documents={documents}
           listMoreDocuments={async () =>
             setDocuments([...documents, ...(await listMoreDocuments())])
           }
+          updateDocument={async (document: IDocument, text: string) => {
+            const newDocument = await updateDocument(document, text);
+
+            if (!newDocument) {
+              setDocuments(
+                documents.filter(
+                  existingDocument => existingDocument.id !== document.id
+                )
+              );
+              return;
+            }
+
+            setDocuments(
+              documents.map(document =>
+                document.id === newDocument.id ? newDocument : document
+              )
+            );
+          }}
         />
       ) : (
         <LoaderContainer>

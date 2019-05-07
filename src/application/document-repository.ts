@@ -5,6 +5,7 @@ export interface IDocumentRepository<C> {
   delete(documentID: string): Promise<void>;
   list(limit: number): Promise<IListResult<C>>;
   listFromCursor(cursor: C, limit: number): Promise<IListResult<C>>;
+  update(document: IDocument): Promise<void>;
 }
 
 export interface IListResult<C> {
