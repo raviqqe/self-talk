@@ -1,5 +1,7 @@
 import React from "react";
+import { GoMarkGithub } from "react-icons/go";
 import styled from "styled-components";
+import configuration from "../../configuration.json";
 import { SignIn } from "./SignIn";
 
 interface IProps {
@@ -33,6 +35,17 @@ const Red = styled.span`
   color: salmon;
 `;
 
+const GitHubLink = styled.a`
+  font-size: 2.5rem;
+  margin: 1.5rem;
+  color: #222;
+  display: block;
+  position: fixed;
+  bottom: 0em;
+  right: 0em;
+  line-height: 0ex;
+`;
+
 export const Landing = (props: IProps) => (
   <Container>
     <Title>
@@ -40,5 +53,8 @@ export const Landing = (props: IProps) => (
       <Red>Talk</Red>
     </Title>
     <SignIn {...props} />
+    <GitHubLink href={configuration.repositoryURL} target="_blank">
+      <GoMarkGithub />
+    </GitHubLink>
   </Container>
 );
