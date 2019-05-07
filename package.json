@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "CI=false react-scripts build",
+    "build": "npm run build:icons && CI=false react-scripts build",
+    "build:icons": "tools/build-images.sh",
     "deploy": "npm run build && npx firebase deploy",
     "lint": "npx tslint src/**/*.ts{,x} && prettier -l *.json src/**/*.{json,ts{,x}}",
     "start": "react-scripts start",
