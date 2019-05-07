@@ -7,15 +7,11 @@ import { TextArea } from "./TextArea";
 const Container = styled.div`
   display: flex;
   align-items: center;
-  padding: 0.5em;
-
-  > * {
-    margin: 0.5em;
-  }
+  padding: 1em;
 `;
 
 const OverwrappedTextArea = styled(TextArea)`
-  margin-right: -1.5em;
+  margin-right: -1em;
 `;
 
 interface IProps {
