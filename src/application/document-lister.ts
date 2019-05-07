@@ -1,7 +1,7 @@
 import { IDocument } from "../domain/document";
 import { IDocumentRepository } from "./document-repository";
 
-const defaultLimit: number = 10;
+const defaultLimit: number = 20;
 
 export class DocumentLister<C> {
   private cursor: C | null = null;
