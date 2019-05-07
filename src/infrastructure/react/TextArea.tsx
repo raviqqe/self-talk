@@ -1,4 +1,10 @@
-import React, { FC, HTMLProps, InputHTMLAttributes } from "react";
+import React, {
+  FC,
+  HTMLProps,
+  InputHTMLAttributes,
+  useEffect,
+  useRef
+} from "react";
 import AutosizeTextArea from "react-autosize-textarea";
 import styled from "styled-components";
 import { boxShadow } from "./style";
@@ -23,4 +29,14 @@ const StyledTextArea: FC<any> = styled(AutosizeTextArea)`
 export const TextArea = (
   props: InputHTMLAttributes<HTMLTextAreaElement> &
     HTMLProps<HTMLTextAreaElement>
-) => <StyledTextArea async={true} {...props} />;
+) => {
+  const ref = useRef<HTMLTextAreaElement | null>(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.focus();
+    }
+  });
+
+  return <StyledTextArea async={true} ref={ref} {...props} />;
+};
