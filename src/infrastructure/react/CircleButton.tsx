@@ -1,19 +1,10 @@
 import styled from "styled-components";
-import { boxShadow } from "./style";
+import { Button } from "./Button";
 
-export const CircleButton = styled.button<{ secondary?: boolean }>`
-  ${boxShadow};
-  background: ${({ secondary }) => (secondary ? "lightgrey" : "salmon")};
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const CircleButton = styled(Button)`
   font-size: 1.5em;
   padding: 0;
   height: 2em;
   width: 2em;
-  border: none;
   border-radius: 1em;
-  flex-shrink: 0;
-  cursor: pointer;
 `;
