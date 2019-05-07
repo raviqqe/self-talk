@@ -22,7 +22,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 3em;
+  font-size: 3.5em;
   font-weight: bold;
   text-shadow: 0.4em 0.4em 0.4em rgba(0, 0, 0, 0.1);
 `;
