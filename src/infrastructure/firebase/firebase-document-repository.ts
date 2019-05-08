@@ -1,10 +1,7 @@
 import * as firebase from "firebase/app";
 import "firebase/firestore";
 import { last } from "lodash";
-import {
-  IDocumentRepository,
-  IListResult
-} from "../../application/document-repository";
+import { IDocumentRepository } from "../../application/document-repository";
 import { IDocument } from "../../domain/document";
 
 export class FirebaseDocumentRepository implements IDocumentRepository {
@@ -19,25 +16,19 @@ export class FirebaseDocumentRepository implements IDocumentRepository {
       .delete();
   }
 
-  public async list(
-    limit: number,
-    cursor?: firebase.firestore.DocumentSnapshot
-  ): Promise<IListResult> {
-    const snapshots = (await (cursor
-      ? this.query().startAfter(cursor)
-      : this.query()
-    )
+  public async *list(limit: number): AsyncIterator<IDocument[]> {
+    let result = await this.query()
       .limit(limit)
-      .get()).docs;
+      .get();
 
-    return {
-      documents: snapshots.map(snapshot => snapshot.data() as IDocument),
-      loadMore:
-        snapshots.length === 0
-          ? null
-          : (limit: number): Promise<IListResult> =>
-              this.list(limit, last(snapshots))
-    };
+    while (result.docs.length > 0) {
+      yield result.docs.map(snapshot => snapshot.data() as IDocument);
+
+      result = await this.query()
+        .startAfter(last(result.docs))
+        .limit(limit)
+        .get();
+    }
   }
 
   public async update(document: IDocument): Promise<void> {

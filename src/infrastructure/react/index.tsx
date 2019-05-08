@@ -27,7 +27,6 @@ export class ReactRenderer {
           createDocument={(text: string) => this.documentCreator.create(text)}
           initialize={() => this.applicationInitializer.initialize()}
           listDocuments={() => this.documentLister.list()}
-          listMoreDocuments={() => this.documentLister.listMore()}
           signIn={() => this.signInManager.signIn()}
           signOut={() => this.signOutManager.signOut()}
           updateDocument={(document: IDocument, text: string) =>

@@ -49,8 +49,7 @@ const SignOutContainer = styled.div`
 
 export interface IProps {
   createDocument: (text: string) => Promise<void>;
-  listDocuments: () => Promise<IDocument[]>;
-  listMoreDocuments: () => Promise<IDocument[]>;
+  listDocuments: () => AsyncIterator<IDocument[]>;
   signOut: () => Promise<void>;
   updateDocument: (
     document: IDocument,
@@ -61,21 +60,45 @@ export interface IProps {
 export const Home = ({
   createDocument,
   listDocuments,
-  listMoreDocuments,
   signOut,
   updateDocument
 }: IProps) => {
   const [documents, setDocuments] = useState<IDocument[] | null>(null);
-  useAsync(async () => setDocuments(await listDocuments()), []);
+  const [documentsIterator, setDocumentsIterator] = useState<AsyncIterator<
+    IDocument[]
+  > | null>(null);
+
+  const loadDocuments = async () => {
+    const documentsIterator = await listDocuments();
+    setDocumentsIterator(documentsIterator);
+    const result = await documentsIterator.next();
+
+    if (!result.done) {
+      setDocuments(result.value);
+    }
+  };
+
+  useAsync(loadDocuments, []);
 
   return (
     <Container>
       {documents ? (
         <Documents
           documents={documents}
-          listMoreDocuments={async () =>
-            setDocuments([...documents, ...(await listMoreDocuments())])
-          }
+          loadMoreDocuments={async () => {
+            if (!documents || !documentsIterator) {
+              return;
+            }
+
+            setDocumentsIterator(null);
+            const result = await documentsIterator.next();
+
+            if (!result.done) {
+              setDocuments([...documents, ...result.value]);
+            }
+
+            setDocumentsIterator(documentsIterator);
+          }}
           updateDocument={async (document: IDocument, text: string) => {
             const newDocument = await updateDocument(document, text);
 
@@ -104,7 +127,7 @@ export const Home = ({
         <CreateDocument
           createDocument={async (text: string) => {
             await createDocument(text);
-            setDocuments(await listDocuments());
+            await loadDocuments();
           }}
         />
         <CreateDocumentBackground />
