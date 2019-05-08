@@ -12,6 +12,7 @@ const Container = styled.div`
   ${boxShadow};
   background: white;
   padding: 1em;
+  padding-right: 2em;
   border-radius: 0.5em;
   position: relative;
 `;
