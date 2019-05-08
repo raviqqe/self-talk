@@ -6,7 +6,7 @@
     "build": "npm run build:icons && CI=false react-scripts build",
     "build:icons": "tools/build-images.sh",
     "deploy": "npm run build && npx firebase deploy",
-    "lint": "npx tslint src/**/*.ts{,x} && prettier -l *.json src/**/*.{json,ts{,x}}",
+    "lint": "npx cspell src/**/* public/**/* && npx tslint src/**/*.ts{,x} && prettier -l *.json src/**/*.{json,ts{,x}}",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },
@@ -36,6 +36,7 @@
     "@types/react-native": "^0.57.51",
     "@types/styled-components": "^4.1.14",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
+    "cspell": "^3.2.10",
     "firebase-tools": "^6.7.2",
     "keyboardjs": "^2.5.1",
     "rebound": "^0.1.0",
