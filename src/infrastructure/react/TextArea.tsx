@@ -3,7 +3,8 @@ import React, {
   HTMLProps,
   InputHTMLAttributes,
   useEffect,
-  useRef
+  useRef,
+  useState
 } from "react";
 import AutosizeTextArea from "react-autosize-textarea";
 import styled from "styled-components";
@@ -31,10 +32,12 @@ export const TextArea = (
     HTMLProps<HTMLTextAreaElement>
 ) => {
   const ref = useRef<HTMLTextAreaElement | null>(null);
+  const [focused, setFocused] = useState(false);
 
   useEffect(() => {
-    if (ref.current) {
+    if (!focused && ref.current) {
       ref.current.focus();
+      setFocused(true);
     }
   });
 
