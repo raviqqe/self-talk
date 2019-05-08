@@ -13,6 +13,10 @@ const Container = styled.div`
     margin-bottom: 0em;
   }
 
+  * {
+    word-wrap: break-word;
+  }
+
   ${[1, 2, 3, 4, 5, 6].map(
     level => css`
       h${level} {
