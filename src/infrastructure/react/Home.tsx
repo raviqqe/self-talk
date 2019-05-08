@@ -95,9 +95,8 @@ export const Home = ({
 
             if (!result.done) {
               setDocuments([...documents, ...result.value]);
+              setDocumentsIterator(documentsIterator);
             }
-
-            setDocumentsIterator(documentsIterator);
           }}
           updateDocument={async (document: IDocument, text: string) => {
             const newDocument = await updateDocument(document, text);
