@@ -20,22 +20,22 @@ interface IProps {
 
 export const CreateDocument = ({ createDocument }: IProps) => {
   const [text, setText] = useState("");
+  const create = async () => {
+    setText("");
+    await createDocument(text);
+  };
 
   return (
     <Container>
       <OverwrappedTextArea
+        onSubmit={create}
         placeholder="Write in Markdown ..."
         onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
           setText(event.target.value)
         }
         value={text}
       />
-      <CircleButton
-        onClick={async () => {
-          setText("");
-          await createDocument(text);
-        }}
-      >
+      <CircleButton onClick={create}>
         <MdAdd />
       </CircleButton>
     </Container>

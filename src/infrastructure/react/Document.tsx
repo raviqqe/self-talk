@@ -47,21 +47,22 @@ export const Document = ({ document, updateDocument }: IProps) => {
   const [text, setText] = useState(document.text);
 
   if (editing) {
+    const finishEditing = async () => {
+      await updateDocument(text);
+      setEditing(false);
+    };
+
     return (
       <TextAreaContainer>
         <OverwrappedTextArea
+          onSubmit={finishEditing}
           placeholder="Write in Markdown ..."
           onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
             setText(event.target.value)
           }
           value={text}
         />
-        <MarginedCircleButton
-          onClick={async () => {
-            await updateDocument(text);
-            setEditing(false);
-          }}
-        >
+        <MarginedCircleButton onClick={finishEditing}>
           <MdSave />
         </MarginedCircleButton>
       </TextAreaContainer>

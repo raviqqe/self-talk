@@ -1,7 +1,7 @@
 import React, {
   FC,
-  HTMLProps,
   InputHTMLAttributes,
+  KeyboardEvent,
   useEffect,
   useRef,
   useState
@@ -27,10 +27,11 @@ const StyledTextArea: FC<any> = styled(AutosizeTextArea)`
   }
 `;
 
-export const TextArea = (
-  props: InputHTMLAttributes<HTMLTextAreaElement> &
-    HTMLProps<HTMLTextAreaElement>
-) => {
+interface IProps extends InputHTMLAttributes<HTMLTextAreaElement> {
+  onSubmit: () => void;
+}
+
+export const TextArea = ({ onSubmit, ...textAreaProps }: IProps) => {
   const ref = useRef<HTMLTextAreaElement | null>(null);
   const [focused, setFocused] = useState(false);
 
@@ -41,5 +42,17 @@ export const TextArea = (
     }
   });
 
-  return <StyledTextArea async={true} ref={ref} {...props} />;
+  return (
+    <StyledTextArea
+      async={true}
+      ref={ref}
+      onKeyDown={(event: KeyboardEvent<HTMLTextAreaElement>) => {
+        if (event.keyCode === 13 && event.shiftKey) {
+          onSubmit();
+          event.preventDefault();
+        }
+      }}
+      {...textAreaProps}
+    />
+  );
 };
