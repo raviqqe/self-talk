@@ -37,6 +37,14 @@ const Container = styled.div`
     }
   }
 
+  pre,
+  code {
+    background: dimgrey;
+    border-radius: 0.2rem;
+    color: white;
+    padding: 0.5em;
+  }
+
   table {
     border-collapse: collapse;
   }
