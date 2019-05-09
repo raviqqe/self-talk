@@ -23,7 +23,7 @@ describe(DocumentCreator.name, () => {
     expect(createMock.mock.calls).toHaveLength(1);
   });
 
-  it("creates a document after formatting it", async () => {
+  it("formats a document before creation", async () => {
     await documentCreator.create("\tfoo ");
     expect(createMock.mock.calls[0][0].text).toBe("foo");
   });
