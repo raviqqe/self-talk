@@ -39,3 +39,7 @@ new ReactRenderer(
     messagePresenter
   )
 ).render(element);
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js");
+}
