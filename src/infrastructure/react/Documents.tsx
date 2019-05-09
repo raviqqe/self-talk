@@ -25,6 +25,7 @@ export const Documents = ({
 }: IProps) => (
   <StyledFlatList
     data={documents}
+    disableVirtualization={true}
     inverted={true}
     keyExtractor={document => document.id}
     onEndReached={loadMoreDocuments}
