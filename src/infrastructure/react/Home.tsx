@@ -28,6 +28,10 @@ const LoaderContainer = styled.div`
 
 const CreateDocumentContainer = styled.div`
   position: relative;
+
+  * {
+    z-index: 1;
+  }
 `;
 
 const CreateDocumentBackground = styled.div`
@@ -37,8 +41,8 @@ const CreateDocumentBackground = styled.div`
   left: -100vw;
   width: 200vw;
   height: 100%;
-  z-index: -1;
   box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.3);
+  z-index: 0;
 `;
 
 const SignOutContainer = styled.div`
