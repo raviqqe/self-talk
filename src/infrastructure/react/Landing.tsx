@@ -22,7 +22,8 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 3.5em;
+  font-family: "Chelsea Market", sans-serif;
+  font-size: 4em;
   font-weight: bold;
   text-shadow: 0.4em 0.4em 0.4em rgba(0, 0, 0, 0.1);
 `;
