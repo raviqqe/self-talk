@@ -37,16 +37,20 @@ const Container = styled.div`
     }
   }
 
+  pre {
+    padding: 0.5em;
+  }
+
   pre,
   code {
     background: dimgrey;
     border-radius: 0.2rem;
     color: white;
-    padding: 0.5em;
   }
 
-  pre code {
-    padding: 0em;
+  :not(pre) code {
+    line-height: 2.5em;
+    padding: 0.5em;
   }
 
   table {
