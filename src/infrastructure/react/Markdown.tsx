@@ -45,6 +45,10 @@ const Container = styled.div`
     padding: 0.5em;
   }
 
+  pre code {
+    padding: 0em;
+  }
+
   table {
     border-collapse: collapse;
   }
