@@ -48,7 +48,7 @@ const Container = styled.div`
     color: white;
   }
 
-  :not(pre) code {
+  *:not(pre) > code {
     line-height: 2.5em;
     padding: 0.5em;
   }
