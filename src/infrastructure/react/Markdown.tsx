@@ -37,6 +37,10 @@ const Container = styled.div`
     }
   }
 
+  pre {
+    overflow-x: auto;
+  }
+
   pre,
   *:not(pre) > code {
     background: dimgrey;
