@@ -13,8 +13,6 @@ export class FirebaseInitializer {
       projectId
     });
 
-    if (window.localStorage) {
-      firebase.firestore().enablePersistence();
-    }
+    firebase.firestore().enablePersistence();
   }
 }
