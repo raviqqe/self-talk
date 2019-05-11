@@ -44,9 +44,7 @@ async function main() {
     )
   ).render(element);
 
-  if ("serviceWorker" in navigator) {
-    await navigator.serviceWorker.register("/service-worker.js");
-  }
+  await navigator.serviceWorker.register("/service-worker.js");
 }
 
 main().catch(error => errorReporter.report(error));
