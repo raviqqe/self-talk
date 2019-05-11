@@ -11,6 +11,7 @@
     "test": "react-scripts test"
   },
   "dependencies": {
+    "@sentry/browser": "^5.2.0",
     "firebase": "^5.11.0",
     "lodash": "^4.17.11",
     "prettier": "^1.17.0",

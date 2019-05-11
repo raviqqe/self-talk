@@ -1,5 +1,3 @@
-// tslint:disable:no-console
-
 import { ApplicationInitializer } from "./application/application-initializer";
 import { DocumentCreator } from "./application/document-creator";
 import { DocumentDeleter } from "./application/document-deleter";
@@ -15,11 +13,16 @@ import {
   FirebaseInitializer
 } from "./infrastructure/firebase";
 import { ReactRenderer } from "./infrastructure/react";
+import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 
-new FirebaseInitializer().initialize().catch(console.error);
+const errorReporter = new SentryErrorReporter();
+
+new FirebaseInitializer()
+  .initialize()
+  .catch(error => errorReporter.report(error));
 
 const authenticationController = new FirebaseAuthenticationController();
-const documentRepository = new FirebaseDocumentRepository();
+const documentRepository = new FirebaseDocumentRepository(errorReporter);
 const messagePresenter = new AlertMessagePresenter();
 const confirmationController = new BuiltinConfirmationController();
 
@@ -43,5 +46,7 @@ new ReactRenderer(
 ).render(element);
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/service-worker.js").catch(console.error);
+  navigator.serviceWorker
+    .register("/service-worker.js")
+    .catch(error => errorReporter.report(error));
 }
