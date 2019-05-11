@@ -17,36 +17,36 @@ import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 
 const errorReporter = new SentryErrorReporter();
 
-new FirebaseInitializer()
-  .initialize()
-  .catch(error => errorReporter.report(error));
+async function main() {
+  await new FirebaseInitializer().initialize();
 
-const authenticationController = new FirebaseAuthenticationController();
-const documentRepository = new FirebaseDocumentRepository(errorReporter);
-const messagePresenter = new AlertMessagePresenter();
-const confirmationController = new BuiltinConfirmationController();
+  const authenticationController = new FirebaseAuthenticationController();
+  const documentRepository = new FirebaseDocumentRepository(errorReporter);
+  const messagePresenter = new AlertMessagePresenter();
+  const confirmationController = new BuiltinConfirmationController();
 
-const element = document.getElementById("root");
+  const element = document.getElementById("root");
 
-if (!element) {
-  throw new Error("no root element");
+  if (!element) {
+    throw new Error("no root element");
+  }
+
+  new ReactRenderer(
+    new ApplicationInitializer(authenticationController),
+    new SignInManager(authenticationController),
+    new SignOutManager(authenticationController),
+    new DocumentCreator(documentRepository, messagePresenter),
+    new DocumentLister(documentRepository),
+    new DocumentUpdater(
+      new DocumentDeleter(documentRepository, confirmationController),
+      documentRepository,
+      messagePresenter
+    )
+  ).render(element);
+
+  if ("serviceWorker" in navigator) {
+    await navigator.serviceWorker.register("/service-worker.js");
+  }
 }
 
-new ReactRenderer(
-  new ApplicationInitializer(authenticationController),
-  new SignInManager(authenticationController),
-  new SignOutManager(authenticationController),
-  new DocumentCreator(documentRepository, messagePresenter),
-  new DocumentLister(documentRepository),
-  new DocumentUpdater(
-    new DocumentDeleter(documentRepository, confirmationController),
-    documentRepository,
-    messagePresenter
-  )
-).render(element);
-
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("/service-worker.js")
-    .catch(error => errorReporter.report(error));
-}
+main().catch(error => errorReporter.report(error));
