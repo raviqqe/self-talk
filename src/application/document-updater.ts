@@ -3,6 +3,7 @@ import {
   IDocument,
   validateDocument
 } from "../domain/document";
+import { formatErrorMessage } from "../domain/error";
 import { DocumentDeleter } from "./document-deleter";
 import { IDocumentRepository } from "./document-repository";
 import { IMessagePresenter } from "./message-presenter";
@@ -28,7 +29,7 @@ export class DocumentUpdater {
     try {
       validateDocument(document);
     } catch (error) {
-      await this.messagePresenter.present(error.message);
+      await this.messagePresenter.present(formatErrorMessage(error));
       return originalDocument;
     }
 

@@ -1,5 +1,6 @@
 import UUID from "pure-uuid";
 import { formatDocument, validateDocument } from "../domain/document";
+import { formatErrorMessage } from "../domain/error";
 import { getUnixTimestamp } from "../domain/utilities";
 import { IDocumentRepository } from "./document-repository";
 import { IMessagePresenter } from "./message-presenter";
@@ -20,7 +21,7 @@ export class DocumentCreator {
     try {
       validateDocument(document);
     } catch (error) {
-      await this.messagePresenter.present(error.message);
+      await this.messagePresenter.present(formatErrorMessage(error));
       return;
     }
 

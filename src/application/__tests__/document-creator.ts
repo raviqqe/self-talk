@@ -30,6 +30,6 @@ describe(DocumentCreator.name, () => {
 
   it("validates a document before creation", async () => {
     await documentCreator.create("");
-    expect(presentMock.mock.calls).toHaveLength(1);
+    expect(presentMock.mock.calls).toEqual([["Document cannot be empty!"]]);
   });
 });
