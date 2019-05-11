@@ -6,8 +6,9 @@ import { IDocument } from "../../domain/document";
 
 export class FirebaseDocumentRepository implements IDocumentRepository {
   public async create(document: IDocument): Promise<void> {
-    const reference = this.collection().doc(document.id);
-    reference.set(document);
+    await this.collection()
+      .doc(document.id)
+      .set(document);
   }
 
   public async delete(documentID: string): Promise<void> {

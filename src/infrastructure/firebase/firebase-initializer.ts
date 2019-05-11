@@ -4,7 +4,7 @@ import "firebase/firestore";
 import configuration from "../../configuration.json";
 
 export class FirebaseInitializer {
-  public initialize() {
+  public async initialize() {
     const { apiKey, projectId } = configuration.firebase;
 
     firebase.initializeApp({
@@ -13,6 +13,6 @@ export class FirebaseInitializer {
       projectId
     });
 
-    firebase.firestore().enablePersistence();
+    await firebase.firestore().enablePersistence();
   }
 }

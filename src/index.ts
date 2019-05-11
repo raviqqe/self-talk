@@ -1,3 +1,5 @@
+// tslint:disable:no-console
+
 import { ApplicationInitializer } from "./application/application-initializer";
 import { DocumentCreator } from "./application/document-creator";
 import { DocumentDeleter } from "./application/document-deleter";
@@ -14,7 +16,7 @@ import {
 } from "./infrastructure/firebase";
 import { ReactRenderer } from "./infrastructure/react";
 
-new FirebaseInitializer().initialize();
+new FirebaseInitializer().initialize().catch(console.error);
 
 const authenticationController = new FirebaseAuthenticationController();
 const documentRepository = new FirebaseDocumentRepository();
@@ -41,5 +43,5 @@ new ReactRenderer(
 ).render(element);
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/service-worker.js");
+  navigator.serviceWorker.register("/service-worker.js").catch(console.error);
 }
