@@ -75,11 +75,9 @@ export const Home = ({
   const loadDocuments = async () => {
     const documentsIterator = await listDocuments();
     setDocumentsIterator(documentsIterator);
-    const result = await documentsIterator.next();
 
-    if (!result.done) {
-      setDocuments(result.value);
-    }
+    const result = await documentsIterator.next();
+    setDocuments(result.done ? [] : result.value);
   };
 
   useAsync(loadDocuments, []);
