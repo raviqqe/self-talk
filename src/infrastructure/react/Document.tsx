@@ -19,16 +19,11 @@ const Container = styled.div`
 
 const TextAreaContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 `;
 
 const OverwrappedTextArea = styled(TextArea)`
-  margin-bottom: -1.5em;
-`;
-
-const MarginedCircleButton = styled(CircleButton)`
-  margin-right: 0.5em;
+  margin-right: -1em;
 `;
 
 const ButtonContainer = styled.div`
@@ -63,9 +58,9 @@ export const Document = ({ document, updateDocument }: IProps) => {
           }
           value={text}
         />
-        <MarginedCircleButton onClick={finishEditing}>
+        <CircleButton onClick={finishEditing}>
           <MdSave />
-        </MarginedCircleButton>
+        </CircleButton>
       </TextAreaContainer>
     );
   }
