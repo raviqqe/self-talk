@@ -1,12 +1,7 @@
 import React from "react";
 import { GoMarkGithub } from "react-icons/go";
 import styled from "styled-components";
-import configuration from "../../configuration.json";
 import { SignIn } from "./SignIn";
-
-interface IProps {
-  signIn: () => void;
-}
 
 const Container = styled.div`
   height: 100vh;
@@ -47,14 +42,19 @@ const GitHubLink = styled.a`
   line-height: 0ex;
 `;
 
-export const Landing = (props: IProps) => (
+export interface IProps {
+  repositoryURL: string;
+  signIn: () => void;
+}
+
+export const Landing = ({ repositoryURL, signIn }: IProps) => (
   <Container>
     <Title>
       <White>Self</White>
       <Red>Talk</Red>
     </Title>
-    <SignIn {...props} />
-    <GitHubLink href={configuration.repositoryURL} target="_blank">
+    <SignIn signIn={signIn} />
+    <GitHubLink href={repositoryURL} target="_blank">
       <GoMarkGithub />
     </GitHubLink>
   </Container>

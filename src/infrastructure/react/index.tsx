@@ -17,7 +17,8 @@ export class ReactRenderer {
     private readonly documentLister: DocumentLister,
     private readonly documentUpdater: DocumentUpdater,
     private readonly signInManager: SignInManager,
-    private readonly signOutManager: SignOutManager
+    private readonly signOutManager: SignOutManager,
+    private readonly repositoryURL: string
   ) {}
 
   public render(element: HTMLElement): void {
@@ -27,6 +28,7 @@ export class ReactRenderer {
           createDocument={(text: string) => this.documentCreator.create(text)}
           initialize={() => this.applicationInitializer.initialize()}
           listDocuments={() => this.documentLister.list()}
+          repositoryURL={this.repositoryURL}
           signIn={() => this.signInManager.signIn()}
           signOut={() => this.signOutManager.signOut()}
           updateDocument={(document: IDocument, text: string) =>

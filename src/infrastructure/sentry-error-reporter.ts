@@ -1,10 +1,9 @@
 import * as sentry from "@sentry/browser";
-import configuration from "../configuration.json";
 import { IErrorReporter } from "./error-reporter";
 
 export class SentryErrorReporter implements IErrorReporter {
-  constructor() {
-    sentry.init({ dsn: configuration.sentry.dsn });
+  constructor(dsn: string) {
+    sentry.init({ dsn });
   }
 
   public report(error: Error): void {

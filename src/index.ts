@@ -5,6 +5,7 @@ import { DocumentLister } from "./application/document-lister";
 import { DocumentUpdater } from "./application/document-updater";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
+import configuration from "./configuration.json";
 import { AlertMessagePresenter } from "./infrastructure/alert-message-presenter";
 import { BuiltinConfirmationController } from "./infrastructure/builtin-confirmation-controller";
 import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
@@ -14,7 +15,12 @@ import { InfrastructureInitializer } from "./infrastructure/infrastructure-initi
 import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 
-const errorReporter = new SentryErrorReporter();
+// Instantiate this at the very beginning to initialize Firebase's default app.
+const firebaseInitializer = new FirebaseInitializer(
+  configuration.firebase.projectId,
+  configuration.firebase.apiKey
+);
+const errorReporter = new SentryErrorReporter(configuration.sentry.dsn);
 
 async function main() {
   const authenticationController = new FirebaseAuthenticationController();
@@ -30,7 +36,7 @@ async function main() {
 
   new ReactRenderer(
     new ApplicationInitializer(
-      new InfrastructureInitializer(new FirebaseInitializer()),
+      new InfrastructureInitializer(firebaseInitializer),
       authenticationController
     ),
     new DocumentCreator(documentRepository, messagePresenter),
@@ -41,7 +47,8 @@ async function main() {
       messagePresenter
     ),
     new SignInManager(authenticationController),
-    new SignOutManager(authenticationController)
+    new SignOutManager(authenticationController),
+    configuration.repositoryURL
   ).render(element);
 
   await navigator.serviceWorker.register("/service-worker.js");

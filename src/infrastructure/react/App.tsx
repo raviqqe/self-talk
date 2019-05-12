@@ -5,7 +5,7 @@ import { useAsync } from "react-use";
 import styled from "styled-components";
 import { IInitialState } from "../../application/application-initializer";
 import { Home, IProps as IHomeProps } from "./Home";
-import { Landing } from "./Landing";
+import { IProps as ILandingProps, Landing } from "./Landing";
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -15,13 +15,19 @@ const LoaderContainer = styled.div`
   width: 100vw;
 `;
 
-interface IProps extends Omit<IHomeProps, "signOut"> {
+interface IProps extends Omit<IHomeProps, "signOut">, ILandingProps {
   initialize: () => Promise<IInitialState>;
   signIn: () => Promise<boolean>;
   signOut: () => Promise<boolean>;
 }
 
-export const App = ({ initialize, signIn, signOut, ...props }: IProps) => {
+export const App = ({
+  initialize,
+  repositoryURL,
+  signIn,
+  signOut,
+  ...props
+}: IProps) => {
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
 
   useAsync(async () => {
@@ -36,7 +42,12 @@ export const App = ({ initialize, signIn, signOut, ...props }: IProps) => {
       </LoaderContainer>
     );
   } else if (!signedIn) {
-    return <Landing signIn={async () => setSignedIn(await signIn())} />;
+    return (
+      <Landing
+        repositoryURL={repositoryURL}
+        signIn={async () => setSignedIn(await signIn())}
+      />
+    );
   }
 
   return <Home {...props} signOut={async () => setSignedIn(await signOut())} />;
