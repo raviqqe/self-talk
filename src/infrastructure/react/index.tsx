@@ -13,11 +13,11 @@ import { GlobalStyle } from "./style";
 export class ReactRenderer {
   constructor(
     private readonly applicationInitializer: ApplicationInitializer,
-    private readonly signInManager: SignInManager,
-    private readonly signOutManager: SignOutManager,
     private readonly documentCreator: DocumentCreator,
     private readonly documentLister: DocumentLister,
-    private readonly documentUpdater: DocumentUpdater
+    private readonly documentUpdater: DocumentUpdater,
+    private readonly signInManager: SignInManager,
+    private readonly signOutManager: SignOutManager
   ) {}
 
   public render(element: HTMLElement): void {

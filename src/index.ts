@@ -7,19 +7,16 @@ import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
 import { AlertMessagePresenter } from "./infrastructure/alert-message-presenter";
 import { BuiltinConfirmationController } from "./infrastructure/builtin-confirmation-controller";
-import {
-  FirebaseAuthenticationController,
-  FirebaseDocumentRepository,
-  FirebaseInitializer
-} from "./infrastructure/firebase";
+import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
+import { FirebaseDocumentRepository } from "./infrastructure/firebase/firebase-document-repository";
+import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
+import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
 import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 
 const errorReporter = new SentryErrorReporter();
 
 async function main() {
-  await new FirebaseInitializer().initialize();
-
   const authenticationController = new FirebaseAuthenticationController();
   const documentRepository = new FirebaseDocumentRepository();
   const messagePresenter = new AlertMessagePresenter();
@@ -32,16 +29,19 @@ async function main() {
   }
 
   new ReactRenderer(
-    new ApplicationInitializer(authenticationController),
-    new SignInManager(authenticationController),
-    new SignOutManager(authenticationController),
+    new ApplicationInitializer(
+      new InfrastructureInitializer(new FirebaseInitializer()),
+      authenticationController
+    ),
     new DocumentCreator(documentRepository, messagePresenter),
     new DocumentLister(documentRepository),
     new DocumentUpdater(
       new DocumentDeleter(documentRepository, confirmationController),
       documentRepository,
       messagePresenter
-    )
+    ),
+    new SignInManager(authenticationController),
+    new SignOutManager(authenticationController)
   ).render(element);
 
   await navigator.serviceWorker.register("/service-worker.js");
