@@ -105,19 +105,14 @@ export const Home = ({
           updateDocument={async (document: IDocument, text: string) => {
             const newDocument = await updateDocument(document, text);
 
-            if (!newDocument) {
-              setDocuments(
-                documents.filter(
-                  existingDocument => existingDocument.id !== document.id
-                )
-              );
-              return;
-            }
-
             setDocuments(
-              documents.map(document =>
-                document.id === newDocument.id ? newDocument : document
-              )
+              newDocument
+                ? documents.map(document =>
+                    document.id === newDocument.id ? newDocument : document
+                  )
+                : documents.filter(
+                    existingDocument => existingDocument.id !== document.id
+                  )
             );
           }}
         />
