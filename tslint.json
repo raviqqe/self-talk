@@ -9,6 +9,7 @@
     "no-floating-promises": true,
     "no-return-await": true,
     "no-shadowed-variable": false,
-    "object-literal-sort-keys": true
+    "object-literal-sort-keys": true,
+    "prefer-readonly": true
   }
 }
