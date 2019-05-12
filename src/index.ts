@@ -21,7 +21,7 @@ async function main() {
   await new FirebaseInitializer().initialize();
 
   const authenticationController = new FirebaseAuthenticationController();
-  const documentRepository = new FirebaseDocumentRepository(errorReporter);
+  const documentRepository = new FirebaseDocumentRepository();
   const messagePresenter = new AlertMessagePresenter();
   const confirmationController = new BuiltinConfirmationController();
 
