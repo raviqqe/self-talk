@@ -52,7 +52,7 @@ const SignOutContainer = styled.div`
 `;
 
 export interface IProps {
-  createDocument: (text: string) => Promise<void>;
+  createDocument: (text: string) => Promise<IDocument | null>;
   listDocuments: () => AsyncIterator<IDocument[]>;
   signOut: () => Promise<void>;
   updateDocument: (
@@ -72,15 +72,13 @@ export const Home = ({
     IDocument[]
   > | null>(null);
 
-  const loadDocuments = async () => {
+  useAsync(async () => {
     const documentsIterator = await listDocuments();
     setDocumentsIterator(documentsIterator);
 
     const result = await documentsIterator.next();
     setDocuments(result.done ? [] : result.value);
-  };
-
-  useAsync(loadDocuments, []);
+  }, []);
 
   return (
     <Container>
@@ -121,9 +119,14 @@ export const Home = ({
       )}
       <CreateDocumentContainer>
         <CreateDocument
-          createDocument={async (text: string) => {
-            await createDocument(text);
-            await loadDocuments();
+          createDocument={async (text: string): Promise<void> => {
+            if (!documents) {
+              return;
+            }
+
+            setDocuments(null);
+            const document: IDocument | null = await createDocument(text);
+            setDocuments(document ? [document, ...documents] : documents);
           }}
         />
         <CreateDocumentBackground />

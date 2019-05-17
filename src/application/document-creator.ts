@@ -1,5 +1,9 @@
 import UUID from "pure-uuid";
-import { formatDocument, validateDocument } from "../domain/document";
+import {
+  formatDocument,
+  IDocument,
+  validateDocument
+} from "../domain/document";
 import { formatErrorMessage } from "../domain/error";
 import { getUnixTimestamp } from "../domain/utilities";
 import { IDocumentRepository } from "./document-repository";
@@ -11,7 +15,7 @@ export class DocumentCreator {
     private readonly messagePresenter: IMessagePresenter
   ) {}
 
-  public async create(text: string): Promise<void> {
+  public async create(text: string): Promise<IDocument | null> {
     const document = formatDocument({
       createdAt: getUnixTimestamp(),
       id: new UUID(4).format(),
@@ -22,9 +26,11 @@ export class DocumentCreator {
       validateDocument(document);
     } catch (error) {
       await this.messagePresenter.present(formatErrorMessage(error));
-      return;
+      return null;
     }
 
     await this.documentRepository.create(formatDocument(document));
+
+    return document;
   }
 }
