@@ -11,6 +11,7 @@ const Container = styled.div`
 `;
 
 const OverwrappedTextArea = styled(TextArea)`
+  max-height: 80vh;
   margin-right: -1em;
 `;
 
