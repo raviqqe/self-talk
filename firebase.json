@@ -5,5 +5,8 @@
   },
   "hosting": {
     "public": "build"
+  },
+  "storage": {
+    "rules": "storage.rules"
   }
 }
