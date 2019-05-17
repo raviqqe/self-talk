@@ -18,7 +18,7 @@ const StyledTextArea: FC<any> = styled(AutosizeTextArea)`
   width: 100%;
   color: inherit;
   font-family: monospace;
-  font-size: inherit;
+  font-size: 0.95em;
   resize: none;
   padding: 1em;
   border-radius: 0.5em;
