@@ -5,12 +5,14 @@ import { DocumentLister } from "./application/document-lister";
 import { DocumentUpdater } from "./application/document-updater";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
+import { TextImageInserter } from "./application/text-image-inserter";
 import configuration from "./configuration.json";
 import { AlertMessagePresenter } from "./infrastructure/alert-message-presenter";
 import { BuiltinConfirmationController } from "./infrastructure/builtin-confirmation-controller";
 import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
 import { FirebaseDocumentRepository } from "./infrastructure/firebase/firebase-document-repository";
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
+import { FirebaseStorageImageRepository } from "./infrastructure/firebase/firebase-storage-image-repository";
 import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
 import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
@@ -48,6 +50,7 @@ async function main() {
     ),
     new SignInManager(authenticationController),
     new SignOutManager(authenticationController),
+    new TextImageInserter(new FirebaseStorageImageRepository()),
     configuration.repositoryURL
   ).render(element);
 

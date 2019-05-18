@@ -53,6 +53,7 @@ const SignOutContainer = styled.div`
 
 export interface IProps {
   createDocument: (text: string) => Promise<IDocument | null>;
+  insertImage: (text: string, position: number, image: Blob) => Promise<string>;
   listDocuments: () => AsyncIterator<IDocument[]>;
   signOut: () => Promise<void>;
   updateDocument: (
@@ -63,6 +64,7 @@ export interface IProps {
 
 export const Home = ({
   createDocument,
+  insertImage,
   listDocuments,
   signOut,
   updateDocument
@@ -128,6 +130,7 @@ export const Home = ({
             const document: IDocument | null = await createDocument(text);
             setDocuments(document ? [document, ...documents] : documents);
           }}
+          insertImage={insertImage}
         />
         <CreateDocumentBackground />
       </CreateDocumentContainer>

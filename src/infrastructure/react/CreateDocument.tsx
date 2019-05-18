@@ -1,4 +1,5 @@
-import React, { ChangeEvent, useState } from "react";
+import { times } from "lodash";
+import React, { ChangeEvent, ClipboardEvent, useState } from "react";
 import { MdAdd } from "react-icons/md";
 import styled from "styled-components";
 import { CircleButton } from "./CircleButton";
@@ -17,9 +18,10 @@ const OverwrappedTextArea = styled(TextArea)`
 
 interface IProps {
   createDocument: (text: string) => Promise<void>;
+  insertImage: (text: string, position: number, image: Blob) => Promise<string>;
 }
 
-export const CreateDocument = ({ createDocument }: IProps) => {
+export const CreateDocument = ({ createDocument, insertImage }: IProps) => {
   const [text, setText] = useState("");
   const create = async () => {
     setText("");
@@ -34,6 +36,35 @@ export const CreateDocument = ({ createDocument }: IProps) => {
         onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
           setText(event.target.value)
         }
+        onPaste={async (
+          event: ClipboardEvent<HTMLTextAreaElement>
+        ): Promise<void> => {
+          if (!event.clipboardData || !event.clipboardData.items) {
+            return;
+          }
+
+          const items = event.clipboardData.items;
+
+          for (const index of times(items.length)) {
+            const item = items[index];
+
+            if (!item.type.startsWith("image/")) {
+              continue;
+            }
+
+            const image = item.getAsFile();
+
+            if (!image) {
+              continue;
+            }
+
+            setText(
+              await insertImage(text, event.currentTarget.selectionStart, image)
+            );
+
+            break;
+          }
+        }}
         value={text}
       />
       <CircleButton onClick={create}>
