@@ -8,7 +8,7 @@
     "deploy": "npm run build && npx firebase deploy",
     "lint": "npx cspell src/**/* public/**/* && npx tslint -p tsconfig.json && prettier -l *.json src/**/*",
     "start": "react-scripts start",
-    "test": "react-scripts test"
+    "test": "react-scripts test --coverage --watchAll=false"
   },
   "dependencies": {
     "@sentry/browser": "^5.2.1",
