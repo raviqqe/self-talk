@@ -41,7 +41,7 @@ export const TextArea = ({ onSubmit, ...textAreaProps }: IProps) => {
       ref.current.focus();
       setFocused(true);
     }
-  });
+  }, [focused, ref]);
 
   return (
     <StyledTextArea

@@ -1,9 +1,9 @@
-import { times } from "lodash";
-import React, { ChangeEvent, ClipboardEvent, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { MdAdd } from "react-icons/md";
 import styled from "styled-components";
 import { CircleButton } from "./CircleButton";
 import { TextArea } from "./TextArea";
+import { InsertImageFunction, useOnPaste } from "./utilities";
 
 const Container = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const OverwrappedTextArea = styled(TextArea)`
 
 interface IProps {
   createDocument: (text: string) => Promise<void>;
-  insertImage: (text: string, position: number, image: Blob) => Promise<string>;
+  insertImage: InsertImageFunction;
 }
 
 export const CreateDocument = ({ createDocument, insertImage }: IProps) => {
@@ -36,35 +36,7 @@ export const CreateDocument = ({ createDocument, insertImage }: IProps) => {
         onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
           setText(event.target.value)
         }
-        onPaste={async (
-          event: ClipboardEvent<HTMLTextAreaElement>
-        ): Promise<void> => {
-          if (!event.clipboardData || !event.clipboardData.items) {
-            return;
-          }
-
-          const items = event.clipboardData.items;
-
-          for (const index of times(items.length)) {
-            const item = items[index];
-
-            if (!item.type.startsWith("image/")) {
-              continue;
-            }
-
-            const image = item.getAsFile();
-
-            if (!image) {
-              continue;
-            }
-
-            setText(
-              await insertImage(text, event.currentTarget.selectionStart, image)
-            );
-
-            break;
-          }
-        }}
+        onPaste={useOnPaste(text, setText, insertImage)}
         value={text}
       />
       <CircleButton onClick={create}>

@@ -3,6 +3,7 @@ import { FlatList, FlatListProps } from "react-native-web";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { Document } from "./Document";
+import { InsertImageFunction } from "./utilities";
 
 const StyledFlatList: FC<FlatListProps<IDocument>> = styled(FlatList)`
   padding: 1em 0.5em;
@@ -14,12 +15,14 @@ const DocumentContainer = styled.div`
 
 interface IProps {
   documents: IDocument[];
+  insertImage: InsertImageFunction;
   loadMoreDocuments: () => Promise<void>;
   updateDocument: (document: IDocument, text: string) => Promise<void>;
 }
 
 export const Documents = ({
   documents,
+  insertImage,
   loadMoreDocuments,
   updateDocument
 }: IProps) => (
@@ -34,6 +37,7 @@ export const Documents = ({
         <Document
           key={document.id}
           document={document}
+          insertImage={insertImage}
           updateDocument={(text: string) => updateDocument(document, text)}
         />
       </DocumentContainer>

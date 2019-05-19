@@ -7,6 +7,8 @@ import { IconButton } from "./IconButton";
 import { Markdown } from "./Markdown";
 import { boxShadow } from "./style";
 import { TextArea } from "./TextArea";
+import { InsertImageFunction } from "./utilities";
+import { useOnPaste } from "./utilities";
 
 const Container = styled.div`
   ${boxShadow};
@@ -35,12 +37,14 @@ const ButtonContainer = styled.div`
 
 interface IProps {
   document: IDocument;
+  insertImage: InsertImageFunction;
   updateDocument: (text: string) => Promise<void>;
 }
 
-export const Document = ({ document, updateDocument }: IProps) => {
+export const Document = ({ document, insertImage, updateDocument }: IProps) => {
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState(document.text);
+  const onPaste = useOnPaste(text, setText, insertImage);
 
   if (editing) {
     const finishEditing = async () => {
@@ -56,6 +60,7 @@ export const Document = ({ document, updateDocument }: IProps) => {
           onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
             setText(event.target.value)
           }
+          onPaste={onPaste}
           value={text}
         />
         <CircleButton onClick={finishEditing}>
