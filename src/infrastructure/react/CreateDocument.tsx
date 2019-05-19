@@ -1,9 +1,9 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import { MdAdd } from "react-icons/md";
 import styled from "styled-components";
 import { CircleButton } from "./CircleButton";
-import { TextArea } from "./TextArea";
-import { InsertImageFunction, useOnPaste } from "./utilities";
+import { MarkdownTextArea } from "./MarkdownTextArea";
+import { InsertImageFunction } from "./utilities";
 
 const Container = styled.div`
   display: flex;
@@ -11,9 +11,9 @@ const Container = styled.div`
   padding: 1em;
 `;
 
-const OverwrappedTextArea = styled(TextArea)`
-  max-height: 80vh;
+const StyledMarkdownTextArea = styled(MarkdownTextArea)`
   margin-right: -1em;
+  max-height: 80vh;
 `;
 
 interface IProps {
@@ -23,21 +23,18 @@ interface IProps {
 
 export const CreateDocument = ({ createDocument, insertImage }: IProps) => {
   const [text, setText] = useState("");
-  const onSubmit = async () => {
+  const onSubmit = async (): Promise<void> => {
     setText("");
     await createDocument(text);
   };
 
   return (
     <Container>
-      <OverwrappedTextArea
+      <StyledMarkdownTextArea
+        insertImage={insertImage}
         onSubmit={onSubmit}
-        placeholder="Write in Markdown ..."
-        onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
-          setText(event.target.value)
-        }
-        onPaste={useOnPaste(text, setText, insertImage)}
-        value={text}
+        setText={setText}
+        text={text}
       />
       <CircleButton onClick={onSubmit}>
         <MdAdd />

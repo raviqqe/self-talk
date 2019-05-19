@@ -1,18 +1,17 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import { MdSave } from "react-icons/md";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { CircleButton } from "./CircleButton";
-import { TextArea } from "./TextArea";
+import { MarkdownTextArea } from "./MarkdownTextArea";
 import { InsertImageFunction } from "./utilities";
-import { useOnPaste } from "./utilities";
 
 const Container = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const OverwrappedTextArea = styled(TextArea)`
+const StyledMarkdownTextArea = styled(MarkdownTextArea)`
   margin-right: -1em;
 `;
 
@@ -30,21 +29,18 @@ export const UpdateDocument = ({
   updateDocument
 }: IProps) => {
   const [text, setText] = useState(document.text);
-  const onSubmit = async () => {
+  const onSubmit = async (): Promise<void> => {
     await updateDocument(text);
     onUpdate();
   };
 
   return (
     <Container>
-      <OverwrappedTextArea
+      <StyledMarkdownTextArea
+        insertImage={insertImage}
         onSubmit={onSubmit}
-        placeholder="Write in Markdown ..."
-        onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
-          setText(event.target.value)
-        }
-        onPaste={useOnPaste(text, setText, insertImage)}
-        value={text}
+        setText={setText}
+        text={text}
       />
       <CircleButton onClick={onSubmit}>
         <MdSave />
