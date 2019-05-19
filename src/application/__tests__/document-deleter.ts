@@ -8,7 +8,7 @@ describe(DocumentDeleter.name, () => {
 
   beforeEach(() => {
     deleteMock = jest.fn();
-    confirmMock = jest.fn(() => true);
+    confirmMock = jest.fn();
     documentDeleter = new DocumentDeleter(
       ({
         delete: deleteMock
@@ -17,13 +17,15 @@ describe(DocumentDeleter.name, () => {
     );
   });
 
-  it("deletes a document", async () => {
+  it("deletes a document after confirmation", async () => {
+    confirmMock.mockReturnValue(true);
     await documentDeleter.delete("foo");
     expect(deleteMock.mock.calls).toHaveLength(1);
   });
 
-  it("confirms deletion before conducting it", async () => {
+  it("does not delete any document if it is not confirmed", async () => {
+    confirmMock.mockReturnValue(false);
     await documentDeleter.delete("\tfoo ");
-    expect(confirmMock.mock.calls).toHaveLength(1);
+    expect(deleteMock.mock.calls).toHaveLength(0);
   });
 });
