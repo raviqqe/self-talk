@@ -1,31 +1,38 @@
 import React, { ChangeEvent, useState } from "react";
-import { MdAdd } from "react-icons/md";
+import { MdSave } from "react-icons/md";
 import styled from "styled-components";
+import { IDocument } from "../../domain/document";
 import { CircleButton } from "./CircleButton";
 import { TextArea } from "./TextArea";
-import { InsertImageFunction, useOnPaste } from "./utilities";
+import { InsertImageFunction } from "./utilities";
+import { useOnPaste } from "./utilities";
 
 const Container = styled.div`
   display: flex;
   align-items: center;
-  padding: 1em;
 `;
 
 const OverwrappedTextArea = styled(TextArea)`
-  max-height: 80vh;
   margin-right: -1em;
 `;
 
 interface IProps {
-  createDocument: (text: string) => Promise<void>;
+  document: IDocument;
   insertImage: InsertImageFunction;
+  onUpdate: () => void;
+  updateDocument: (text: string) => Promise<void>;
 }
 
-export const CreateDocument = ({ createDocument, insertImage }: IProps) => {
-  const [text, setText] = useState("");
+export const UpdateDocument = ({
+  document,
+  onUpdate,
+  insertImage,
+  updateDocument
+}: IProps) => {
+  const [text, setText] = useState(document.text);
   const onSubmit = async () => {
-    setText("");
-    await createDocument(text);
+    await updateDocument(text);
+    onUpdate();
   };
 
   return (
@@ -40,7 +47,7 @@ export const CreateDocument = ({ createDocument, insertImage }: IProps) => {
         value={text}
       />
       <CircleButton onClick={onSubmit}>
-        <MdAdd />
+        <MdSave />
       </CircleButton>
     </Container>
   );
