@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<div
+  className="sc-dnqmqq ibqKeQ sc-dnqmqq ibqKeQ css-view-1dbjc4n r-WebkitOverflowScrolling-150rngu r-flexDirection-eqz5dr r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-overflowX-11yh6sk r-overflowY-1rnoaur r-transform-1qc3rpd"
+  onResponderGrant={[Function]}
+  onResponderReject={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onScroll={[Function]}
+  onScrollShouldSetResponder={[Function]}
+  onStartShouldSetResponder={[Function]}
+  onStartShouldSetResponderCapture={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+>
+  <div
+    className="css-view-1dbjc4n"
+  >
+    <div
+      className="css-view-1dbjc4n r-flexDirection-1d5kdc7 r-transform-1qc3rpd"
+    >
+      <div
+        className="sc-iwsKbI fmCmXU"
+      >
+        <div
+          className="sc-gzVnrw eVDcRJ"
+        >
+          <div
+            className="sc-bwzfXH zbECj"
+          >
+            <p>
+              text
+            </p>
+          </div>
+          <div
+            className="sc-htoDjs fBkGvu"
+          >
+            <div
+              className="sc-bdVaJa hHGyAi"
+              onClick={[Function]}
+            >
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders with no documents 1`] = `
+<div
+  className="sc-dnqmqq ibqKeQ sc-dnqmqq ibqKeQ css-view-1dbjc4n r-WebkitOverflowScrolling-150rngu r-flexDirection-eqz5dr r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-overflowX-11yh6sk r-overflowY-1rnoaur r-transform-1qc3rpd"
+  onResponderGrant={[Function]}
+  onResponderReject={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onScroll={[Function]}
+  onScrollShouldSetResponder={[Function]}
+  onStartShouldSetResponder={[Function]}
+  onStartShouldSetResponderCapture={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  onWheel={[Function]}
+>
+  <div
+    className="css-view-1dbjc4n"
+  />
+</div>
+`;

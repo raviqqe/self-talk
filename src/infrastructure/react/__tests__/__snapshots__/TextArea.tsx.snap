@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<textarea
+  async={true}
+  className="sc-bdVaJa cPXXOd"
+  onChange={[Function]}
+  onKeyDown={[Function]}
+  rows={1}
+/>
+`;
