@@ -2,10 +2,10 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-VigVT kyOdWZ"
+  className="sc-jTzLTM fLeIbt"
 >
   <div
-    className="sc-jTzLTM drTWqF"
+    className="sc-fjdhpX eIxLu"
   >
     <div
       className="css-0"
@@ -22,7 +22,7 @@ exports[`renders 1`] = `
     </div>
   </div>
   <div
-    className="sc-fjdhpX jUzgAD"
+    className="sc-jzJRlG ibGvGA"
   >
     <div
       className="sc-bxivhb fcPulK"
@@ -63,11 +63,11 @@ exports[`renders 1`] = `
       </button>
     </div>
     <div
-      className="sc-jzJRlG eEdBLJ"
+      className="sc-cSHVUG jkRavA"
     />
   </div>
   <div
-    className="sc-cSHVUG exLpVs"
+    className="sc-kAzzGY cADUfd"
   >
     <button
       className="sc-bdVaJa sc-bwzfXH davee"

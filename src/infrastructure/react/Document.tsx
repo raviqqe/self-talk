@@ -25,12 +25,18 @@ const ButtonContainer = styled.div`
 `;
 
 interface IProps {
+  className?: string;
   document: IDocument;
   insertImage: InsertImageFunction;
   updateDocument: (text: string) => Promise<void>;
 }
 
-export const Document = ({ document, insertImage, updateDocument }: IProps) => {
+export const Document = ({
+  document,
+  insertImage,
+  updateDocument,
+  ...restProps
+}: IProps) => {
   const [editing, setEditing] = useState(false);
 
   if (editing) {
@@ -40,12 +46,13 @@ export const Document = ({ document, insertImage, updateDocument }: IProps) => {
         insertImage={insertImage}
         onUpdate={() => setEditing(false)}
         updateDocument={updateDocument}
+        {...restProps}
       />
     );
   }
 
   return (
-    <Container>
+    <Container {...restProps}>
       <Markdown>{document.text}</Markdown>
       <ButtonContainer>
         <IconButton aria-label="Edit" onClick={() => setEditing(true)}>

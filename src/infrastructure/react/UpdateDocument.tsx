@@ -16,6 +16,7 @@ const StyledMarkdownTextArea = styled(MarkdownTextArea)`
 `;
 
 interface IProps {
+  className?: string;
   document: IDocument;
   insertImage: InsertImageFunction;
   onUpdate: () => void;
@@ -26,7 +27,8 @@ export const UpdateDocument = ({
   document,
   onUpdate,
   insertImage,
-  updateDocument
+  updateDocument,
+  ...restProps
 }: IProps) => {
   const [text, setText] = useState(document.text);
   const onSubmit = async (): Promise<void> => {
@@ -35,7 +37,7 @@ export const UpdateDocument = ({
   };
 
   return (
-    <Container>
+    <Container {...restProps}>
       <StyledMarkdownTextArea
         insertImage={insertImage}
         onSubmit={onSubmit}

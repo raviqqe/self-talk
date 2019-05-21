@@ -1,15 +1,23 @@
-import React, { FC } from "react";
-import { FlatList, FlatListProps } from "react-native-web";
+import React from "react";
+import InfiniteScroller from "react-infinite-scroller";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { Document } from "./Document";
 import { InsertImageFunction } from "./utilities";
 
-const StyledFlatList: FC<FlatListProps<IDocument>> = styled(FlatList)`
-  padding: 1em 0.5em;
-` as any;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: auto;
+`;
 
-const DocumentContainer = styled.div`
+const StyledInfiniteScroller = styled(InfiniteScroller)`
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 1em 0.5em;
+`;
+
+const StyledDocument = styled(Document)`
   margin: 0.5em;
 `;
 
@@ -26,21 +34,21 @@ export const Documents = ({
   loadMoreDocuments,
   updateDocument
 }: IProps) => (
-  <StyledFlatList
-    data={documents}
-    disableVirtualization={true}
-    inverted={true}
-    keyExtractor={document => document.id}
-    onEndReached={loadMoreDocuments}
-    renderItem={({ item: document }) => (
-      <DocumentContainer>
-        <Document
+  <Container>
+    <StyledInfiniteScroller
+      hasMore={true}
+      isReverse={true}
+      loadMore={loadMoreDocuments}
+      useWindow={false}
+    >
+      {documents.map((document: IDocument) => (
+        <StyledDocument
           key={document.id}
           document={document}
           insertImage={insertImage}
           updateDocument={(text: string) => updateDocument(document, text)}
         />
-      </DocumentContainer>
-    )}
-  />
+      ))}
+    </StyledInfiniteScroller>
+  </Container>
 );

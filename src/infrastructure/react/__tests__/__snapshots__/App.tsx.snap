@@ -3,17 +3,17 @@
 exports[`renders after a user signs in 1`] = `
 <div>
   <div
-    class="sc-VigVT kyOdWZ"
+    class="sc-jTzLTM fLeIbt"
   >
     <div
-      class="sc-gZMcBi bNEpGc sc-gZMcBi bNEpGc css-view-1dbjc4n r-WebkitOverflowScrolling-150rngu r-flexDirection-eqz5dr r-flexGrow-16y2uox r-flexShrink-1wbh5a2 r-overflowX-11yh6sk r-overflowY-1rnoaur r-transform-1qc3rpd"
+      class="sc-gZMcBi kNPZGk"
     >
       <div
-        class="css-view-1dbjc4n"
+        class="sc-gqjmRU cbhwjO"
       />
     </div>
     <div
-      class="sc-fjdhpX jUzgAD"
+      class="sc-jzJRlG ibGvGA"
     >
       <div
         class="sc-bxivhb fcPulK"
@@ -21,7 +21,6 @@ exports[`renders after a user signs in 1`] = `
         <textarea
           async=""
           class="sc-ifAKCX cMeaPw sc-htpNat gsNViM"
-          data-focusvisible-polyfill="true"
           placeholder="Write in Markdown ..."
           rows="1"
           style="overflow-x: hidden; word-wrap: break-word; overflow-y: hidden;"
@@ -46,11 +45,11 @@ exports[`renders after a user signs in 1`] = `
         </button>
       </div>
       <div
-        class="sc-jzJRlG eEdBLJ"
+        class="sc-cSHVUG jkRavA"
       />
     </div>
     <div
-      class="sc-cSHVUG exLpVs"
+      class="sc-kAzzGY cADUfd"
     >
       <button
         class="sc-bdVaJa sc-bwzfXH davee"
@@ -77,29 +76,29 @@ exports[`renders after a user signs in 1`] = `
 exports[`renders before a user signs in 1`] = `
 <div>
   <div
-    class="sc-chPdSV kgQxlY"
+    class="sc-kgoBCf gMeNpm"
   >
     <div
-      class="sc-kgoBCf glunCI"
+      class="sc-kGXeez ejNnzc"
     >
       <span
-        class="sc-kGXeez iYUYjx"
+        class="sc-kpOJdX cTQEhr"
       >
         Self
       </span>
       <span
-        class="sc-kpOJdX cgrdII"
+        class="sc-dxgOiQ kXoRrR"
       >
         Talk
       </span>
     </div>
     <button
-      class="sc-bdVaJa sc-kAzzGY iMjcFC"
+      class="sc-bdVaJa sc-chPdSV goUjih"
     >
       Sign in
     </button>
     <a
-      class="sc-dxgOiQ uChsF"
+      class="sc-ckVGcZ PZLob"
       href="url"
       target="_blank"
     >
