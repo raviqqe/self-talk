@@ -39,6 +39,7 @@ exports[`renders 1`] = `
             className="sc-htoDjs fBkGvu"
           >
             <div
+              aria-label="Edit"
               className="sc-bdVaJa hHGyAi"
               onClick={[Function]}
             >

@@ -36,7 +36,7 @@ export const CreateDocument = ({ createDocument, insertImage }: IProps) => {
         setText={setText}
         text={text}
       />
-      <CircleButton onClick={onSubmit}>
+      <CircleButton aria-label="Create" onClick={onSubmit}>
         <MdAdd />
       </CircleButton>
     </Container>

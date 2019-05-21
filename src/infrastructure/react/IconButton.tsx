@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { AriaAttributes, ReactNode } from "react";
 import styled from "styled-components";
 
 const Button = styled.div`
@@ -9,11 +9,13 @@ const Button = styled.div`
   display: flex;
 `;
 
-interface IProps {
+interface IProps extends AriaAttributes {
   children: ReactNode;
   onClick: () => void;
 }
 
-export const IconButton = ({ children, onClick }: IProps) => (
-  <Button onClick={onClick}>{children}</Button>
+export const IconButton = ({ children, onClick, ...restProps }: IProps) => (
+  <Button onClick={onClick} {...restProps}>
+    {children}
+  </Button>
 );

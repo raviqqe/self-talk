@@ -48,7 +48,7 @@ export const Document = ({ document, insertImage, updateDocument }: IProps) => {
     <Container>
       <Markdown>{document.text}</Markdown>
       <ButtonContainer>
-        <IconButton onClick={() => setEditing(true)}>
+        <IconButton aria-label="Edit" onClick={() => setEditing(true)}>
           <MdEdit />
         </IconButton>
       </ButtonContainer>

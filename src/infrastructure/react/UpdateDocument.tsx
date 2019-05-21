@@ -42,7 +42,7 @@ export const UpdateDocument = ({
         setText={setText}
         text={text}
       />
-      <CircleButton onClick={onSubmit}>
+      <CircleButton aria-label="Save" onClick={onSubmit}>
         <MdSave />
       </CircleButton>
     </Container>
