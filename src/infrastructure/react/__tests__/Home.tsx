@@ -1,7 +1,6 @@
 import React from "react";
 import { create } from "react-test-renderer";
 import {
-  act,
   cleanup,
   fireEvent,
   render,
