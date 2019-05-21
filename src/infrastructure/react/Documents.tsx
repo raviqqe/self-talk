@@ -39,6 +39,7 @@ export const Documents = ({
       hasMore={true}
       isReverse={true}
       loadMore={loadMoreDocuments}
+      threshold={512}
       useWindow={false}
     >
       {documents.map((document: IDocument) => (
