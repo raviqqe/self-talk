@@ -11,7 +11,7 @@
     "test": "react-scripts test --coverage --watchAll=false"
   },
   "dependencies": {
-    "@sentry/browser": "^5.2.1",
+    "@sentry/browser": "^5.3.0",
     "firebase": "^6.0.0",
     "lodash": "^4.17.11",
     "prettier": "^1.17.1",
@@ -38,7 +38,7 @@
     "@types/react-test-renderer": "^16.8.1",
     "@types/styled-components": "^4.1.15",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
-    "cspell": "^4.0.12",
+    "cspell": "^4.0.13",
     "firebase-tools": "^6.10.0",
     "keyboardjs": "^2.5.1",
     "react-test-renderer": "^16.8.6",
