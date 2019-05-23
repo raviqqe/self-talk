@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 
 const Container = styled.div`
   cursor: text;
+  overflow-x: auto;
 
   > :first-child {
     margin-top: 0em;
