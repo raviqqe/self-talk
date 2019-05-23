@@ -39,9 +39,7 @@ const Container = styled.div`
   }
 
   img {
-    display: block;
-    margin: 0.5em;
-    max-width: calc(100% - 1em);
+    max-width: 100%;
   }
 
   pre {
