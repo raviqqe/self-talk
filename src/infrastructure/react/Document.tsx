@@ -6,7 +6,7 @@ import { IconButton } from "./IconButton";
 import { Markdown } from "./Markdown";
 import { boxShadow } from "./style";
 import { UpdateDocument } from "./UpdateDocument";
-import { InsertImageFunction } from "./utilities";
+import { InsertImagesFunction } from "./utilities";
 
 const Container = styled.div`
   ${boxShadow};
@@ -27,13 +27,13 @@ const ButtonContainer = styled.div`
 interface IProps {
   className?: string;
   document: IDocument;
-  insertImage: InsertImageFunction;
+  insertImages: InsertImagesFunction;
   updateDocument: (text: string) => Promise<void>;
 }
 
 export const Document = ({
   document,
-  insertImage,
+  insertImages,
   updateDocument,
   ...restProps
 }: IProps) => {
@@ -43,7 +43,7 @@ export const Document = ({
     return (
       <UpdateDocument
         document={document}
-        insertImage={insertImage}
+        insertImages={insertImages}
         onUpdate={() => setEditing(false)}
         updateDocument={updateDocument}
         {...restProps}

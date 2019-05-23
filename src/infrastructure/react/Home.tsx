@@ -6,7 +6,7 @@ import { IDocument } from "../../domain/document";
 import { CreateDocument } from "./CreateDocument";
 import { Documents } from "./Documents";
 import { SignOut } from "./SignOut";
-import { InsertImageFunction } from "./utilities";
+import { InsertImagesFunction } from "./utilities";
 
 const Container = styled.div`
   display: flex;
@@ -54,7 +54,7 @@ const SignOutContainer = styled.div`
 
 export interface IProps {
   createDocument: (text: string) => Promise<IDocument | null>;
-  insertImage: InsertImageFunction;
+  insertImages: InsertImagesFunction;
   listDocuments: () => AsyncIterator<IDocument[]>;
   signOut: () => Promise<void>;
   updateDocument: (
@@ -65,7 +65,7 @@ export interface IProps {
 
 export const Home = ({
   createDocument,
-  insertImage,
+  insertImages,
   listDocuments,
   signOut,
   updateDocument
@@ -88,7 +88,7 @@ export const Home = ({
       {documents ? (
         <Documents
           documents={documents}
-          insertImage={insertImage}
+          insertImages={insertImages}
           loadMoreDocuments={async () => {
             if (!documents || !documentsIterator) {
               return;
@@ -132,7 +132,7 @@ export const Home = ({
             const document: IDocument | null = await createDocument(text);
             setDocuments(document ? [document, ...documents] : documents);
           }}
-          insertImage={insertImage}
+          insertImages={insertImages}
         />
         <CreateDocumentBackground />
       </CreateDocumentContainer>

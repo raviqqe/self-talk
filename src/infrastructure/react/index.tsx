@@ -29,12 +29,12 @@ export class ReactRenderer {
         <App
           createDocument={(text: string) => this.documentCreator.create(text)}
           initialize={() => this.applicationInitializer.initialize()}
-          insertImage={(
+          insertImages={(
             text: string,
             position: number,
-            image: Blob
+            images: Blob[]
           ): Promise<string> =>
-            this.textImageInserter.insert(text, position, image)
+            this.textImageInserter.insert(text, position, images)
           }
           listDocuments={() => this.documentLister.list()}
           repositoryURL={this.repositoryURL}

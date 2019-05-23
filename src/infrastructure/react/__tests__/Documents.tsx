@@ -7,7 +7,7 @@ it("renders", () => {
     create(
       <Documents
         documents={[{ id: "id", text: "text", createdAt: 42 }]}
-        insertImage={async () => "url"}
+        insertImages={async () => "url"}
         loadMoreDocuments={async () => undefined}
         updateDocument={async () => undefined}
       />
@@ -20,7 +20,7 @@ it("renders with no documents", () => {
     create(
       <Documents
         documents={[]}
-        insertImage={async () => "url"}
+        insertImages={async () => "url"}
         loadMoreDocuments={async () => undefined}
         updateDocument={async () => undefined}
       />

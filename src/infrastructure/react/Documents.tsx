@@ -3,7 +3,7 @@ import InfiniteScroller from "react-infinite-scroller";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { Document } from "./Document";
-import { InsertImageFunction } from "./utilities";
+import { InsertImagesFunction } from "./utilities";
 
 const Container = styled.div`
   display: flex;
@@ -23,14 +23,14 @@ const StyledDocument = styled(Document)`
 
 interface IProps {
   documents: IDocument[];
-  insertImage: InsertImageFunction;
+  insertImages: InsertImagesFunction;
   loadMoreDocuments: () => Promise<void>;
   updateDocument: (document: IDocument, text: string) => Promise<void>;
 }
 
 export const Documents = ({
   documents,
-  insertImage,
+  insertImages,
   loadMoreDocuments,
   updateDocument
 }: IProps) => (
@@ -46,7 +46,7 @@ export const Documents = ({
         <StyledDocument
           key={document.id}
           document={document}
-          insertImage={insertImage}
+          insertImages={insertImages}
           updateDocument={(text: string) => updateDocument(document, text)}
         />
       ))}

@@ -7,7 +7,7 @@ it("renders", () => {
   expect(
     render(
       <MarkdownTextArea
-        insertImage={async () => "url"}
+        insertImages={async () => ""}
         onSubmit={async () => undefined}
         setText={() => undefined}
         text="foo"
@@ -21,7 +21,7 @@ it("pastes an image as a link", async () => {
 
   const { container } = render(
     <MarkdownTextArea
-      insertImage={async () => "result"}
+      insertImages={async () => "result"}
       onSubmit={async () => undefined}
       setText={setText}
       text="foo"
@@ -48,7 +48,7 @@ it("does not paste anything if there is no clipboard data", async () => {
 
   const { container } = render(
     <MarkdownTextArea
-      insertImage={async () => "result"}
+      insertImages={async () => "result"}
       onSubmit={async () => undefined}
       setText={setText}
       text="foo"
@@ -68,7 +68,7 @@ it("does not paste anything if there is no images in clipboard data", async () =
 
   const { container } = render(
     <MarkdownTextArea
-      insertImage={async () => "result"}
+      insertImages={async () => "result"}
       onSubmit={async () => undefined}
       setText={setText}
       text="foo"

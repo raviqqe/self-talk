@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { CircleButton } from "./CircleButton";
 import { MarkdownTextArea } from "./MarkdownTextArea";
-import { InsertImageFunction } from "./utilities";
+import { InsertImagesFunction } from "./utilities";
 
 const Container = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const StyledMarkdownTextArea = styled(MarkdownTextArea)`
 interface IProps {
   className?: string;
   document: IDocument;
-  insertImage: InsertImageFunction;
+  insertImages: InsertImagesFunction;
   onUpdate: () => void;
   updateDocument: (text: string) => Promise<void>;
 }
@@ -26,7 +26,7 @@ interface IProps {
 export const UpdateDocument = ({
   document,
   onUpdate,
-  insertImage,
+  insertImages,
   updateDocument,
   ...restProps
 }: IProps) => {
@@ -39,7 +39,7 @@ export const UpdateDocument = ({
   return (
     <Container {...restProps}>
       <StyledMarkdownTextArea
-        insertImage={insertImage}
+        insertImages={insertImages}
         onSubmit={onSubmit}
         setText={setText}
         text={text}

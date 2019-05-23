@@ -1,17 +1,17 @@
 import React, { ChangeEvent, ClipboardEvent } from "react";
 import { TextArea } from "./TextArea";
-import { InsertImageFunction } from "./utilities";
+import { InsertImagesFunction } from "./utilities";
 
 interface IProps {
   className?: string;
-  insertImage: InsertImageFunction;
+  insertImages: InsertImagesFunction;
   onSubmit: () => Promise<void>;
   setText: (text: string) => void;
   text: string;
 }
 
 export const MarkdownTextArea = ({
-  insertImage,
+  insertImages,
   onSubmit,
   setText,
   text,
@@ -40,9 +40,8 @@ export const MarkdownTextArea = ({
           return;
         }
 
-        // TODO: Support multiple image upload.
         setText(
-          await insertImage(text, event.currentTarget.selectionStart, images[0])
+          await insertImages(text, event.currentTarget.selectionStart, images)
         );
       }}
       value={text}

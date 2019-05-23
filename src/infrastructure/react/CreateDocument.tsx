@@ -3,7 +3,7 @@ import { MdAdd } from "react-icons/md";
 import styled from "styled-components";
 import { CircleButton } from "./CircleButton";
 import { MarkdownTextArea } from "./MarkdownTextArea";
-import { InsertImageFunction } from "./utilities";
+import { InsertImagesFunction } from "./utilities";
 
 const Container = styled.div`
   display: flex;
@@ -18,10 +18,10 @@ const StyledMarkdownTextArea = styled(MarkdownTextArea)`
 
 interface IProps {
   createDocument: (text: string) => Promise<void>;
-  insertImage: InsertImageFunction;
+  insertImages: InsertImagesFunction;
 }
 
-export const CreateDocument = ({ createDocument, insertImage }: IProps) => {
+export const CreateDocument = ({ createDocument, insertImages }: IProps) => {
   const [text, setText] = useState("");
   const onSubmit = async (): Promise<void> => {
     setText("");
@@ -31,7 +31,7 @@ export const CreateDocument = ({ createDocument, insertImage }: IProps) => {
   return (
     <Container>
       <StyledMarkdownTextArea
-        insertImage={insertImage}
+        insertImages={insertImages}
         onSubmit={onSubmit}
         setText={setText}
         text={text}

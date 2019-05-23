@@ -6,11 +6,16 @@ export class TextImageInserter {
   public async insert(
     text: string,
     position: number,
-    image: Blob
+    images: Blob[]
   ): Promise<string> {
     return (
       text.slice(0, position) +
-      `![](${await this.imageRepository.create(image)})` +
+      (await Promise.all(
+        images.map(
+          async (image: Blob) =>
+            `![](${await this.imageRepository.create(image)})`
+        )
+      )).join(" ") +
       text.slice(position)
     );
   }

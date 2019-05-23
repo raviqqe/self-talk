@@ -11,7 +11,13 @@ beforeEach(() => {
 });
 
 it("inserts an image into a document", async () => {
-  expect(await inserter.insert("foobar", 3, {} as Blob)).toBe(
+  expect(await inserter.insert("foobar", 3, [{} as Blob])).toBe(
     `foo![](${dummyImageURL})bar`
+  );
+});
+
+it("inserts multiple images into a document", async () => {
+  expect(await inserter.insert("foobar", 3, [{} as Blob, {} as Blob])).toBe(
+    `foo![](${dummyImageURL}) ![](${dummyImageURL})bar`
   );
 });
