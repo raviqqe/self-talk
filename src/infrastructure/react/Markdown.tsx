@@ -38,6 +38,10 @@ const Container = styled.div`
     }
   }
 
+  blockquote {
+    color: dimgrey;
+  }
+
   img {
     max-width: 100%;
   }
