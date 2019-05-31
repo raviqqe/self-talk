@@ -1,6 +1,6 @@
+import { render, waitForDomChange } from "@testing-library/react";
 import React from "react";
 import { Simulate } from "react-dom/test-utils";
-import { render, waitForDomChange } from "react-testing-library";
 import { MarkdownTextArea } from "../MarkdownTextArea";
 
 it("renders", () => {
