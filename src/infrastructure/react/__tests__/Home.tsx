@@ -1,11 +1,11 @@
-import React from "react";
-import { create } from "react-test-renderer";
 import {
   cleanup,
   fireEvent,
   render,
   waitForDomChange
-} from "react-testing-library";
+} from "@testing-library/react";
+import React from "react";
+import { create } from "react-test-renderer";
 import { Home } from "../Home";
 
 afterEach(cleanup);

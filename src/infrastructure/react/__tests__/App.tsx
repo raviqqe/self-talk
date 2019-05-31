@@ -1,5 +1,5 @@
+import { fireEvent, render, waitForDomChange } from "@testing-library/react";
 import React from "react";
-import { fireEvent, render, waitForDomChange } from "react-testing-library";
 import { IDocument } from "../../../domain/document";
 import { App } from "../App";
 
