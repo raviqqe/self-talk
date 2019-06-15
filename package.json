@@ -24,7 +24,7 @@
     "react-markdown": "^4.0.8",
     "react-scripts": "^3.0.1",
     "react-spinners": "^0.5.4",
-    "react-use": "^9.0.0",
+    "react-use": "^9.4.1",
     "styled-components": "^4.2.0"
   },
   "devDependencies": {
