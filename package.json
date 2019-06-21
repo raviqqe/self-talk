@@ -40,7 +40,7 @@
     "@types/styled-components": "^4.1.15",
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "cspell": "^4.0.23",
-    "firebase-tools": "^7.0.0",
+    "firebase-tools": "^7.0.1",
     "keyboardjs": "^2.5.1",
     "react-test-renderer": "^16.8.6",
     "rebound": "^0.1.0",
