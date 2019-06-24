@@ -44,7 +44,7 @@
     "keyboardjs": "^2.5.1",
     "react-test-renderer": "^16.8.6",
     "rebound": "^0.1.0",
-    "tslint": "^5.16.0",
+    "tslint": "^5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.2"
