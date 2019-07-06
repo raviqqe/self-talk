@@ -1,4 +1,9 @@
-import React, { ChangeEvent, ClipboardEvent } from "react";
+import React, {
+  ChangeEvent,
+  ClipboardEvent,
+  DragEvent,
+  SyntheticEvent
+} from "react";
 import { TextArea } from "./TextArea";
 import { InsertImagesFunction } from "./utilities";
 
@@ -17,12 +22,32 @@ export const MarkdownTextArea = ({
   text,
   ...restProps
 }: IProps) => {
+  const uploadImages = async (
+    event: SyntheticEvent<HTMLTextAreaElement>,
+    files: Array<File | null>
+  ) => {
+    const images = files
+      .filter((file): file is File => !!file)
+      .filter(file => file.type.startsWith("image/"));
+
+    if (images.length === 0) {
+      return;
+    }
+
+    setText(
+      await insertImages(text, event.currentTarget.selectionStart, images)
+    );
+  };
+
   return (
     <TextArea
       onSubmit={onSubmit}
       placeholder="Write in Markdown ..."
       onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
         setText(event.target.value)
+      }
+      onDrop={(event: DragEvent<HTMLTextAreaElement>): Promise<void> =>
+        uploadImages(event, Array.from(event.dataTransfer.files))
       }
       onPaste={async (
         event: ClipboardEvent<HTMLTextAreaElement>
@@ -31,17 +56,9 @@ export const MarkdownTextArea = ({
           return;
         }
 
-        const images: File[] = Array.from(event.clipboardData.items)
-          .filter(item => item.type.startsWith("image/"))
-          .map(item => item.getAsFile())
-          .filter((image): image is File => !!image);
-
-        if (images.length === 0) {
-          return;
-        }
-
-        setText(
-          await insertImages(text, event.currentTarget.selectionStart, images)
+        await uploadImages(
+          event,
+          Array.from(event.clipboardData.items).map(item => item.getAsFile())
         );
       }}
       value={text}

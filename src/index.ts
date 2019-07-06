@@ -54,6 +54,10 @@ async function main() {
     configuration.repositoryURL
   ).render(element);
 
+  // Disable default behavior on drop events.
+  window.ondragover = event => event.preventDefault();
+  window.ondrop = event => event.preventDefault();
+
   await navigator.serviceWorker.register("/service-worker.js");
 }
 
