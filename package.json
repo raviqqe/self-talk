@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run build:icons && CI=false react-scripts build",
     "build:icons": "tools/build-images.sh",
-    "deploy": "npm run build && npx firebase deploy",
+    "deploy": "npx firebase deploy",
     "lint": "npx cspell src/**/* public/**/* && npx tslint -p tsconfig.json && prettier -l *.json src/**/*",
     "start": "react-scripts start",
     "test": "react-scripts test --coverage --watchAll=false"

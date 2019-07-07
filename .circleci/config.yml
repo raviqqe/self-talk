@@ -1,8 +1,16 @@
 version: 2
+workflows:
+  version: 2
+  all:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
 jobs:
   build:
     docker:
-      - image: node:10
+      - image: node
     steps:
       - run: |
           apt -y update --fix-missing
@@ -15,3 +23,16 @@ jobs:
       - run: |
           npm run test
           npx codecov
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+            - node_modules
+  deploy:
+    docker:
+      - image: node
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: npm run deploy -- --token $FIREBASE_TOKEN
