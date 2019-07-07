@@ -6,7 +6,10 @@ import { IImageRepository } from "../../application/image-repository";
 export class FirebaseStorageImageRepository implements IImageRepository {
   public async create(image: Blob): Promise<string> {
     const child = this.images().child(new UUID(4).format());
+
     await child.put(image);
+    await child.updateMetadata({ cacheControl: "max-age=2592000" });
+
     return child.getDownloadURL();
   }
 
