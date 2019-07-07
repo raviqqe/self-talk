@@ -43,6 +43,7 @@ const Container = styled.div`
   }
 
   img {
+    cursor: pointer;
     max-width: 100%;
   }
 
@@ -85,6 +86,24 @@ interface IProps {
 
 export const Markdown = ({ children }: IProps) => (
   <Container>
-    <ReactMarkdown source={children} />
+    <ReactMarkdown
+      source={children}
+      renderers={{
+        image: props => (
+          <img
+            onClick={event => {
+              const parent = event.currentTarget.parentElement;
+
+              if (parent && parent.tagName === "A") {
+                return;
+              }
+
+              window.open(props.src, "_blank");
+            }}
+            {...props}
+          />
+        )
+      }}
+    />
   </Container>
 );
