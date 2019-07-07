@@ -38,5 +38,5 @@ jobs:
       - run: |
           if [ $CIRCLE_BRANCH = master ]
           then
-            npm run deploy -- --token $FIREBASE_TOKEN
+            npm run --silent deploy -- --token $FIREBASE_TOKEN
           fi
