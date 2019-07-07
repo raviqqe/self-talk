@@ -5,6 +5,10 @@ workflows:
     jobs:
       - build
       - deploy:
+          filters:
+            branches:
+              only:
+                - master
           requires:
             - build
 jobs:
@@ -35,8 +39,4 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: |
-          if [ $CIRCLE_BRANCH = master ]
-          then
-            npm run --silent deploy -- --token $FIREBASE_TOKEN
-          fi
+      - run: npm run --silent deploy -- --token $FIREBASE_TOKEN
