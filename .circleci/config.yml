@@ -35,4 +35,8 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: npm run deploy -- --token $FIREBASE_TOKEN
+      - run: |
+          if [ $CIRCLE_BRANCH = master ]
+          then
+            npm run deploy -- --token $FIREBASE_TOKEN
+          fi
