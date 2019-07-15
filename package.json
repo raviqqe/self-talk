@@ -23,7 +23,7 @@
     "react-infinite-scroller": "^1.2.4",
     "react-markdown": "^4.1.0",
     "react-scripts": "^3.0.1",
-    "react-spinners": "^0.5.8",
+    "react-spinners": "^0.5.12",
     "react-use": "^9.11.0",
     "styled-components": "^4.3.2"
   },
