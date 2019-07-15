@@ -37,7 +37,7 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-infinite-scroller": "^1.2.1",
     "@types/react-test-renderer": "^16.8.2",
-    "@types/styled-components": "^4.1.17",
+    "@types/styled-components": "^4.1.18",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "cspell": "^4.0.26",
     "firebase-tools": "^7.1.0",
