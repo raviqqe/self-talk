@@ -8,7 +8,9 @@ export class FirebaseStorageImageRepository implements IImageRepository {
     const child = this.images().child(new UUID(4).format());
 
     await child.put(image);
-    await child.updateMetadata({ cacheControl: "max-age=2592000" });
+    await child.updateMetadata({
+      cacheControl: `max-age=${60 * 60 * 24 * 365}`
+    });
 
     return child.getDownloadURL();
   }
