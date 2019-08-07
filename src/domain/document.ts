@@ -12,6 +12,8 @@ export function formatDocument(document: IDocument): IDocument {
     text: prettier
       .format(document.text, { parser: "markdown", plugins: [markdownParser] })
       .trim()
+      // https://github.com/prettier/prettier/issues/6213
+      .replace(/\\*\$/g, "$")
   };
 }
 

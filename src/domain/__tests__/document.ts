@@ -14,6 +14,20 @@ describe("formatDocument", () => {
       text: "# foo\n\nbar"
     });
   });
+
+  it("does not escape any dollar signs", () => {
+    for (const [source, target] of [
+      ["$", "$"],
+      ["\\$", "$"],
+      ["\\\\$", "$"],
+      ["\\$\\$", "$$"]
+    ]) {
+      expect(formatDocument({ id: "", text: source })).toEqual({
+        id: "",
+        text: target
+      });
+    }
+  });
 });
 
 describe("validateDocument", () => {
