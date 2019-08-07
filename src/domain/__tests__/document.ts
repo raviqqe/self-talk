@@ -2,18 +2,14 @@ import { formatDocument, IDocument, validateDocument } from "../document";
 
 describe("formatDocument", () => {
   it("removes extra spaces", () => {
-    expect(formatDocument({ createdAt: 42, id: "", text: " foo\n" })).toEqual({
-      createdAt: 42,
+    expect(formatDocument({ id: "", text: " foo\n" })).toEqual({
       id: "",
       text: "foo"
     });
   });
 
   it("formats a document as Markdown", () => {
-    expect(
-      formatDocument({ createdAt: 42, id: "", text: "# foo \n\nbar" })
-    ).toEqual({
-      createdAt: 42,
+    expect(formatDocument({ id: "", text: "# foo \n\nbar" })).toEqual({
       id: "",
       text: "# foo\n\nbar"
     });

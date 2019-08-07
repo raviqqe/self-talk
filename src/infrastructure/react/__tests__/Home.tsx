@@ -27,11 +27,7 @@ it("renders", () => {
 });
 
 it("creates a document", async () => {
-  const createDocument = jest.fn(async () => ({
-    createdAt: 42,
-    id: "id",
-    text: "text"
-  }));
+  const createDocument = jest.fn(async () => ({ id: "id", text: "text" }));
 
   const { container, getByLabelText } = render(
     <Home
@@ -57,18 +53,14 @@ it("creates a document", async () => {
 });
 
 it("updates a document", async () => {
-  const updateDocument = jest.fn(async () => ({
-    createdAt: 42,
-    id: "id",
-    text: "text"
-  }));
+  const updateDocument = jest.fn(async () => ({ id: "id", text: "text" }));
 
   const { container, getByLabelText } = render(
     <Home
       createDocument={async () => null}
       insertImages={async () => "url"}
       listDocuments={async function*() {
-        yield [{ id: "id", text: "text", createdAt: 42 }];
+        yield [{ id: "id", text: "text" }];
       }}
       signOut={async () => undefined}
       updateDocument={updateDocument}

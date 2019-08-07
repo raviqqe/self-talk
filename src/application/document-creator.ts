@@ -5,7 +5,6 @@ import {
   validateDocument
 } from "../domain/document";
 import { formatErrorMessage } from "../domain/error";
-import { getUnixTimestamp } from "../domain/utilities";
 import { IDocumentRepository } from "./document-repository";
 import { IMessagePresenter } from "./message-presenter";
 
@@ -17,7 +16,6 @@ export class DocumentCreator {
 
   public async create(text: string): Promise<IDocument | null> {
     const document = formatDocument({
-      createdAt: getUnixTimestamp(),
       id: new UUID(4).format(),
       text
     });

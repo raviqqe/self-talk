@@ -2,7 +2,6 @@ import markdownParser from "prettier/parser-markdown";
 import prettier from "prettier/standalone";
 
 export interface IDocument {
-  createdAt: number; // Unix timestamp in seconds
   id: string;
   text: string; // in Markdown
 }

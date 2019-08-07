@@ -6,7 +6,7 @@ it("renders", () => {
   expect(
     create(
       <Documents
-        documents={[{ id: "id", text: "text", createdAt: 42 }]}
+        documents={[{ id: "id", text: "text" }]}
         insertImages={async () => "url"}
         loadMoreDocuments={async () => undefined}
         updateDocument={async () => undefined}

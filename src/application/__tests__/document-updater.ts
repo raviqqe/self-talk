@@ -5,7 +5,7 @@ import { IDocumentRepository } from "../document-repository";
 import { DocumentUpdater } from "../document-updater";
 import { IMessagePresenter } from "../message-presenter";
 
-const dummyDocument: IDocument = { createdAt: 42, id: "id", text: "foo" };
+const dummyDocument: IDocument = { id: "id", text: "foo" };
 
 let updateMock: jest.Mock;
 let deleteMock: jest.Mock;

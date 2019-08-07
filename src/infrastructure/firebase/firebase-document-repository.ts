@@ -6,9 +6,7 @@ import { IDocument } from "../../domain/document";
 
 export class FirebaseDocumentRepository implements IDocumentRepository {
   public async create(document: IDocument): Promise<void> {
-    await this.collection()
-      .doc(document.id)
-      .set(document);
+    await this.createOrUpdate(document);
   }
 
   public async delete(documentID: string): Promise<void> {
@@ -33,9 +31,16 @@ export class FirebaseDocumentRepository implements IDocumentRepository {
   }
 
   public async update(document: IDocument): Promise<void> {
+    await this.createOrUpdate(document);
+  }
+
+  public async createOrUpdate(document: IDocument): Promise<void> {
     await this.collection()
       .doc(document.id)
-      .set(document);
+      .set({
+        ...document,
+        createdAt: Math.floor(Date.now() / 1000) // Unix timestamp
+      });
   }
 
   private query(): firebase.firestore.Query {
