@@ -3,31 +3,31 @@
 exports[`goes to a home screen when a user signs in 1`] = `
 <DocumentFragment>
   <div
-    class="sc-jTzLTM fLeIbt"
+    class="sc-kgoBCf kKUGmM"
   >
     <div
-      class="sc-gZMcBi kNPZGk"
+      class="sc-cSHVUG kkubzK"
     >
       <div
-        class="sc-gqjmRU cbhwjO"
+        class="sc-kAzzGY gZHqkp"
       />
     </div>
     <div
-      class="sc-jzJRlG ibGvGA"
+      class="sc-kpOJdX lapLPw"
     >
       <div
-        class="sc-bxivhb fcPulK"
+        class="sc-dnqmqq ePGzeM"
       >
         <textarea
           async=""
-          class="sc-ifAKCX cMeaPw sc-htpNat gsNViM"
+          class="sc-iwsKbI fyQvfV sc-htoDjs dUPfGM"
           placeholder="Write in Markdown ..."
           rows="1"
           style="overflow-x: hidden; word-wrap: break-word; overflow-y: hidden;"
         />
         <button
           aria-label="Create"
-          class="sc-bdVaJa sc-bwzfXH fYkRwl"
+          class="sc-bdVaJa sc-gzVnrw hbYNXN"
         >
           <svg
             fill="currentColor"
@@ -45,14 +45,14 @@ exports[`goes to a home screen when a user signs in 1`] = `
         </button>
       </div>
       <div
-        class="sc-cSHVUG jkRavA"
+        class="sc-dxgOiQ UOjLv"
       />
     </div>
     <div
-      class="sc-kAzzGY cADUfd"
+      class="sc-ckVGcZ cCzrVo"
     >
       <button
-        class="sc-bdVaJa sc-bwzfXH davee"
+        class="sc-bdVaJa sc-gzVnrw fsRgZr"
       >
         <svg
           fill="currentColor"
@@ -76,31 +76,31 @@ exports[`goes to a home screen when a user signs in 1`] = `
 exports[`renders after a user signs in 1`] = `
 <div>
   <div
-    class="sc-jTzLTM fLeIbt"
+    class="sc-kgoBCf kKUGmM"
   >
     <div
-      class="sc-gZMcBi kNPZGk"
+      class="sc-cSHVUG kkubzK"
     >
       <div
-        class="sc-gqjmRU cbhwjO"
+        class="sc-kAzzGY gZHqkp"
       />
     </div>
     <div
-      class="sc-jzJRlG ibGvGA"
+      class="sc-kpOJdX lapLPw"
     >
       <div
-        class="sc-bxivhb fcPulK"
+        class="sc-dnqmqq ePGzeM"
       >
         <textarea
           async=""
-          class="sc-ifAKCX cMeaPw sc-htpNat gsNViM"
+          class="sc-iwsKbI fyQvfV sc-htoDjs dUPfGM"
           placeholder="Write in Markdown ..."
           rows="1"
           style="overflow-x: hidden; word-wrap: break-word; overflow-y: hidden;"
         />
         <button
           aria-label="Create"
-          class="sc-bdVaJa sc-bwzfXH fYkRwl"
+          class="sc-bdVaJa sc-gzVnrw hbYNXN"
         >
           <svg
             fill="currentColor"
@@ -118,14 +118,14 @@ exports[`renders after a user signs in 1`] = `
         </button>
       </div>
       <div
-        class="sc-cSHVUG jkRavA"
+        class="sc-dxgOiQ UOjLv"
       />
     </div>
     <div
-      class="sc-kAzzGY cADUfd"
+      class="sc-ckVGcZ cCzrVo"
     >
       <button
-        class="sc-bdVaJa sc-bwzfXH davee"
+        class="sc-bdVaJa sc-gzVnrw fsRgZr"
       >
         <svg
           fill="currentColor"
@@ -149,29 +149,29 @@ exports[`renders after a user signs in 1`] = `
 exports[`renders before a user signs in 1`] = `
 <div>
   <div
-    class="sc-kgoBCf gMeNpm"
+    class="sc-htpNat gyfPDF"
   >
     <div
-      class="sc-kGXeez ejNnzc"
+      class="sc-bxivhb bnCmgF"
     >
       <span
-        class="sc-kpOJdX cTQEhr"
+        class="sc-ifAKCX hrWLvt"
       >
         Self
       </span>
       <span
-        class="sc-dxgOiQ kXoRrR"
+        class="sc-EHOje blkkiu"
       >
         Talk
       </span>
     </div>
     <button
-      class="sc-bdVaJa sc-chPdSV goUjih"
+      class="sc-bdVaJa sc-bwzfXH cqtuLn"
     >
       Sign in
     </button>
     <a
-      class="sc-ckVGcZ PZLob"
+      class="sc-bZQynM zHicg"
       href="url"
       target="_blank"
     >
