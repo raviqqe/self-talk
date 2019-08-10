@@ -32,7 +32,7 @@ export class ReactRenderer {
           insertImages={(
             text: string,
             position: number,
-            images: Blob[]
+            images: File[]
           ): Promise<string> =>
             this.textImageInserter.insert(text, position, images)
           }

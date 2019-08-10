@@ -1,5 +1,5 @@
 export type InsertImagesFunction = (
   text: string,
   position: number,
-  images: Blob[]
+  images: File[]
 ) => Promise<string>;

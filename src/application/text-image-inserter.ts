@@ -6,7 +6,7 @@ export class TextImageInserter {
   public async insert(
     text: string,
     position: number,
-    images: Blob[]
+    images: File[]
   ): Promise<string> {
     return (
       text.slice(0, position) +
