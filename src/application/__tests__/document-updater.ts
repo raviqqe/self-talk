@@ -1,8 +1,8 @@
-import { IDocument } from "../../domain/document";
 import * as documentModule from "../../domain/document";
 import { DocumentDeleter } from "../document-deleter";
-import { IDocumentRepository } from "../document-repository";
+import { IDocument } from "../../domain/document";
 import { DocumentUpdater } from "../document-updater";
+import { IDocumentRepository } from "../document-repository";
 import { IMessagePresenter } from "../message-presenter";
 
 const dummyDocument: IDocument = { id: "id", text: "foo" };

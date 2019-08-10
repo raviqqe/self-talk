@@ -1,4 +1,4 @@
-import { formatDocument, IDocument, validateDocument } from "../document";
+import { IDocument, formatDocument, validateDocument } from "../document";
 
 describe("formatDocument", () => {
   it("removes extra spaces", () => {

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { CreateDocument } from "./CreateDocument";
 import { Documents } from "./Documents";
-import { SignOut } from "./SignOut";
 import { InsertImagesFunction } from "./utilities";
+import { SignOut } from "./SignOut";
 
 const Container = styled.div`
   display: flex;

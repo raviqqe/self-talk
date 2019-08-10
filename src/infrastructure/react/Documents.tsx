@@ -1,9 +1,9 @@
-import React from "react";
 import InfiniteScroller from "react-infinite-scroller";
+import React from "react";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
-import { Document } from "./Document";
 import { InsertImagesFunction } from "./utilities";
+import { Document } from "./Document";
 
 const Container = styled.div`
   display: flex;

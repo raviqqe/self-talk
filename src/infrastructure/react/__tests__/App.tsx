@@ -1,7 +1,7 @@
 import { fireEvent, render, waitForDomChange } from "@testing-library/react";
 import React from "react";
-import { IDocument } from "../../../domain/document";
 import { App } from "../App";
+import { IDocument } from "../../../domain/document";
 
 it("renders before a user signs in", async () => {
   const result = render(

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
 import { MdSave } from "react-icons/md";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { CircleButton } from "./CircleButton";
-import { MarkdownTextArea } from "./MarkdownTextArea";
 import { InsertImagesFunction } from "./utilities";
+import { MarkdownTextArea } from "./MarkdownTextArea";
 
 const Container = styled.div`
   display: flex;

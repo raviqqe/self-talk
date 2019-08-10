@@ -4,8 +4,8 @@ import React, {
   DragEvent,
   SyntheticEvent
 } from "react";
-import { TextArea } from "./TextArea";
 import { InsertImagesFunction } from "./utilities";
+import { TextArea } from "./TextArea";
 
 interface IProps {
   className?: string;

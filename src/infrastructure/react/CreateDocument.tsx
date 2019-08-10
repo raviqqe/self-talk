@@ -1,9 +1,9 @@
-import React, { useState } from "react";
 import { MdAdd } from "react-icons/md";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { CircleButton } from "./CircleButton";
-import { MarkdownTextArea } from "./MarkdownTextArea";
 import { InsertImagesFunction } from "./utilities";
+import { MarkdownTextArea } from "./MarkdownTextArea";
 
 const Container = styled.div`
   display: flex;

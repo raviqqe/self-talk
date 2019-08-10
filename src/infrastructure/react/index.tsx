@@ -1,15 +1,15 @@
-import React from "react";
 import { render } from "react-dom";
+import React from "react";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { DocumentCreator } from "../../application/document-creator";
 import { DocumentLister } from "../../application/document-lister";
 import { DocumentUpdater } from "../../application/document-updater";
+import { IDocument } from "../../domain/document";
 import { SignInManager } from "../../application/sign-in-manager";
 import { SignOutManager } from "../../application/sign-out-manager";
 import { TextImageInserter } from "../../application/text-image-inserter";
-import { IDocument } from "../../domain/document";
-import { App } from "./App";
 import { GlobalStyle } from "./style";
+import { App } from "./App";
 
 export class ReactRenderer {
   constructor(

@@ -1,11 +1,11 @@
 import { Omit } from "lodash";
-import React, { useState } from "react";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { IInitialState } from "../../application/application-initializer";
-import { Home, IProps as IHomeProps } from "./Home";
 import { IProps as ILandingProps, Landing } from "./Landing";
+import { Home, IProps as IHomeProps } from "./Home";
 
 const LoaderContainer = styled.div`
   display: flex;

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
 import { MdEdit } from "react-icons/md";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { IconButton } from "./IconButton";
-import { Markdown } from "./Markdown";
-import { boxShadow } from "./style";
-import { UpdateDocument } from "./UpdateDocument";
 import { InsertImagesFunction } from "./utilities";
+import { Markdown } from "./Markdown";
+import { UpdateDocument } from "./UpdateDocument";
+import { boxShadow } from "./style";
 
 const Container = styled.div`
   ${boxShadow};

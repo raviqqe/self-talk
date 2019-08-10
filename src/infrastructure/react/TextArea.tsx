@@ -1,3 +1,4 @@
+import AutosizeTextArea from "react-autosize-textarea";
 import React, {
   FC,
   InputHTMLAttributes,
@@ -6,7 +7,6 @@ import React, {
   useRef,
   useState
 } from "react";
-import AutosizeTextArea from "react-autosize-textarea";
 import styled from "styled-components";
 import { boxShadow } from "./style";
 

@@ -80,30 +80,27 @@ const Container = styled.div`
   }
 `;
 
+const Image = (props: { src: string }) => (
+  <img
+    onClick={event => {
+      const parent = event.currentTarget.parentElement;
+
+      if (parent && parent.tagName === "A") {
+        return;
+      }
+
+      window.open(props.src, "_blank");
+    }}
+    {...props}
+  />
+);
+
 interface IProps {
   children: string;
 }
 
 export const Markdown = ({ children }: IProps) => (
   <Container>
-    <ReactMarkdown
-      source={children}
-      renderers={{
-        image: props => (
-          <img
-            onClick={event => {
-              const parent = event.currentTarget.parentElement;
-
-              if (parent && parent.tagName === "A") {
-                return;
-              }
-
-              window.open(props.src, "_blank");
-            }}
-            {...props}
-          />
-        )
-      }}
-    />
+    <ReactMarkdown source={children} renderers={{ image: Image }} />
   </Container>
 );

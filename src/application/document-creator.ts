@@ -1,7 +1,7 @@
 import UUID from "pure-uuid";
 import {
-  formatDocument,
   IDocument,
+  formatDocument,
   validateDocument
 } from "../domain/document";
 import { formatErrorMessage } from "../domain/error";
