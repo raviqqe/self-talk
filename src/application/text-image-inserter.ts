@@ -1,7 +1,7 @@
-import { IImageRepository } from "./image-repository";
+import { IFileRepository } from "./file-repository";
 
 export class TextImageInserter {
-  constructor(private readonly imageRepository: IImageRepository) {}
+  constructor(private readonly imageRepository: IFileRepository) {}
 
   public async insert(
     text: string,
