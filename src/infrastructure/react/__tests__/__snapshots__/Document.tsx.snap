@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-gzVnrw eVDcRJ"
+  className="sc-htoDjs jykURL"
 >
   <div
     className="sc-bwzfXH jdcGic"
@@ -12,7 +12,7 @@ exports[`renders 1`] = `
     </p>
   </div>
   <div
-    className="sc-htoDjs fBkGvu"
+    className="sc-dnqmqq kiGCsA"
   >
     <div
       aria-label="Edit"

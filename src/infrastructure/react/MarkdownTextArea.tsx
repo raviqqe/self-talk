@@ -1,11 +1,21 @@
 import React, {
   ChangeEvent,
   ClipboardEvent,
+  useState,
   DragEvent,
   SyntheticEvent
 } from "react";
+import { PulseLoader } from "react-spinners";
+import styled from "styled-components";
 import { InsertFilesFunction } from "./utilities";
 import { TextArea } from "./TextArea";
+
+const LoaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
 
 interface IProps {
   className?: string;
@@ -22,6 +32,8 @@ export const MarkdownTextArea = ({
   text,
   ...restProps
 }: IProps) => {
+  const [uploadingFiles, setUploadingFiles] = useState(false);
+
   const uploadFiles = async (
     event: SyntheticEvent<HTMLTextAreaElement>,
     files: Array<File | null>
@@ -32,10 +44,22 @@ export const MarkdownTextArea = ({
       return;
     }
 
+    setUploadingFiles(true);
+
     setText(
       await insertFiles(text, event.currentTarget.selectionStart, validFiles)
     );
+
+    setUploadingFiles(false);
   };
+
+  if (uploadingFiles) {
+    return (
+      <LoaderContainer>
+        <PulseLoader color="white" />
+      </LoaderContainer>
+    );
+  }
 
   return (
     <TextArea

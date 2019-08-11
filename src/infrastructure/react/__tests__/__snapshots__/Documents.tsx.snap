@@ -2,13 +2,13 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-dnqmqq hisrMQ"
+  className="sc-iwsKbI JzTPu"
 >
   <div
-    className="sc-iwsKbI gZFQVd"
+    className="sc-gZMcBi iGIsAY"
   >
     <div
-      className="sc-gZMcBi ikOReP sc-gzVnrw eVDcRJ"
+      className="sc-gqjmRU heFntT sc-htoDjs jykURL"
     >
       <div
         className="sc-bwzfXH jdcGic"
@@ -18,7 +18,7 @@ exports[`renders 1`] = `
         </p>
       </div>
       <div
-        className="sc-htoDjs fBkGvu"
+        className="sc-dnqmqq kiGCsA"
       >
         <div
           aria-label="Edit"
@@ -52,10 +52,10 @@ exports[`renders 1`] = `
 
 exports[`renders with no documents 1`] = `
 <div
-  className="sc-dnqmqq hisrMQ"
+  className="sc-iwsKbI JzTPu"
 >
   <div
-    className="sc-iwsKbI gZFQVd"
+    className="sc-gZMcBi iGIsAY"
   />
 </div>
 `;

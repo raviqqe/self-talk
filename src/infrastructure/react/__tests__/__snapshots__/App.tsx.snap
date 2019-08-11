@@ -3,24 +3,24 @@
 exports[`goes to a home screen when a user signs in 1`] = `
 <DocumentFragment>
   <div
-    class="sc-kgoBCf kKUGmM"
+    class="sc-kGXeez fOWBRp"
   >
     <div
-      class="sc-cSHVUG kkubzK"
+      class="sc-kAzzGY gyNdPx"
     >
       <div
-        class="sc-kAzzGY gZHqkp"
+        class="sc-chPdSV rDDFH"
       />
     </div>
     <div
-      class="sc-kpOJdX lapLPw"
+      class="sc-dxgOiQ dCNDNW"
     >
       <div
-        class="sc-dnqmqq ePGzeM"
+        class="sc-iwsKbI kNsanL"
       >
         <textarea
           async=""
-          class="sc-iwsKbI fyQvfV sc-htoDjs dUPfGM"
+          class="sc-gZMcBi meTUk sc-htoDjs dUPfGM"
           placeholder="Write in Markdown ..."
           rows="1"
           style="overflow-x: hidden; word-wrap: break-word; overflow-y: hidden;"
@@ -45,11 +45,11 @@ exports[`goes to a home screen when a user signs in 1`] = `
         </button>
       </div>
       <div
-        class="sc-dxgOiQ UOjLv"
+        class="sc-ckVGcZ jPrxRC"
       />
     </div>
     <div
-      class="sc-ckVGcZ cCzrVo"
+      class="sc-jKJlTe bzwHak"
     >
       <button
         class="sc-bdVaJa sc-gzVnrw fsRgZr"
@@ -76,24 +76,24 @@ exports[`goes to a home screen when a user signs in 1`] = `
 exports[`renders after a user signs in 1`] = `
 <div>
   <div
-    class="sc-kgoBCf kKUGmM"
+    class="sc-kGXeez fOWBRp"
   >
     <div
-      class="sc-cSHVUG kkubzK"
+      class="sc-kAzzGY gyNdPx"
     >
       <div
-        class="sc-kAzzGY gZHqkp"
+        class="sc-chPdSV rDDFH"
       />
     </div>
     <div
-      class="sc-kpOJdX lapLPw"
+      class="sc-dxgOiQ dCNDNW"
     >
       <div
-        class="sc-dnqmqq ePGzeM"
+        class="sc-iwsKbI kNsanL"
       >
         <textarea
           async=""
-          class="sc-iwsKbI fyQvfV sc-htoDjs dUPfGM"
+          class="sc-gZMcBi meTUk sc-htoDjs dUPfGM"
           placeholder="Write in Markdown ..."
           rows="1"
           style="overflow-x: hidden; word-wrap: break-word; overflow-y: hidden;"
@@ -118,11 +118,11 @@ exports[`renders after a user signs in 1`] = `
         </button>
       </div>
       <div
-        class="sc-dxgOiQ UOjLv"
+        class="sc-ckVGcZ jPrxRC"
       />
     </div>
     <div
-      class="sc-ckVGcZ cCzrVo"
+      class="sc-jKJlTe bzwHak"
     >
       <button
         class="sc-bdVaJa sc-gzVnrw fsRgZr"

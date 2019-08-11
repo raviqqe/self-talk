@@ -2,11 +2,11 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-bxivhb fcPulK"
+  className="sc-ifAKCX hAoVjF"
 >
   <textarea
     async={true}
-    className="sc-ifAKCX cMeaPw sc-htpNat gsNViM"
+    className="sc-EHOje ggueGO sc-htpNat gsNViM"
     onChange={[Function]}
     onDrop={[Function]}
     onKeyDown={[Function]}

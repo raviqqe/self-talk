@@ -2,10 +2,10 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-jTzLTM fLeIbt"
+  className="sc-fjdhpX kBOHOE"
 >
   <div
-    className="sc-fjdhpX eIxLu"
+    className="sc-jzJRlG hcmvaz"
   >
     <div
       className="css-lyovzr-Loader"
@@ -22,14 +22,14 @@ exports[`renders 1`] = `
     </div>
   </div>
   <div
-    className="sc-jzJRlG ibGvGA"
+    className="sc-cSHVUG bhmkpW"
   >
     <div
-      className="sc-bxivhb fcPulK"
+      className="sc-ifAKCX hAoVjF"
     >
       <textarea
         async={true}
-        className="sc-ifAKCX cMeaPw sc-htpNat gsNViM"
+        className="sc-EHOje ggueGO sc-htpNat gsNViM"
         onChange={[Function]}
         onDrop={[Function]}
         onKeyDown={[Function]}
@@ -64,11 +64,11 @@ exports[`renders 1`] = `
       </button>
     </div>
     <div
-      className="sc-cSHVUG jkRavA"
+      className="sc-kAzzGY dLsBNe"
     />
   </div>
   <div
-    className="sc-kAzzGY cADUfd"
+    className="sc-chPdSV XJZzt"
   >
     <button
       className="sc-bdVaJa sc-bwzfXH davee"
