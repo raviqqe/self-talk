@@ -1,13 +1,13 @@
 import "firebase/storage";
 import * as firebase from "firebase/app";
 import UUID from "pure-uuid";
-import { IImageRepository } from "../../application/image-repository";
+import { IFileRepository } from "../../application/file-repository";
 
-export class FirebaseStorageImageRepository implements IImageRepository {
-  public async create(image: Blob): Promise<string> {
-    const child = this.images().child(new UUID(4).format());
+export class FirebaseStorageFileRepository implements IFileRepository {
+  public async create(file: Blob): Promise<string> {
+    const child = this.files().child(new UUID(4).format());
 
-    await child.put(image);
+    await child.put(file);
     await child.updateMetadata({
       cacheControl: `max-age=${60 * 60 * 24 * 365}`
     });
@@ -15,7 +15,7 @@ export class FirebaseStorageImageRepository implements IImageRepository {
     return child.getDownloadURL();
   }
 
-  private images(): firebase.storage.Reference {
+  private files(): firebase.storage.Reference {
     const user = firebase.auth().currentUser;
 
     if (!user) {
@@ -27,6 +27,6 @@ export class FirebaseStorageImageRepository implements IImageRepository {
       .ref()
       .child("users")
       .child(user.uid)
-      .child("images");
+      .child("files");
   }
 }

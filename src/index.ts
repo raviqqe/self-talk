@@ -8,13 +8,13 @@ import { DocumentUpdater } from "./application/document-updater";
 import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
 import { FirebaseDocumentRepository } from "./infrastructure/firebase/firebase-document-repository";
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
-import { FirebaseStorageImageRepository } from "./infrastructure/firebase/firebase-storage-image-repository";
+import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebase-storage-file-repository";
 import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
 import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
-import { TextImageInserter } from "./application/text-image-inserter";
+import { TextFileInserter } from "./application/text-file-inserter";
 import configuration from "./configuration.json";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.
@@ -50,7 +50,7 @@ async function main() {
     ),
     new SignInManager(authenticationController),
     new SignOutManager(authenticationController),
-    new TextImageInserter(new FirebaseStorageImageRepository()),
+    new TextFileInserter(new FirebaseStorageFileRepository()),
     configuration.repositoryURL
   ).render(element);
 

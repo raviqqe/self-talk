@@ -7,7 +7,7 @@ it("renders", () => {
     create(
       <Document
         document={{ id: "id", text: "text" }}
-        insertImages={async () => "url"}
+        insertFiles={async () => "url"}
         updateDocument={async () => undefined}
       />
     ).toJSON()
