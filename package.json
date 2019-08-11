@@ -16,7 +16,7 @@
     "lodash": "^4.17.15",
     "prettier": "^1.18.2",
     "pure-uuid": "^1.5.7",
-    "react": "^16.9.0-alpha.0",
+    "react": "^16.9.0",
     "react-autosize-textarea": "^7.0.0",
     "react-dom": "^16.9.0-alpha.0",
     "react-icons": "^3.7.0",
