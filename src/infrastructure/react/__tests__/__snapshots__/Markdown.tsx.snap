@@ -9,3 +9,17 @@ exports[`renders 1`] = `
   </h1>
 </div>
 `;
+
+exports[`renders images 1`] = `
+<div
+  className="sc-bdVaJa iOJtQG"
+>
+  <p>
+    <img
+      alt="foo"
+      onClick={[Function]}
+      src="http://bar/baz.png"
+    />
+  </p>
+</div>
+`;
