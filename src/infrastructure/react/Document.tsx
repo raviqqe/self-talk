@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { IconButton } from "./IconButton";
-import { InsertImagesFunction } from "./utilities";
+import { InsertFilesFunction } from "./utilities";
 import { Markdown } from "./Markdown";
 import { UpdateDocument } from "./UpdateDocument";
 import { boxShadow } from "./style";
@@ -27,13 +27,13 @@ const ButtonContainer = styled.div`
 interface IProps {
   className?: string;
   document: IDocument;
-  insertImages: InsertImagesFunction;
+  insertFiles: InsertFilesFunction;
   updateDocument: (text: string) => Promise<void>;
 }
 
 export const Document = ({
   document,
-  insertImages,
+  insertFiles,
   updateDocument,
   ...restProps
 }: IProps) => {
@@ -43,7 +43,7 @@ export const Document = ({
     return (
       <UpdateDocument
         document={document}
-        insertImages={insertImages}
+        insertFiles={insertFiles}
         onUpdate={() => setEditing(false)}
         updateDocument={updateDocument}
         {...restProps}

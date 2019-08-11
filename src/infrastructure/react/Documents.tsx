@@ -2,7 +2,7 @@ import InfiniteScroller from "react-infinite-scroller";
 import React from "react";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
-import { InsertImagesFunction } from "./utilities";
+import { InsertFilesFunction } from "./utilities";
 import { Document } from "./Document";
 
 const Container = styled.div`
@@ -23,14 +23,14 @@ const StyledDocument = styled(Document)`
 
 interface IProps {
   documents: IDocument[];
-  insertImages: InsertImagesFunction;
+  insertFiles: InsertFilesFunction;
   loadMoreDocuments: () => Promise<void>;
   updateDocument: (document: IDocument, text: string) => Promise<void>;
 }
 
 export const Documents = ({
   documents,
-  insertImages,
+  insertFiles,
   loadMoreDocuments,
   updateDocument
 }: IProps) => (
@@ -46,7 +46,7 @@ export const Documents = ({
         <StyledDocument
           key={document.id}
           document={document}
-          insertImages={insertImages}
+          insertFiles={insertFiles}
           updateDocument={(text: string) => updateDocument(document, text)}
         />
       ))}

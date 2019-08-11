@@ -7,7 +7,7 @@ it("renders", () => {
     create(
       <CreateDocument
         createDocument={async () => undefined}
-        insertImages={async () => "url"}
+        insertFiles={async () => "url"}
       />
     ).toJSON()
   ).toMatchSnapshot();

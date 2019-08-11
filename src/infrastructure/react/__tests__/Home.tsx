@@ -15,7 +15,7 @@ it("renders", () => {
     create(
       <Home
         createDocument={async () => null}
-        insertImages={async () => "url"}
+        insertFiles={async () => "url"}
         listDocuments={async function*() {
           yield [];
         }}
@@ -32,7 +32,7 @@ it("creates a document", async () => {
   const { container, getByLabelText } = render(
     <Home
       createDocument={createDocument}
-      insertImages={async () => "url"}
+      insertFiles={async () => "url"}
       listDocuments={async function*() {
         yield [];
       }}
@@ -58,7 +58,7 @@ it("updates a document", async () => {
   const { container, getByLabelText } = render(
     <Home
       createDocument={async () => null}
-      insertImages={async () => "url"}
+      insertFiles={async () => "url"}
       listDocuments={async function*() {
         yield [{ id: "id", text: "text" }];
       }}

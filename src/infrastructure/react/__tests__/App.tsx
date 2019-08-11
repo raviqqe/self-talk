@@ -8,7 +8,7 @@ it("renders before a user signs in", async () => {
     <App
       createDocument={async () => ({} as IDocument)}
       initialize={async () => ({ signedIn: false })}
-      insertImages={async () => "url"}
+      insertFiles={async () => "url"}
       listDocuments={async function*() {
         yield [];
       }}
@@ -29,7 +29,7 @@ it("renders after a user signs in", async () => {
     <App
       createDocument={async () => ({} as IDocument)}
       initialize={async () => ({ signedIn: true })}
-      insertImages={async () => "url"}
+      insertFiles={async () => "url"}
       listDocuments={async function*() {
         yield [];
       }}
@@ -50,7 +50,7 @@ it("goes to a home screen when a user signs in", async () => {
     <App
       createDocument={async () => ({} as IDocument)}
       initialize={async () => ({ signedIn: false })}
-      insertImages={async () => "url"}
+      insertFiles={async () => "url"}
       listDocuments={async function*() {
         yield [];
       }}

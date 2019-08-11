@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { CircleButton } from "./CircleButton";
-import { InsertImagesFunction } from "./utilities";
+import { InsertFilesFunction } from "./utilities";
 import { MarkdownTextArea } from "./MarkdownTextArea";
 
 const Container = styled.div`
@@ -18,7 +18,7 @@ const StyledMarkdownTextArea = styled(MarkdownTextArea)`
 interface IProps {
   className?: string;
   document: IDocument;
-  insertImages: InsertImagesFunction;
+  insertFiles: InsertFilesFunction;
   onUpdate: () => void;
   updateDocument: (text: string) => Promise<void>;
 }
@@ -26,7 +26,7 @@ interface IProps {
 export const UpdateDocument = ({
   document,
   onUpdate,
-  insertImages,
+  insertFiles,
   updateDocument,
   ...restProps
 }: IProps) => {
@@ -39,7 +39,7 @@ export const UpdateDocument = ({
   return (
     <Container {...restProps}>
       <StyledMarkdownTextArea
-        insertImages={insertImages}
+        insertFiles={insertFiles}
         onSubmit={onSubmit}
         setText={setText}
         text={text}

@@ -7,7 +7,7 @@ import { DocumentUpdater } from "../../application/document-updater";
 import { IDocument } from "../../domain/document";
 import { SignInManager } from "../../application/sign-in-manager";
 import { SignOutManager } from "../../application/sign-out-manager";
-import { TextImageInserter } from "../../application/text-image-inserter";
+import { TextFileInserter } from "../../application/text-file-inserter";
 import { GlobalStyle } from "./style";
 import { App } from "./App";
 
@@ -19,7 +19,7 @@ export class ReactRenderer {
     private readonly documentUpdater: DocumentUpdater,
     private readonly signInManager: SignInManager,
     private readonly signOutManager: SignOutManager,
-    private readonly textImageInserter: TextImageInserter,
+    private readonly textFileInserter: TextFileInserter,
     private readonly repositoryURL: string
   ) {}
 
@@ -29,12 +29,12 @@ export class ReactRenderer {
         <App
           createDocument={(text: string) => this.documentCreator.create(text)}
           initialize={() => this.applicationInitializer.initialize()}
-          insertImages={(
+          insertFiles={(
             text: string,
             position: number,
-            images: File[]
+            files: File[]
           ): Promise<string> =>
-            this.textImageInserter.insert(text, position, images)
+            this.textFileInserter.insert(text, position, files)
           }
           listDocuments={() => this.documentLister.list()}
           repositoryURL={this.repositoryURL}

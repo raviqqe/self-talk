@@ -4,7 +4,7 @@ import { DocumentLister } from "../../../application/document-lister";
 import { DocumentUpdater } from "../../../application/document-updater";
 import { SignInManager } from "../../../application/sign-in-manager";
 import { SignOutManager } from "../../../application/sign-out-manager";
-import { TextImageInserter } from "../../../application/text-image-inserter";
+import { TextFileInserter } from "../../../application/text-file-inserter";
 import { ReactRenderer } from "..";
 
 it("renders", () => {
@@ -15,7 +15,7 @@ it("renders", () => {
     {} as DocumentUpdater,
     {} as SignInManager,
     {} as SignOutManager,
-    {} as TextImageInserter,
+    {} as TextFileInserter,
     "url"
   ).render(document.createElement("div"));
 });

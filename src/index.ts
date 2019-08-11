@@ -14,7 +14,7 @@ import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
-import { TextImageInserter } from "./application/text-image-inserter";
+import { TextFileInserter } from "./application/text-file-inserter";
 import configuration from "./configuration.json";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.
@@ -50,7 +50,7 @@ async function main() {
     ),
     new SignInManager(authenticationController),
     new SignOutManager(authenticationController),
-    new TextImageInserter(new FirebaseStorageFileRepository()),
+    new TextFileInserter(new FirebaseStorageFileRepository()),
     configuration.repositoryURL
   ).render(element);
 

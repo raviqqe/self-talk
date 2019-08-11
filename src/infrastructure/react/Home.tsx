@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { CreateDocument } from "./CreateDocument";
 import { Documents } from "./Documents";
-import { InsertImagesFunction } from "./utilities";
+import { InsertFilesFunction } from "./utilities";
 import { SignOut } from "./SignOut";
 
 const Container = styled.div`
@@ -54,7 +54,7 @@ const SignOutContainer = styled.div`
 
 export interface IProps {
   createDocument: (text: string) => Promise<IDocument | null>;
-  insertImages: InsertImagesFunction;
+  insertFiles: InsertFilesFunction;
   listDocuments: () => AsyncIterator<IDocument[]>;
   signOut: () => Promise<void>;
   updateDocument: (
@@ -65,7 +65,7 @@ export interface IProps {
 
 export const Home = ({
   createDocument,
-  insertImages,
+  insertFiles,
   listDocuments,
   signOut,
   updateDocument
@@ -88,7 +88,7 @@ export const Home = ({
       {documents ? (
         <Documents
           documents={documents}
-          insertImages={insertImages}
+          insertFiles={insertFiles}
           loadMoreDocuments={async () => {
             if (!documents || !documentsIterator) {
               return;
@@ -132,7 +132,7 @@ export const Home = ({
             const document: IDocument | null = await createDocument(text);
             setDocuments(document ? [document, ...documents] : documents);
           }}
-          insertImages={insertImages}
+          insertFiles={insertFiles}
         />
         <CreateDocumentBackground />
       </CreateDocumentContainer>

@@ -2,7 +2,7 @@ import { MdAdd } from "react-icons/md";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { CircleButton } from "./CircleButton";
-import { InsertImagesFunction } from "./utilities";
+import { InsertFilesFunction } from "./utilities";
 import { MarkdownTextArea } from "./MarkdownTextArea";
 
 const Container = styled.div`
@@ -18,10 +18,10 @@ const StyledMarkdownTextArea = styled(MarkdownTextArea)`
 
 interface IProps {
   createDocument: (text: string) => Promise<void>;
-  insertImages: InsertImagesFunction;
+  insertFiles: InsertFilesFunction;
 }
 
-export const CreateDocument = ({ createDocument, insertImages }: IProps) => {
+export const CreateDocument = ({ createDocument, insertFiles }: IProps) => {
   const [text, setText] = useState("");
   const onSubmit = async (): Promise<void> => {
     setText("");
@@ -31,7 +31,7 @@ export const CreateDocument = ({ createDocument, insertImages }: IProps) => {
   return (
     <Container>
       <StyledMarkdownTextArea
-        insertImages={insertImages}
+        insertFiles={insertFiles}
         onSubmit={onSubmit}
         setText={setText}
         text={text}
