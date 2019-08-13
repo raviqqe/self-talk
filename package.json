@@ -28,7 +28,7 @@
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
-    "@testing-library/react": "^9.1.0",
+    "@testing-library/react": "^9.1.1",
     "@types/jest": "^24.0.17",
     "@types/lodash": "^4.14.136",
     "@types/node": "^12.7.1",
