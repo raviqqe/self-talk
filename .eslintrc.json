@@ -14,9 +14,10 @@
   },
   "plugins": ["@typescript-eslint", "import", "jest", "prettier", "react"],
   "rules": {
-    "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "error",
-    "import/order": "error"
+    "import/order": "error",
+    "no-return-await": "error",
+    "no-unused-vars": "off"
   },
   "env": {
     "browser": true,
