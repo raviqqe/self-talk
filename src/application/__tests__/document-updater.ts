@@ -1,11 +1,10 @@
 import * as documentModule from "../../domain/document";
 import { DocumentDeleter } from "../document-deleter";
-import { IDocument } from "../../domain/document";
 import { DocumentUpdater } from "../document-updater";
 import { IDocumentRepository } from "../document-repository";
 import { IMessagePresenter } from "../message-presenter";
 
-const dummyDocument: IDocument = { id: "id", text: "foo" };
+const dummyDocument: documentModule.IDocument = { id: "id", text: "foo" };
 
 let updateMock: jest.Mock;
 let deleteMock: jest.Mock;
