@@ -23,5 +23,10 @@
     "browser": true,
     "es6": true,
     "jest/globals": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
