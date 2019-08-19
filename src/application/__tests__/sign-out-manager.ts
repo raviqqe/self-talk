@@ -11,7 +11,7 @@ beforeEach(() => {
   } as unknown) as IAuthenticationController);
 });
 
-it("lists documents", async () => {
+it("signs out", async () => {
   await signOutManager.signOut();
   expect(signOutMock.mock.calls).toHaveLength(1);
 });

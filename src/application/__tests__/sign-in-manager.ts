@@ -11,7 +11,7 @@ beforeEach(() => {
   } as unknown) as IAuthenticationController);
 });
 
-it("lists documents", async () => {
+it("signs in", async () => {
   await signInManager.signIn();
   expect(signInMock.mock.calls).toHaveLength(1);
 });
