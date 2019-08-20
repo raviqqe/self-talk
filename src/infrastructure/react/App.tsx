@@ -35,15 +35,13 @@ export const App = ({
     setSignedIn(signedIn);
   }, []);
 
-  if (signedIn === null) {
-    return (
-      <LoaderContainer>
-        <PulseLoader color="white" />
-      </LoaderContainer>
-    );
-  } else if (!signedIn) {
-    return <Landing repositoryURL={repositoryURL} signIn={signIn} />;
-  }
-
-  return <Home {...props} signOut={async () => setSignedIn(await signOut())} />;
+  return signedIn === null ? (
+    <LoaderContainer>
+      <PulseLoader color="white" />
+    </LoaderContainer>
+  ) : signedIn ? (
+    <Home {...props} signOut={async () => setSignedIn(await signOut())} />
+  ) : (
+    <Landing repositoryURL={repositoryURL} signIn={signIn} />
+  );
 };
