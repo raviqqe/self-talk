@@ -13,11 +13,10 @@ export class FirebaseAuthenticationController
     });
   }
 
-  public async signIn(): Promise<boolean> {
+  public async signIn(): Promise<void> {
     await firebase
       .auth()
       .signInWithRedirect(new firebase.auth.GoogleAuthProvider());
-    return this.isSignedIn();
   }
 
   public async signOut(): Promise<boolean> {

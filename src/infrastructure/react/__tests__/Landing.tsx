@@ -4,8 +4,6 @@ import { Landing } from "../Landing";
 
 it("renders", () => {
   expect(
-    create(
-      <Landing repositoryURL="url" signIn={async () => undefined} />
-    ).toJSON()
+    create(<Landing repositoryURL="url" signIn={() => undefined} />).toJSON()
   ).toMatchSnapshot();
 });

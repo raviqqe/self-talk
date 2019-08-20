@@ -17,7 +17,7 @@ const LoaderContainer = styled.div`
 
 interface IProps extends Omit<IHomeProps, "signOut">, ILandingProps {
   initialize: () => Promise<IInitialState>;
-  signIn: () => Promise<boolean>;
+  signIn: () => void;
   signOut: () => Promise<boolean>;
 }
 
@@ -42,12 +42,7 @@ export const App = ({
       </LoaderContainer>
     );
   } else if (!signedIn) {
-    return (
-      <Landing
-        repositoryURL={repositoryURL}
-        signIn={async () => setSignedIn(await signIn())}
-      />
-    );
+    return <Landing repositoryURL={repositoryURL} signIn={signIn} />;
   }
 
   return <Home {...props} signOut={async () => setSignedIn(await signOut())} />;

@@ -5,7 +5,7 @@ export class SignInManager {
     private readonly authenticationController: IAuthenticationController
   ) {}
 
-  public async signIn(): Promise<boolean> {
-    return this.authenticationController.signIn();
+  public async signIn(): Promise<void> {
+    await this.authenticationController.signIn();
   }
 }
