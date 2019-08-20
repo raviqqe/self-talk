@@ -9,11 +9,13 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "sourceType": "module",
-    "ecmaFeatures": { "jsx": true }
+    "ecmaFeatures": { "jsx": true },
+    "project": "./tsconfig.json",
+    "sourceType": "module"
   },
   "plugins": ["@typescript-eslint", "import", "jest", "prettier", "react"],
   "rules": {
+    "@typescript-eslint/no-floating-promises": "error",
     "@typescript-eslint/no-unused-vars": "error",
     "import/order": "error",
     "no-return-await": "error",
