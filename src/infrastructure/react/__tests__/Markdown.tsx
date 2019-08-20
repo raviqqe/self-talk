@@ -3,6 +3,8 @@ import { create } from "react-test-renderer";
 import React from "react";
 import { Markdown } from "../Markdown";
 
+afterEach(() => jest.restoreAllMocks());
+
 it("renders", () => {
   expect(create(<Markdown># Foo</Markdown>).toJSON()).toMatchSnapshot();
 });
@@ -20,7 +22,6 @@ it("opens an image when it is clicked", () => {
   fireEvent.click(container.querySelector("img") as Element);
 
   expect(spy).toBeCalledTimes(1);
-  spy.mockRestore();
 });
 
 it("does not open a linked image even when it is clicked", () => {
@@ -32,5 +33,4 @@ it("does not open a linked image even when it is clicked", () => {
   fireEvent.click(container.querySelector("img") as Element);
 
   expect(spy).toBeCalledTimes(0);
-  spy.mockRestore();
 });
