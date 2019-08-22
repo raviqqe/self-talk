@@ -15,11 +15,21 @@
   },
   "plugins": ["@typescript-eslint", "import", "jest", "prettier", "react"],
   "rules": {
+    "@typescript-eslint/array-type": "error",
+    "@typescript-eslint/consistent-type-definitions": "error",
+    "@typescript-eslint/interface-name-prefix": ["error", "always"],
     "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-require-imports": "error",
     "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-var-requires": "error",
+    "@typescript-eslint/prefer-readonly": "error",
+    "import/no-cycle": "error",
+    "import/no-default-export": "error",
+    "import/no-unused-modules": "error",
     "import/order": "error",
     "no-return-await": "error",
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "sort-keys": "error"
   },
   "env": {
     "browser": true,

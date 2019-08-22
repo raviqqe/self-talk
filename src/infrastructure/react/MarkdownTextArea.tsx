@@ -36,7 +36,7 @@ export const MarkdownTextArea = ({
 
   const uploadFiles = async (
     event: SyntheticEvent<HTMLTextAreaElement>,
-    files: Array<File | null>
+    files: (File | null)[]
   ) => {
     const validFiles = files.filter((file): file is File => !!file);
 
