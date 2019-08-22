@@ -17,6 +17,7 @@ it("renders images", () => {
 
 it("opens an image when it is clicked", () => {
   const spy = jest.spyOn(window, "open");
+  spy.mockReturnValue(null);
 
   const { container } = render(<Markdown>![foo](http://bar/baz.png)</Markdown>);
   fireEvent.click(container.querySelector("img") as Element);
@@ -26,6 +27,7 @@ it("opens an image when it is clicked", () => {
 
 it("does not open a linked image even when it is clicked", () => {
   const spy = jest.spyOn(window, "open");
+  spy.mockReturnValue(null);
 
   const { container } = render(
     <Markdown>[![foo](http://bar/baz.png)](http://bar/blah)</Markdown>
