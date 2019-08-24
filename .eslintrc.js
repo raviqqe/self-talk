@@ -1,5 +1,7 @@
-{
-  "extends": [
+const path = require("path");
+
+module.exports = {
+  extends: [
     "eslint:recommended",
     "plugin:prettier/recommended",
     "plugin:react/recommended",
@@ -7,14 +9,14 @@
     "plugin:import/warnings",
     "plugin:import/typescript"
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": { "jsx": true },
-    "project": "./tsconfig.json",
-    "sourceType": "module"
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaFeatures: { jsx: true },
+    project: path.join(__dirname, "tsconfig.json"),
+    sourceType: "module"
   },
-  "plugins": ["@typescript-eslint", "import", "jest", "prettier", "react"],
-  "rules": {
+  plugins: ["@typescript-eslint", "import", "jest", "prettier", "react"],
+  rules: {
     "@typescript-eslint/array-type": "error",
     "@typescript-eslint/consistent-type-definitions": "error",
     "@typescript-eslint/interface-name-prefix": ["error", "always"],
@@ -31,14 +33,14 @@
     "no-unused-vars": "off",
     "sort-keys": "error"
   },
-  "env": {
-    "browser": true,
-    "es6": true,
+  env: {
+    browser: true,
+    es6: true,
     "jest/globals": true
   },
-  "settings": {
-    "react": {
-      "version": "detect"
+  settings: {
+    react: {
+      version: "detect"
     }
   }
-}
+};
