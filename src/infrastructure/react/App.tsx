@@ -1,9 +1,9 @@
-import { Omit } from "lodash";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { IInitialState } from "../../application/application-initializer";
+import { observer } from "mobx-react";
+import { AuthenticationStore } from "../mobx/authentication-store";
 import { IProps as ILandingProps, Landing } from "./Landing";
 import { Home, IProps as IHomeProps } from "./Home";
 
@@ -15,33 +15,30 @@ const LoaderContainer = styled.div`
   width: 100vw;
 `;
 
-interface IProps extends Omit<IHomeProps, "signOut">, ILandingProps {
-  initialize: () => Promise<IInitialState>;
-  signIn: () => void;
-  signOut: () => Promise<boolean>;
+interface IProps extends IHomeProps, ILandingProps {
+  authenticationStore: AuthenticationStore;
+  initialize: () => Promise<void>;
 }
 
-export const App = ({
-  initialize,
-  repositoryURL,
-  signIn,
-  signOut,
-  ...props
-}: IProps) => {
-  const [signedIn, setSignedIn] = useState<boolean | null>(null);
+export const App = observer(
+  ({
+    authenticationStore: { signedIn },
+    initialize,
+    repositoryURL,
+    signIn,
+    signOut,
+    ...props
+  }: IProps) => {
+    useAsync(initialize, []);
 
-  useAsync(async () => {
-    const { signedIn } = await initialize();
-    setSignedIn(signedIn);
-  }, []);
-
-  return signedIn === null ? (
-    <LoaderContainer>
-      <PulseLoader color="white" />
-    </LoaderContainer>
-  ) : signedIn ? (
-    <Home {...props} signOut={async () => setSignedIn(await signOut())} />
-  ) : (
-    <Landing repositoryURL={repositoryURL} signIn={signIn} />
-  );
-};
+    return signedIn === null ? (
+      <LoaderContainer>
+        <PulseLoader color="white" />
+      </LoaderContainer>
+    ) : signedIn ? (
+      <Home {...props} signOut={signOut} />
+    ) : (
+      <Landing repositoryURL={repositoryURL} signIn={signIn} />
+    );
+  }
+);

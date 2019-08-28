@@ -8,6 +8,7 @@ import { IDocument } from "../../domain/document";
 import { SignInManager } from "../../application/sign-in-manager";
 import { SignOutManager } from "../../application/sign-out-manager";
 import { TextFileInserter } from "../../application/text-file-inserter";
+import { AuthenticationStore } from "../mobx/authentication-store";
 import { GlobalStyle } from "./style";
 import { App } from "./App";
 
@@ -20,6 +21,7 @@ export class ReactRenderer {
     private readonly signInManager: SignInManager,
     private readonly signOutManager: SignOutManager,
     private readonly textFileInserter: TextFileInserter,
+    private readonly authenticationStore: AuthenticationStore,
     private readonly repositoryURL: string
   ) {}
 
@@ -27,6 +29,7 @@ export class ReactRenderer {
     render(
       <>
         <App
+          authenticationStore={this.authenticationStore}
           createDocument={(text: string) => this.documentCreator.create(text)}
           initialize={() => this.applicationInitializer.initialize()}
           insertFiles={(

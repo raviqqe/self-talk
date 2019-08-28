@@ -12,6 +12,8 @@ import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebas
 import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
 import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
+import { AuthenticationStore } from "./infrastructure/mobx/authentication-store";
+import { MobxAuthenticationPresenter } from "./infrastructure/mobx/mobx-authentication-presenter";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
 import { TextFileInserter } from "./application/text-file-inserter";
@@ -25,21 +27,26 @@ const firebaseInitializer = new FirebaseInitializer(
 const errorReporter = new SentryErrorReporter(configuration.sentry.dsn);
 
 async function main() {
-  const authenticationController = new FirebaseAuthenticationController();
-  const documentRepository = new FirebaseDocumentRepository();
-  const messagePresenter = new AlertMessagePresenter();
-  const confirmationController = new BuiltinConfirmationController();
-
   const element = document.getElementById("root");
 
   if (!element) {
     throw new Error("no root element");
   }
 
+  const authenticationStore = new AuthenticationStore();
+  const authenticationPresenter = new MobxAuthenticationPresenter(
+    authenticationStore
+  );
+  const authenticationController = new FirebaseAuthenticationController();
+  const documentRepository = new FirebaseDocumentRepository();
+  const messagePresenter = new AlertMessagePresenter();
+  const confirmationController = new BuiltinConfirmationController();
+
   new ReactRenderer(
     new ApplicationInitializer(
-      new InfrastructureInitializer(firebaseInitializer),
-      authenticationController
+      authenticationController,
+      authenticationPresenter,
+      new InfrastructureInitializer(firebaseInitializer)
     ),
     new DocumentCreator(documentRepository, messagePresenter),
     new DocumentLister(documentRepository),
@@ -49,8 +56,9 @@ async function main() {
       messagePresenter
     ),
     new SignInManager(authenticationController),
-    new SignOutManager(authenticationController),
+    new SignOutManager(authenticationController, authenticationPresenter),
     new TextFileInserter(new FirebaseStorageFileRepository()),
+    authenticationStore,
     configuration.repositoryURL
   ).render(element);
 

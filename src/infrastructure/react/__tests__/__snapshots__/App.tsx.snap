@@ -6,11 +6,21 @@ exports[`renders after a user signs in 1`] = `
     class="sc-kGXeez fOWBRp"
   >
     <div
-      class="sc-kAzzGY gyNdPx"
+      class="sc-kpOJdX fxTCzR"
     >
       <div
-        class="sc-chPdSV rDDFH"
-      />
+        class="css-0"
+      >
+        <div
+          class="css-b0t2tw"
+        />
+        <div
+          class="css-fz02ge"
+        />
+        <div
+          class="css-1xlchjq"
+        />
+      </div>
     </div>
     <div
       class="sc-dxgOiQ dCNDNW"
@@ -23,7 +33,6 @@ exports[`renders after a user signs in 1`] = `
           class="sc-gZMcBi meTUk sc-htoDjs dUPfGM"
           placeholder="Write in Markdown ..."
           rows="1"
-          style="overflow-x: hidden; word-wrap: break-word; overflow-y: hidden;"
         />
         <button
           aria-label="Create"
@@ -73,7 +82,7 @@ exports[`renders after a user signs in 1`] = `
 </div>
 `;
 
-exports[`renders before a user signs in 1`] = `
+exports[`renders after a user signs out 1`] = `
 <div>
   <div
     class="sc-htpNat gyfPDF"
@@ -117,6 +126,28 @@ exports[`renders before a user signs in 1`] = `
         />
       </svg>
     </a>
+  </div>
+</div>
+`;
+
+exports[`renders before a user signs in 1`] = `
+<div>
+  <div
+    class="sc-eNQAEJ jEaFIf"
+  >
+    <div
+      class="css-0"
+    >
+      <div
+        class="css-b0t2tw"
+      />
+      <div
+        class="css-fz02ge"
+      />
+      <div
+        class="css-1xlchjq"
+      />
+    </div>
   </div>
 </div>
 `;

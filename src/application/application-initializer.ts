@@ -1,18 +1,18 @@
 import { IAuthenticationController } from "./authentication-controller";
+import { IAuthenticationPresenter } from "./authentication-presenter";
 import { IInfrastructureInitializer } from "./infrastructure-initializer";
-
-export interface IInitialState {
-  signedIn: boolean;
-}
 
 export class ApplicationInitializer {
   constructor(
-    private readonly infrastructureInitializer: IInfrastructureInitializer,
-    private readonly authenticationController: IAuthenticationController
+    private readonly authenticationController: IAuthenticationController,
+    private readonly authenticationPresenter: IAuthenticationPresenter,
+    private readonly infrastructureInitializer: IInfrastructureInitializer
   ) {}
 
-  public async initialize(): Promise<IInitialState> {
+  public async initialize(): Promise<void> {
     await this.infrastructureInitializer.initialize();
-    return { signedIn: await this.authenticationController.isSignedIn() };
+    this.authenticationPresenter.presentSignedIn(
+      await this.authenticationController.isSignedIn()
+    );
   }
 }

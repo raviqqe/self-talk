@@ -56,7 +56,7 @@ export interface IProps {
   createDocument: (text: string) => Promise<IDocument | null>;
   insertFiles: InsertFilesFunction;
   listDocuments: () => AsyncIterator<IDocument[]>;
-  signOut: () => Promise<void>;
+  signOut: () => void;
   updateDocument: (
     document: IDocument,
     text: string
