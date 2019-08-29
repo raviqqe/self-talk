@@ -63,8 +63,8 @@ async function main() {
   ).render(element);
 
   // Disable default behavior on drop events.
-  window.ondragover = event => event.preventDefault();
-  window.ondrop = event => event.preventDefault();
+  window.ondragover = (event: DragEvent) => event.preventDefault();
+  window.ondrop = (event: DragEvent) => event.preventDefault();
 
   await navigator.serviceWorker.register("/service-worker.js");
 }
