@@ -3,14 +3,24 @@
 exports[`renders after a user signs in 1`] = `
 <div>
   <div
-    class="sc-kGXeez fOWBRp"
+    class="sc-kpOJdX RJnix"
   >
     <div
-      class="sc-kAzzGY gyNdPx"
+      class="sc-chPdSV hCBDrf"
     >
       <div
-        class="sc-chPdSV rDDFH"
-      />
+        class="css-0"
+      >
+        <div
+          class="css-b0t2tw"
+        />
+        <div
+          class="css-fz02ge"
+        />
+        <div
+          class="css-1xlchjq"
+        />
+      </div>
     </div>
     <div
       class="sc-dxgOiQ dCNDNW"
