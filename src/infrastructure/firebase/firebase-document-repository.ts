@@ -6,7 +6,12 @@ import { IDocumentRepository } from "../../application/document-repository";
 
 export class FirebaseDocumentRepository implements IDocumentRepository {
   public async create(document: IDocument): Promise<void> {
-    await this.createOrUpdate(document);
+    await this.collection()
+      .doc(document.id)
+      .set({
+        ...document,
+        createdAt: Math.floor(Date.now() / 1000) // Unix timestamp
+      });
   }
 
   public async delete(documentID: string): Promise<void> {
@@ -31,16 +36,9 @@ export class FirebaseDocumentRepository implements IDocumentRepository {
   }
 
   public async update(document: IDocument): Promise<void> {
-    await this.createOrUpdate(document);
-  }
-
-  public async createOrUpdate(document: IDocument): Promise<void> {
     await this.collection()
       .doc(document.id)
-      .set({
-        ...document,
-        createdAt: Math.floor(Date.now() / 1000) // Unix timestamp
-      });
+      .update(document);
   }
 
   private query(): firebase.firestore.Query {
