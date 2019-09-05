@@ -1,33 +1,52 @@
 import { DocumentCreator } from "../document-creator";
 import { IDocumentRepository } from "../document-repository";
+import { IDocumentPresenter } from "../document-presenter";
 import { IMessagePresenter } from "../message-presenter";
 
-let createMock: jest.Mock;
-let presentMock: jest.Mock;
+let documentRepository: jest.Mocked<IDocumentRepository>;
+let documentPresenter: jest.Mocked<IDocumentPresenter>;
+let messagePresenter: jest.Mocked<IMessagePresenter>;
 let documentCreator: DocumentCreator;
 
 beforeEach(() => {
-  createMock = jest.fn();
-  presentMock = jest.fn();
+  documentRepository = {
+    create: jest.fn(),
+    delete: jest.fn(),
+    list: jest.fn(),
+    update: jest.fn()
+  };
+  documentPresenter = {
+    presentDeletedDocument: jest.fn(),
+    presentDocuments: jest.fn(),
+    presentNewDocument: jest.fn(),
+    presentUpdatedDocument: jest.fn()
+  };
+  messagePresenter = { present: jest.fn() };
   documentCreator = new DocumentCreator(
-    ({
-      create: createMock
-    } as unknown) as IDocumentRepository,
-    { present: presentMock } as IMessagePresenter
+    documentRepository,
+    documentPresenter,
+    messagePresenter
   );
 });
 
 it("creates and persists a document", async () => {
   await documentCreator.create("foo");
-  expect(createMock.mock.calls).toHaveLength(1);
+  expect(documentRepository.create.mock.calls).toEqual([
+    [{ id: expect.any(String), text: "foo" }]
+  ]);
+  expect(documentPresenter.presentNewDocument.mock.calls).toEqual([
+    [{ id: expect.any(String), text: "foo" }]
+  ]);
 });
 
 it("formats a document before creation", async () => {
   await documentCreator.create("\tfoo ");
-  expect(createMock.mock.calls[0][0].text).toBe("foo");
+  expect(documentRepository.create.mock.calls[0][0].text).toBe("foo");
 });
 
 it("validates a document before creation", async () => {
   await documentCreator.create("");
-  expect(presentMock.mock.calls).toEqual([["Document cannot be empty!"]]);
+  expect(messagePresenter.present.mock.calls).toEqual([
+    ["Document cannot be empty!"]
+  ]);
 });

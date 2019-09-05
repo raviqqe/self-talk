@@ -6,6 +6,7 @@ import { SignInManager } from "../../../application/sign-in-manager";
 import { SignOutManager } from "../../../application/sign-out-manager";
 import { TextFileInserter } from "../../../application/text-file-inserter";
 import { AuthenticationStore } from "../../mobx/authentication-store";
+import { DocumentsStore } from "../../mobx/documents-store";
 import { ReactRenderer } from "..";
 
 it("renders", () => {
@@ -18,6 +19,7 @@ it("renders", () => {
     {} as SignOutManager,
     {} as TextFileInserter,
     new AuthenticationStore(),
+    new DocumentsStore(),
     "url"
   ).render(document.createElement("div"));
 });

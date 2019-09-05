@@ -1,29 +1,45 @@
 import { DocumentDeleter } from "../document-deleter";
 import { IDocumentRepository } from "../document-repository";
+import { IDocumentPresenter } from "../document-presenter";
+import { IConfirmationController } from "../confirmation-controller";
 
-let deleteMock: jest.Mock;
-let confirmMock: jest.Mock;
+let documentRepository: jest.Mocked<IDocumentRepository>;
+let documentPresenter: jest.Mocked<IDocumentPresenter>;
+let confirmationController: jest.Mocked<IConfirmationController>;
 let documentDeleter: DocumentDeleter;
 
 beforeEach(() => {
-  deleteMock = jest.fn();
-  confirmMock = jest.fn();
+  documentRepository = {
+    create: jest.fn(),
+    delete: jest.fn(),
+    list: jest.fn(),
+    update: jest.fn()
+  };
+  documentPresenter = {
+    presentDeletedDocument: jest.fn(),
+    presentDocuments: jest.fn(),
+    presentNewDocument: jest.fn(),
+    presentUpdatedDocument: jest.fn()
+  };
+  confirmationController = { confirm: jest.fn() };
   documentDeleter = new DocumentDeleter(
-    ({
-      delete: deleteMock
-    } as unknown) as IDocumentRepository,
-    { confirm: confirmMock }
+    documentRepository,
+    documentPresenter,
+    confirmationController
   );
 });
 
 it("deletes a document after confirmation", async () => {
-  confirmMock.mockReturnValue(true);
+  confirmationController.confirm.mockResolvedValue(true);
   await documentDeleter.delete("foo");
-  expect(deleteMock.mock.calls).toHaveLength(1);
+  expect(documentRepository.delete.mock.calls).toEqual([["foo"]]);
+  expect(documentPresenter.presentDeletedDocument.mock.calls).toEqual([
+    ["foo"]
+  ]);
 });
 
 it("does not delete any document if it is not confirmed", async () => {
-  confirmMock.mockReturnValue(false);
-  await documentDeleter.delete("\tfoo ");
-  expect(deleteMock.mock.calls).toHaveLength(0);
+  confirmationController.confirm.mockResolvedValue(false);
+  await documentDeleter.delete("foo");
+  expect(documentRepository.delete).toBeCalledTimes(0);
 });

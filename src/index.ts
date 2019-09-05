@@ -14,6 +14,8 @@ import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 import { AuthenticationStore } from "./infrastructure/mobx/authentication-store";
 import { MobxAuthenticationPresenter } from "./infrastructure/mobx/mobx-authentication-presenter";
+import { DocumentsStore } from "./infrastructure/mobx/documents-store";
+import { MobxDocumentPresenter } from "./infrastructure/mobx/mobx-document-presenter";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
 import { TextFileInserter } from "./application/text-file-inserter";
@@ -41,6 +43,8 @@ async function main() {
   const documentRepository = new FirebaseDocumentRepository();
   const messagePresenter = new AlertMessagePresenter();
   const confirmationController = new BuiltinConfirmationController();
+  const documentsStore = new DocumentsStore();
+  const documentPresenter = new MobxDocumentPresenter(documentsStore);
 
   new ReactRenderer(
     new ApplicationInitializer(
@@ -48,17 +52,27 @@ async function main() {
       authenticationPresenter,
       new InfrastructureInitializer(firebaseInitializer)
     ),
-    new DocumentCreator(documentRepository, messagePresenter),
-    new DocumentLister(documentRepository),
-    new DocumentUpdater(
-      new DocumentDeleter(documentRepository, confirmationController),
+    new DocumentCreator(
       documentRepository,
+      documentPresenter,
+      messagePresenter
+    ),
+    new DocumentLister(documentRepository, documentPresenter),
+    new DocumentUpdater(
+      new DocumentDeleter(
+        documentRepository,
+        documentPresenter,
+        confirmationController
+      ),
+      documentRepository,
+      documentPresenter,
       messagePresenter
     ),
     new SignInManager(authenticationController),
     new SignOutManager(authenticationController, authenticationPresenter),
     new TextFileInserter(new FirebaseStorageFileRepository()),
     authenticationStore,
+    documentsStore,
     configuration.repositoryURL
   ).render(element);
 

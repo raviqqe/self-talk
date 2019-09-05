@@ -6,21 +6,11 @@ exports[`renders after a user signs in 1`] = `
     class="sc-kGXeez fOWBRp"
   >
     <div
-      class="sc-kpOJdX fxTCzR"
+      class="sc-kAzzGY gyNdPx"
     >
       <div
-        class="css-0"
-      >
-        <div
-          class="css-b0t2tw"
-        />
-        <div
-          class="css-fz02ge"
-        />
-        <div
-          class="css-1xlchjq"
-        />
-      </div>
+        class="sc-chPdSV rDDFH"
+      />
     </div>
     <div
       class="sc-dxgOiQ dCNDNW"
@@ -108,7 +98,7 @@ exports[`renders after a user signs out 1`] = `
     </button>
     <a
       class="sc-bZQynM zHicg"
-      href="url"
+      href=""
       target="_blank"
     >
       <svg

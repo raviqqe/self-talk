@@ -2,22 +2,22 @@ import { render } from "@testing-library/react";
 import React from "react";
 import { App } from "../App";
 import { AuthenticationStore } from "../../mobx/authentication-store";
-import { IDocument } from "../../../domain/document";
+import { DocumentsStore } from "../../mobx/documents-store";
 
 it("renders before a user signs in", async () => {
   const result = render(
     <App
       authenticationStore={new AuthenticationStore()}
-      createDocument={async () => ({} as IDocument)}
+      documentsStore={new DocumentsStore()}
+      createDocument={async () => {}}
       initialize={async () => {}}
-      insertFiles={async () => "url"}
-      listDocuments={async function*() {
-        yield [];
-      }}
+      insertFiles={async () => ""}
+      listDocuments={async () => {}}
+      listMoreDocuments={async () => {}}
       signIn={() => {}}
       signOut={() => {}}
-      updateDocument={async () => ({} as IDocument)}
-      repositoryURL="url"
+      updateDocument={async () => {}}
+      repositoryURL=""
     />
   );
 
@@ -25,22 +25,22 @@ it("renders before a user signs in", async () => {
 });
 
 it("renders after a user signs in", async () => {
-  const store = new AuthenticationStore();
-  store.setSignedIn(true);
+  const authenticationStore = new AuthenticationStore();
+  authenticationStore.setSignedIn(true);
 
   const result = render(
     <App
-      authenticationStore={store}
-      createDocument={async () => ({} as IDocument)}
+      authenticationStore={authenticationStore}
+      documentsStore={new DocumentsStore()}
+      createDocument={async () => {}}
       initialize={async () => {}}
-      insertFiles={async () => "url"}
-      listDocuments={async function*() {
-        yield [];
-      }}
+      insertFiles={async () => ""}
+      listDocuments={async () => {}}
+      listMoreDocuments={async () => {}}
       signIn={() => {}}
       signOut={() => {}}
-      updateDocument={async () => ({} as IDocument)}
-      repositoryURL="url"
+      updateDocument={async () => {}}
+      repositoryURL=""
     />
   );
 
@@ -48,22 +48,22 @@ it("renders after a user signs in", async () => {
 });
 
 it("renders after a user signs out", async () => {
-  const store = new AuthenticationStore();
-  store.setSignedIn(false);
+  const authenticationStore = new AuthenticationStore();
+  authenticationStore.setSignedIn(false);
 
   const result = render(
     <App
-      authenticationStore={store}
-      createDocument={async () => ({} as IDocument)}
+      authenticationStore={authenticationStore}
+      documentsStore={new DocumentsStore()}
+      createDocument={async () => {}}
       initialize={async () => {}}
-      insertFiles={async () => "url"}
-      listDocuments={async function*() {
-        yield [];
-      }}
+      insertFiles={async () => ""}
+      listDocuments={async () => {}}
+      listMoreDocuments={async () => {}}
       signIn={() => {}}
       signOut={() => {}}
-      updateDocument={async () => ({} as IDocument)}
-      repositoryURL="url"
+      updateDocument={async () => {}}
+      repositoryURL=""
     />
   );
 

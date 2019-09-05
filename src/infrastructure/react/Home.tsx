@@ -1,11 +1,7 @@
-import { PulseLoader } from "react-spinners";
-import { useAsync } from "react-use";
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { IDocument } from "../../domain/document";
 import { CreateDocument } from "./CreateDocument";
-import { Documents } from "./Documents";
-import { InsertFilesFunction } from "./utilities";
+import { Documents, IProps as IDocumentsProps } from "./Documents";
 import { SignOut } from "./SignOut";
 
 const Container = styled.div`
@@ -19,12 +15,6 @@ const Container = styled.div`
   > :first-child {
     flex: 1;
   }
-`;
-
-const LoaderContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const CreateDocumentContainer = styled.div`
@@ -52,93 +42,37 @@ const SignOutContainer = styled.div`
   right: 0.5em;
 `;
 
-export interface IProps {
-  createDocument: (text: string) => Promise<IDocument | null>;
-  insertFiles: InsertFilesFunction;
-  listDocuments: () => AsyncIterator<IDocument[]>;
+export interface IProps extends IDocumentsProps {
+  createDocument: (text: string) => Promise<void>;
   signOut: () => void;
-  updateDocument: (
-    document: IDocument,
-    text: string
-  ) => Promise<IDocument | null>;
 }
 
 export const Home = ({
   createDocument,
+  documents,
   insertFiles,
   listDocuments,
+  listMoreDocuments,
   signOut,
   updateDocument
-}: IProps) => {
-  const [documents, setDocuments] = useState<IDocument[] | null>(null);
-  const [documentsIterator, setDocumentsIterator] = useState<AsyncIterator<
-    IDocument[]
-  > | null>(null);
-
-  useAsync(async () => {
-    const documentsIterator = await listDocuments();
-    setDocumentsIterator(documentsIterator);
-
-    const result = await documentsIterator.next();
-    setDocuments(result.done ? [] : result.value);
-  }, []);
-
-  return (
-    <Container>
-      {documents ? (
-        <Documents
-          documents={documents}
-          insertFiles={insertFiles}
-          loadMoreDocuments={async () => {
-            if (!documents || !documentsIterator) {
-              return;
-            }
-
-            setDocumentsIterator(null);
-            const result = await documentsIterator.next();
-
-            if (!result.done) {
-              setDocuments([...documents, ...result.value]);
-              setDocumentsIterator(documentsIterator);
-            }
-          }}
-          updateDocument={async (document: IDocument, text: string) => {
-            const newDocument = await updateDocument(document, text);
-
-            setDocuments(
-              newDocument
-                ? documents.map(document =>
-                    document.id === newDocument.id ? newDocument : document
-                  )
-                : documents.filter(
-                    existingDocument => existingDocument.id !== document.id
-                  )
-            );
-          }}
-        />
-      ) : (
-        <LoaderContainer>
-          <PulseLoader color="white" />
-        </LoaderContainer>
-      )}
-      <CreateDocumentContainer>
-        <CreateDocument
-          createDocument={async (text: string): Promise<void> => {
-            if (!documents) {
-              return;
-            }
-
-            setDocuments(null);
-            const document: IDocument | null = await createDocument(text);
-            setDocuments(document ? [document, ...documents] : documents);
-          }}
-          insertFiles={insertFiles}
-        />
-        <CreateDocumentBackground />
-      </CreateDocumentContainer>
-      <SignOutContainer>
-        <SignOut signOut={signOut} />
-      </SignOutContainer>
-    </Container>
-  );
-};
+}: IProps) => (
+  <Container>
+    <Documents
+      documents={documents}
+      insertFiles={insertFiles}
+      listDocuments={listDocuments}
+      listMoreDocuments={listMoreDocuments}
+      updateDocument={updateDocument}
+    />
+    <CreateDocumentContainer>
+      <CreateDocument
+        createDocument={createDocument}
+        insertFiles={insertFiles}
+      />
+      <CreateDocumentBackground />
+    </CreateDocumentContainer>
+    <SignOutContainer>
+      <SignOut signOut={signOut} />
+    </SignOutContainer>
+  </Container>
+);

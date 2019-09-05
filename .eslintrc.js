@@ -22,7 +22,10 @@ module.exports = {
     "@typescript-eslint/interface-name-prefix": ["error", "always"],
     "@typescript-eslint/no-floating-promises": "error",
     "@typescript-eslint/no-require-imports": "error",
-    "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_" }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }
+    ],
     "@typescript-eslint/no-var-requires": "error",
     "@typescript-eslint/prefer-readonly": "error",
     "import/no-cycle": "error",

@@ -1,34 +1,28 @@
 import UUID from "pure-uuid";
-import {
-  IDocument,
-  formatDocument,
-  validateDocument
-} from "../domain/document";
+import { formatDocument, validateDocument } from "../domain/document";
 import { formatErrorMessage } from "../domain/error";
 import { IDocumentRepository } from "./document-repository";
+import { IDocumentPresenter } from "./document-presenter";
 import { IMessagePresenter } from "./message-presenter";
 
 export class DocumentCreator {
   constructor(
     private readonly documentRepository: IDocumentRepository,
+    private readonly documentPresenter: IDocumentPresenter,
     private readonly messagePresenter: IMessagePresenter
   ) {}
 
-  public async create(text: string): Promise<IDocument | null> {
-    const document = formatDocument({
-      id: new UUID(4).format(),
-      text
-    });
+  public async create(text: string): Promise<void> {
+    const document = formatDocument({ id: new UUID(4).format(), text });
 
     try {
       validateDocument(document);
     } catch (error) {
       await this.messagePresenter.present(formatErrorMessage(error));
-      return null;
+      return;
     }
 
     await this.documentRepository.create(formatDocument(document));
-
-    return document;
+    this.documentPresenter.presentNewDocument(document);
   }
 }

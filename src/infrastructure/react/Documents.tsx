@@ -1,4 +1,6 @@
+import { PulseLoader } from "react-spinners";
 import InfiniteScroller from "react-infinite-scroller";
+import { useAsync } from "react-use";
 import React from "react";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
@@ -11,6 +13,12 @@ const Container = styled.div`
   overflow: auto;
 `;
 
+const LoaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const StyledInfiniteScroller = styled(InfiniteScroller)`
   display: flex;
   flex-direction: column-reverse;
@@ -21,35 +29,45 @@ const StyledDocument = styled(Document)`
   margin: 0.5em;
 `;
 
-interface IProps {
-  documents: IDocument[];
+export interface IProps {
+  documents: IDocument[] | null;
   insertFiles: InsertFilesFunction;
-  loadMoreDocuments: () => Promise<void>;
+  listDocuments: () => Promise<void>;
+  listMoreDocuments: () => Promise<void>;
   updateDocument: (document: IDocument, text: string) => Promise<void>;
 }
 
 export const Documents = ({
   documents,
   insertFiles,
-  loadMoreDocuments,
+  listDocuments,
+  listMoreDocuments,
   updateDocument
-}: IProps) => (
-  <Container>
-    <StyledInfiniteScroller
-      hasMore={true}
-      isReverse={true}
-      loadMore={loadMoreDocuments}
-      threshold={512}
-      useWindow={false}
-    >
-      {documents.map((document: IDocument) => (
-        <StyledDocument
-          key={document.id}
-          document={document}
-          insertFiles={insertFiles}
-          updateDocument={(text: string) => updateDocument(document, text)}
-        />
-      ))}
-    </StyledInfiniteScroller>
-  </Container>
-);
+}: IProps) => {
+  useAsync(listDocuments, []);
+
+  return documents ? (
+    <Container>
+      <StyledInfiniteScroller
+        hasMore={true}
+        isReverse={true}
+        loadMore={listMoreDocuments}
+        threshold={512}
+        useWindow={false}
+      >
+        {documents.map((document: IDocument) => (
+          <StyledDocument
+            key={document.id}
+            document={document}
+            insertFiles={insertFiles}
+            updateDocument={(text: string) => updateDocument(document, text)}
+          />
+        ))}
+      </StyledInfiniteScroller>
+    </Container>
+  ) : (
+    <LoaderContainer>
+      <PulseLoader color="white" />
+    </LoaderContainer>
+  );
+};

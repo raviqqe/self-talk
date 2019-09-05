@@ -7,9 +7,10 @@ it("renders", () => {
     create(
       <Documents
         documents={[{ id: "id", text: "text" }]}
-        insertFiles={async () => "url"}
-        loadMoreDocuments={async () => undefined}
-        updateDocument={async () => undefined}
+        insertFiles={async () => ""}
+        listDocuments={async () => {}}
+        listMoreDocuments={async () => {}}
+        updateDocument={async () => {}}
       />
     ).toJSON()
   ).toMatchSnapshot();
@@ -20,9 +21,24 @@ it("renders with no documents", () => {
     create(
       <Documents
         documents={[]}
-        insertFiles={async () => "url"}
-        loadMoreDocuments={async () => undefined}
-        updateDocument={async () => undefined}
+        insertFiles={async () => ""}
+        listDocuments={async () => {}}
+        listMoreDocuments={async () => {}}
+        updateDocument={async () => {}}
+      />
+    ).toJSON()
+  ).toMatchSnapshot();
+});
+
+it("renders with documents not loaded yet", () => {
+  expect(
+    create(
+      <Documents
+        documents={null}
+        insertFiles={async () => ""}
+        listDocuments={async () => {}}
+        listMoreDocuments={async () => {}}
+        updateDocument={async () => {}}
       />
     ).toJSON()
   ).toMatchSnapshot();

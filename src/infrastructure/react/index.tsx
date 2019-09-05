@@ -9,6 +9,7 @@ import { SignInManager } from "../../application/sign-in-manager";
 import { SignOutManager } from "../../application/sign-out-manager";
 import { TextFileInserter } from "../../application/text-file-inserter";
 import { AuthenticationStore } from "../mobx/authentication-store";
+import { DocumentsStore } from "../mobx/documents-store";
 import { GlobalStyle } from "./style";
 import { App } from "./App";
 
@@ -22,6 +23,7 @@ export class ReactRenderer {
     private readonly signOutManager: SignOutManager,
     private readonly textFileInserter: TextFileInserter,
     private readonly authenticationStore: AuthenticationStore,
+    private readonly documentsStore: DocumentsStore,
     private readonly repositoryURL: string
   ) {}
 
@@ -30,6 +32,7 @@ export class ReactRenderer {
       <>
         <App
           authenticationStore={this.authenticationStore}
+          documentsStore={this.documentsStore}
           createDocument={(text: string) => this.documentCreator.create(text)}
           initialize={() => this.applicationInitializer.initialize()}
           insertFiles={(
@@ -40,6 +43,7 @@ export class ReactRenderer {
             this.textFileInserter.insert(text, position, files)
           }
           listDocuments={() => this.documentLister.list()}
+          listMoreDocuments={() => this.documentLister.listMore()}
           repositoryURL={this.repositoryURL}
           signIn={() => this.signInManager.signIn()}
           signOut={() => this.signOutManager.signOut()}
