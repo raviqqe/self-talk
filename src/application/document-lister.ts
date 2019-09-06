@@ -5,7 +5,6 @@ import { IDocumentPresenter } from "./document-presenter";
 const defaultLimit: number = 20;
 
 export class DocumentLister {
-  private documents: IDocument[] = [];
   private iterator: AsyncIterator<IDocument[]> | null = null;
 
   constructor(
@@ -14,9 +13,9 @@ export class DocumentLister {
   ) {}
 
   public async list(): Promise<void> {
-    this.documents = [];
     this.iterator = this.documentRepository.list(defaultLimit);
-    await this.listMore();
+    const result = await this.iterator.next();
+    this.documentPresenter.presentDocuments(result.value);
   }
 
   public async listMore(): Promise<void> {
@@ -25,7 +24,6 @@ export class DocumentLister {
     }
 
     const result = await this.iterator.next();
-    this.documents = [...this.documents, ...result.value];
-    this.documentPresenter.presentDocuments(this.documents);
+    this.documentPresenter.presentMoreDocuments(result.value);
   }
 }

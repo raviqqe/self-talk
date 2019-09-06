@@ -9,8 +9,12 @@ export class MobxDocumentPresenter implements IDocumentPresenter {
     this.store.setDocuments(documents);
   }
 
+  public presentMoreDocuments(documents: IDocument[]): void {
+    this.store.appendDocuments(documents);
+  }
+
   public presentNewDocument(document: IDocument): void {
-    this.store.appendDocument(document);
+    this.store.prependDocument(document);
   }
 
   public presentUpdatedDocument(document: IDocument): void {

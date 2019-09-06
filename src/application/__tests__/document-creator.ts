@@ -15,12 +15,9 @@ beforeEach(() => {
     list: jest.fn(),
     update: jest.fn()
   };
-  documentPresenter = {
-    presentDeletedDocument: jest.fn(),
-    presentDocuments: jest.fn(),
-    presentNewDocument: jest.fn(),
-    presentUpdatedDocument: jest.fn()
-  };
+  documentPresenter = ({
+    presentNewDocument: jest.fn()
+  } as unknown) as jest.Mocked<IDocumentPresenter>;
   messagePresenter = { present: jest.fn() };
   documentCreator = new DocumentCreator(
     documentRepository,
