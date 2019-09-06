@@ -20,7 +20,7 @@ export class FirebaseDocumentRepository implements IDocumentRepository {
       .delete();
   }
 
-  public async *list(limit: number): AsyncIterator<IDocument[]> {
+  public async *list(limit: number): AsyncIterator<IDocument[], void> {
     let result = await this.query()
       .limit(limit)
       .get();

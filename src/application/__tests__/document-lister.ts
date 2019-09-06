@@ -33,12 +33,25 @@ it("lists documents", async () => {
   ]);
 });
 
+it("lists no documents", async () => {
+  documentRepository.list = jest.fn(async function*(_: number) {});
+  await documentLister.list();
+  expect(documentPresenter.presentDocuments.mock.calls).toEqual([[[]]]);
+});
+
 it("lists more documents", async () => {
   await documentLister.list();
   await documentLister.listMore();
   expect(documentPresenter.presentMoreDocuments.mock.calls).toEqual([
     [[{ id: "", text: "" }]]
   ]);
+});
+
+it("lists no more documents", async () => {
+  documentRepository.list = jest.fn(async function*(_: number) {});
+  await documentLister.list();
+  await documentLister.listMore();
+  expect(documentPresenter.presentMoreDocuments.mock.calls).toEqual([]);
 });
 
 it("throws an error if it tries to list more documents before listing initial ones", async () => {
