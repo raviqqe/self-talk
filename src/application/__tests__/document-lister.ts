@@ -51,7 +51,7 @@ it("lists no more documents", async () => {
   documentRepository.list = jest.fn(async function*(_: number) {});
   await documentLister.list();
   await documentLister.listMore();
-  expect(documentPresenter.presentMoreDocuments.mock.calls).toEqual([]);
+  expect(documentPresenter.presentMoreDocuments).toBeCalledTimes(0);
 });
 
 it("throws an error if it tries to list more documents before listing initial ones", async () => {
