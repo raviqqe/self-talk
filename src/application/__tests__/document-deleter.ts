@@ -15,12 +15,9 @@ beforeEach(() => {
     list: jest.fn(),
     update: jest.fn()
   };
-  documentPresenter = {
-    presentDeletedDocument: jest.fn(),
-    presentDocuments: jest.fn(),
-    presentNewDocument: jest.fn(),
-    presentUpdatedDocument: jest.fn()
-  };
+  documentPresenter = ({
+    presentDeletedDocument: jest.fn()
+  } as unknown) as jest.Mocked<IDocumentPresenter>;
   confirmationController = { confirm: jest.fn() };
   documentDeleter = new DocumentDeleter(
     documentRepository,

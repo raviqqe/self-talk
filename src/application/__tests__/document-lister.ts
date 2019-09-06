@@ -19,12 +19,10 @@ beforeEach(() => {
     }),
     update: jest.fn()
   };
-  documentPresenter = {
-    presentDeletedDocument: jest.fn(),
+  documentPresenter = ({
     presentDocuments: jest.fn(),
-    presentNewDocument: jest.fn(),
-    presentUpdatedDocument: jest.fn()
-  };
+    presentMoreDocuments: jest.fn()
+  } as unknown) as jest.Mocked<IDocumentPresenter>;
   documentLister = new DocumentLister(documentRepository, documentPresenter);
 });
 
@@ -38,9 +36,8 @@ it("lists documents", async () => {
 it("lists more documents", async () => {
   await documentLister.list();
   await documentLister.listMore();
-  expect(documentPresenter.presentDocuments.mock.calls).toEqual([
-    [[{ id: "", text: "" }]],
-    [[{ id: "", text: "" }, { id: "", text: "" }]]
+  expect(documentPresenter.presentMoreDocuments.mock.calls).toEqual([
+    [[{ id: "", text: "" }]]
   ]);
 });
 

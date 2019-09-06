@@ -10,7 +10,16 @@ export class DocumentsStore {
   }
 
   @action
-  public appendDocument(document: IDocument): void {
+  public appendDocuments(documents: IDocument[]): void {
+    if (!this.documents) {
+      throw new Error("documents not loaded");
+    }
+
+    this.documents = [...this.documents, ...documents];
+  }
+
+  @action
+  public prependDocument(document: IDocument): void {
     if (!this.documents) {
       throw new Error("documents not loaded");
     }
