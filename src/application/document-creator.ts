@@ -22,7 +22,7 @@ export class DocumentCreator {
       return;
     }
 
-    await this.documentRepository.create(formatDocument(document));
     this.documentPresenter.presentNewDocument(document);
+    await this.documentRepository.create(formatDocument(document));
   }
 }

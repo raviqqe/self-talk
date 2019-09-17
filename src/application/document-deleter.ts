@@ -15,8 +15,8 @@ export class DocumentDeleter {
         "Do you want to delete the document?"
       )
     ) {
+      this.documentPresenter.presentDeletedDocument(documentID);
       await this.documentRepository.delete(documentID);
-      await this.documentPresenter.presentDeletedDocument(documentID);
     }
   }
 }

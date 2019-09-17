@@ -35,7 +35,7 @@ export class DocumentUpdater {
       return;
     }
 
-    await this.documentRepository.update(document);
     this.documentPresenter.presentUpdatedDocument(document);
+    await this.documentRepository.update(document);
   }
 }
