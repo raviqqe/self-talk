@@ -19,7 +19,7 @@ it("renders", () => {
         insertFiles={async () => ""}
         listDocuments={async () => {}}
         listMoreDocuments={async () => {}}
-        signOut={async () => undefined}
+        signOut={async () => {}}
         updateDocument={async () => {}}
       />
     ).toJSON()
@@ -36,7 +36,7 @@ it("creates a document", async () => {
       insertFiles={async () => ""}
       listDocuments={async () => {}}
       listMoreDocuments={async () => {}}
-      signOut={async () => undefined}
+      signOut={async () => {}}
       updateDocument={async () => {}}
     />
   );
