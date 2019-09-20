@@ -32,8 +32,8 @@ export class ReactRenderer {
       <>
         <App
           authenticationStore={this.authenticationStore}
-          documentsStore={this.documentsStore}
           createDocument={(text: string) => this.documentCreator.create(text)}
+          documentsStore={this.documentsStore}
           initialize={() => this.applicationInitializer.initialize()}
           insertFiles={(
             text: string,

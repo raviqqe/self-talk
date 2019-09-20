@@ -8,16 +8,16 @@ it("renders before a user signs in", async () => {
   const result = render(
     <App
       authenticationStore={new AuthenticationStore()}
-      documentsStore={new DocumentsStore()}
       createDocument={async () => {}}
+      documentsStore={new DocumentsStore()}
       initialize={async () => {}}
       insertFiles={async () => ""}
       listDocuments={async () => {}}
       listMoreDocuments={async () => {}}
+      repositoryURL=""
       signIn={() => {}}
       signOut={() => {}}
       updateDocument={async () => {}}
-      repositoryURL=""
     />
   );
 
@@ -31,16 +31,16 @@ it("renders after a user signs in", async () => {
   const result = render(
     <App
       authenticationStore={authenticationStore}
-      documentsStore={new DocumentsStore()}
       createDocument={async () => {}}
+      documentsStore={new DocumentsStore()}
       initialize={async () => {}}
       insertFiles={async () => ""}
       listDocuments={async () => {}}
       listMoreDocuments={async () => {}}
+      repositoryURL=""
       signIn={() => {}}
       signOut={() => {}}
       updateDocument={async () => {}}
-      repositoryURL=""
     />
   );
 
@@ -54,16 +54,16 @@ it("renders after a user signs out", async () => {
   const result = render(
     <App
       authenticationStore={authenticationStore}
-      documentsStore={new DocumentsStore()}
       createDocument={async () => {}}
+      documentsStore={new DocumentsStore()}
       initialize={async () => {}}
       insertFiles={async () => ""}
       listDocuments={async () => {}}
       listMoreDocuments={async () => {}}
+      repositoryURL=""
       signIn={() => {}}
       signOut={() => {}}
       updateDocument={async () => {}}
-      repositoryURL=""
     />
   );
 

@@ -63,8 +63,6 @@ export const MarkdownTextArea = ({
 
   return (
     <TextArea
-      onSubmit={onSubmit}
-      placeholder="Write in Markdown ..."
       onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
         setText(event.target.value)
       }
@@ -83,6 +81,8 @@ export const MarkdownTextArea = ({
           Array.from(event.clipboardData.items).map(item => item.getAsFile())
         );
       }}
+      onSubmit={onSubmit}
+      placeholder="Write in Markdown ..."
       value={text}
       {...restProps}
     />

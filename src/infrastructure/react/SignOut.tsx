@@ -7,7 +7,7 @@ interface IProps {
 }
 
 export const SignOut = ({ signOut }: IProps) => (
-  <CircleButton secondary={true} onClick={signOut}>
+  <CircleButton onClick={signOut} secondary={true}>
     <MdExitToApp />
   </CircleButton>
 );

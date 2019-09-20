@@ -57,9 +57,9 @@ export const Documents = ({
       >
         {documents.map((document: IDocument) => (
           <StyledDocument
-            key={document.id}
             document={document}
             insertFiles={insertFiles}
+            key={document.id}
             updateDocument={(text: string) => updateDocument(document, text)}
           />
         ))}

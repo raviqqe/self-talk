@@ -46,13 +46,13 @@ export const TextArea = ({ onSubmit, ...textAreaProps }: IProps) => {
   return (
     <StyledTextArea
       async={true}
-      ref={ref}
       onKeyDown={(event: KeyboardEvent<HTMLTextAreaElement>) => {
         if (event.keyCode === 13 && event.shiftKey) {
           onSubmit();
           event.preventDefault();
         }
       }}
+      ref={ref}
       {...textAreaProps}
     />
   );

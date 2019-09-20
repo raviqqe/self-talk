@@ -101,6 +101,6 @@ interface IProps {
 
 export const Markdown = ({ children }: IProps) => (
   <Container>
-    <ReactMarkdown source={children} renderers={{ image: Image }} />
+    <ReactMarkdown renderers={{ image: Image }} source={children} />
   </Container>
 );
