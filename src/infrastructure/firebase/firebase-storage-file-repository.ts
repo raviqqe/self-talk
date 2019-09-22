@@ -1,5 +1,5 @@
 import "firebase/storage";
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import UUID from "pure-uuid";
 import { IFileRepository } from "../../application/file-repository";
 

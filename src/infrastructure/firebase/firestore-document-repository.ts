@@ -1,5 +1,5 @@
 import "firebase/firestore";
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import { last } from "lodash";
 import { IDocument } from "../../domain/document";
 import { IDocumentRepository } from "../../application/document-repository";
