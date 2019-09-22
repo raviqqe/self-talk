@@ -4,7 +4,7 @@ import { last } from "lodash";
 import { IDocument } from "../../domain/document";
 import { IDocumentRepository } from "../../application/document-repository";
 
-export class FirebaseDocumentRepository implements IDocumentRepository {
+export class FirestoreDocumentRepository implements IDocumentRepository {
   public async create(document: IDocument): Promise<void> {
     await this.collection()
       .doc(document.id)

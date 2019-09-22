@@ -6,7 +6,7 @@ import { DocumentDeleter } from "./application/document-deleter";
 import { DocumentLister } from "./application/document-lister";
 import { DocumentUpdater } from "./application/document-updater";
 import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
-import { FirebaseDocumentRepository } from "./infrastructure/firebase/firebase-document-repository";
+import { FirestoreDocumentRepository } from "./infrastructure/firebase/firestore-document-repository";
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
 import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebase-storage-file-repository";
 import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
@@ -40,7 +40,7 @@ async function main() {
     authenticationStore
   );
   const authenticationController = new FirebaseAuthenticationController();
-  const documentRepository = new FirebaseDocumentRepository();
+  const documentRepository = new FirestoreDocumentRepository();
   const messagePresenter = new AlertMessagePresenter();
   const confirmationController = new BuiltinConfirmationController();
   const documentsStore = new DocumentsStore();
