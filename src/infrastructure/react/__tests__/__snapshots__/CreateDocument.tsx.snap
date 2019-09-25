@@ -6,7 +6,7 @@ exports[`renders 1`] = `
 >
   <textarea
     async={true}
-    className="sc-EHOje ggueGO sc-htpNat gsNViM"
+    className="sc-htpNat gsNViM sc-EHOje ggueGO"
     onChange={[Function]}
     onDrop={[Function]}
     onKeyDown={[Function]}

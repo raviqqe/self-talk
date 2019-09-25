@@ -30,7 +30,7 @@ exports[`renders after a user signs in 1`] = `
       >
         <textarea
           async=""
-          class="sc-gZMcBi meTUk sc-htoDjs dUPfGM"
+          class="sc-htoDjs dUPfGM sc-gZMcBi meTUk"
           placeholder="Write in Markdown ..."
           rows="1"
         />
