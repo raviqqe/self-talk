@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^5.6.3",
-    "firebase": "^6.6.2",
+    "firebase": "^7.0.0",
     "lodash": "^4.17.15",
     "mobx": "^5.13.0",
     "mobx-react": "^6.1.3",
