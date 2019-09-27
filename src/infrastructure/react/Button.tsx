@@ -1,16 +1,8 @@
-import { FC, HTMLAttributes, HTMLProps, ReactNode } from "react";
 import styled from "styled-components";
 import { boxShadow } from "./style";
 import { lightGrey, red, white } from "./style/colors";
 
-interface IProps
-  extends HTMLProps<HTMLButtonElement>,
-    HTMLAttributes<HTMLButtonElement> {
-  secondary?: boolean;
-  children?: ReactNode;
-}
-
-export const Button: FC<IProps> = styled.button<{ secondary?: boolean }>`
+export const Button = styled.button<{ secondary?: boolean }>`
   ${boxShadow};
   background: ${({ secondary }) => (secondary ? lightGrey : red)}
   display: flex;
@@ -21,4 +13,4 @@ export const Button: FC<IProps> = styled.button<{ secondary?: boolean }>`
   border: none;
   cursor: pointer;
   flex-shrink: 0;
-` as FC<any>;
+`;

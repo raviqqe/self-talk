@@ -1,6 +1,5 @@
 import AutosizeTextArea from "react-autosize-textarea";
 import React, {
-  FC,
   InputHTMLAttributes,
   KeyboardEvent,
   useEffect,
@@ -11,7 +10,7 @@ import styled from "styled-components";
 import { boxShadow } from "./style";
 import { grey } from "./style/colors";
 
-const StyledTextArea: FC<any> = styled(AutosizeTextArea)`
+const StyledTextArea = styled(AutosizeTextArea)`
   ${boxShadow};
   box-sizing: border-box;
   border: none;
