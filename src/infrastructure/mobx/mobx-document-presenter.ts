@@ -10,18 +10,40 @@ export class MobxDocumentPresenter implements IDocumentPresenter {
   }
 
   public presentMoreDocuments(documents: IDocument[]): void {
-    this.store.appendDocuments(documents);
+    if (!this.store.documents) {
+      throw new Error("documents not loaded");
+    }
+
+    this.store.setDocuments([...this.store.documents, ...documents]);
   }
 
   public presentNewDocument(document: IDocument): void {
-    this.store.prependDocument(document);
+    if (!this.store.documents) {
+      throw new Error("documents not loaded");
+    }
+
+    this.store.setDocuments([document, ...this.store.documents]);
   }
 
-  public presentUpdatedDocument(document: IDocument): void {
-    this.store.updateDocument(document);
+  public presentUpdatedDocument(updatedDocument: IDocument): void {
+    if (!this.store.documents) {
+      throw new Error("documents not loaded");
+    }
+
+    this.store.setDocuments(
+      this.store.documents.map(document =>
+        document.id === updatedDocument.id ? updatedDocument : document
+      )
+    );
   }
 
   public presentDeletedDocument(documentID: string): void {
-    this.store.deleteDocument(documentID);
+    if (!this.store.documents) {
+      throw new Error("documents not loaded");
+    }
+
+    this.store.setDocuments(
+      this.store.documents.filter(document => document.id !== documentID)
+    );
   }
 }
