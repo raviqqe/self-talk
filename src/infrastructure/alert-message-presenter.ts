@@ -1,5 +1,5 @@
 export class AlertMessagePresenter {
-  public async present(message: string): Promise<void> {
+  public present(message: string): void {
     alert(message);
   }
 }

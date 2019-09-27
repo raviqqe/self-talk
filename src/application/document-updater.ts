@@ -31,7 +31,7 @@ export class DocumentUpdater {
     try {
       validateDocument(document);
     } catch (error) {
-      await this.messagePresenter.present(formatErrorMessage(error));
+      this.messagePresenter.present(formatErrorMessage(error));
       return;
     }
 
