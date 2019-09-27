@@ -1,11 +1,12 @@
 import { createGlobalStyle, css } from "styled-components";
+import { black, yellow } from "./colors";
 
 export const GlobalStyle = createGlobalStyle`
   body {
-    background: khaki;
+    background: ${yellow};
     margin: 0;
     padding: 0;
-    color: #222;
+    color: ${black};
     font-family: Roboto, sans-serif;
     line-height: 1.4;
     font-size: 16px;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { CreateDocument } from "./CreateDocument";
 import { Documents, IProps as IDocumentsProps } from "./Documents";
 import { SignOut } from "./SignOut";
+import { darkYellow } from "./style/colors";
 
 const Container = styled.div`
   display: flex;
@@ -26,7 +27,7 @@ const CreateDocumentContainer = styled.div`
 `;
 
 const CreateDocumentBackground = styled.div`
-  background: darkkhaki;
+  background: ${darkYellow};
   position: absolute;
   top: 0;
   left: -100vw;

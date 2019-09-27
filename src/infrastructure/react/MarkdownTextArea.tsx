@@ -56,7 +56,7 @@ export const MarkdownTextArea = ({
   if (uploadingFiles) {
     return (
       <LoaderContainer>
-        <PulseLoader color="white" />
+        <PulseLoader color="${white}" />
       </LoaderContainer>
     );
   }

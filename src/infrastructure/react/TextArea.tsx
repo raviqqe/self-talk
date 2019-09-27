@@ -9,6 +9,7 @@ import React, {
 } from "react";
 import styled from "styled-components";
 import { boxShadow } from "./style";
+import { grey } from "./style/colors";
 
 const StyledTextArea: FC<any> = styled(AutosizeTextArea)`
   ${boxShadow};
@@ -24,7 +25,7 @@ const StyledTextArea: FC<any> = styled(AutosizeTextArea)`
   border-radius: 0.5em;
 
   &::placeholder {
-    color: grey;
+    color: ${grey};
   }
 `;
 

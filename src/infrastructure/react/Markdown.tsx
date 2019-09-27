@@ -1,6 +1,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import styled, { css } from "styled-components";
+import { darkGrey, grey, red, white } from "./style/colors";
 
 const Container = styled.div`
   cursor: text;
@@ -31,15 +32,15 @@ const Container = styled.div`
   )};
 
   a {
-    color: salmon;
+    color: ${red};
 
     &:visited {
-      color: salmon;
+      color: ${red};
     }
   }
 
   blockquote {
-    color: dimgrey;
+    color: ${darkGrey};
   }
 
   img {
@@ -53,9 +54,9 @@ const Container = styled.div`
 
   pre,
   *:not(pre) > code {
-    background: dimgrey;
+    background: ${darkGrey};
     border-radius: 0.2rem;
-    color: white;
+    color: ${white};
     font-size: 0.95em;
     padding: 0.4em;
   }
@@ -71,7 +72,7 @@ const Container = styled.div`
   table,
   td,
   th {
-    border: 1px solid grey;
+    border: 1px solid ${grey};
   }
 
   td,

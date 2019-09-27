@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { IDocument } from "../../domain/document";
 import { InsertFilesFunction } from "./utilities";
 import { Document } from "./Document";
+import { white } from "./style/colors";
 
 const Container = styled.div`
   display: flex;
@@ -67,7 +68,7 @@ export const Documents = ({
     </Container>
   ) : (
     <LoaderContainer>
-      <PulseLoader color="white" />
+      <PulseLoader color={white} />
     </LoaderContainer>
   );
 };

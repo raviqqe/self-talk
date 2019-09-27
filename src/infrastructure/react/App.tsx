@@ -7,6 +7,7 @@ import { AuthenticationStore } from "../mobx/authentication-store";
 import { DocumentsStore } from "../mobx/documents-store";
 import { IProps as ILandingProps, Landing } from "./Landing";
 import { Home, IProps as IHomeProps } from "./Home";
+import { white } from "./style/colors";
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -36,7 +37,7 @@ export const App = observer(
 
     return signedIn === null ? (
       <LoaderContainer>
-        <PulseLoader color="white" />
+        <PulseLoader color={white} />
       </LoaderContainer>
     ) : signedIn ? (
       <Home {...props} documents={documents} signOut={signOut} />

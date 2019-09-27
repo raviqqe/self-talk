@@ -7,10 +7,11 @@ import { InsertFilesFunction } from "./utilities";
 import { Markdown } from "./Markdown";
 import { UpdateDocument } from "./UpdateDocument";
 import { boxShadow } from "./style";
+import { white } from "./style/colors";
 
 const Container = styled.div`
   ${boxShadow};
-  background: white;
+  background: ${white};
   padding: 1em;
   padding-right: 2.1em;
   border-radius: 0.5em;
