@@ -13,7 +13,7 @@ exports[`renders 1`] = `
     onPaste={[Function]}
     placeholder="Write in Markdown ..."
     rows={1}
-    value="text"
+    value=""
   />
   <button
     aria-label="Save"

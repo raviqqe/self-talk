@@ -1,11 +1,12 @@
 import { MdEdit } from "react-icons/md";
 import React, { useState } from "react";
 import styled from "styled-components";
-import { IDocument } from "../../domain/document";
 import { IconButton } from "./IconButton";
-import { InsertFilesFunction } from "./utilities";
 import { Markdown } from "./Markdown";
-import { UpdateDocument } from "./UpdateDocument";
+import {
+  UpdateDocument,
+  IProps as IUpdateDocumentProps
+} from "./UpdateDocument";
 import { boxShadow } from "./style";
 import { white } from "./style/colors";
 
@@ -25,12 +26,7 @@ const ButtonContainer = styled.div`
   right: 0.4em;
 `;
 
-interface IProps {
-  className?: string;
-  document: IDocument;
-  insertFiles: InsertFilesFunction;
-  updateDocument: (text: string) => Promise<void>;
-}
+interface IProps extends IUpdateDocumentProps {}
 
 export const Document = ({
   document,
@@ -40,19 +36,17 @@ export const Document = ({
 }: IProps) => {
   const [editing, setEditing] = useState(false);
 
-  if (editing) {
-    return (
-      <UpdateDocument
-        document={document}
-        insertFiles={insertFiles}
-        onUpdate={() => setEditing(false)}
-        updateDocument={updateDocument}
-        {...restProps}
-      />
-    );
-  }
-
-  return (
+  return editing ? (
+    <UpdateDocument
+      document={document}
+      insertFiles={insertFiles}
+      updateDocument={async document => {
+        setEditing(false);
+        await updateDocument(document);
+      }}
+      {...restProps}
+    />
+  ) : (
     <Container {...restProps}>
       <Markdown>{document.text}</Markdown>
       <ButtonContainer>

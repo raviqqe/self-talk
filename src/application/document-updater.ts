@@ -17,11 +17,8 @@ export class DocumentUpdater {
     private readonly messagePresenter: IMessagePresenter
   ) {}
 
-  public async update(
-    originalDocument: IDocument,
-    text: string
-  ): Promise<void> {
-    const document = formatDocument({ ...originalDocument, text });
+  public async update(document: IDocument): Promise<void> {
+    document = formatDocument(document);
 
     if (!document.text) {
       await this.documentDeleter.delete(document.id);

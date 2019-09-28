@@ -47,8 +47,8 @@ export class ReactRenderer {
           repositoryURL={this.repositoryURL}
           signIn={() => this.signInManager.signIn()}
           signOut={() => this.signOutManager.signOut()}
-          updateDocument={(document: IDocument, text: string) =>
-            this.documentUpdater.update(document, text)
+          updateDocument={(document: IDocument) =>
+            this.documentUpdater.update(document)
           }
         />
         <GlobalStyle />

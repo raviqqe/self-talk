@@ -15,26 +15,21 @@ const StyledMarkdownTextArea = styled(MarkdownTextArea)`
   margin-right: -1em;
 `;
 
-interface IProps {
+export interface IProps {
   className?: string;
   document: IDocument;
   insertFiles: InsertFilesFunction;
-  onUpdate: () => void;
-  updateDocument: (text: string) => Promise<void>;
+  updateDocument: (document: IDocument) => Promise<void>;
 }
 
 export const UpdateDocument = ({
   document,
-  onUpdate,
   insertFiles,
   updateDocument,
   ...restProps
 }: IProps) => {
   const [text, setText] = useState(document.text);
-  const onSubmit = async (): Promise<void> => {
-    await updateDocument(text);
-    onUpdate();
-  };
+  const onSubmit = () => updateDocument({ ...document, text });
 
   return (
     <Container {...restProps}>

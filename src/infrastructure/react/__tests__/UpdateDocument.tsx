@@ -6,10 +6,9 @@ it("renders", () => {
   expect(
     create(
       <UpdateDocument
-        document={{ id: "id", text: "text" }}
-        insertFiles={async () => "url"}
-        onUpdate={() => undefined}
-        updateDocument={async () => undefined}
+        document={{ id: "", text: "" }}
+        insertFiles={async () => ""}
+        updateDocument={async () => {}}
       />
     ).toJSON()
   ).toMatchSnapshot();

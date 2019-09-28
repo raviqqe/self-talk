@@ -5,7 +5,7 @@ import { IDocumentRepository } from "../document-repository";
 import { IDocumentPresenter } from "../document-presenter";
 import { IMessagePresenter } from "../message-presenter";
 
-const dummyDocument: documentModule.IDocument = { id: "id", text: "foo" };
+const dummyDocument: documentModule.IDocument = { id: "", text: "foo" };
 
 let documentRepository: jest.Mocked<IDocumentRepository>;
 let documentPresenter: jest.Mocked<IDocumentPresenter>;
@@ -37,24 +37,22 @@ beforeEach(() => {
 afterEach(() => jest.restoreAllMocks());
 
 it("updates and persists a document", async () => {
-  await documentUpdater.update(dummyDocument, "bar");
+  await documentUpdater.update(dummyDocument);
   expect(documentRepository.update.mock.calls).toEqual([
-    [{ ...dummyDocument, text: "bar" }]
+    [{ ...dummyDocument, text: "foo" }]
   ]);
   expect(documentPresenter.presentUpdatedDocument.mock.calls).toEqual([
-    [{ ...dummyDocument, text: "bar" }]
-  ]);
-});
-
-it("formats a document before update", async () => {
-  await documentUpdater.update(dummyDocument, "\tfoo ");
-  expect(documentRepository.update.mock.calls).toEqual([
     [{ ...dummyDocument, text: "foo" }]
   ]);
 });
 
+it("formats a document before update", async () => {
+  await documentUpdater.update({ ...dummyDocument, text: "\tfoo " });
+  expect(documentRepository.update.mock.calls).toEqual([[dummyDocument]]);
+});
+
 it("deletes a document if its text is empty", async () => {
-  await documentUpdater.update(dummyDocument, "");
+  await documentUpdater.update({ ...dummyDocument, text: "" });
   expect(documentRepository.delete).toBeCalledTimes(1);
 });
 
@@ -63,7 +61,7 @@ it("does not update any document if validation fails", async () => {
     throw new Error("foo");
   });
 
-  await documentUpdater.update(dummyDocument, "bar");
+  await documentUpdater.update(dummyDocument);
   expect(messagePresenter.present).toBeCalledTimes(1);
   expect(documentPresenter.presentUpdatedDocument).toBeCalledTimes(0);
 });

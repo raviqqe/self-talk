@@ -35,7 +35,7 @@ export interface IProps {
   insertFiles: InsertFilesFunction;
   listDocuments: () => Promise<void>;
   listMoreDocuments: () => Promise<void>;
-  updateDocument: (document: IDocument, text: string) => Promise<void>;
+  updateDocument: (document: IDocument) => Promise<void>;
 }
 
 export const Documents = ({
@@ -61,7 +61,7 @@ export const Documents = ({
             document={document}
             insertFiles={insertFiles}
             key={document.id}
-            updateDocument={(text: string) => updateDocument(document, text)}
+            updateDocument={updateDocument}
           />
         ))}
       </StyledInfiniteScroller>
