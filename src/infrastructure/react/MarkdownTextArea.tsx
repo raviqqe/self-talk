@@ -9,6 +9,7 @@ import { PulseLoader } from "react-spinners";
 import styled from "styled-components";
 import { InsertFilesFunction } from "./utilities";
 import { TextArea } from "./TextArea";
+import { white } from "./style/colors";
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -56,7 +57,7 @@ export const MarkdownTextArea = ({
   if (uploadingFiles) {
     return (
       <LoaderContainer>
-        <PulseLoader color="${white}" />
+        <PulseLoader color={white} />
       </LoaderContainer>
     );
   }
