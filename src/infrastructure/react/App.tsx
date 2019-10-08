@@ -17,7 +17,7 @@ const LoaderContainer = styled.div`
   width: 100vw;
 `;
 
-interface IProps extends Omit<IHomeProps, "documents">, ILandingProps {
+export interface IProps extends Omit<IHomeProps, "documents">, ILandingProps {
   authenticationStore: AuthenticationStore;
   documentsStore: DocumentsStore;
   initialize: () => Promise<void>;

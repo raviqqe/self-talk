@@ -1,69 +1,57 @@
 import { render } from "@testing-library/react";
 import React from "react";
-import { App } from "../App";
+import { App, IProps } from "../App";
 import { AuthenticationStore } from "../../mobx/authentication-store";
 import { DocumentsStore } from "../../mobx/documents-store";
 
-it("renders before a user signs in", async () => {
+const commonProps: Omit<IProps, "authenticationStore" | "documentsStore"> = {
+  createDocument: async () => {},
+  initialize: async () => {},
+  insertFiles: async () => "",
+  listDocuments: async () => {},
+  listMoreDocuments: async () => {},
+  repositoryURL: "",
+  signIn: async () => {},
+  signOut: async () => {},
+  updateDocument: async () => {}
+};
+
+it("renders before a user signs in", () => {
   const result = render(
     <App
+      {...commonProps}
       authenticationStore={new AuthenticationStore()}
-      createDocument={async () => {}}
       documentsStore={new DocumentsStore()}
-      initialize={async () => {}}
-      insertFiles={async () => ""}
-      listDocuments={async () => {}}
-      listMoreDocuments={async () => {}}
-      repositoryURL=""
-      signIn={() => {}}
-      signOut={() => {}}
-      updateDocument={async () => {}}
     />
   );
 
   expect(result.container).toMatchSnapshot();
 });
 
-it("renders after a user signs in", async () => {
+it("renders after a user signs in", () => {
   const authenticationStore = new AuthenticationStore();
   authenticationStore.setSignedIn(true);
 
   const result = render(
     <App
+      {...commonProps}
       authenticationStore={authenticationStore}
-      createDocument={async () => {}}
       documentsStore={new DocumentsStore()}
-      initialize={async () => {}}
-      insertFiles={async () => ""}
-      listDocuments={async () => {}}
-      listMoreDocuments={async () => {}}
-      repositoryURL=""
-      signIn={() => {}}
-      signOut={() => {}}
-      updateDocument={async () => {}}
     />
   );
 
   expect(result.container).toMatchSnapshot();
 });
 
-it("renders after a user signs out", async () => {
+it("renders after a user signs out", () => {
   const authenticationStore = new AuthenticationStore();
   authenticationStore.setSignedIn(false);
 
   const result = render(
     <App
+      {...commonProps}
       authenticationStore={authenticationStore}
-      createDocument={async () => {}}
       documentsStore={new DocumentsStore()}
-      initialize={async () => {}}
-      insertFiles={async () => ""}
-      listDocuments={async () => {}}
-      listMoreDocuments={async () => {}}
-      repositoryURL=""
-      signIn={() => {}}
-      signOut={() => {}}
-      updateDocument={async () => {}}
     />
   );
 
