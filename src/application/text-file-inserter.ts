@@ -10,14 +10,16 @@ export class TextFileInserter {
   ): Promise<string> {
     return (
       text.slice(0, position) +
-      (await Promise.all(
-        files.map(async (file: File) => {
-          let url = await this.fileRepository.create(file);
-          return file.type.startsWith("image/")
-            ? `![](${url})`
-            : `[${file.name}](${url})`;
-        })
-      )).join(" ") +
+      (
+        await Promise.all(
+          files.map(async (file: File) => {
+            let url = await this.fileRepository.create(file);
+            return file.type.startsWith("image/")
+              ? `![](${url})`
+              : `[${file.name}](${url})`;
+          })
+        )
+      ).join(" ") +
       text.slice(position)
     );
   }
