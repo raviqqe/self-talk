@@ -19,7 +19,7 @@ exports[`renders 1`] = `
     </span>
   </div>
   <button
-    className="sc-AykKC sc-AykKD hCMgfe"
+    className="sc-AykKC sc-AykKD ceFyCZ"
     onClick={[Function]}
   >
     Sign in

@@ -36,7 +36,7 @@ exports[`renders after a user signs in 1`] = `
         />
         <button
           aria-label="Create"
-          class="sc-AykKC sc-AykKJ eAZAHc"
+          class="sc-AykKC sc-AykKJ hGclKX"
         >
           <svg
             fill="currentColor"
@@ -61,7 +61,7 @@ exports[`renders after a user signs in 1`] = `
       class="sc-fzXfMB fBcezj"
     >
       <button
-        class="sc-AykKC sc-AykKJ cLpPGv"
+        class="sc-AykKC sc-AykKJ eHyhKG"
       >
         <svg
           fill="currentColor"
@@ -102,7 +102,7 @@ exports[`renders after a user signs out 1`] = `
       </span>
     </div>
     <button
-      class="sc-AykKC sc-AykKD hCMgfe"
+      class="sc-AykKC sc-AykKD ceFyCZ"
     >
       Sign in
     </button>
