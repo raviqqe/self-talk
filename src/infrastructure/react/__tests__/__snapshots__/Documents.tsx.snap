@@ -2,27 +2,27 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-iwsKbI JzTPu"
+  className="sc-fzXfLP gKiHhu"
 >
   <div
-    className="sc-gqjmRU cbhwjO"
+    className="sc-fzXfLR dULbuK"
   >
     <div
-      className="sc-htoDjs jykURL sc-VigVT heImIo"
+      className="sc-AykKK KrZGJ sc-fzXfLS jEQXmY"
     >
       <div
-        className="sc-bwzfXH jdcGic"
+        className="sc-AykKD fPnoBJ"
       >
         <p>
           text
         </p>
       </div>
       <div
-        className="sc-dnqmqq kiGCsA"
+        className="sc-fzXfLO eQXWGA"
       >
         <div
           aria-label="Edit"
-          className="sc-bdVaJa cduGuR"
+          className="sc-AykKC jlRTDW"
           onClick={[Function]}
         >
           <svg
@@ -52,7 +52,7 @@ exports[`renders 1`] = `
 
 exports[`renders with documents not loaded yet 1`] = `
 <div
-  className="sc-gZMcBi ilLSlI"
+  className="sc-fzXfLQ eYgxGs"
 >
   <div
     className="css-0"
@@ -72,10 +72,10 @@ exports[`renders with documents not loaded yet 1`] = `
 
 exports[`renders with no documents 1`] = `
 <div
-  className="sc-iwsKbI JzTPu"
+  className="sc-fzXfLP gKiHhu"
 >
   <div
-    className="sc-gqjmRU cbhwjO"
+    className="sc-fzXfLR dULbuK"
   />
 </div>
 `;
