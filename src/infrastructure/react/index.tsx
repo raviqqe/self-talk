@@ -8,13 +8,17 @@ import { IDocument } from "../../domain/document";
 import { SignInManager } from "../../application/sign-in-manager";
 import { SignOutManager } from "../../application/sign-out-manager";
 import { TextFileInserter } from "../../application/text-file-inserter";
-import { AuthenticationStore } from "../mobx/authentication-store";
-import { DocumentsStore } from "../mobx/documents-store";
+import { IRenderer } from "../renderer";
 import { GlobalStyle } from "./style";
-import { App } from "./App";
+import { App, IProps as IAppProps } from "./App";
 
-export class ReactRenderer {
+interface IProps extends Pick<IAppProps, "documents" | "signedIn"> {}
+
+export class ReactRenderer implements IRenderer {
+  private props: IProps = { documents: null, signedIn: null };
+
   constructor(
+    private readonly element: HTMLElement,
     private readonly applicationInitializer: ApplicationInitializer,
     private readonly documentCreator: DocumentCreator,
     private readonly documentLister: DocumentLister,
@@ -22,18 +26,29 @@ export class ReactRenderer {
     private readonly signInManager: SignInManager,
     private readonly signOutManager: SignOutManager,
     private readonly textFileInserter: TextFileInserter,
-    private readonly authenticationStore: AuthenticationStore,
-    private readonly documentsStore: DocumentsStore,
     private readonly repositoryURL: string
   ) {}
 
-  public render(element: HTMLElement): void {
+  public render(): void {
+    this.renderProps({});
+  }
+
+  public renderDocuments(documents: IDocument[] | null): void {
+    this.renderProps({ documents });
+  }
+
+  public renderSignedIn(signedIn: boolean): void {
+    this.renderProps({ signedIn });
+  }
+
+  private renderProps(props: Partial<IProps>): void {
+    this.props = { ...this.props, ...props };
+
     render(
       <>
         <App
-          authenticationStore={this.authenticationStore}
+          {...this.props}
           createDocument={(text: string) => this.documentCreator.create(text)}
-          documentsStore={this.documentsStore}
           initialize={() => this.applicationInitializer.initialize()}
           insertFiles={(
             text: string,
@@ -53,7 +68,7 @@ export class ReactRenderer {
         />
         <GlobalStyle />
       </>,
-      element
+      this.element
     );
   }
 }

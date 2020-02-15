@@ -12,10 +12,8 @@ import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebas
 import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
 import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
-import { AuthenticationStore } from "./infrastructure/mobx/authentication-store";
-import { MobxAuthenticationPresenter } from "./infrastructure/mobx/mobx-authentication-presenter";
-import { DocumentsStore } from "./infrastructure/mobx/documents-store";
-import { MobxDocumentPresenter } from "./infrastructure/mobx/mobx-document-presenter";
+import { AuthenticationPresenter } from "./infrastructure/authentication-presenter";
+import { DocumentPresenter } from "./infrastructure/document-presenter";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
 import { TextFileInserter } from "./application/text-file-inserter";
@@ -35,18 +33,15 @@ async function main() {
     throw new Error("no root element");
   }
 
-  const authenticationStore = new AuthenticationStore();
-  const authenticationPresenter = new MobxAuthenticationPresenter(
-    authenticationStore
-  );
+  const authenticationPresenter = new AuthenticationPresenter();
   const authenticationController = new FirebaseAuthenticationController();
   const documentRepository = new FirestoreDocumentRepository();
   const messagePresenter = new AlertMessagePresenter();
   const confirmationController = new BuiltinConfirmationController();
-  const documentsStore = new DocumentsStore();
-  const documentPresenter = new MobxDocumentPresenter(documentsStore);
+  const documentPresenter = new DocumentPresenter();
 
-  new ReactRenderer(
+  const renderer = new ReactRenderer(
+    element,
     new ApplicationInitializer(
       authenticationController,
       authenticationPresenter,
@@ -71,10 +66,13 @@ async function main() {
     new SignInManager(authenticationController),
     new SignOutManager(authenticationController, authenticationPresenter),
     new TextFileInserter(new FirebaseStorageFileRepository()),
-    authenticationStore,
-    documentsStore,
     configuration.repositoryURL
-  ).render(element);
+  );
+
+  authenticationPresenter.setRenderer(renderer);
+  documentPresenter.setRenderer(renderer);
+
+  renderer.render();
 
   // Disable default behavior on drop events.
   window.ondragover = (event: DragEvent) => event.preventDefault();
