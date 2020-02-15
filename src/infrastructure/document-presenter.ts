@@ -6,7 +6,7 @@ export class DocumentPresenter implements IDocumentPresenter {
   private renderer: IRenderer | null = null;
   private documents: IDocument[] | null = null;
 
-  public setRenderer(renderer: IRenderer) {
+  public setRenderer(renderer: IRenderer): void {
     this.renderer = renderer;
   }
 
