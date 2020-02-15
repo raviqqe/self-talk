@@ -13,34 +13,40 @@ export class DocumentPresenter implements IDocumentPresenter {
   public presentDocuments(documents: IDocument[]): void {
     this.documents = documents;
 
-    this.renderer?.renderDocuments(documents);
+    this.render();
   }
 
   public presentMoreDocuments(documents: IDocument[]): void {
-    this.renderer?.renderDocuments(
-      this.documents && [...this.documents, ...documents]
-    );
+    this.documents = this.documents && [...this.documents, ...documents];
+
+    this.render();
   }
 
   public presentNewDocument(document: IDocument): void {
-    this.renderer?.renderDocuments(
-      this.documents && [document, ...this.documents]
-    );
+    this.documents = this.documents && [document, ...this.documents];
+
+    this.render();
   }
 
   public presentUpdatedDocument(updatedDocument: IDocument): void {
-    this.renderer?.renderDocuments(
+    this.documents =
       this.documents &&
-        this.documents.map(document =>
-          document.id === updatedDocument.id ? updatedDocument : document
-        )
-    );
+      this.documents.map(document =>
+        document.id === updatedDocument.id ? updatedDocument : document
+      );
+
+    this.render();
   }
 
   public presentDeletedDocument(documentID: string): void {
-    this.renderer?.renderDocuments(
+    this.documents =
       this.documents &&
-        this.documents.filter(document => document.id !== documentID)
-    );
+      this.documents.filter(document => document.id !== documentID);
+
+    this.render();
+  }
+
+  private render(): void {
+    this.renderer?.renderDocuments(this.documents);
   }
 }
