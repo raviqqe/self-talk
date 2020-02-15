@@ -2,7 +2,6 @@ import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import React from "react";
 import styled from "styled-components";
-import { observer } from "mobx-react";
 import { IProps as ILandingProps, Landing } from "./Landing";
 import { Home, IProps as IHomeProps } from "./Home";
 import { white } from "./style/colors";
@@ -20,26 +19,24 @@ export interface IProps extends IHomeProps, ILandingProps {
   signedIn: boolean | null;
 }
 
-export const App = observer(
-  ({
-    documents,
-    initialize,
-    repositoryURL,
-    signedIn,
-    signIn,
-    signOut,
-    ...props
-  }: IProps) => {
-    useAsync(initialize, []);
+export const App = ({
+  documents,
+  initialize,
+  repositoryURL,
+  signedIn,
+  signIn,
+  signOut,
+  ...props
+}: IProps) => {
+  useAsync(initialize, []);
 
-    return signedIn === null ? (
-      <LoaderContainer>
-        <PulseLoader color={white} />
-      </LoaderContainer>
-    ) : signedIn ? (
-      <Home {...props} documents={documents} signOut={signOut} />
-    ) : (
-      <Landing repositoryURL={repositoryURL} signIn={signIn} />
-    );
-  }
-);
+  return signedIn === null ? (
+    <LoaderContainer>
+      <PulseLoader color={white} />
+    </LoaderContainer>
+  ) : signedIn ? (
+    <Home {...props} documents={documents} signOut={signOut} />
+  ) : (
+    <Landing repositoryURL={repositoryURL} signIn={signIn} />
+  );
+};
