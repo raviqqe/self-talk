@@ -12,6 +12,10 @@ import { IRenderer } from "../renderer";
 import { GlobalStyle } from "./style";
 import { App, IProps as IAppProps } from "./App";
 
+interface IPresenter {
+  setRenderer(renderer: IRenderer): void;
+}
+
 interface IProps extends Pick<IAppProps, "documents" | "signedIn"> {}
 
 export class ReactRenderer implements IRenderer {
@@ -19,6 +23,7 @@ export class ReactRenderer implements IRenderer {
 
   constructor(
     private readonly element: HTMLElement,
+    presenters: IPresenter[],
     private readonly applicationInitializer: ApplicationInitializer,
     private readonly documentCreator: DocumentCreator,
     private readonly documentLister: DocumentLister,
@@ -27,7 +32,11 @@ export class ReactRenderer implements IRenderer {
     private readonly signOutManager: SignOutManager,
     private readonly textFileInserter: TextFileInserter,
     private readonly repositoryURL: string
-  ) {}
+  ) {
+    for (const presenter of presenters) {
+      presenter.setRenderer(this);
+    }
+  }
 
   public render(): void {
     this.renderProps({});

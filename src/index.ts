@@ -40,8 +40,9 @@ async function main() {
   const confirmationController = new BuiltinConfirmationController();
   const documentPresenter = new DocumentPresenter();
 
-  const renderer = new ReactRenderer(
+  new ReactRenderer(
     element,
+    [authenticationPresenter, documentPresenter],
     new ApplicationInitializer(
       authenticationController,
       authenticationPresenter,
@@ -67,12 +68,7 @@ async function main() {
     new SignOutManager(authenticationController, authenticationPresenter),
     new TextFileInserter(new FirebaseStorageFileRepository()),
     configuration.repositoryURL
-  );
-
-  authenticationPresenter.setRenderer(renderer);
-  documentPresenter.setRenderer(renderer);
-
-  renderer.render();
+  ).render();
 
   // Disable default behavior on drop events.
   window.ondragover = (event: DragEvent) => event.preventDefault();
