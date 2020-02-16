@@ -14,9 +14,9 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
       });
   }
 
-  public async delete(documentID: string): Promise<void> {
+  public async delete(documentId: string): Promise<void> {
     await this.collection()
-      .doc(documentID)
+      .doc(documentId)
       .delete();
   }
 

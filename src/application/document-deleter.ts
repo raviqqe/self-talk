@@ -9,14 +9,14 @@ export class DocumentDeleter {
     private readonly confirmationController: IConfirmationController
   ) {}
 
-  public async delete(documentID: string): Promise<void> {
+  public async delete(documentId: string): Promise<void> {
     if (
       await this.confirmationController.confirm(
         "Do you want to delete the document?"
       )
     ) {
-      this.documentPresenter.presentDeletedDocument(documentID);
-      await this.documentRepository.delete(documentID);
+      this.documentPresenter.presentDeletedDocument(documentId);
+      await this.documentRepository.delete(documentId);
     }
   }
 }

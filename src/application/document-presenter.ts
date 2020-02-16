@@ -5,5 +5,5 @@ export interface IDocumentPresenter {
   presentMoreDocuments(documents: IDocument[]): void;
   presentNewDocument(document: IDocument): void;
   presentUpdatedDocument(document: IDocument): void;
-  presentDeletedDocument(documentID: string): void;
+  presentDeletedDocument(documentId: string): void;
 }
