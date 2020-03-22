@@ -4,7 +4,7 @@ import React, {
   KeyboardEvent,
   useEffect,
   useRef,
-  useState
+  useState,
 } from "react";
 import styled from "styled-components";
 import { boxShadow } from "./style";

@@ -4,14 +4,14 @@ describe("formatDocument", () => {
   it("removes extra spaces", () => {
     expect(formatDocument({ id: "", text: " foo\n" })).toEqual({
       id: "",
-      text: "foo"
+      text: "foo",
     });
   });
 
   it("formats a document as Markdown", () => {
     expect(formatDocument({ id: "", text: "# foo \n\nbar" })).toEqual({
       id: "",
-      text: "# foo\n\nbar"
+      text: "# foo\n\nbar",
     });
   });
 
@@ -20,11 +20,11 @@ describe("formatDocument", () => {
       ["$", "$"],
       ["\\$", "$"],
       ["\\\\$", "$"],
-      ["\\$\\$", "$$"]
+      ["\\$\\$", "$$"],
     ]) {
       expect(formatDocument({ id: "", text: source })).toEqual({
         id: "",
-        text: target
+        text: target,
       });
     }
   });

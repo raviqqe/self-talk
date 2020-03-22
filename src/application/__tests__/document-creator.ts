@@ -13,10 +13,10 @@ beforeEach(() => {
     create: jest.fn(),
     delete: jest.fn(),
     list: jest.fn(),
-    update: jest.fn()
+    update: jest.fn(),
   };
   documentPresenter = ({
-    presentNewDocument: jest.fn()
+    presentNewDocument: jest.fn(),
   } as unknown) as jest.Mocked<IDocumentPresenter>;
   messagePresenter = { present: jest.fn() };
   documentCreator = new DocumentCreator(
@@ -29,10 +29,10 @@ beforeEach(() => {
 it("creates and persists a document", async () => {
   await documentCreator.create("foo");
   expect(documentRepository.create.mock.calls).toEqual([
-    [{ id: expect.any(String), text: "foo" }]
+    [{ id: expect.any(String), text: "foo" }],
   ]);
   expect(documentPresenter.presentNewDocument.mock.calls).toEqual([
-    [{ id: expect.any(String), text: "foo" }]
+    [{ id: expect.any(String), text: "foo" }],
   ]);
 });
 
@@ -44,6 +44,6 @@ it("formats a document before creation", async () => {
 it("validates a document before creation", async () => {
   await documentCreator.create("");
   expect(messagePresenter.present.mock.calls).toEqual([
-    ["Document cannot be empty!"]
+    ["Document cannot be empty!"],
   ]);
 });

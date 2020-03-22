@@ -10,23 +10,19 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
       .doc(document.id)
       .set({
         ...document,
-        createdAt: Math.floor(Date.now() / 1000) // Unix timestamp
+        createdAt: Math.floor(Date.now() / 1000), // Unix timestamp
       });
   }
 
   public async delete(documentId: string): Promise<void> {
-    await this.collection()
-      .doc(documentId)
-      .delete();
+    await this.collection().doc(documentId).delete();
   }
 
   public async *list(limit: number): AsyncIterator<IDocument[], void> {
-    let result = await this.query()
-      .limit(limit)
-      .get();
+    let result = await this.query().limit(limit).get();
 
     while (result.docs.length > 0) {
-      yield result.docs.map(snapshot => snapshot.data() as IDocument);
+      yield result.docs.map((snapshot) => snapshot.data() as IDocument);
 
       result = await this.query()
         .startAfter(last(result.docs))
@@ -36,9 +32,7 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
   }
 
   public async update(document: IDocument): Promise<void> {
-    await this.collection()
-      .doc(document.id)
-      .update(document);
+    await this.collection().doc(document.id).update(document);
   }
 
   private query(): firebase.firestore.Query {

@@ -13,7 +13,7 @@ export function formatDocument(document: IDocument): IDocument {
       .format(document.text, { parser: "markdown", plugins: [markdownParser] })
       .trim()
       // https://github.com/prettier/prettier/issues/6213
-      .replace(/\\*\$/g, "$")
+      .replace(/\\*\$/g, "$"),
   };
 }
 

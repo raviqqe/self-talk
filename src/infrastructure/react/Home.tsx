@@ -55,7 +55,7 @@ export const Home = ({
   listDocuments,
   listMoreDocuments,
   signOut,
-  updateDocument
+  updateDocument,
 }: IProps) => (
   <Container>
     <Documents

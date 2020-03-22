@@ -17,16 +17,16 @@ beforeEach(() => {
     create: jest.fn(),
     delete: jest.fn(),
     list: jest.fn(),
-    update: jest.fn()
+    update: jest.fn(),
   };
   documentPresenter = ({
     presentDeletedDocument: jest.fn(),
-    presentUpdatedDocument: jest.fn()
+    presentUpdatedDocument: jest.fn(),
   } as unknown) as jest.Mocked<IDocumentPresenter>;
   messagePresenter = { present: jest.fn() };
   documentUpdater = new DocumentUpdater(
     new DocumentDeleter(documentRepository, documentPresenter, {
-      confirm: jest.fn(async () => true)
+      confirm: jest.fn(async () => true),
     }),
     documentRepository,
     documentPresenter,
@@ -39,10 +39,10 @@ afterEach(() => jest.restoreAllMocks());
 it("updates and persists a document", async () => {
   await documentUpdater.update(dummyDocument);
   expect(documentRepository.update.mock.calls).toEqual([
-    [{ ...dummyDocument, text: "foo" }]
+    [{ ...dummyDocument, text: "foo" }],
   ]);
   expect(documentPresenter.presentUpdatedDocument.mock.calls).toEqual([
-    [{ ...dummyDocument, text: "foo" }]
+    [{ ...dummyDocument, text: "foo" }],
   ]);
 });
 
