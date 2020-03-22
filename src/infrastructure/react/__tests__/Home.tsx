@@ -2,7 +2,7 @@ import {
   cleanup,
   fireEvent,
   render,
-  waitForDomChange
+  waitForDomChange,
 } from "@testing-library/react";
 import { create } from "react-test-renderer";
 import React from "react";
@@ -44,7 +44,7 @@ it("creates a document", async () => {
   await waitForDomChange({ container });
 
   fireEvent.change(container.querySelector("textarea") as HTMLTextAreaElement, {
-    target: { value: "foo" }
+    target: { value: "foo" },
   });
 
   fireEvent.click(getByLabelText("Create"));
@@ -72,7 +72,7 @@ it("updates a document", async () => {
   fireEvent.click(getByLabelText("Edit"));
 
   fireEvent.change(container.querySelector("textarea") as HTMLTextAreaElement, {
-    target: { value: "foo" }
+    target: { value: "foo" },
   });
 
   fireEvent.click(getByLabelText("Save"));

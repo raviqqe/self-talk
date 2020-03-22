@@ -9,7 +9,7 @@ export class FirebaseStorageFileRepository implements IFileRepository {
 
     await child.put(file);
     await child.updateMetadata({
-      cacheControl: `max-age=${60 * 60 * 24 * 365}`
+      cacheControl: `max-age=${60 * 60 * 24 * 365}`,
     });
 
     return child.getDownloadURL();

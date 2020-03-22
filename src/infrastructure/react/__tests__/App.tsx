@@ -13,7 +13,7 @@ const props: IProps = {
   signIn: async () => {},
   signOut: async () => {},
   signedIn: null,
-  updateDocument: async () => {}
+  updateDocument: async () => {},
 };
 
 it("renders before a user signs in", () => {

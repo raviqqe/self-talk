@@ -13,10 +13,10 @@ beforeEach(() => {
     create: jest.fn(),
     delete: jest.fn(),
     list: jest.fn(),
-    update: jest.fn()
+    update: jest.fn(),
   };
   documentPresenter = ({
-    presentDeletedDocument: jest.fn()
+    presentDeletedDocument: jest.fn(),
   } as unknown) as jest.Mocked<IDocumentPresenter>;
   confirmationController = { confirm: jest.fn() };
   documentDeleter = new DocumentDeleter(
@@ -31,7 +31,7 @@ it("deletes a document after confirmation", async () => {
   await documentDeleter.delete("foo");
   expect(documentRepository.delete.mock.calls).toEqual([["foo"]]);
   expect(documentPresenter.presentDeletedDocument.mock.calls).toEqual([
-    ["foo"]
+    ["foo"],
   ]);
 });
 

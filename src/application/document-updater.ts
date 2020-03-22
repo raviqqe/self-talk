@@ -1,7 +1,7 @@
 import {
   IDocument,
   formatDocument,
-  validateDocument
+  validateDocument,
 } from "../domain/document";
 import { formatErrorMessage } from "../domain/error";
 import { DocumentDeleter } from "./document-deleter";

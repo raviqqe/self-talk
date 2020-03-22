@@ -34,9 +34,9 @@ it("pastes an image as a link", async () => {
     {
       clipboardData: {
         items: [
-          { getAsFile: () => new File([], "foo.png", { type: "image/png" }) }
-        ]
-      }
+          { getAsFile: () => new File([], "foo.png", { type: "image/png" }) },
+        ],
+      },
     } as any
   );
 
@@ -105,8 +105,8 @@ it("drops an image as a link", async () => {
     container.firstElementChild as Element,
     {
       dataTransfer: {
-        files: [new File([], "foo.png", { type: "image/png" })]
-      }
+        files: [new File([], "foo.png", { type: "image/png" })],
+      },
     } as any
   );
 

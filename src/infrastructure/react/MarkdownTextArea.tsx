@@ -3,7 +3,7 @@ import React, {
   ClipboardEvent,
   useState,
   DragEvent,
-  SyntheticEvent
+  SyntheticEvent,
 } from "react";
 import { PulseLoader } from "react-spinners";
 import styled from "styled-components";
@@ -79,7 +79,7 @@ export const MarkdownTextArea = ({
 
         await uploadFiles(
           event,
-          Array.from(event.clipboardData.items).map(item => item.getAsFile())
+          Array.from(event.clipboardData.items).map((item) => item.getAsFile())
         );
       }}
       onSubmit={onSubmit}

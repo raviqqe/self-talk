@@ -43,7 +43,7 @@ export const Documents = ({
   insertFiles,
   listDocuments,
   listMoreDocuments,
-  updateDocument
+  updateDocument,
 }: IProps) => {
   useAsync(listDocuments, []);
 

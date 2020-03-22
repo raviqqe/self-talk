@@ -14,7 +14,7 @@ it("triggers a submit callback on Enter+Shift", () => {
 
   fireEvent.keyDown(container.firstElementChild as Element, {
     keyCode: 13,
-    shiftKey: true
+    shiftKey: true,
   });
 
   expect(onSubmit.mock.calls).toHaveLength(1);

@@ -5,7 +5,7 @@ import { IconButton } from "./IconButton";
 import { Markdown } from "./Markdown";
 import {
   UpdateDocument,
-  IProps as IUpdateDocumentProps
+  IProps as IUpdateDocumentProps,
 } from "./UpdateDocument";
 import { boxShadow } from "./style";
 import { white } from "./style/colors";
@@ -40,7 +40,7 @@ export const Document = ({
     <UpdateDocument
       document={document}
       insertFiles={insertFiles}
-      updateDocument={async document => {
+      updateDocument={async (document) => {
         setEditing(false);
         await updateDocument(document);
       }}

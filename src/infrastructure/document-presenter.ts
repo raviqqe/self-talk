@@ -24,7 +24,7 @@ export class DocumentPresenter implements IDocumentPresenter {
 
   public presentUpdatedDocument(updatedDocument: IDocument): void {
     this.renderDocuments(
-      this.documents?.map(document =>
+      this.documents?.map((document) =>
         document.id === updatedDocument.id ? updatedDocument : document
       )
     );
@@ -32,7 +32,7 @@ export class DocumentPresenter implements IDocumentPresenter {
 
   public presentDeletedDocument(documentId: string): void {
     this.renderDocuments(
-      this.documents?.filter(document => document.id !== documentId)
+      this.documents?.filter((document) => document.id !== documentId)
     );
   }
 

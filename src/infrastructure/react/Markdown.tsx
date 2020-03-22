@@ -20,7 +20,7 @@ const Container = styled.div`
   }
 
   ${[1, 2, 3, 4, 5, 6].map(
-    level => css`
+    (level) => css`
       h${level} {
         font-size: 1em;
 
@@ -83,7 +83,7 @@ const Container = styled.div`
 
 const Image = (props: { src: string }) => (
   <img
-    onClick={event => {
+    onClick={(event) => {
       const parent = event.currentTarget.parentElement;
 
       if (parent && parent.tagName === "A") {

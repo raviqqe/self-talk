@@ -13,15 +13,15 @@ beforeEach(() => {
   documentRepository = {
     create: jest.fn(),
     delete: jest.fn(),
-    list: jest.fn(async function*(_: number) {
+    list: jest.fn(async function* (_: number) {
       yield [dummyDocument];
       yield [dummyDocument];
     }),
-    update: jest.fn()
+    update: jest.fn(),
   };
   documentPresenter = ({
     presentDocuments: jest.fn(),
-    presentMoreDocuments: jest.fn()
+    presentMoreDocuments: jest.fn(),
   } as unknown) as jest.Mocked<IDocumentPresenter>;
   documentLister = new DocumentLister(documentRepository, documentPresenter);
 });
@@ -29,12 +29,12 @@ beforeEach(() => {
 it("lists documents", async () => {
   await documentLister.list();
   expect(documentPresenter.presentDocuments.mock.calls).toEqual([
-    [[{ id: "", text: "" }]]
+    [[{ id: "", text: "" }]],
   ]);
 });
 
 it("lists no documents", async () => {
-  documentRepository.list = jest.fn(async function*(_: number) {});
+  documentRepository.list = jest.fn(async function* (_: number) {});
   await documentLister.list();
   expect(documentPresenter.presentDocuments.mock.calls).toEqual([[[]]]);
 });
@@ -43,12 +43,12 @@ it("lists more documents", async () => {
   await documentLister.list();
   await documentLister.listMore();
   expect(documentPresenter.presentMoreDocuments.mock.calls).toEqual([
-    [[{ id: "", text: "" }]]
+    [[{ id: "", text: "" }]],
   ]);
 });
 
 it("lists no more documents", async () => {
-  documentRepository.list = jest.fn(async function*(_: number) {});
+  documentRepository.list = jest.fn(async function* (_: number) {});
   await documentLister.list();
   await documentLister.listMore();
   expect(documentPresenter.presentMoreDocuments).toBeCalledTimes(0);
