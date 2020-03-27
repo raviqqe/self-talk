@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^5.15.4",
-    "firebase": "^7.13.0",
+    "firebase": "^7.13.1",
     "lodash": "^4.17.15",
     "prettier": "^2.0.2",
     "pure-uuid": "^1.6.0",
