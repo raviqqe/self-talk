@@ -19,10 +19,13 @@ beforeEach(() => {
     }),
     update: jest.fn(),
   };
-  documentPresenter = ({
-    presentDocuments: jest.fn(),
-    presentMoreDocuments: jest.fn(),
-  } as unknown) as jest.Mocked<IDocumentPresenter>;
+  documentPresenter =
+    ({
+      presentDocuments: jest.fn(),
+      presentMoreDocuments: jest.fn(),
+    } as
+      unknown) as
+    jest.Mocked<IDocumentPresenter>;
   documentLister = new DocumentLister(documentRepository, documentPresenter);
 });
 
