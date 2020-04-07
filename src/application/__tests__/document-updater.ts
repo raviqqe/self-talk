@@ -19,13 +19,10 @@ beforeEach(() => {
     list: jest.fn(),
     update: jest.fn(),
   };
-  documentPresenter =
-    ({
-      presentDeletedDocument: jest.fn(),
-      presentUpdatedDocument: jest.fn(),
-    } as
-      unknown) as
-    jest.Mocked<IDocumentPresenter>;
+  documentPresenter = ({
+    presentDeletedDocument: jest.fn(),
+    presentUpdatedDocument: jest.fn(),
+  } as unknown) as jest.Mocked<IDocumentPresenter>;
   messagePresenter = { present: jest.fn() };
   documentUpdater = new DocumentUpdater(
     new DocumentDeleter(documentRepository, documentPresenter, {

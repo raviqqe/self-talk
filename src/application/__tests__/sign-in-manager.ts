@@ -8,9 +8,7 @@ beforeEach(() => {
   signInMock = jest.fn();
   signInManager = new SignInManager(({
     signIn: signInMock,
-  } as
-    unknown) as
-    IAuthenticationController);
+  } as unknown) as IAuthenticationController);
 });
 
 it("signs in", async () => {
