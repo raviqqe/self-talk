@@ -1,23 +1,23 @@
-import { AlertMessagePresenter } from "./infrastructure/alert-message-presenter";
 import { ApplicationInitializer } from "./application/application-initializer";
-import { BuiltinConfirmationController } from "./infrastructure/builtin-confirmation-controller";
 import { DocumentCreator } from "./application/document-creator";
 import { DocumentDeleter } from "./application/document-deleter";
 import { DocumentLister } from "./application/document-lister";
 import { DocumentUpdater } from "./application/document-updater";
-import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
-import { FirestoreDocumentRepository } from "./infrastructure/firebase/firestore-document-repository";
-import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
-import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebase-storage-file-repository";
-import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
-import { ReactRenderer } from "./infrastructure/react";
-import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
-import { AuthenticationPresenter } from "./infrastructure/authentication-presenter";
-import { DocumentPresenter } from "./infrastructure/document-presenter";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
 import { TextFileInserter } from "./application/text-file-inserter";
 import configuration from "./configuration.json";
+import { AlertMessagePresenter } from "./infrastructure/alert-message-presenter";
+import { AuthenticationPresenter } from "./infrastructure/authentication-presenter";
+import { BuiltinConfirmationController } from "./infrastructure/builtin-confirmation-controller";
+import { DocumentPresenter } from "./infrastructure/document-presenter";
+import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller";
+import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
+import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebase-storage-file-repository";
+import { FirestoreDocumentRepository } from "./infrastructure/firebase/firestore-document-repository";
+import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
+import { ReactRenderer } from "./infrastructure/react";
+import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.
 const firebaseInitializer = new FirebaseInitializer(

@@ -1,6 +1,6 @@
 import { render, fireEvent } from "@testing-library/react";
-import { create } from "react-test-renderer";
 import React from "react";
+import { create } from "react-test-renderer";
 import { Markdown } from "../Markdown";
 
 afterEach(() => jest.restoreAllMocks());

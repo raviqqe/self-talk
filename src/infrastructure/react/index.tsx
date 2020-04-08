@@ -1,16 +1,16 @@
-import { render } from "react-dom";
 import React from "react";
+import { render } from "react-dom";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { DocumentCreator } from "../../application/document-creator";
 import { DocumentLister } from "../../application/document-lister";
 import { DocumentUpdater } from "../../application/document-updater";
-import { IDocument } from "../../domain/document";
 import { SignInManager } from "../../application/sign-in-manager";
 import { SignOutManager } from "../../application/sign-out-manager";
 import { TextFileInserter } from "../../application/text-file-inserter";
+import { IDocument } from "../../domain/document";
 import { IRenderer } from "../renderer";
-import { GlobalStyle } from "./style";
 import { App, IProps as IAppProps } from "./App";
+import { GlobalStyle } from "./style";
 
 interface IPresenter {
   setRenderer(renderer: IRenderer): void;

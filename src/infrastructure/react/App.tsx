@@ -1,9 +1,9 @@
+import React from "react";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
-import React from "react";
 import styled from "styled-components";
-import { IProps as ILandingProps, Landing } from "./Landing";
 import { Home, IProps as IHomeProps } from "./Home";
+import { IProps as ILandingProps, Landing } from "./Landing";
 import { white } from "./style/colors";
 
 const LoaderContainer = styled.div`

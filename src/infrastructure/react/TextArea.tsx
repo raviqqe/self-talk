@@ -1,4 +1,3 @@
-import AutosizeTextArea from "react-autosize-textarea";
 import React, {
   InputHTMLAttributes,
   KeyboardEvent,
@@ -6,6 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import AutosizeTextArea from "react-autosize-textarea";
 import styled from "styled-components";
 import { boxShadow } from "./style";
 import { grey } from "./style/colors";

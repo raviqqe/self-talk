@@ -1,7 +1,7 @@
-import { DocumentLister } from "../document-lister";
-import { IDocumentRepository } from "../document-repository";
-import { IDocumentPresenter } from "../document-presenter";
 import { IDocument } from "../../domain/document";
+import { DocumentLister } from "../document-lister";
+import { IDocumentPresenter } from "../document-presenter";
+import { IDocumentRepository } from "../document-repository";
 
 const dummyDocument: IDocument = { id: "", text: "" };
 

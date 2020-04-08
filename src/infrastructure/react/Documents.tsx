@@ -1,12 +1,12 @@
-import { PulseLoader } from "react-spinners";
-import InfiniteScroller from "react-infinite-scroller";
-import { useAsync } from "react-use";
 import React from "react";
+import InfiniteScroller from "react-infinite-scroller";
+import { PulseLoader } from "react-spinners";
+import { useAsync } from "react-use";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";
-import { InsertFilesFunction } from "./utilities";
 import { Document } from "./Document";
 import { white } from "./style/colors";
+import { InsertFilesFunction } from "./utilities";
 
 const Container = styled.div`
   display: flex;

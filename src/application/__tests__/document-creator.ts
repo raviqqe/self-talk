@@ -1,6 +1,6 @@
 import { DocumentCreator } from "../document-creator";
-import { IDocumentRepository } from "../document-repository";
 import { IDocumentPresenter } from "../document-presenter";
+import { IDocumentRepository } from "../document-repository";
 import { IMessagePresenter } from "../message-presenter";
 
 let documentRepository: jest.Mocked<IDocumentRepository>;
