@@ -1,7 +1,7 @@
-import { DocumentDeleter } from "../document-deleter";
-import { IDocumentRepository } from "../document-repository";
-import { IDocumentPresenter } from "../document-presenter";
 import { IConfirmationController } from "../confirmation-controller";
+import { DocumentDeleter } from "../document-deleter";
+import { IDocumentPresenter } from "../document-presenter";
+import { IDocumentRepository } from "../document-repository";
 
 let documentRepository: jest.Mocked<IDocumentRepository>;
 let documentPresenter: jest.Mocked<IDocumentPresenter>;

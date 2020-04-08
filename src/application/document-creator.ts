@@ -1,8 +1,8 @@
 import UUID from "pure-uuid";
 import { formatDocument, validateDocument } from "../domain/document";
 import { formatErrorMessage } from "../domain/error";
-import { IDocumentRepository } from "./document-repository";
 import { IDocumentPresenter } from "./document-presenter";
+import { IDocumentRepository } from "./document-repository";
 import { IMessagePresenter } from "./message-presenter";
 
 export class DocumentCreator {

@@ -7,9 +7,9 @@ import React, {
 } from "react";
 import { PulseLoader } from "react-spinners";
 import styled from "styled-components";
-import { InsertFilesFunction } from "./utilities";
 import { TextArea } from "./TextArea";
 import { white } from "./style/colors";
+import { InsertFilesFunction } from "./utilities";
 
 const LoaderContainer = styled.div`
   display: flex;

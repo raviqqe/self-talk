@@ -5,8 +5,8 @@ import {
 } from "../domain/document";
 import { formatErrorMessage } from "../domain/error";
 import { DocumentDeleter } from "./document-deleter";
-import { IDocumentRepository } from "./document-repository";
 import { IDocumentPresenter } from "./document-presenter";
+import { IDocumentRepository } from "./document-repository";
 import { IMessagePresenter } from "./message-presenter";
 
 export class DocumentUpdater {
