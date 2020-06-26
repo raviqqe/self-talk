@@ -11,7 +11,7 @@
     "test": "react-scripts test --coverage --watchAll=false"
   },
   "dependencies": {
-    "@sentry/browser": "^5.18.0",
+    "@sentry/browser": "^5.18.1",
     "firebase": "^7.15.5",
     "lodash": "^4.17.15",
     "prettier": "^2.0.5",
