@@ -13,7 +13,8 @@ export class TextFileInserter {
       (
         await Promise.all(
           files.map(async (file: File) => {
-            let url = await this.fileRepository.create(file);
+            const url = await this.fileRepository.create(file);
+
             return file.type.startsWith("image/")
               ? `![](${url})`
               : `[${file.name}](${url})`;
