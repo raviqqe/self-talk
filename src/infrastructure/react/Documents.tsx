@@ -1,5 +1,5 @@
 import React from "react";
-import InfiniteScroller from "react-infinite-scroller";
+import InfiniteScroll from "react-infinite-scroll-component";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import styled from "styled-components";
@@ -7,6 +7,8 @@ import { IDocument } from "../../domain/document";
 import { Document } from "./Document";
 import { white } from "./style/colors";
 import { InsertFilesFunction } from "./utilities";
+
+const scrollableTargetId: string = "documents-scrollable-target";
 
 const Container = styled.div`
   display: flex;
@@ -20,7 +22,7 @@ const LoaderContainer = styled.div`
   align-items: center;
 `;
 
-const StyledInfiniteScroller = styled(InfiniteScroller)`
+const StyledInfiniteScroll = styled(InfiniteScroll)`
   display: flex;
   flex-direction: column-reverse;
   padding: 1em 0.5em;
@@ -44,17 +46,18 @@ export const Documents = ({
   listDocuments,
   listMoreDocuments,
   updateDocument,
-}: IProps) => {
+}: IProps): JSX.Element => {
   useAsync(listDocuments, []);
 
   return documents ? (
-    <Container>
-      <StyledInfiniteScroller
+    <Container id={scrollableTargetId}>
+      <StyledInfiniteScroll
+        dataLength={documents.length}
         hasMore={true}
-        isReverse={true}
-        loadMore={listMoreDocuments}
-        threshold={512}
-        useWindow={false}
+        inverse={true}
+        loader={null}
+        next={listMoreDocuments}
+        scrollableTarget={scrollableTargetId}
       >
         {documents.map((document: IDocument) => (
           <StyledDocument
@@ -64,7 +67,7 @@ export const Documents = ({
             updateDocument={updateDocument}
           />
         ))}
-      </StyledInfiniteScroller>
+      </StyledInfiniteScroll>
     </Container>
   ) : (
     <LoaderContainer>

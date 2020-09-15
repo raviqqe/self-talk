@@ -8,8 +8,8 @@ it("renders", () => {
     render(
       <MarkdownTextArea
         insertFiles={async () => ""}
-        onSubmit={async () => undefined}
-        setText={() => undefined}
+        onSubmit={async () => {}}
+        setText={() => {}}
         text="foo"
       />
     ).container
@@ -22,7 +22,7 @@ it("pastes an image as a link", async () => {
   const { container } = render(
     <MarkdownTextArea
       insertFiles={async () => "result"}
-      onSubmit={async () => undefined}
+      onSubmit={async () => {}}
       setText={setText}
       text="foo"
     />
@@ -37,7 +37,7 @@ it("pastes an image as a link", async () => {
           { getAsFile: () => new File([], "foo.png", { type: "image/png" }) },
         ],
       },
-    } as any
+    } as never
   );
 
   await waitForDomChange({ container });
@@ -51,7 +51,7 @@ it("does not paste anything if there is no clipboard data", async () => {
   const { container } = render(
     <MarkdownTextArea
       insertFiles={async () => "result"}
-      onSubmit={async () => undefined}
+      onSubmit={async () => {}}
       setText={setText}
       text="foo"
     />
@@ -71,7 +71,7 @@ it("does not paste anything if there is no images in clipboard data", async () =
   const { container } = render(
     <MarkdownTextArea
       insertFiles={async () => "result"}
-      onSubmit={async () => undefined}
+      onSubmit={async () => {}}
       setText={setText}
       text="foo"
     />
@@ -94,7 +94,7 @@ it("drops an image as a link", async () => {
   const { container } = render(
     <MarkdownTextArea
       insertFiles={async () => "result"}
-      onSubmit={async () => undefined}
+      onSubmit={async () => {}}
       setText={setText}
       text="foo"
     />

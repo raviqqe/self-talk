@@ -6,10 +6,23 @@ exports[`renders 1`] = `
 >
   <div
     className="sc-iqAbSa lonwfP"
+    id="documents-scrollable-target"
   >
     <div
-      className="sc-dIsAE WODKM"
-    />
+      className="infinite-scroll-component__outerdiv"
+      style={Object {}}
+    >
+      <div
+        className="infinite-scroll-component sc-dIsAE WODKM"
+        style={
+          Object {
+            "WebkitOverflowScrolling": "touch",
+            "height": "auto",
+            "overflow": "auto",
+          }
+        }
+      />
+    </div>
   </div>
   <div
     className="sc-hBMVcZ fPaNwM"

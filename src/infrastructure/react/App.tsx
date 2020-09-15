@@ -27,7 +27,7 @@ export const App = ({
   signIn,
   signOut,
   ...props
-}: IProps) => {
+}: IProps): JSX.Element => {
   useAsync(initialize, []);
 
   return signedIn === null ? (

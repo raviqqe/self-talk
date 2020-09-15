@@ -3,9 +3,7 @@ import React from "react";
 import { TextArea } from "../TextArea";
 
 it("renders", () => {
-  expect(
-    render(<TextArea onSubmit={() => undefined} />).container
-  ).toMatchSnapshot();
+  expect(render(<TextArea onSubmit={() => {}} />).container).toMatchSnapshot();
 });
 
 it("triggers a submit callback on Enter+Shift", () => {
