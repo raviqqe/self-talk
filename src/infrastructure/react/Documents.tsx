@@ -53,7 +53,7 @@ export const Documents = ({
         dataLength={documents.length}
         hasMore={true}
         inverse={true}
-        loader={null}
+        loader={<PulseLoader color={white} />}
         next={listMoreDocuments}
         scrollThreshold={512}
       >
