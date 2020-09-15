@@ -3,7 +3,7 @@
 exports[`renders 1`] = `
 <div
   className="sc-jrsJCI bZbTDB"
-  id="documents-scrollable-target"
+  id="documents-container"
 >
   <div
     className="infinite-scroll-component__outerdiv"
@@ -86,7 +86,7 @@ exports[`renders with documents not loaded yet 1`] = `
 exports[`renders with no documents 1`] = `
 <div
   className="sc-jrsJCI bZbTDB"
-  id="documents-scrollable-target"
+  id="documents-container"
 >
   <div
     className="infinite-scroll-component__outerdiv"
