@@ -2,7 +2,7 @@ import { IDocument } from "../domain/document";
 import { IDocumentPresenter } from "./document-presenter";
 import { IDocumentRepository } from "./document-repository";
 
-const defaultLimit: number = 20;
+const defaultLimit = 20;
 
 export class DocumentLister {
   private iterator: AsyncIterator<IDocument[]> | null = null;

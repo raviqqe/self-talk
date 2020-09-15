@@ -1,8 +1,8 @@
-export const black: string = "#222";
-export const darkGrey: string = "dimgrey";
-export const darkYellow: string = "darkkhaki";
-export const grey: string = "grey";
-export const lightGrey: string = "darkgrey";
-export const red: string = "salmon";
-export const white: string = "white";
-export const yellow: string = "khaki";
+export const black = "#222";
+export const darkGrey = "dimgrey";
+export const darkYellow = "darkkhaki";
+export const grey = "grey";
+export const lightGrey = "darkgrey";
+export const red = "salmon";
+export const white = "white";
+export const yellow = "khaki";

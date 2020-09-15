@@ -8,7 +8,7 @@ import { Document } from "./Document";
 import { white } from "./style/colors";
 import { InsertFilesFunction } from "./utilities";
 
-const scrollableTargetId: string = "documents-scrollable-target";
+const scrollableTargetId = "documents-scrollable-target";
 
 const Container = styled.div`
   display: flex;
