@@ -8,7 +8,7 @@ import { Document } from "./Document";
 import { white } from "./style/colors";
 import { InsertFilesFunction } from "./utilities";
 
-const scrollableTargetId = "documents-scrollable-target";
+const documentsContainerId = "documents-container";
 
 const Container = styled.div`
   display: flex;
@@ -50,14 +50,14 @@ export const Documents = ({
   useAsync(listDocuments, []);
 
   return documents ? (
-    <Container id={scrollableTargetId}>
+    <Container id={documentsContainerId}>
       <StyledInfiniteScroll
         dataLength={documents.length}
         hasMore={true}
         inverse={true}
         loader={null}
         next={listMoreDocuments}
-        scrollableTarget={scrollableTargetId}
+        scrollableTarget={documentsContainerId}
       >
         {documents.map((document: IDocument) => (
           <StyledDocument
