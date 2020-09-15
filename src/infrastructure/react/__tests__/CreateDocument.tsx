@@ -6,7 +6,7 @@ it("renders", () => {
   expect(
     create(
       <CreateDocument
-        createDocument={async () => undefined}
+        createDocument={async () => {}}
         insertFiles={async () => "url"}
       />
     ).toJSON()

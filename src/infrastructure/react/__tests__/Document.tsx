@@ -8,7 +8,7 @@ it("renders", () => {
       <Document
         document={{ id: "id", text: "text" }}
         insertFiles={async () => "url"}
-        updateDocument={async () => undefined}
+        updateDocument={async () => {}}
       />
     ).toJSON()
   ).toMatchSnapshot();
