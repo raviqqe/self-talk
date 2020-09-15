@@ -21,21 +21,7 @@ exports[`renders 1`] = `
             "overflow": "auto",
           }
         }
-      >
-        <div
-          className="css-0"
-        >
-          <div
-            className="css-b0t2tw"
-          />
-          <div
-            className="css-fz02ge"
-          />
-          <div
-            className="css-1xlchjq"
-          />
-        </div>
-      </div>
+      />
     </div>
   </div>
   <div
