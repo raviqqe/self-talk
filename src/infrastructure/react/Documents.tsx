@@ -8,6 +8,8 @@ import { Document } from "./Document";
 import { white } from "./style/colors";
 import { InsertFilesFunction } from "./utilities";
 
+const scrollableTargetId: string = "scrollable-target";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column-reverse;
@@ -48,14 +50,14 @@ export const Documents = ({
   useAsync(listDocuments, []);
 
   return documents ? (
-    <Container>
+    <Container id={scrollableTargetId}>
       <StyledInfiniteScroll
         dataLength={documents.length}
         hasMore={true}
         inverse={true}
         loader={<PulseLoader color={white} />}
         next={listMoreDocuments}
-        scrollThreshold={512}
+        scrollableTarget={scrollableTargetId}
       >
         {documents.map((document: IDocument) => (
           <StyledDocument
