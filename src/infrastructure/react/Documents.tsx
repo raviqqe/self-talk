@@ -55,7 +55,7 @@ export const Documents = ({
         dataLength={documents.length}
         hasMore={true}
         inverse={true}
-        loader={<PulseLoader color={white} />}
+        loader={null}
         next={listMoreDocuments}
         scrollableTarget={scrollableTargetId}
       >
