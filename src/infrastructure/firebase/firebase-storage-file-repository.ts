@@ -12,7 +12,7 @@ export class FirebaseStorageFileRepository implements IFileRepository {
       cacheControl: `max-age=${60 * 60 * 24 * 365}`,
     });
 
-    return child.getDownloadURL();
+    return (await child.getDownloadURL()) as string;
   }
 
   private files(): firebase.storage.Reference {
