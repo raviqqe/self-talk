@@ -2,24 +2,24 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-fzokOt Qcwer"
+  className="sc-ksluoS letSmy"
 >
   <div
-    className="sc-fzplWN gLelMI"
+    className="sc-iqAbSa lonwfP"
   >
     <div
-      className="sc-fznKkj HfYSd"
+      className="sc-dIsAE WODKM"
     />
   </div>
   <div
-    className="sc-fzqBZW hmZiwB"
+    className="sc-hBMVcZ fPaNwM"
   >
     <div
-      className="sc-AxhUy jkncAu"
+      className="sc-eCApGN kozWKy"
     >
       <textarea
         async={true}
-        className="sc-AxiKw emBwCb sc-AxgMl cNIsWQ"
+        className="sc-dlnjPT PsXGY sc-jSFkmK flafde"
         onChange={[Function]}
         onDrop={[Function]}
         onKeyDown={[Function]}
@@ -30,7 +30,7 @@ exports[`renders 1`] = `
       />
       <button
         aria-label="Create"
-        className="sc-AxjAm sc-AxirZ ekcjUO"
+        className="sc-bdnylx sc-gtssRu fbGLvz eBFUyR"
         onClick={[Function]}
       >
         <svg
@@ -54,14 +54,14 @@ exports[`renders 1`] = `
       </button>
     </div>
     <div
-      className="sc-fzqNJr fCAtrr"
+      className="sc-fnVYJo gzkLDN"
     />
   </div>
   <div
-    className="sc-fzoyAV eGeOGW"
+    className="sc-fFSRdu HaGhE"
   >
     <button
-      className="sc-AxjAm sc-AxirZ huBbKx"
+      className="sc-bdnylx sc-gtssRu iwZKpE eBFUyR"
       onClick={[Function]}
     >
       <svg

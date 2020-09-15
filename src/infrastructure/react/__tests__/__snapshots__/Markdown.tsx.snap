@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-AxjAm gzrQDD"
+  className="sc-bdnylx kGzveS"
 >
   <h1>
     Foo
@@ -12,7 +12,7 @@ exports[`renders 1`] = `
 
 exports[`renders images 1`] = `
 <div
-  className="sc-AxjAm gzrQDD"
+  className="sc-bdnylx kGzveS"
 >
   <p>
     <img
