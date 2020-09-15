@@ -1,6 +1,6 @@
 import { TextFileInserter } from "../text-file-inserter";
 
-const dummyFileURL: string = "https://foo.com/bar";
+const dummyFileURL = "https://foo.com/bar";
 
 let createMock: jest.Mock;
 let inserter: TextFileInserter;
