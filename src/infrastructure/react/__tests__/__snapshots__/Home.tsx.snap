@@ -8,8 +8,34 @@ exports[`renders 1`] = `
     className="sc-iqAbSa lonwfP"
   >
     <div
-      className="sc-dIsAE WODKM"
-    />
+      className="infinite-scroll-component__outerdiv"
+      style={Object {}}
+    >
+      <div
+        className="infinite-scroll-component sc-dIsAE WODKM"
+        style={
+          Object {
+            "WebkitOverflowScrolling": "touch",
+            "height": "auto",
+            "overflow": "auto",
+          }
+        }
+      >
+        <div
+          className="css-0"
+        >
+          <div
+            className="css-b0t2tw"
+          />
+          <div
+            className="css-fz02ge"
+          />
+          <div
+            className="css-1xlchjq"
+          />
+        </div>
+      </div>
+    </div>
   </div>
   <div
     className="sc-hBMVcZ fPaNwM"
