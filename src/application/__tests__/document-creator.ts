@@ -29,10 +29,10 @@ beforeEach(() => {
 it("creates and persists a document", async () => {
   await documentCreator.create("foo");
   expect(documentRepository.create.mock.calls).toEqual([
-    [{ id: expect.any(String), text: "foo" }],
+    [{ id: expect.any(String) as string, text: "foo" }],
   ]);
   expect(documentPresenter.presentNewDocument.mock.calls).toEqual([
-    [{ id: expect.any(String), text: "foo" }],
+    [{ id: expect.any(String) as string, text: "foo" }],
   ]);
 });
 
