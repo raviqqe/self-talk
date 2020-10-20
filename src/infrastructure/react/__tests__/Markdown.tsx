@@ -9,10 +9,20 @@ it("renders", () => {
   expect(create(<Markdown># Foo</Markdown>).toJSON()).toMatchSnapshot();
 });
 
-it("renders images", () => {
+it("renders an image", () => {
   expect(
     create(<Markdown>![foo](http://bar/baz.png)</Markdown>).toJSON()
   ).toMatchSnapshot();
+});
+
+it("renders a table", () => {
+  const markdown = `
+|foo |bar |
+|----|----|
+|123 |456 |
+  `;
+
+  expect(create(<Markdown>{markdown}</Markdown>).toJSON()).toMatchSnapshot();
 });
 
 it("opens an image when it is clicked", () => {
