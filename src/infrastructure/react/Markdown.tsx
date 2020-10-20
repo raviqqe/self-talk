@@ -81,7 +81,7 @@ const Container = styled.div`
   }
 `;
 
-const Image = (props: { src: string }) => (
+const Image = ({ node: _, ...props }: { node: unknown; src: string }) => (
   <img
     onClick={(event) => {
       const parent = event.currentTarget.parentElement;
@@ -100,7 +100,7 @@ interface IProps {
   children: string;
 }
 
-export const Markdown = ({ children }: IProps) => (
+export const Markdown = ({ children }: IProps): JSX.Element => (
   <Container>
     <ReactMarkdown renderers={{ image: Image }} source={children} />
   </Container>
