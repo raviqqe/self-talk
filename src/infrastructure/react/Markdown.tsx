@@ -1,5 +1,6 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import styled, { css } from "styled-components";
 import { darkGrey, grey, red, white } from "./style/colors";
 
@@ -102,6 +103,10 @@ interface IProps {
 
 export const Markdown = ({ children }: IProps): JSX.Element => (
   <Container>
-    <ReactMarkdown renderers={{ image: Image }} source={children} />
+    <ReactMarkdown
+      plugins={[remarkGfm]}
+      renderers={{ image: Image }}
+      source={children}
+    />
   </Container>
 );

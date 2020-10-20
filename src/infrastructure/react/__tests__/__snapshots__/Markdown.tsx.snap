@@ -10,7 +10,36 @@ exports[`renders 1`] = `
 </div>
 `;
 
-exports[`renders images 1`] = `
+exports[`renders a table 1`] = `
+<div
+  className="sc-bdnylx kGzveS"
+>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          foo
+        </th>
+        <th>
+          bar
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          123
+        </td>
+        <td>
+          456
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`renders an image 1`] = `
 <div
   className="sc-bdnylx kGzveS"
 >
