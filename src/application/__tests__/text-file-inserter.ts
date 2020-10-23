@@ -22,7 +22,7 @@ it("inserts multiple images into a document", async () => {
       { type: "image/png" } as File,
       { type: "image/png" } as File,
     ])
-  ).toBe(`foo![](${dummyFileURL}) ![](${dummyFileURL})bar`);
+  ).toBe(`foo![](${dummyFileURL})\n\n![](${dummyFileURL})bar`);
 });
 
 it("inserts a text file into a document", async () => {
