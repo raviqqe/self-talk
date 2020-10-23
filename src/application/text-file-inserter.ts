@@ -20,7 +20,7 @@ export class TextFileInserter {
               : `[${file.name}](${url})`;
           })
         )
-      ).join(" ") +
+      ).join("\n\n") +
       text.slice(position)
     );
   }
