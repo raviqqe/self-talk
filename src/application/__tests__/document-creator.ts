@@ -38,7 +38,7 @@ it("creates and persists a document", async () => {
 
 it("formats a document before creation", async () => {
   await documentCreator.create("\tfoo ");
-  expect(documentRepository.create.mock.calls[0][0].text).toBe("foo");
+  expect(documentRepository.create.mock.calls[0]?.[0].text).toBe("foo");
 });
 
 it("validates a document before creation", async () => {

@@ -21,7 +21,7 @@ describe("formatDocument", () => {
       ["\\$", "$"],
       ["\\\\$", "$"],
       ["\\$\\$", "$$"],
-    ]) {
+    ] as [string, string][]) {
       expect(formatDocument({ id: "", text: source })).toEqual({
         id: "",
         text: target,
