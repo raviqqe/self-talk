@@ -35,7 +35,7 @@
     "@types/prettier": "^2.1.5",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@types/react-test-renderer": "^16.9.3",
+    "@types/react-test-renderer": "^17.0.0",
     "@types/styled-components": "^5.1.4",
     "cspell": "^4.2.2",
     "firebase-tools": "^8.16.2",
