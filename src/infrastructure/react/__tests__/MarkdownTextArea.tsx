@@ -1,6 +1,5 @@
-import { render, waitForDomChange } from "@testing-library/react";
+import { fireEvent, render, waitFor } from "@testing-library/react";
 import React from "react";
-import { Simulate } from "react-dom/test-utils";
 import { MarkdownTextArea } from "../MarkdownTextArea";
 
 it("renders", () => {
@@ -28,8 +27,7 @@ it("pastes an image as a link", async () => {
     />
   );
 
-  // TODO: Use fireEvent.paste when it is fixed.
-  Simulate.paste(
+  fireEvent.paste(
     container.firstElementChild as Element,
     {
       clipboardData: {
@@ -40,9 +38,7 @@ it("pastes an image as a link", async () => {
     } as never
   );
 
-  await waitForDomChange({ container });
-
-  expect(setText.mock.calls).toEqual([["result"]]);
+  await waitFor(() => expect(setText.mock.calls).toEqual([["result"]]));
 });
 
 it("does not paste anything if there is no clipboard data", async () => {
@@ -57,12 +53,9 @@ it("does not paste anything if there is no clipboard data", async () => {
     />
   );
 
-  // TODO: Use fireEvent.paste when it is fixed.
-  Simulate.paste(container.firstElementChild as Element, {} as any);
+  fireEvent.paste(container.firstElementChild as Element, {} as any);
 
-  await waitForDomChange({ container });
-
-  expect(setText.mock.calls).toHaveLength(0);
+  await waitFor(() => expect(setText.mock.calls).toHaveLength(0));
 });
 
 it("does not paste anything if there is no images in clipboard data", async () => {
@@ -77,15 +70,12 @@ it("does not paste anything if there is no images in clipboard data", async () =
     />
   );
 
-  // TODO: Use fireEvent.paste when it is fixed.
-  Simulate.paste(
+  fireEvent.paste(
     container.firstElementChild as Element,
     { clipboardData: { items: [] } } as any
   );
 
-  await waitForDomChange({ container });
-
-  expect(setText.mock.calls).toHaveLength(0);
+  await waitFor(() => expect(setText.mock.calls).toHaveLength(0));
 });
 
 it("drops an image as a link", async () => {
@@ -100,8 +90,7 @@ it("drops an image as a link", async () => {
     />
   );
 
-  // TODO: Use fireEvent.drop when it is fixed.
-  Simulate.drop(
+  fireEvent.drop(
     container.firstElementChild as Element,
     {
       dataTransfer: {
@@ -110,7 +99,5 @@ it("drops an image as a link", async () => {
     } as any
   );
 
-  await waitForDomChange({ container });
-
-  expect(setText.mock.calls).toEqual([["result"]]);
+  await waitFor(() => expect(setText.mock.calls).toEqual([["result"]]));
 });

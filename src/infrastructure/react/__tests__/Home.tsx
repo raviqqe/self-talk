@@ -1,9 +1,4 @@
-import {
-  cleanup,
-  fireEvent,
-  render,
-  waitForDomChange,
-} from "@testing-library/react";
+import { cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 import React from "react";
 import { create } from "react-test-renderer";
 import { Home } from "../Home";
@@ -41,7 +36,7 @@ it("creates a document", async () => {
     />
   );
 
-  await waitForDomChange({ container });
+  await waitFor(() => expect(container.querySelector("textarea")).toBeTruthy());
 
   fireEvent.change(container.querySelector("textarea") as HTMLTextAreaElement, {
     target: { value: "foo" },
@@ -67,7 +62,7 @@ it("updates a document", async () => {
     />
   );
 
-  await waitForDomChange({ container });
+  await waitFor(() => expect(getByLabelText("Edit")).toBeTruthy());
 
   fireEvent.click(getByLabelText("Edit"));
 
