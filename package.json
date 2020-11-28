@@ -25,10 +25,12 @@
     "react-spinners": "^0.9.0",
     "react-use": "^15.3.4",
     "remark-gfm": "^1.0.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "workbox-precaching": "^5.1.4"
   },
   "devDependencies": {
-    "@raviqqe/react-scripts": "^1.2.14",
+    "@raviqqe/eslint-config": "^1.0.6",
+    "@raviqqe/react-tsconfig": "^1.0.3",
     "@testing-library/react": "^11.2.2",
     "@types/jest": "^26.0.15",
     "@types/lodash": "^4.14.165",
@@ -39,6 +41,7 @@
     "@types/styled-components": "^5.1.4",
     "cspell": "^4.2.2",
     "firebase-tools": "^8.16.2",
+    "react-scripts": "^4.0.1",
     "react-test-renderer": "^17.0.1"
   }
 }
