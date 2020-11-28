@@ -33,7 +33,7 @@ export const Document = ({
   insertFiles,
   updateDocument,
   ...restProps
-}: IProps) => {
+}: IProps): JSX.Element => {
   const [editing, setEditing] = useState(false);
 
   return editing ? (

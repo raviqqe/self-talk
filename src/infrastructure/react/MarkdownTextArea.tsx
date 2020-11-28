@@ -32,7 +32,7 @@ export const MarkdownTextArea = ({
   setText,
   text,
   ...restProps
-}: IProps) => {
+}: IProps): JSX.Element => {
   const [uploadingFiles, setUploadingFiles] = useState(false);
 
   const uploadFiles = async (

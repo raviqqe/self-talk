@@ -56,7 +56,7 @@ export const Home = ({
   listMoreDocuments,
   signOut,
   updateDocument,
-}: IProps) => (
+}: IProps): JSX.Element => (
   <Container>
     <Documents
       documents={documents}

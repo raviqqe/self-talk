@@ -48,7 +48,7 @@ export interface IProps {
   signIn: () => void;
 }
 
-export const Landing = ({ repositoryURL, signIn }: IProps) => (
+export const Landing = ({ repositoryURL, signIn }: IProps): JSX.Element => (
   <Container>
     <Title>
       <White>Self</White>

@@ -27,7 +27,7 @@ export const UpdateDocument = ({
   insertFiles,
   updateDocument,
   ...restProps
-}: IProps) => {
+}: IProps): JSX.Element => {
   const [text, setText] = useState(document.text);
   const onSubmit = () => updateDocument({ ...document, text });
 
