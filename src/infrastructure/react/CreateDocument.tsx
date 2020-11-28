@@ -21,7 +21,10 @@ interface IProps {
   insertFiles: InsertFilesFunction;
 }
 
-export const CreateDocument = ({ createDocument, insertFiles }: IProps) => {
+export const CreateDocument = ({
+  createDocument,
+  insertFiles,
+}: IProps): JSX.Element => {
   const [text, setText] = useState("");
   const onSubmit = async (): Promise<void> => {
     setText("");
