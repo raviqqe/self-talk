@@ -1,4 +1,3 @@
-import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";

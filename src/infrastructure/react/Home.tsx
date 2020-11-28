@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { CreateDocument } from "./CreateDocument";
 import { Documents, IProps as IDocumentsProps } from "./Documents";
