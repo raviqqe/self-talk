@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdSave } from "react-icons/md";
 import styled from "styled-components";
 import { IDocument } from "../../domain/document";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdEdit } from "react-icons/md";
 import styled from "styled-components";
 import { IconButton } from "./IconButton";

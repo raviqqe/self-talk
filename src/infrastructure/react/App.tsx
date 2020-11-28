@@ -1,4 +1,3 @@
-import React from "react";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import styled from "styled-components";
