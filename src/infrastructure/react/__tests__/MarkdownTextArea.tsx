@@ -52,7 +52,7 @@ it("does not paste anything if there is no clipboard data", async () => {
     />
   );
 
-  fireEvent.paste(container.firstElementChild as Element, {} as any);
+  fireEvent.paste(container.firstElementChild as Element, {});
 
   await waitFor(() => expect(setText.mock.calls).toHaveLength(0));
 });
@@ -69,10 +69,9 @@ it("does not paste anything if there is no images in clipboard data", async () =
     />
   );
 
-  fireEvent.paste(
-    container.firstElementChild as Element,
-    { clipboardData: { items: [] } } as any
-  );
+  fireEvent.paste(container.firstElementChild as Element, {
+    clipboardData: { items: [] },
+  });
 
   await waitFor(() => expect(setText.mock.calls).toHaveLength(0));
 });
@@ -89,14 +88,11 @@ it("drops an image as a link", async () => {
     />
   );
 
-  fireEvent.drop(
-    container.firstElementChild as Element,
-    {
-      dataTransfer: {
-        files: [new File([], "foo.png", { type: "image/png" })],
-      },
-    } as any
-  );
+  fireEvent.drop(container.firstElementChild as Element, {
+    dataTransfer: {
+      files: [new File([], "foo.png", { type: "image/png" })],
+    },
+  });
 
   await waitFor(() => expect(setText.mock.calls).toEqual([["result"]]));
 });
