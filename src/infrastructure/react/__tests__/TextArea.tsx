@@ -5,13 +5,25 @@ it("renders", () => {
   expect(render(<TextArea onSubmit={() => {}} />).container).toMatchSnapshot();
 });
 
-it("triggers a submit callback on Enter+Shift", () => {
+it("triggers a submit callback on Shift + Enter", () => {
   const onSubmit = jest.fn();
   const { container } = render(<TextArea onSubmit={onSubmit} />);
 
   fireEvent.keyDown(container.firstElementChild as Element, {
-    keyCode: 13,
+    key: "Enter",
     shiftKey: true,
+  });
+
+  expect(onSubmit.mock.calls).toHaveLength(1);
+});
+
+it("triggers a submit callback on Ctrl + Enter", () => {
+  const onSubmit = jest.fn();
+  const { container } = render(<TextArea onSubmit={onSubmit} />);
+
+  fireEvent.keyDown(container.firstElementChild as Element, {
+    ctrlKey: true,
+    key: "Enter",
   });
 
   expect(onSubmit.mock.calls).toHaveLength(1);
