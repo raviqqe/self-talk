@@ -10,7 +10,7 @@ it("triggers a submit callback on Shift + Enter", () => {
   const { container } = render(<TextArea onSubmit={onSubmit} />);
 
   fireEvent.keyDown(container.firstElementChild as Element, {
-    keyCode: 13,
+    key: "Enter",
     shiftKey: true,
   });
 
@@ -23,7 +23,7 @@ it("triggers a submit callback on Ctrl + Enter", () => {
 
   fireEvent.keyDown(container.firstElementChild as Element, {
     ctrlKey: true,
-    keyCode: 13,
+    key: "Enter",
   });
 
   expect(onSubmit.mock.calls).toHaveLength(1);

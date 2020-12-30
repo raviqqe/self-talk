@@ -50,7 +50,7 @@ export const TextArea = ({
     <StyledTextArea
       async={true}
       onKeyDown={(event: KeyboardEvent<HTMLTextAreaElement>) => {
-        if (event.keyCode === 13 && event.shiftKey) {
+        if (event.key === "Enter" && (event.ctrlKey || event.shiftKey)) {
           onSubmit();
           event.preventDefault();
         }
