@@ -67,19 +67,19 @@ exports[`renders with documents not loaded yet 1`] = `
 <div
   className="sc-kEjbxe jcfUNz"
 >
-  <div
+  <span
     className="css-0"
   >
-    <div
+    <span
       className="css-b0t2tw"
     />
-    <div
+    <span
       className="css-fz02ge"
     />
-    <div
+    <span
       className="css-1xlchjq"
     />
-  </div>
+  </span>
 </div>
 `;
 
