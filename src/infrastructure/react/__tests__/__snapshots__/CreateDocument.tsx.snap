@@ -2,11 +2,11 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-eCssSg lgOYLH"
+  className="sc-eCImvq gEoWIi"
 >
   <textarea
     async={true}
-    className="sc-dlfnbm gbwuXW sc-jSgupP iCpwtS"
+    className="sc-dkPtyc hjUUUa sc-jRQAMF kuATNM"
     onChange={[Function]}
     onDrop={[Function]}
     onKeyDown={[Function]}
@@ -17,7 +17,7 @@ exports[`renders 1`] = `
   />
   <button
     aria-label="Create"
-    className="sc-bdfBwQ sc-gsTCUz egYkqn kRFccQ"
+    className="sc-bdvvaa sc-gsDJrp jIMkcL jREvqu"
     onClick={[Function]}
   >
     <svg

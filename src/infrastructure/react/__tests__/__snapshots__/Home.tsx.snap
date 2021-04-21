@@ -2,10 +2,10 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-kstrdz hBeTKu"
+  className="sc-ksdxAp gBPoth"
 >
   <div
-    className="sc-iqHYGH igNjuJ"
+    className="sc-iqsfdx lbZJyM"
     id="documents-container"
   >
     <div
@@ -13,7 +13,7 @@ exports[`renders 1`] = `
       style={Object {}}
     >
       <div
-        className="infinite-scroll-component sc-dQppl gNlZqu"
+        className="infinite-scroll-component sc-egiSv dFijKr"
         style={
           Object {
             "WebkitOverflowScrolling": "touch",
@@ -25,14 +25,14 @@ exports[`renders 1`] = `
     </div>
   </div>
   <div
-    className="sc-hBEYos jVXqjz"
+    className="sc-hBURRC hXzSaz"
   >
     <div
-      className="sc-eCssSg lgOYLH"
+      className="sc-eCImvq gEoWIi"
     >
       <textarea
         async={true}
-        className="sc-dlfnbm gbwuXW sc-jSgupP iCpwtS"
+        className="sc-dkPtyc hjUUUa sc-jRQAMF kuATNM"
         onChange={[Function]}
         onDrop={[Function]}
         onKeyDown={[Function]}
@@ -43,7 +43,7 @@ exports[`renders 1`] = `
       />
       <button
         aria-label="Create"
-        className="sc-bdfBwQ sc-gsTCUz egYkqn kRFccQ"
+        className="sc-bdvvaa sc-gsDJrp jIMkcL jREvqu"
         onClick={[Function]}
       >
         <svg
@@ -67,14 +67,14 @@ exports[`renders 1`] = `
       </button>
     </div>
     <div
-      className="sc-fodVxV jJgbtH"
+      className="sc-fotPbf dMGmYl"
     />
   </div>
   <div
-    className="sc-fFubgz dABCoz"
+    className="sc-fFehDp clCZwy"
   >
     <button
-      className="sc-bdfBwQ sc-gsTCUz iEhruk kRFccQ"
+      className="sc-bdvvaa sc-gsDJrp ilmKZo jREvqu"
       onClick={[Function]}
     >
       <svg
