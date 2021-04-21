@@ -81,16 +81,12 @@ const Container = styled.div`
   }
 `;
 
-const Image = ({ node: _, ...props }: { node: unknown; src: string }) => (
+const Image = (props: { node: unknown; src?: string }) => (
   <img
     onClick={(event) => {
-      const parent = event.currentTarget.parentElement;
-
-      if (parent && parent.tagName === "A") {
-        return;
+      if (event.currentTarget.parentElement?.tagName !== "A" && props.src) {
+        window.open(props.src, "_blank");
       }
-
-      window.open(props.src, "_blank");
     }}
     {...props}
   />
@@ -102,10 +98,8 @@ interface IProps {
 
 export const Markdown = ({ children }: IProps): JSX.Element => (
   <Container>
-    <ReactMarkdown
-      plugins={[remarkGfm]}
-      renderers={{ image: Image }}
-      source={children}
-    />
+    <ReactMarkdown components={{ img: Image }} plugins={[remarkGfm]}>
+      {children}
+    </ReactMarkdown>
   </Container>
 );
