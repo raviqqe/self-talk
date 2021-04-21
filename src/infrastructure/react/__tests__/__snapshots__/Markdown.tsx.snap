@@ -15,26 +15,52 @@ exports[`renders a table 1`] = `
   className="sc-bdfBwQ byPbtG"
 >
   <table>
+    
+
     <thead>
+      
+
       <tr>
+        
+
         <th>
           foo
         </th>
+        
+
         <th>
           bar
         </th>
+        
+
       </tr>
+      
+
     </thead>
+    
+
     <tbody>
+      
+
       <tr>
+        
+
         <td>
           123
         </td>
+        
+
         <td>
           456
         </td>
+        
+
       </tr>
+      
+
     </tbody>
+    
+
   </table>
 </div>
 `;
@@ -46,6 +72,29 @@ exports[`renders an image 1`] = `
   <p>
     <img
       alt="foo"
+      node={
+        Object {
+          "children": Array [],
+          "position": Object {
+            "end": Object {
+              "column": 27,
+              "line": 1,
+              "offset": 26,
+            },
+            "start": Object {
+              "column": 1,
+              "line": 1,
+              "offset": 0,
+            },
+          },
+          "properties": Object {
+            "alt": "foo",
+            "src": "http://bar/baz.png",
+          },
+          "tagName": "img",
+          "type": "element",
+        }
+      }
       onClick={[Function]}
       src="http://bar/baz.png"
     />
