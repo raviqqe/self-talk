@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-bdfBwQ byPbtG"
+  className="sc-bdvvaa gVLkGS"
 >
   <h1>
     Foo
@@ -12,62 +12,36 @@ exports[`renders 1`] = `
 
 exports[`renders a table 1`] = `
 <div
-  className="sc-bdfBwQ byPbtG"
+  className="sc-bdvvaa gVLkGS"
 >
   <table>
-    
-
     <thead>
-      
-
       <tr>
-        
-
         <th>
           foo
         </th>
-        
-
         <th>
           bar
         </th>
-        
-
       </tr>
-      
-
     </thead>
-    
-
     <tbody>
-      
-
       <tr>
-        
-
         <td>
           123
         </td>
-        
-
         <td>
           456
         </td>
-        
-
       </tr>
-      
-
     </tbody>
-    
-
   </table>
 </div>
 `;
 
 exports[`renders an image 1`] = `
 <div
-  className="sc-bdfBwQ byPbtG"
+  className="sc-bdvvaa gVLkGS"
 >
   <p>
     <img
