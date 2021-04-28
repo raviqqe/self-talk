@@ -2,21 +2,21 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-furvIG jLvwou"
+  className="sc-fubCfw gwrAhi"
 >
   <div
-    className="sc-gsDJrp fLMibE"
+    className="sc-gsTCUz fVOtau"
   >
     <p>
       text
     </p>
   </div>
   <div
-    className="sc-pVTma kCuzCa"
+    className="sc-pFZIQ iQUpQq"
   >
     <div
       aria-label="Edit"
-      className="sc-bdvvaa coNtbE"
+      className="sc-bdfBwQ glVERM"
       onClick={[Function]}
     >
       <svg
