@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-jrQzUz jJJjcJ"
+  className="sc-jrsJWt kCbNjd"
   id="documents-container"
 >
   <div
@@ -10,7 +10,7 @@ exports[`renders 1`] = `
     style={Object {}}
   >
     <div
-      className="infinite-scroll-component sc-iqsfdx eSkHlI"
+      className="infinite-scroll-component sc-iqAclL ipZwWN"
       style={
         Object {
           "WebkitOverflowScrolling": "touch",
@@ -20,21 +20,21 @@ exports[`renders 1`] = `
       }
     >
       <div
-        className="sc-furvIG jLvwou sc-crHlIS imeGTR"
+        className="sc-fujyAs jiccqL sc-crzoAE fgkuwk"
       >
         <div
-          className="sc-gsDJrp fLMibE"
+          className="sc-gtsrHT csBdns"
         >
           <p>
             text
           </p>
         </div>
         <div
-          className="sc-pVTma kCuzCa"
+          className="sc-pNWdM fLFNuC"
         >
           <div
             aria-label="Edit"
-            className="sc-bdvvaa coNtbE"
+            className="sc-bdnxRM isnqEX"
             onClick={[Function]}
           >
             <svg
@@ -65,7 +65,7 @@ exports[`renders 1`] = `
 
 exports[`renders with documents not loaded yet 1`] = `
 <div
-  className="sc-kDThTU kJEbSU"
+  className="sc-kEqXSa jgiJjN"
 >
   <span
     className="css-0"
@@ -85,7 +85,7 @@ exports[`renders with documents not loaded yet 1`] = `
 
 exports[`renders with no documents 1`] = `
 <div
-  className="sc-jrQzUz jJJjcJ"
+  className="sc-jrsJWt kCbNjd"
   id="documents-container"
 >
   <div
@@ -93,7 +93,7 @@ exports[`renders with no documents 1`] = `
     style={Object {}}
   >
     <div
-      className="infinite-scroll-component sc-iqsfdx eSkHlI"
+      className="infinite-scroll-component sc-iqAclL ipZwWN"
       style={
         Object {
           "WebkitOverflowScrolling": "touch",

@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-bdvvaa gVLkGS"
+  className="sc-bdnxRM ZLgvd"
 >
   <h1>
     Foo
@@ -12,7 +12,7 @@ exports[`renders 1`] = `
 
 exports[`renders a table 1`] = `
 <div
-  className="sc-bdvvaa gVLkGS"
+  className="sc-bdnxRM ZLgvd"
 >
   <table>
     <thead>
@@ -41,7 +41,7 @@ exports[`renders a table 1`] = `
 
 exports[`renders an image 1`] = `
 <div
-  className="sc-bdvvaa gVLkGS"
+  className="sc-bdnxRM ZLgvd"
 >
   <p>
     <img
