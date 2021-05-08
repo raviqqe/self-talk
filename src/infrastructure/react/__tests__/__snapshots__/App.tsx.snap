@@ -3,10 +3,10 @@
 exports[`renders after a user signs in 1`] = `
 <div>
   <div
-    class="sc-ksdxAp gBPoth"
+    class="sc-ksluID jFAevu"
   >
     <div
-      class="sc-crHlIS jqFzHp"
+      class="sc-crzoAE jnuzJY"
     >
       <span
         class="css-0"
@@ -23,20 +23,20 @@ exports[`renders after a user signs in 1`] = `
       </span>
     </div>
     <div
-      class="sc-hBURRC hXzSaz"
+      class="sc-hBMUJo dRIQAO"
     >
       <div
-        class="sc-eCImvq gEoWIi"
+        class="sc-eCApnc xebFr"
       >
         <textarea
           async=""
-          class="sc-dkPtyc hjUUUa sc-jRQAMF kuATNM"
+          class="sc-dlnjwi kkOTHv sc-jSFjdj idOYZC"
           placeholder="Write in Markdown ..."
           rows="1"
         />
         <button
           aria-label="Create"
-          class="sc-bdvvaa sc-gsDJrp jIMkcL jREvqu"
+          class="sc-bdnxRM sc-gtsrHT cqAbxk fovUfS"
         >
           <svg
             fill="currentColor"
@@ -54,14 +54,14 @@ exports[`renders after a user signs in 1`] = `
         </button>
       </div>
       <div
-        class="sc-fotPbf dMGmYl"
+        class="sc-fnVZcZ dFZmlj"
       />
     </div>
     <div
-      class="sc-fFehDp clCZwy"
+      class="sc-fFSPTT cpxQNS"
     >
       <button
-        class="sc-bdvvaa sc-gsDJrp ilmKZo jREvqu"
+        class="sc-bdnxRM sc-gtsrHT kJsOCr fovUfS"
       >
         <svg
           fill="currentColor"
@@ -85,29 +85,29 @@ exports[`renders after a user signs in 1`] = `
 exports[`renders after a user signs out 1`] = `
 <div>
   <div
-    class="sc-ieebsP bRqiUD"
+    class="sc-iemWCZ gGXleq"
   >
     <div
-      class="sc-dJjZJu hWoWPt"
+      class="sc-dIvrsQ fnyYmF"
     >
       <span
-        class="sc-hGPAah kVSiBx"
+        class="sc-hHEiqL jUAMrJ"
       >
         Self
       </span>
       <span
-        class="sc-dlVyqM iHOBHM"
+        class="sc-dlMDgC dhZIfY"
       >
         Talk
       </span>
     </div>
     <button
-      class="sc-bdvvaa sc-bkkfTU jIMkcL jjZCvZ"
+      class="sc-bdnxRM sc-bkbkJK cqAbxk ifjJzn"
     >
       Sign in
     </button>
     <a
-      class="sc-kfPtPH exGBku"
+      class="sc-kfYoZR dwNvXO"
       href=""
       target="_blank"
     >
@@ -133,7 +133,7 @@ exports[`renders after a user signs out 1`] = `
 exports[`renders before a user signs in 1`] = `
 <div>
   <div
-    class="sc-fKVsgm jjTMay"
+    class="sc-fKgJPI fAIBir"
   >
     <span
       class="css-0"
