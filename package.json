@@ -14,7 +14,7 @@
     "@sentry/browser": "^6.3.6",
     "firebase": "^8.6.1",
     "lodash": "^4.17.21",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.0",
     "pure-uuid": "^1.6.2",
     "react": "^17.0.2",
     "react-autosize-textarea": "^7.1.0",

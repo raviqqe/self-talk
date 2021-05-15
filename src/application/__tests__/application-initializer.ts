@@ -6,7 +6,7 @@ it("initializes an application state", async () => {
   const authenticationController = { isSignedIn: jest.fn(async () => true) };
   const authenticationPresenter = { presentSignedIn: jest.fn() };
   const applicationInitializer = new ApplicationInitializer(
-    (authenticationController as unknown) as IAuthenticationController,
+    authenticationController as unknown as IAuthenticationController,
     authenticationPresenter,
     infrastructureInitializer
   );
