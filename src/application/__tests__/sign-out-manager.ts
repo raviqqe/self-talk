@@ -7,7 +7,7 @@ it("signs out", async () => {
   };
   const authenticationPresenter = { presentSignedIn: jest.fn() };
   const signOutManager = new SignOutManager(
-    (authenticationController as unknown) as IAuthenticationController,
+    authenticationController as unknown as IAuthenticationController,
     authenticationPresenter
   );
 
