@@ -1,4 +1,4 @@
-import InfiniteScroll from "react-infinite-scroll-component";
+import InfiniteScroll, { Props } from "react-infinite-scroll-component";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import styled from "styled-components";
@@ -21,7 +21,9 @@ const LoaderContainer = styled.div`
   align-items: center;
 `;
 
-const StyledInfiniteScroll = styled(InfiniteScroll)`
+const StyledInfiniteScroll = styled((props: Props) => (
+  <InfiniteScroll {...props} />
+))`
   display: flex;
   flex-direction: column-reverse;
   padding: 1em 0.5em;
