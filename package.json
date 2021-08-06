@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@sentry/browser": "^6.10.0",
-    "firebase": "^8.8.1",
+    "firebase": "^8.9.0",
     "lodash": "^4.17.21",
     "prettier": "^2.3.2",
     "pure-uuid": "^1.6.2",
@@ -26,7 +26,7 @@
     "react-use": "^17.2.4",
     "remark-gfm": "^1.0.0",
     "styled-components": "^5.3.0",
-    "workbox-precaching": "^6.1.5"
+    "workbox-precaching": "^6.2.0"
   },
   "devDependencies": {
     "@raviqqe/eslint-config": "^1.0.9",
@@ -35,7 +35,7 @@
     "@types/jest": "^26.0.24",
     "@types/lodash": "^4.14.172",
     "@types/prettier": "^2.3.2",
-    "@types/react": "^17.0.15",
+    "@types/react": "^17.0.16",
     "@types/react-dom": "^17.0.9",
     "@types/react-test-renderer": "^17.0.1",
     "@types/styled-components": "^5.1.12",
