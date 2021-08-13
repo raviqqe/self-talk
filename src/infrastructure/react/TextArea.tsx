@@ -1,4 +1,5 @@
 import {
+  ForwardedRef,
   forwardRef,
   InputHTMLAttributes,
   KeyboardEvent,
@@ -6,14 +7,21 @@ import {
   useRef,
   useState,
 } from "react";
-import TextareaAutosize from "react-textarea-autosize";
+import TextareaAutosize, {
+  TextareaAutosizeProps,
+} from "react-textarea-autosize";
 import styled from "styled-components";
 import { boxShadow } from "./style";
 import { grey } from "./style/colors";
 
-const StyledTextArea = styled(
-  forwardRef((props, ref) => <TextareaAutosize ref={ref} {...props} />)
-)`
+const NoStyleTextareaAutosize = forwardRef(
+  (
+    props: Omit<TextareaAutosizeProps, "style">,
+    ref: ForwardedRef<HTMLTextAreaElement>
+  ) => <TextareaAutosize ref={ref} {...props} />
+);
+
+const StyledTextArea = styled(NoStyleTextareaAutosize)`
   ${boxShadow};
   box-sizing: border-box;
   border: none;
