@@ -2,60 +2,40 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-ksluID jFAevu"
+  class="sc-ksluID jFAevu"
 >
   <div
-    className="sc-iqAclL hNlBaV"
+    class="sc-iqAclL hNlBaV"
     id="documents-container"
   >
     <div
-      className="infinite-scroll-component__outerdiv"
-      style={Object {}}
+      class="infinite-scroll-component__outerdiv"
     >
       <div
-        className="infinite-scroll-component sc-dIsUp cYNKYE"
-        style={
-          Object {
-            "WebkitOverflowScrolling": "touch",
-            "height": "auto",
-            "overflow": "auto",
-          }
-        }
+        class="infinite-scroll-component sc-dIsUp cYNKYE"
+        style="height: auto; overflow: auto;"
       />
     </div>
   </div>
   <div
-    className="sc-hBMUJo dRIQAO"
+    class="sc-hBMUJo dRIQAO"
   >
     <div
-      className="sc-eCApnc xebFr"
+      class="sc-eCApnc xebFr"
     >
       <textarea
-        async={true}
-        className="sc-dlnjwi kkOTHv sc-jSFjdj idOYZC"
-        onChange={[Function]}
-        onDrop={[Function]}
-        onKeyDown={[Function]}
-        onPaste={[Function]}
+        class="sc-dlnjwi kkOTHv sc-jSFjdj idOYZC"
         placeholder="Write in Markdown ..."
-        rows={1}
-        value=""
       />
       <button
         aria-label="Create"
-        className="sc-bdnxRM sc-gtsrHT cqAbxk fovUfS"
-        onClick={[Function]}
+        class="sc-bdnxRM sc-gtsrHT cqAbxk fovUfS"
       >
         <svg
           fill="currentColor"
           height="1em"
           stroke="currentColor"
-          strokeWidth="0"
-          style={
-            Object {
-              "color": undefined,
-            }
-          }
+          stroke-width="0"
           viewBox="0 0 24 24"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
@@ -67,26 +47,20 @@ exports[`renders 1`] = `
       </button>
     </div>
     <div
-      className="sc-fnVZcZ dFZmlj"
+      class="sc-fnVZcZ dFZmlj"
     />
   </div>
   <div
-    className="sc-fFSPTT cpxQNS"
+    class="sc-fFSPTT cpxQNS"
   >
     <button
-      className="sc-bdnxRM sc-gtsrHT kJsOCr fovUfS"
-      onClick={[Function]}
+      class="sc-bdnxRM sc-gtsrHT kJsOCr fovUfS"
     >
       <svg
         fill="currentColor"
         height="1em"
         stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
+        stroke-width="0"
         viewBox="0 0 24 24"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"

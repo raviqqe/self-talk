@@ -29,10 +29,8 @@ exports[`renders after a user signs in 1`] = `
         class="sc-eCApnc xebFr"
       >
         <textarea
-          async=""
           class="sc-dlnjwi kkOTHv sc-jSFjdj idOYZC"
           placeholder="Write in Markdown ..."
-          rows="1"
         />
         <button
           aria-label="Create"

@@ -1,12 +1,11 @@
 import { cleanup, fireEvent, render, waitFor } from "@testing-library/react";
-import { create } from "react-test-renderer";
 import { Home } from "../Home";
 
 afterEach(cleanup);
 
 it("renders", () => {
   expect(
-    create(
+    render(
       <Home
         createDocument={async () => {}}
         documents={[]}
@@ -16,7 +15,7 @@ it("renders", () => {
         signOut={async () => {}}
         updateDocument={async () => {}}
       />
-    ).toJSON()
+    ).container.firstChild
   ).toMatchSnapshot();
 });
 

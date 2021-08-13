@@ -3,10 +3,8 @@
 exports[`renders 1`] = `
 <div>
   <textarea
-    async=""
     class="sc-bdnxRM bCTzTW"
     placeholder="Write in Markdown ..."
-    rows="1"
   >
     foo
   </textarea>

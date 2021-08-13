@@ -1,13 +1,13 @@
-import { create } from "react-test-renderer";
+import { render } from "@testing-library/react";
 import { CreateDocument } from "../CreateDocument";
 
 it("renders", () => {
   expect(
-    create(
+    render(
       <CreateDocument
         createDocument={async () => {}}
         insertFiles={async () => "url"}
       />
-    ).toJSON()
+    ).container.firstChild
   ).toMatchSnapshot();
 });
