@@ -20,6 +20,7 @@ const NoStyleTextareaAutosize = forwardRef(
     ref: ForwardedRef<HTMLTextAreaElement>
   ) => <TextareaAutosize ref={ref} {...props} />
 );
+NoStyleTextareaAutosize.displayName = "NoStyleTextareaAutosize";
 
 const StyledTextArea = styled(NoStyleTextareaAutosize)`
   ${boxShadow};
