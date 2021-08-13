@@ -17,7 +17,7 @@
     "prettier": "^2.3.0",
     "pure-uuid": "^1.6.2",
     "react": "^17.0.2",
-    "react-autosize-textarea": "^7.1.0",
+    "react-textarea-autosize": "^8.3.3",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-infinite-scroll-component": "^6.1.0",

@@ -2,34 +2,21 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-eCApnc huHUyo"
+  class="sc-eCApnc huHUyo"
 >
   <textarea
-    async={true}
-    className="sc-dlnjwi kkOTHv sc-jSFjdj kkFyiJ"
-    onChange={[Function]}
-    onDrop={[Function]}
-    onKeyDown={[Function]}
-    onPaste={[Function]}
+    class="sc-dlnjwi kkOTHv sc-jSFjdj kkFyiJ"
     placeholder="Write in Markdown ..."
-    rows={1}
-    value=""
   />
   <button
     aria-label="Save"
-    className="sc-bdnxRM sc-gtsrHT cqAbxk fovUfS"
-    onClick={[Function]}
+    class="sc-bdnxRM sc-gtsrHT cqAbxk fovUfS"
   >
     <svg
       fill="currentColor"
       height="1em"
       stroke="currentColor"
-      strokeWidth="0"
-      style={
-        Object {
-          "color": undefined,
-        }
-      }
+      stroke-width="0"
       viewBox="0 0 24 24"
       width="1em"
       xmlns="http://www.w3.org/2000/svg"
