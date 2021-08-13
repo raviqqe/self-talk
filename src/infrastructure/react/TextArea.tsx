@@ -5,12 +5,12 @@ import {
   useRef,
   useState,
 } from "react";
-import AutosizeTextArea from "react-autosize-textarea";
+import TextareaAutosize from "react-textarea-autosize";
 import styled from "styled-components";
 import { boxShadow } from "./style";
 import { grey } from "./style/colors";
 
-const StyledTextArea = styled(AutosizeTextArea)`
+const StyledTextarea = styled((props) => <TextareaAutosize {...props} />)`
   ${boxShadow};
   box-sizing: border-box;
   border: none;
@@ -47,8 +47,7 @@ export const TextArea = ({
   }, [focused, ref]);
 
   return (
-    <StyledTextArea
-      async={true}
+    <StyledTextarea
       onKeyDown={(event: KeyboardEvent<HTMLTextAreaElement>) => {
         if (event.key === "Enter" && (event.ctrlKey || event.shiftKey)) {
           onSubmit();
