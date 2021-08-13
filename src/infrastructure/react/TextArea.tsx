@@ -11,7 +11,7 @@ import styled from "styled-components";
 import { boxShadow } from "./style";
 import { grey } from "./style/colors";
 
-const StyledTextarea = styled(
+const StyledTextArea = styled(
   forwardRef((props, ref) => <TextareaAutosize ref={ref} {...props} />)
 )`
   ${boxShadow};
@@ -50,7 +50,7 @@ export const TextArea = ({
   }, [focused, ref]);
 
   return (
-    <StyledTextarea
+    <StyledTextArea
       onKeyDown={(event: KeyboardEvent<HTMLTextAreaElement>) => {
         if (event.key === "Enter" && (event.ctrlKey || event.shiftKey)) {
           onSubmit();
