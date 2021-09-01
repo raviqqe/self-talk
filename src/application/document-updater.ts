@@ -28,7 +28,7 @@ export class DocumentUpdater {
     try {
       validateDocument(document);
     } catch (error) {
-      this.messagePresenter.present(formatErrorMessage(error));
+      this.messagePresenter.present(formatErrorMessage(error as Error));
       return;
     }
 
