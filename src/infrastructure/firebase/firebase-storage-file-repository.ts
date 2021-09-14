@@ -1,5 +1,5 @@
-import "firebase/storage";
-import firebase from "firebase/app";
+import "firebase/compat/storage";
+import firebase from "firebase/compat/app";
 import UUID from "pure-uuid";
 import { IFileRepository } from "../../application/file-repository";
 
@@ -12,7 +12,7 @@ export class FirebaseStorageFileRepository implements IFileRepository {
       cacheControl: `max-age=${60 * 60 * 24 * 365}`,
     });
 
-    return (await child.getDownloadURL()) as string;
+    return child.getDownloadURL();
   }
 
   private files(): firebase.storage.Reference {
