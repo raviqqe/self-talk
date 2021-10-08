@@ -2,7 +2,6 @@
   "name": "self-talk",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "npm run build:icons && react-scripts build",
     "build:icons": "inkscape --export-width 512 --export-height 512 --export-png public/icon.png public/icon.svg",
