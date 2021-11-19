@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 <button
-  className="sc-bdfBQB glojYb"
+  className="sc-bdvvtL dsCIzG"
 >
   foo
 </button>
@@ -10,7 +10,7 @@ exports[`renders 1`] = `
 
 exports[`renders as a secondary button 1`] = `
 <button
-  className="sc-bdfBQB gSdseo"
+  className="sc-bdvvtL gPIhRN"
 >
   foo
 </button>
