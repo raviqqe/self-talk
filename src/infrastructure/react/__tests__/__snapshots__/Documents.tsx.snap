@@ -2,51 +2,38 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-jrAFXE fgURmg"
+  class="sc-jrAFXE fgURmg"
   id="documents-container"
 >
   <div
-    className="infinite-scroll-component__outerdiv"
-    style={Object {}}
+    class="infinite-scroll-component__outerdiv"
   >
     <div
-      className="infinite-scroll-component sc-iqHYmW fQLOTR"
-      style={
-        Object {
-          "WebkitOverflowScrolling": "touch",
-          "height": "auto",
-          "overflow": "auto",
-        }
-      }
+      class="infinite-scroll-component sc-iqHYmW fQLOTR"
+      style="height: auto; overflow: auto;"
     >
       <div
-        className="sc-fubCzh EvQpk sc-crrszt gPWrzz"
+        class="sc-fubCzh EvQpk sc-crrszt gPWrzz"
       >
         <div
-          className="sc-gsTEea XDMyi"
+          class="sc-gsTEea XDMyi"
         >
           <p>
             text
           </p>
         </div>
         <div
-          className="sc-pGacB kJRbyA"
+          class="sc-pGacB kJRbyA"
         >
           <div
             aria-label="Edit"
-            className="sc-bdfBQB hewmSM"
-            onClick={[Function]}
+            class="sc-bdfBQB hewmSM"
           >
             <svg
               fill="currentColor"
               height="1em"
               stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
+              stroke-width="0"
               viewBox="0 0 24 24"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
@@ -69,19 +56,19 @@ exports[`renders 1`] = `
 
 exports[`renders with documents not loaded yet 1`] = `
 <div
-  className="sc-kEjbQP dCWJOi"
+  class="sc-kEjbQP dCWJOi"
 >
   <span
-    className="css-1xdhyk6"
+    class="css-1xdhyk6"
   >
     <span
-      className="css-hqq8du"
+      class="css-hqq8du"
     />
     <span
-      className="css-1h0qtnz"
+      class="css-1h0qtnz"
     />
     <span
-      className="css-1ihj5oh"
+      class="css-1ihj5oh"
     />
   </span>
 </div>
@@ -89,22 +76,15 @@ exports[`renders with documents not loaded yet 1`] = `
 
 exports[`renders with no documents 1`] = `
 <div
-  className="sc-jrAFXE fgURmg"
+  class="sc-jrAFXE fgURmg"
   id="documents-container"
 >
   <div
-    className="infinite-scroll-component__outerdiv"
-    style={Object {}}
+    class="infinite-scroll-component__outerdiv"
   >
     <div
-      className="infinite-scroll-component sc-iqHYmW fQLOTR"
-      style={
-        Object {
-          "WebkitOverflowScrolling": "touch",
-          "height": "auto",
-          "overflow": "auto",
-        }
-      }
+      class="infinite-scroll-component sc-iqHYmW fQLOTR"
+      style="height: auto; overflow: auto;"
     />
   </div>
 </div>
