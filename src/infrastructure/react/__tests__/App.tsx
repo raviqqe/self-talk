@@ -1,12 +1,20 @@
-import { render } from "@testing-library/react";
+import { act, render, waitFor } from "@testing-library/react";
 import { App, IProps } from "../App";
+
+let initialize = jest.fn();
+let listDocuments = jest.fn();
+
+beforeEach(() => {
+  initialize.mockReset().mockResolvedValue(undefined);
+  listDocuments.mockReset().mockResolvedValue(undefined);
+});
 
 const props: IProps = {
   createDocument: async () => {},
   documents: null,
-  initialize: async () => {},
+  initialize,
   insertFiles: async () => "",
-  listDocuments: async () => {},
+  listDocuments,
   listMoreDocuments: async () => {},
   repositoryURL: "",
   signIn: async () => {},
@@ -15,20 +23,33 @@ const props: IProps = {
   updateDocument: async () => {},
 };
 
-it("renders before a user signs in", () => {
-  expect(
-    render(<App {...props} signedIn={null} />).container
-  ).toMatchSnapshot();
+it("renders before a user signs in", async () => {
+  await act(async () => {
+    expect(
+      render(<App {...props} signedIn={null} />).container
+    ).toMatchSnapshot();
+
+    await waitFor(() => expect(initialize).toBeCalled());
+  });
 });
 
-it("renders after a user signs in", () => {
-  expect(
-    render(<App {...props} signedIn={true} />).container
-  ).toMatchSnapshot();
+it("renders after a user signs in", async () => {
+  await act(async () => {
+    expect(
+      render(<App {...props} signedIn={true} />).container
+    ).toMatchSnapshot();
+
+    await waitFor(() => expect(initialize).toBeCalled());
+    await waitFor(() => expect(listDocuments).toBeCalled());
+  });
 });
 
-it("renders after a user signs out", () => {
-  expect(
-    render(<App {...props} signedIn={false} />).container
-  ).toMatchSnapshot();
+it("renders after a user signs out", async () => {
+  await act(async () => {
+    expect(
+      render(<App {...props} signedIn={false} />).container
+    ).toMatchSnapshot();
+
+    await waitFor(() => expect(initialize).toBeCalled());
+  });
 });

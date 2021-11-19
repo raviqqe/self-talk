@@ -1,22 +1,30 @@
-import { cleanup, fireEvent, render, waitFor } from "@testing-library/react";
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  waitFor,
+} from "@testing-library/react";
 import { Home } from "../Home";
 
 afterEach(cleanup);
 
-it("renders", () => {
-  expect(
-    render(
-      <Home
-        createDocument={async () => {}}
-        documents={[]}
-        insertFiles={async () => ""}
-        listDocuments={async () => {}}
-        listMoreDocuments={async () => {}}
-        signOut={async () => {}}
-        updateDocument={async () => {}}
-      />
-    ).container.firstChild
-  ).toMatchSnapshot();
+it("renders", async () => {
+  await act(async () => {
+    expect(
+      render(
+        <Home
+          createDocument={async () => {}}
+          documents={[]}
+          insertFiles={async () => ""}
+          listDocuments={async () => {}}
+          listMoreDocuments={async () => {}}
+          signOut={async () => {}}
+          updateDocument={async () => {}}
+        />
+      ).container.firstChild
+    ).toMatchSnapshot();
+  });
 });
 
 it("creates a document", async () => {
