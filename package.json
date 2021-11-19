@@ -7,7 +7,7 @@
     "build:icons": "inkscape --export-width 512 --export-height 512 --export-png public/icon.png public/icon.svg",
     "start": "react-scripts start",
     "lint": "cspell src/**/* 'public/**/*.{html,json}'",
-    "test": "react-scripts test",
+    "test": "jest",
     "deploy": "firebase deploy"
   },
   "dependencies": {
@@ -17,18 +17,21 @@
     "prettier": "^2.3.0",
     "pure-uuid": "^1.6.2",
     "react": "^17.0.2",
-    "react-textarea-autosize": "^8.3.3",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-infinite-scroll-component": "^6.1.0",
-    "react-markdown": "^6.0.3",
+    "react-markdown": "^7.0.1",
     "react-spinners": "^0.11.0",
+    "react-textarea-autosize": "^8.3.3",
     "react-use": "^17.3.1",
-    "remark-gfm": "^1.0.0",
+    "remark-gfm": "^2.0.0",
     "styled-components": "^5.3.3",
     "workbox-precaching": "^6.3.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "@babel/preset-typescript": "^7.16.0",
     "@raviqqe/eslint-config": "^1.0.9",
     "@raviqqe/react-tsconfig": "^1.0.5",
     "@testing-library/react": "^12.1.2",
