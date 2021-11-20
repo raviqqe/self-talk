@@ -14,6 +14,10 @@ export const GlobalStyle = createGlobalStyle`
     width: 100vw;
     overflow: hidden;
   }
+
+  #root {
+    overflow-x: hidden;
+  }
 `;
 
 export const boxShadow = css`
