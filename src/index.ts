@@ -33,9 +33,12 @@ async function main() {
     throw new Error("no root element");
   }
 
+  const firebaseApp = await firebaseInitializer.initialize();
   const authenticationPresenter = new AuthenticationPresenter();
-  const authenticationController = new FirebaseAuthenticationController();
-  const documentRepository = new FirestoreDocumentRepository();
+  const authenticationController = new FirebaseAuthenticationController(
+    firebaseApp
+  );
+  const documentRepository = new FirestoreDocumentRepository(firebaseApp);
   const messagePresenter = new AlertMessagePresenter();
   const confirmationController = new BuiltinConfirmationController();
   const documentPresenter = new DocumentPresenter();
@@ -46,7 +49,7 @@ async function main() {
     new ApplicationInitializer(
       authenticationController,
       authenticationPresenter,
-      new InfrastructureInitializer(firebaseInitializer)
+      new InfrastructureInitializer()
     ),
     new DocumentCreator(
       documentRepository,
@@ -66,7 +69,7 @@ async function main() {
     ),
     new SignInManager(authenticationController),
     new SignOutManager(authenticationController, authenticationPresenter),
-    new TextFileInserter(new FirebaseStorageFileRepository()),
+    new TextFileInserter(new FirebaseStorageFileRepository(firebaseApp)),
     configuration.repositoryURL
   ).render();
 

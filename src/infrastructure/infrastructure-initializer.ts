@@ -1,10 +1,7 @@
 import { IInfrastructureInitializer } from "../application/infrastructure-initializer";
-import { FirebaseInitializer } from "./firebase/firebase-initializer";
 
 export class InfrastructureInitializer implements IInfrastructureInitializer {
-  constructor(private readonly firebaseInitializer: FirebaseInitializer) {}
+  constructor() {}
 
-  public async initialize(): Promise<void> {
-    await this.firebaseInitializer.initialize();
-  }
+  public async initialize(): Promise<void> {}
 }
