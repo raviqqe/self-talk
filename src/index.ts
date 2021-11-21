@@ -15,7 +15,6 @@ import { FirebaseAuthenticationController } from "./infrastructure/firebase/fire
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
 import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebase-storage-file-repository";
 import { FirestoreDocumentRepository } from "./infrastructure/firebase/firestore-document-repository";
-import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
 import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 
@@ -48,8 +47,7 @@ async function main() {
     [authenticationPresenter, documentPresenter],
     new ApplicationInitializer(
       authenticationController,
-      authenticationPresenter,
-      new InfrastructureInitializer()
+      authenticationPresenter
     ),
     new DocumentCreator(
       documentRepository,

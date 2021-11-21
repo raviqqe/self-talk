@@ -1,6 +1,5 @@
 import { FirebaseApp } from "firebase/app";
-import UUID from "pure-uuid";
-import { IFileRepository } from "../../application/file-repository";
+import { Auth, getAuth } from "firebase/auth";
 import {
   ref,
   FirebaseStorage,
@@ -10,7 +9,8 @@ import {
   getDownloadURL,
   uploadBytes,
 } from "firebase/storage";
-import { Auth, getAuth } from "firebase/auth";
+import UUID from "pure-uuid";
+import { IFileRepository } from "../../application/file-repository";
 
 export class FirebaseStorageFileRepository implements IFileRepository {
   private readonly auth: Auth;
