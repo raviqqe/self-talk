@@ -1,32 +1,44 @@
-import "firebase/compat/storage";
-import firebase from "firebase/compat/app";
+import { FirebaseApp } from "firebase/app";
+import { Auth, getAuth } from "firebase/auth";
+import {
+  ref,
+  FirebaseStorage,
+  getStorage,
+  StorageReference,
+  updateMetadata,
+  getDownloadURL,
+  uploadBytes,
+} from "firebase/storage";
 import UUID from "pure-uuid";
 import { IFileRepository } from "../../application/file-repository";
 
 export class FirebaseStorageFileRepository implements IFileRepository {
-  public async create(file: Blob): Promise<string> {
-    const child = this.files().child(new UUID(4).format());
+  private readonly auth: Auth;
+  private readonly storage: FirebaseStorage;
 
-    await child.put(file);
-    await child.updateMetadata({
+  constructor(app: FirebaseApp) {
+    this.auth = getAuth(app);
+    this.storage = getStorage(app);
+  }
+
+  public async create(file: Blob): Promise<string> {
+    const child = ref(this.files(), new UUID(4).format());
+
+    await uploadBytes(child, file);
+    await updateMetadata(child, {
       cacheControl: `max-age=${60 * 60 * 24 * 365}`,
     });
 
-    return child.getDownloadURL();
+    return getDownloadURL(child);
   }
 
-  private files(): firebase.storage.Reference {
-    const user = firebase.auth().currentUser;
+  private files(): StorageReference {
+    const user = this.auth.currentUser;
 
     if (!user) {
       throw new Error("user not authenticated");
     }
 
-    return firebase
-      .storage()
-      .ref()
-      .child("users")
-      .child(user.uid)
-      .child("files");
+    return ref(this.storage, `users/${user.uid}/files`);
   }
 }

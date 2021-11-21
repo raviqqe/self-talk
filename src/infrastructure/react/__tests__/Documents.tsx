@@ -1,7 +1,7 @@
 import { act, render, waitFor } from "@testing-library/react";
 import { Documents } from "../Documents";
 
-let listDocuments = jest.fn();
+const listDocuments = jest.fn();
 const wait = () => waitFor(() => expect(listDocuments).toBeCalled());
 
 beforeEach(() => {

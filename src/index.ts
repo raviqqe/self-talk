@@ -15,7 +15,6 @@ import { FirebaseAuthenticationController } from "./infrastructure/firebase/fire
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer";
 import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebase-storage-file-repository";
 import { FirestoreDocumentRepository } from "./infrastructure/firebase/firestore-document-repository";
-import { InfrastructureInitializer } from "./infrastructure/infrastructure-initializer";
 import { ReactRenderer } from "./infrastructure/react";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter";
 
@@ -33,9 +32,12 @@ async function main() {
     throw new Error("no root element");
   }
 
+  const firebaseApp = await firebaseInitializer.initialize();
   const authenticationPresenter = new AuthenticationPresenter();
-  const authenticationController = new FirebaseAuthenticationController();
-  const documentRepository = new FirestoreDocumentRepository();
+  const authenticationController = new FirebaseAuthenticationController(
+    firebaseApp
+  );
+  const documentRepository = new FirestoreDocumentRepository(firebaseApp);
   const messagePresenter = new AlertMessagePresenter();
   const confirmationController = new BuiltinConfirmationController();
   const documentPresenter = new DocumentPresenter();
@@ -45,8 +47,7 @@ async function main() {
     [authenticationPresenter, documentPresenter],
     new ApplicationInitializer(
       authenticationController,
-      authenticationPresenter,
-      new InfrastructureInitializer(firebaseInitializer)
+      authenticationPresenter
     ),
     new DocumentCreator(
       documentRepository,
@@ -66,7 +67,7 @@ async function main() {
     ),
     new SignInManager(authenticationController),
     new SignOutManager(authenticationController, authenticationPresenter),
-    new TextFileInserter(new FirebaseStorageFileRepository()),
+    new TextFileInserter(new FirebaseStorageFileRepository(firebaseApp)),
     configuration.repositoryURL
   ).render();
 

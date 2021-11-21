@@ -1,8 +1,8 @@
 import { act, render, waitFor } from "@testing-library/react";
 import { App, IProps } from "../App";
 
-let initialize = jest.fn();
-let listDocuments = jest.fn();
+const initialize = jest.fn();
+const listDocuments = jest.fn();
 
 beforeEach(() => {
   initialize.mockReset().mockResolvedValue(undefined);
