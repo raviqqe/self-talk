@@ -98,7 +98,7 @@ interface IProps {
 
 export const Markdown = ({ children }: IProps): JSX.Element => (
   <Container>
-    <ReactMarkdown components={{ img: Image }} plugins={[remarkGfm]}>
+    <ReactMarkdown components={{ img: Image }} remarkPlugins={[remarkGfm]}>
       {children}
     </ReactMarkdown>
   </Container>
