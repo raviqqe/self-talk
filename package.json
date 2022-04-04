@@ -13,7 +13,7 @@
     "@sentry/browser": "^6.19.3",
     "firebase": "^9.6.10",
     "lodash": "^4.17.21",
-    "prettier": "^2.6.1",
+    "prettier": "^2.6.2",
     "pure-uuid": "^1.6.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
