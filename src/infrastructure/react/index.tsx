@@ -18,7 +18,7 @@ interface IPresenter {
 interface IProps extends Pick<IAppProps, "documents" | "signedIn"> {}
 
 export class ReactRenderer implements IRenderer {
-  private root: Root;
+  private readonly root: Root;
   private props: IProps = { documents: null, signedIn: null };
 
   constructor(
