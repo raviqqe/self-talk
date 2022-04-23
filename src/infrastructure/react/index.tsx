@@ -78,8 +78,7 @@ export class ReactRenderer implements IRenderer {
           }
         />
         <GlobalStyle />
-      </>,
-      this.element
+      </>
     );
   }
 }
