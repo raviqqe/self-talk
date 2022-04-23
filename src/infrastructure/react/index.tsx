@@ -1,4 +1,4 @@
-import { render } from "react-dom";
+import { createRoot, Root } from "react-dom/client";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { DocumentCreator } from "../../application/document-creator";
 import { DocumentLister } from "../../application/document-lister";
@@ -18,10 +18,11 @@ interface IPresenter {
 interface IProps extends Pick<IAppProps, "documents" | "signedIn"> {}
 
 export class ReactRenderer implements IRenderer {
+  private readonly root: Root;
   private props: IProps = { documents: null, signedIn: null };
 
   constructor(
-    private readonly element: HTMLElement,
+    element: HTMLElement,
     presenters: IPresenter[],
     private readonly applicationInitializer: ApplicationInitializer,
     private readonly documentCreator: DocumentCreator,
@@ -35,6 +36,8 @@ export class ReactRenderer implements IRenderer {
     for (const presenter of presenters) {
       presenter.setRenderer(this);
     }
+
+    this.root = createRoot(element);
   }
 
   public render(): void {
@@ -52,7 +55,7 @@ export class ReactRenderer implements IRenderer {
   private renderProps(props: Partial<IProps>): void {
     this.props = { ...this.props, ...props };
 
-    render(
+    this.root.render(
       <>
         <App
           {...this.props}
@@ -75,8 +78,7 @@ export class ReactRenderer implements IRenderer {
           }
         />
         <GlobalStyle />
-      </>,
-      this.element
+      </>
     );
   }
 }
