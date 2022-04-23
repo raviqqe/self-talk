@@ -59,9 +59,7 @@ it("creates a document", async () => {
       { target: { value: "foo" } }
     );
 
-    if (result) {
-      fireEvent.click(result?.getByLabelText("Create"));
-    }
+    fireEvent.click(result?.getByLabelText("Create") as Element);
   });
 
   expect(createDocument.mock.calls).toHaveLength(1);
@@ -88,18 +86,14 @@ it("updates a document", async () => {
   await waitFor(() => expect(result?.getByLabelText("Edit")).toBeTruthy());
 
   act(() => {
-    if (result) {
-      fireEvent.click(result.getByLabelText("Edit"));
-    }
+    fireEvent.click(result?.getByLabelText("Edit") as Element);
 
     fireEvent.change(
       result?.container.querySelector("textarea") as HTMLTextAreaElement,
       { target: { value: "foo" } }
     );
 
-    if (result) {
-      fireEvent.click(result?.getByLabelText("Save"));
-    }
+    fireEvent.click(result?.getByLabelText("Save") as Element);
   });
 
   expect(updateDocument.mock.calls).toHaveLength(1);
