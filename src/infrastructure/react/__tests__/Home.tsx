@@ -7,7 +7,7 @@ import {
 } from "@testing-library/react";
 import { Home } from "../Home";
 
-it("renders", () => {
+it("renders", async () => {
   let result: RenderResult | undefined;
 
   act(() => {
@@ -23,6 +23,10 @@ it("renders", () => {
       />
     );
   });
+
+  await waitFor(() =>
+    expect(result?.container.querySelector("textarea")).toBeTruthy()
+  );
 
   expect(result?.container.firstChild).toMatchSnapshot();
 });
