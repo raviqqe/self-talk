@@ -1,10 +1,4 @@
-import {
-  ChangeEvent,
-  ClipboardEvent,
-  useState,
-  DragEvent,
-  SyntheticEvent,
-} from "react";
+import { useState, SyntheticEvent } from "react";
 import { PulseLoader } from "react-spinners";
 import styled from "styled-components";
 import { TextArea } from "./TextArea";
@@ -64,24 +58,16 @@ export const MarkdownTextArea = ({
 
   return (
     <TextArea
-      onChange={(event: ChangeEvent<HTMLTextAreaElement>) =>
-        setText(event.target.value)
-      }
-      onDrop={(event: DragEvent<HTMLTextAreaElement>): Promise<void> =>
+      onChange={(event) => setText(event.target.value)}
+      onDrop={(event) =>
         uploadFiles(event, Array.from(event.dataTransfer.files))
       }
-      onPaste={async (
-        event: ClipboardEvent<HTMLTextAreaElement>
-      ): Promise<void> => {
-        if (!event.clipboardData || !event.clipboardData.items) {
-          return;
-        }
-
-        await uploadFiles(
+      onPaste={(event) =>
+        uploadFiles(
           event,
           Array.from(event.clipboardData.items).map((item) => item.getAsFile())
-        );
-      }}
+        )
+      }
       onSubmit={onSubmit}
       placeholder="Write in Markdown ..."
       value={text}
