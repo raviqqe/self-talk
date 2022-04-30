@@ -52,7 +52,9 @@ it("does not paste anything if there is no clipboard data", async () => {
     />
   );
 
-  fireEvent.paste(container.firstElementChild as Element, {});
+  fireEvent.paste(container.firstElementChild as Element, {
+    clipboardData: { items: [] },
+  });
 
   await waitFor(() => expect(setText.mock.calls).toHaveLength(0));
 });
