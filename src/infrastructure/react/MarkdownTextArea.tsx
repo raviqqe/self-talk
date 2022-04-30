@@ -62,16 +62,12 @@ export const MarkdownTextArea = ({
       onDrop={(event) =>
         uploadFiles(event, Array.from(event.dataTransfer.files))
       }
-      onPaste={async (event): Promise<void> => {
-        if (!event.clipboardData.items) {
-          return;
-        }
-
-        await uploadFiles(
+      onPaste={(event) =>
+        uploadFiles(
           event,
           Array.from(event.clipboardData.items).map((item) => item.getAsFile())
-        );
-      }}
+        )
+      }
       onSubmit={onSubmit}
       placeholder="Write in Markdown ..."
       value={text}
