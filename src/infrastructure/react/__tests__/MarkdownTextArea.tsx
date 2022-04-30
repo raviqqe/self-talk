@@ -40,26 +40,7 @@ it("pastes an image as a link", async () => {
   await waitFor(() => expect(setText.mock.calls).toEqual([["result"]]));
 });
 
-it("does not paste anything if there is no clipboard data", async () => {
-  const setText = jest.fn();
-
-  const { container } = render(
-    <MarkdownTextArea
-      insertFiles={async () => "result"}
-      onSubmit={async () => {}}
-      setText={setText}
-      text="foo"
-    />
-  );
-
-  fireEvent.paste(container.firstElementChild as Element, {
-    clipboardData: { items: [] },
-  });
-
-  await waitFor(() => expect(setText.mock.calls).toHaveLength(0));
-});
-
-it("does not paste anything if there is no images in clipboard data", async () => {
+it("does not paste anything if there is no files in clipboard data", async () => {
   const setText = jest.fn();
 
   const { container } = render(
