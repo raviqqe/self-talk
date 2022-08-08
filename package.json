@@ -10,7 +10,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "@sentry/browser": "^7.8.1",
+    "@sentry/browser": "^7.9.0",
     "firebase": "^9.9.2",
     "lodash": "^4.17.21",
     "prettier": "^2.7.1",
