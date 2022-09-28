@@ -13,6 +13,6 @@ it("signs out", async () => {
 
   await signOutManager.signOut();
 
-  expect(authenticationController.signOut).toBeCalledTimes(1);
+  expect(authenticationController.signOut).toHaveBeenCalledTimes(1);
   expect(authenticationPresenter.presentSignedIn.mock.calls).toEqual([[false]]);
 });

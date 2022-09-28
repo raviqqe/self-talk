@@ -32,6 +32,6 @@ describe("formatDocument", () => {
 
 describe("validateDocument", () => {
   it("validates texts", () => {
-    expect(() => validateDocument({ text: "" } as IDocument)).toThrowError();
+    expect(() => validateDocument({ text: "" } as IDocument)).toThrow();
   });
 });

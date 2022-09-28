@@ -38,6 +38,6 @@ it("deletes a document after confirmation", async () => {
 it("does not delete any document if it is not confirmed", async () => {
   confirmationController.confirm.mockResolvedValue(false);
   await documentDeleter.delete("foo");
-  expect(documentRepository.delete).toBeCalledTimes(0);
-  expect(documentPresenter.presentDeletedDocument).toBeCalledTimes(0);
+  expect(documentRepository.delete).toHaveBeenCalledTimes(0);
+  expect(documentPresenter.presentDeletedDocument).toHaveBeenCalledTimes(0);
 });

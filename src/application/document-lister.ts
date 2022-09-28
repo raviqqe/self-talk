@@ -5,7 +5,7 @@ import { IDocumentRepository } from "./document-repository";
 const defaultLimit = 20;
 
 export class DocumentLister {
-  private iterator: AsyncIterator<IDocument[]> | null = null;
+  private iterator: AsyncIterator<IDocument[], void> | null = null;
 
   constructor(
     private readonly documentRepository: IDocumentRepository,
