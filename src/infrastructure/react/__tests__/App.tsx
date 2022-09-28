@@ -32,7 +32,7 @@ it("renders before a user signs in", async () => {
 
   expect(result?.container).toMatchSnapshot();
 
-  await waitFor(() => expect(initialize).toBeCalled());
+  await waitFor(() => expect(initialize).toHaveBeenCalled());
 });
 
 it("renders after a user signs in", async () => {
@@ -44,8 +44,8 @@ it("renders after a user signs in", async () => {
 
   expect(result?.container).toMatchSnapshot();
 
-  await waitFor(() => expect(initialize).toBeCalled());
-  await waitFor(() => expect(listDocuments).toBeCalled());
+  await waitFor(() => expect(initialize).toHaveBeenCalled());
+  await waitFor(() => expect(listDocuments).toHaveBeenCalled());
 });
 
 it("renders after a user signs out", async () => {
@@ -57,5 +57,5 @@ it("renders after a user signs out", async () => {
 
   expect(result?.container).toMatchSnapshot();
 
-  await waitFor(() => expect(initialize).toBeCalled());
+  await waitFor(() => expect(initialize).toHaveBeenCalled());
 });

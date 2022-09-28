@@ -31,7 +31,7 @@ it("opens an image when it is clicked", () => {
   const { container } = render(<Markdown>![foo](http://bar/baz.png)</Markdown>);
   fireEvent.click(container.querySelector("img") as Element);
 
-  expect(spy).toBeCalledTimes(1);
+  expect(spy).toHaveBeenCalledTimes(1);
 });
 
 it("does not open a linked image even when it is clicked", () => {
@@ -43,5 +43,5 @@ it("does not open a linked image even when it is clicked", () => {
   );
   fireEvent.click(container.querySelector("img") as Element);
 
-  expect(spy).toBeCalledTimes(0);
+  expect(spy).toHaveBeenCalledTimes(0);
 });

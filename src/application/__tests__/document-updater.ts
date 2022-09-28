@@ -53,7 +53,7 @@ it("formats a document before update", async () => {
 
 it("deletes a document if its text is empty", async () => {
   await documentUpdater.update({ ...dummyDocument, text: "" });
-  expect(documentRepository.delete).toBeCalledTimes(1);
+  expect(documentRepository.delete).toHaveBeenCalledTimes(1);
 });
 
 it("does not update any document if validation fails", async () => {
@@ -62,6 +62,6 @@ it("does not update any document if validation fails", async () => {
   });
 
   await documentUpdater.update(dummyDocument);
-  expect(messagePresenter.present).toBeCalledTimes(1);
-  expect(documentPresenter.presentUpdatedDocument).toBeCalledTimes(0);
+  expect(messagePresenter.present).toHaveBeenCalledTimes(1);
+  expect(documentPresenter.presentUpdatedDocument).toHaveBeenCalledTimes(0);
 });

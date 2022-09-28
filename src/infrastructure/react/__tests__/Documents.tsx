@@ -2,7 +2,7 @@ import { act, render, RenderResult, waitFor } from "@testing-library/react";
 import { Documents } from "../Documents";
 
 const listDocuments = jest.fn();
-const wait = () => waitFor(() => expect(listDocuments).toBeCalled());
+const wait = () => waitFor(() => expect(listDocuments).toHaveBeenCalled());
 
 beforeEach(() => {
   listDocuments.mockReset().mockResolvedValue(undefined);
