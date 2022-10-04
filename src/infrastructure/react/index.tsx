@@ -1,3 +1,4 @@
+import { StrictMode } from "react";
 import { createRoot, Root } from "react-dom/client";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { DocumentCreator } from "../../application/document-creator";
@@ -56,7 +57,7 @@ export class ReactRenderer implements IRenderer {
     this.props = { ...this.props, ...props };
 
     this.root.render(
-      <>
+      <StrictMode>
         <App
           {...this.props}
           createDocument={(text: string) => this.documentCreator.create(text)}
@@ -78,7 +79,7 @@ export class ReactRenderer implements IRenderer {
           }
         />
         <GlobalStyle />
-      </>
+      </StrictMode>
     );
   }
 }
