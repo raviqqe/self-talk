@@ -1,12 +1,6 @@
-import {
-  fireEvent,
-  render,
-  RenderResult,
-  waitFor,
-  act,
-} from "@testing-library/react";
-import { describe, beforeEach, expect, it, vi } from "vitest";
+import { fireEvent, render, waitFor } from "@testing-library/react";
 import { MarkdownTextArea } from "./MarkdownTextArea";
+import { it, expect, vi } from "vitest";
 
 it("renders", () => {
   expect(
@@ -23,21 +17,18 @@ it("renders", () => {
 
 it("pastes an image as a link", async () => {
   const setText = vi.fn();
-  let result: RenderResult | undefined;
 
-  act(() => {
-    result = render(
-      <MarkdownTextArea
-        insertFiles={async () => "result"}
-        onSubmit={async () => {}}
-        setText={setText}
-        text="foo"
-      />
-    );
-  });
+  const { container } = render(
+    <MarkdownTextArea
+      insertFiles={async () => "result"}
+      onSubmit={async () => {}}
+      setText={setText}
+      text="foo"
+    />
+  );
 
   fireEvent.paste(
-    result?.container.firstElementChild as Element,
+    container.firstElementChild as Element,
     {
       clipboardData: {
         items: [
@@ -52,20 +43,17 @@ it("pastes an image as a link", async () => {
 
 it("does not paste anything if there is no files in clipboard data", async () => {
   const setText = vi.fn();
-  let result: RenderResult | undefined;
 
-  act(() => {
-    result = render(
-      <MarkdownTextArea
-        insertFiles={async () => "result"}
-        onSubmit={async () => {}}
-        setText={setText}
-        text="foo"
-      />
-    );
-  });
+  const { container } = render(
+    <MarkdownTextArea
+      insertFiles={async () => "result"}
+      onSubmit={async () => {}}
+      setText={setText}
+      text="foo"
+    />
+  );
 
-  fireEvent.paste(result?.container.firstElementChild as Element, {
+  fireEvent.paste(container.firstElementChild as Element, {
     clipboardData: { items: [] },
   });
 
@@ -74,20 +62,17 @@ it("does not paste anything if there is no files in clipboard data", async () =>
 
 it("drops an image as a link", async () => {
   const setText = vi.fn();
-  let result: RenderResult | undefined;
 
-  act(() => {
-    result = render(
-      <MarkdownTextArea
-        insertFiles={async () => "result"}
-        onSubmit={async () => {}}
-        setText={setText}
-        text="foo"
-      />
-    );
-  });
+  const { container } = render(
+    <MarkdownTextArea
+      insertFiles={async () => "result"}
+      onSubmit={async () => {}}
+      setText={setText}
+      text="foo"
+    />
+  );
 
-  fireEvent.drop(result?.container.firstElementChild as Element, {
+  fireEvent.drop(container.firstElementChild as Element, {
     dataTransfer: {
       files: [new File([], "foo.png", { type: "image/png" })],
     },
