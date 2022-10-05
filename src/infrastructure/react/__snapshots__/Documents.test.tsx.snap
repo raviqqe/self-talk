@@ -1,0 +1,91 @@
+// Vitest Snapshot v1
+
+exports[`renders 1`] = `
+<div
+  class="sc-jrcTuL kILoZz"
+  id="documents-container"
+>
+  <div
+    class="infinite-scroll-component__outerdiv"
+  >
+    <div
+      class="infinite-scroll-component sc-ipEyDJ iLJXoO"
+      style="height: auto; overflow: auto;"
+    >
+      <div
+        class="sc-ftTHYK ebfSnj sc-csuSiG yCuJG"
+      >
+        <div
+          class="sc-gswNZR dIoQnh"
+        >
+          <p>
+            text
+          </p>
+        </div>
+        <div
+          class="sc-pyfCe eZVdAB"
+        >
+          <div
+            aria-label="Edit"
+            class="sc-bcXHqe jUftXb"
+          >
+            <svg
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders with documents not loaded yet 1`] = `
+<div
+  class="sc-kDvujY jXJZGx"
+>
+  <span
+    style="display: inherit;"
+  >
+    <span
+      style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+    />
+    <span
+      style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+    />
+    <span
+      style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+    />
+  </span>
+</div>
+`;
+
+exports[`renders with no documents 1`] = `
+<div
+  class="sc-jrcTuL kILoZz"
+  id="documents-container"
+>
+  <div
+    class="infinite-scroll-component__outerdiv"
+  >
+    <div
+      class="infinite-scroll-component sc-ipEyDJ iLJXoO"
+      style="height: auto; overflow: auto;"
+    />
+  </div>
+</div>
+`;
