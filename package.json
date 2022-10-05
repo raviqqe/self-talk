@@ -45,7 +45,8 @@
     "firebase-tools": "^11.13.0",
     "react-scripts": "^5.0.1",
     "react-test-renderer": "^18.2.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "vite": "^3.1.4"
   },
   "browserslist": {
     "production": [
