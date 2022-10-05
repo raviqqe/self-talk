@@ -1,9 +1,10 @@
-import { ApplicationInitializer } from "../application-initializer";
-import { IAuthenticationController } from "../authentication-controller";
+import { ApplicationInitializer } from "./application-initializer";
+import { IAuthenticationController } from "./authentication-controller";
+import { it, expect, vi } from "vitest";
 
 it("initializes an application state", async () => {
-  const authenticationController = { isSignedIn: jest.fn(async () => true) };
-  const authenticationPresenter = { presentSignedIn: jest.fn() };
+  const authenticationController = { isSignedIn: vi.fn(async () => true) };
+  const authenticationPresenter = { presentSignedIn: vi.fn() };
   const applicationInitializer = new ApplicationInitializer(
     authenticationController as unknown as IAuthenticationController,
     authenticationPresenter

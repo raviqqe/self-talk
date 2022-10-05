@@ -1,12 +1,13 @@
-import { TextFileInserter } from "../text-file-inserter";
+import { TextFileInserter } from "./text-file-inserter";
+import { it, expect, beforeEach, vi, Mock } from "vitest";
 
 const dummyFileURL = "https://foo.com/bar";
 
-let createMock: jest.Mock;
+let createMock: Mock;
 let inserter: TextFileInserter;
 
 beforeEach(() => {
-  createMock = jest.fn(async () => dummyFileURL);
+  createMock = vi.fn(async () => dummyFileURL);
   inserter = new TextFileInserter({ create: createMock });
 });
 

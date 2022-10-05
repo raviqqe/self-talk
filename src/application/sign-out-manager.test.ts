@@ -1,11 +1,12 @@
-import { IAuthenticationController } from "../authentication-controller";
-import { SignOutManager } from "../sign-out-manager";
+import { IAuthenticationController } from "./authentication-controller";
+import { SignOutManager } from "./sign-out-manager";
+import { it, vi, expect } from "vitest";
 
 it("signs out", async () => {
   const authenticationController = {
-    signOut: jest.fn(async () => false),
+    signOut: vi.fn(async () => false),
   };
-  const authenticationPresenter = { presentSignedIn: jest.fn() };
+  const authenticationPresenter = { presentSignedIn: vi.fn() };
   const signOutManager = new SignOutManager(
     authenticationController as unknown as IAuthenticationController,
     authenticationPresenter

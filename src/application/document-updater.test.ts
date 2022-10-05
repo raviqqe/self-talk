@@ -1,4 +1,4 @@
-import { expect, beforeEach, vi, it, Mocked } from "vitest";
+import { expect, beforeEach, afterEach, vi, it, Mocked } from "vitest";
 import * as documentModule from "../domain/document";
 import { DocumentDeleter } from "./document-deleter";
 import { IDocumentPresenter } from "./document-presenter";
@@ -35,7 +35,9 @@ beforeEach(() => {
   );
 });
 
-afterEach(() => vi.restoreAllMocks());
+afterEach(() => {
+  vi.restoreAllMocks();
+});
 
 it("updates and persists a document", async () => {
   await documentUpdater.update(dummyDocument);

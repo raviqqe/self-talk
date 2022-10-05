@@ -1,24 +1,25 @@
-import { DocumentCreator } from "../document-creator";
-import { IDocumentPresenter } from "../document-presenter";
-import { IDocumentRepository } from "../document-repository";
-import { IMessagePresenter } from "../message-presenter";
+import { DocumentCreator } from "./document-creator";
+import { IDocumentPresenter } from "./document-presenter";
+import { IDocumentRepository } from "./document-repository";
+import { IMessagePresenter } from "./message-presenter";
+import { it, expect, vi, Mocked, beforeEach } from "vitest";
 
-let documentRepository: jest.Mocked<IDocumentRepository>;
-let documentPresenter: jest.Mocked<IDocumentPresenter>;
-let messagePresenter: jest.Mocked<IMessagePresenter>;
+let documentRepository: Mocked<IDocumentRepository>;
+let documentPresenter: Mocked<IDocumentPresenter>;
+let messagePresenter: Mocked<IMessagePresenter>;
 let documentCreator: DocumentCreator;
 
 beforeEach(() => {
   documentRepository = {
-    create: jest.fn(),
-    delete: jest.fn(),
-    list: jest.fn(),
-    update: jest.fn(),
+    create: vi.fn(),
+    delete: vi.fn(),
+    list: vi.fn(),
+    update: vi.fn(),
   };
   documentPresenter = {
-    presentNewDocument: jest.fn(),
-  } as unknown as jest.Mocked<IDocumentPresenter>;
-  messagePresenter = { present: jest.fn() };
+    presentNewDocument: vi.fn(),
+  } as unknown as Mocked<IDocumentPresenter>;
+  messagePresenter = { present: vi.fn() };
   documentCreator = new DocumentCreator(
     documentRepository,
     documentPresenter,
