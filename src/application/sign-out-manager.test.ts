@@ -1,6 +1,6 @@
+import { it, vi, expect } from "vitest";
 import { IAuthenticationController } from "./authentication-controller";
 import { SignOutManager } from "./sign-out-manager";
-import { it, vi, expect } from "vitest";
 
 it("signs out", async () => {
   const authenticationController = {
