@@ -21,7 +21,7 @@ export class FirebaseStorageFileRepository implements IFileRepository {
     this.storage = getStorage(app);
   }
 
-  public async create(file: Blob): Promise<string> {
+  public async create(file: File): Promise<string> {
     const child = ref(this.files(), new UUID(4).format());
 
     await uploadBytes(child, file);
