@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "react-scripts build",
-    "start": "react-scripts start",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "lint": "eslint src/**/*.{ts,tsx}",
     "test": "vitest",
     "deploy": "firebase deploy"
@@ -28,9 +29,6 @@
     "workbox-precaching": "^6.5.4"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.19.1",
-    "@babel/preset-react": "^7.18.6",
-    "@babel/preset-typescript": "^7.18.6",
     "@raviqqe/eslint-config": "git://github.com/raviqqe/eslint-config",
     "@raviqqe/react-tsconfig": "git://github.com/raviqqe/react-tsconfig",
     "@testing-library/react": "^13.4.0",
@@ -44,22 +42,9 @@
     "@vitejs/plugin-react": "^2.1.0",
     "cspell": "^6.12.0",
     "firebase-tools": "^11.13.0",
-    "react-scripts": "^5.0.1",
     "react-test-renderer": "^18.2.0",
     "typescript": "^4.8.3",
     "vite": "^3.1.4",
     "vitest": "^0.23.4"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
