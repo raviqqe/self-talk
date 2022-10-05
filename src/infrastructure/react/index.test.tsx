@@ -1,4 +1,4 @@
-import { it, vi } from "vitest";
+import { it } from "vitest";
 import { ApplicationInitializer } from "../../application/application-initializer";
 import { DocumentCreator } from "../../application/document-creator";
 import { DocumentLister } from "../../application/document-lister";
@@ -12,7 +12,7 @@ it("renders", () => {
   new ReactRenderer(
     document.createElement("div"),
     [],
-    { initialize: vi.fn() } as ApplicationInitializer,
+    { initialize: async () => {} } as ApplicationInitializer,
     {} as DocumentCreator,
     {} as DocumentLister,
     {} as DocumentUpdater,
