@@ -1,5 +1,6 @@
+import { describe, expect, it } from "vitest";
 import { create } from "react-test-renderer";
-import { Document } from "../Document";
+import { Document } from "./Document";
 
 it("renders", () => {
   expect(

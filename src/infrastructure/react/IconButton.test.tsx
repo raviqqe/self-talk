@@ -1,5 +1,6 @@
+import { describe, expect, it } from "vitest";
 import { create } from "react-test-renderer";
-import { IconButton } from "../IconButton";
+import { IconButton } from "./IconButton";
 
 it("renders", () => {
   expect(

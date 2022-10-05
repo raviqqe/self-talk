@@ -1,5 +1,6 @@
+import { describe, expect, it } from "vitest";
 import { create } from "react-test-renderer";
-import { Button } from "../Button";
+import { Button } from "./Button";
 
 it("renders", () => {
   expect(create(<Button>foo</Button>).toJSON()).toMatchSnapshot();
