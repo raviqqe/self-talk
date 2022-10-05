@@ -1,32 +1,33 @@
-import * as documentModule from "../../domain/document";
-import { DocumentDeleter } from "../document-deleter";
-import { IDocumentPresenter } from "../document-presenter";
-import { IDocumentRepository } from "../document-repository";
-import { DocumentUpdater } from "../document-updater";
-import { IMessagePresenter } from "../message-presenter";
+import { expect, beforeEach, vi, it, Mocked } from "vitest";
+import * as documentModule from "../domain/document";
+import { DocumentDeleter } from "./document-deleter";
+import { IDocumentPresenter } from "./document-presenter";
+import { IDocumentRepository } from "./document-repository";
+import { DocumentUpdater } from "./document-updater";
+import { IMessagePresenter } from "./message-presenter";
 
 const dummyDocument: documentModule.IDocument = { id: "", text: "foo" };
 
-let documentRepository: jest.Mocked<IDocumentRepository>;
-let documentPresenter: jest.Mocked<IDocumentPresenter>;
-let messagePresenter: jest.Mocked<IMessagePresenter>;
+let documentRepository: Mocked<IDocumentRepository>;
+let documentPresenter: Mocked<IDocumentPresenter>;
+let messagePresenter: Mocked<IMessagePresenter>;
 let documentUpdater: DocumentUpdater;
 
 beforeEach(() => {
   documentRepository = {
-    create: jest.fn(),
-    delete: jest.fn(),
-    list: jest.fn(),
-    update: jest.fn(),
+    create: vi.fn(),
+    delete: vi.fn(),
+    list: vi.fn(),
+    update: vi.fn(),
   };
   documentPresenter = {
-    presentDeletedDocument: jest.fn(),
-    presentUpdatedDocument: jest.fn(),
-  } as unknown as jest.Mocked<IDocumentPresenter>;
-  messagePresenter = { present: jest.fn() };
+    presentDeletedDocument: vi.fn(),
+    presentUpdatedDocument: vi.fn(),
+  } as unknown as Mocked<IDocumentPresenter>;
+  messagePresenter = { present: vi.fn() };
   documentUpdater = new DocumentUpdater(
     new DocumentDeleter(documentRepository, documentPresenter, {
-      confirm: jest.fn(async () => true),
+      confirm: vi.fn(async () => true),
     }),
     documentRepository,
     documentPresenter,
@@ -34,7 +35,7 @@ beforeEach(() => {
   );
 });
 
-afterEach(() => jest.restoreAllMocks());
+afterEach(() => vi.restoreAllMocks());
 
 it("updates and persists a document", async () => {
   await documentUpdater.update(dummyDocument);
@@ -57,7 +58,7 @@ it("deletes a document if its text is empty", async () => {
 });
 
 it("does not update any document if validation fails", async () => {
-  jest.spyOn(documentModule, "validateDocument").mockImplementation(() => {
+  vi.spyOn(documentModule, "validateDocument").mockImplementation(() => {
     throw new Error("foo");
   });
 
