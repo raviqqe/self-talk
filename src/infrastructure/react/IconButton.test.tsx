@@ -1,5 +1,5 @@
 import { create } from "react-test-renderer";
-import { describe, expect, it } from "vitest";
+import { expect, it } from "vitest";
 import { IconButton } from "./IconButton";
 
 it("renders", () => {

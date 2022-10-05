@@ -1,5 +1,5 @@
-import { act, fireEvent, render, RenderResult } from "@testing-library/react";
-import { describe, beforeEach, afterEach, expect, it, vi } from "vitest";
+import { fireEvent, render } from "@testing-library/react";
+import { expect, it, vi } from "vitest";
 import { TextArea } from "./TextArea";
 
 it("renders", () => {

@@ -1,4 +1,4 @@
-import { expect, beforeEach, it, Mock, vi, Mocked } from "vitest";
+import { expect, beforeEach, it, vi, Mocked } from "vitest";
 import { IConfirmationController } from "./confirmation-controller";
 import { DocumentDeleter } from "./document-deleter";
 import { IDocumentPresenter } from "./document-presenter";

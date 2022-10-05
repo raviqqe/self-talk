@@ -5,7 +5,7 @@ import {
   RenderResult,
   waitFor,
 } from "@testing-library/react";
-import { describe, beforeEach, afterEach, expect, it, vi } from "vitest";
+import { afterEach, expect, it, vi } from "vitest";
 import { Home } from "./Home";
 
 afterEach(() => {

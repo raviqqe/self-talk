@@ -1,5 +1,5 @@
 import { act, render, RenderResult, waitFor } from "@testing-library/react";
-import { describe, beforeEach, expect, it, vi } from "vitest";
+import { beforeEach, expect, it, vi } from "vitest";
 import { Documents } from "./Documents";
 
 const listDocuments = vi.fn();

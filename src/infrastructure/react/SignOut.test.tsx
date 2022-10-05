@@ -1,5 +1,5 @@
 import { create } from "react-test-renderer";
-import { describe, expect, it } from "vitest";
+import { expect, it } from "vitest";
 import { SignOut } from "./SignOut";
 
 it("renders", () => {

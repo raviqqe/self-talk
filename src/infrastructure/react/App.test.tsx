@@ -1,5 +1,5 @@
 import { act, render, RenderResult, waitFor } from "@testing-library/react";
-import { describe, beforeEach, expect, it, vi } from "vitest";
+import { beforeEach, expect, it, vi } from "vitest";
 import { App, IProps } from "./App";
 
 const initialize = vi.fn();

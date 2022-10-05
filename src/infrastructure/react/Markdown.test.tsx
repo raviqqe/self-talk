@@ -1,6 +1,6 @@
 import { render, fireEvent } from "@testing-library/react";
 import { create } from "react-test-renderer";
-import { describe, beforeEach, afterEach, expect, it, vi } from "vitest";
+import { afterEach, expect, it, vi } from "vitest";
 import { Markdown } from "./Markdown";
 
 afterEach(() => {
