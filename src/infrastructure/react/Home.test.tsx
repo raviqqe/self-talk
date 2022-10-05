@@ -8,6 +8,12 @@ import {
 import { describe, beforeEach, afterEach, expect, it, vi } from "vitest";
 import { Home } from "./Home";
 
+afterEach(() => {
+  for (const element of document.getElementsByTagName("html")) {
+    element.innerHTML = "";
+  }
+});
+
 it("renders", async () => {
   let result: RenderResult | undefined;
 
