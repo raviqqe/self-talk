@@ -45,3 +45,9 @@ it("does not open a linked image even when it is clicked", () => {
 
   expect(spy).toHaveBeenCalledTimes(0);
 });
+
+it("renders a link with an ampersand", () => {
+  expect(
+    create(<Markdown>[](http://foo.com?foo=bar&baz=blah)</Markdown>).toJSON()
+  ).toMatchSnapshot();
+});

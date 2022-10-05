@@ -10,6 +10,18 @@ exports[`renders 1`] = `
 </div>
 `;
 
+exports[`renders a link with an ampersand 1`] = `
+<div
+  className="sc-bcXHqe iogSyR"
+>
+  <p>
+    <a
+      href="http://foo.com?foo=bar&baz=blah"
+    />
+  </p>
+</div>
+`;
+
 exports[`renders a table 1`] = `
 <div
   className="sc-bcXHqe iogSyR"
