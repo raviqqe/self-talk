@@ -5,7 +5,7 @@
   "scripts": {
     "build": "react-scripts build",
     "start": "react-scripts start",
-    "lint": "cspell src/**/* 'public/**/*.{html,json}'",
+    "lint": "eslint src/**/*.{ts,tsx}",
     "test": "vitest",
     "deploy": "firebase deploy"
   },
