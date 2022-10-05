@@ -1,11 +1,12 @@
-import { IAuthenticationController } from "../authentication-controller";
-import { SignInManager } from "../sign-in-manager";
+import { expect, beforeEach, it, Mock, vi } from "vitest";
+import { IAuthenticationController } from "./authentication-controller";
+import { SignInManager } from "./sign-in-manager";
 
-let signInMock: jest.Mock;
+let signInMock: Mock;
 let signInManager: SignInManager;
 
 beforeEach(() => {
-  signInMock = jest.fn();
+  signInMock = vi.fn();
   signInManager = new SignInManager({
     signIn: signInMock,
   } as unknown as IAuthenticationController);

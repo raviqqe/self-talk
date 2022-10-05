@@ -5,7 +5,8 @@ import {
   RenderResult,
   waitFor,
 } from "@testing-library/react";
-import { Home } from "../Home";
+import { describe, beforeEach, afterEach, expect, it, vi } from "vitest";
+import { Home } from "./Home";
 
 it("renders", async () => {
   let result: RenderResult | undefined;
@@ -13,13 +14,13 @@ it("renders", async () => {
   act(() => {
     result = render(
       <Home
-        createDocument={async () => {}}
+        createDocument={async () => { }}
         documents={[]}
         insertFiles={async () => ""}
-        listDocuments={async () => {}}
-        listMoreDocuments={async () => {}}
-        signOut={async () => {}}
-        updateDocument={async () => {}}
+        listDocuments={async () => { }}
+        listMoreDocuments={async () => { }}
+        signOut={async () => { }}
+        updateDocument={async () => { }}
       />
     );
   });
@@ -32,7 +33,7 @@ it("renders", async () => {
 });
 
 it("creates a document", async () => {
-  const createDocument = jest.fn(async () => {});
+  const createDocument = vi.fn(async () => { });
   let result: RenderResult | undefined;
 
   act(() => {
@@ -41,10 +42,10 @@ it("creates a document", async () => {
         createDocument={createDocument}
         documents={[]}
         insertFiles={async () => ""}
-        listDocuments={async () => {}}
-        listMoreDocuments={async () => {}}
-        signOut={async () => {}}
-        updateDocument={async () => {}}
+        listDocuments={async () => { }}
+        listMoreDocuments={async () => { }}
+        signOut={async () => { }}
+        updateDocument={async () => { }}
       />
     );
   });
@@ -53,31 +54,30 @@ it("creates a document", async () => {
     expect(result?.container.querySelector("textarea")).toBeTruthy()
   );
 
-  act(() => {
-    fireEvent.change(
-      result?.container.querySelector("textarea") as HTMLTextAreaElement,
-      { target: { value: "foo" } }
-    );
+  fireEvent.change(
+    result?.container.querySelector("textarea") as HTMLTextAreaElement,
+    { target: { value: "foo" } }
+  );
 
-    fireEvent.click(result?.getByLabelText("Create") as Element);
-  });
+  fireEvent.click(result?.getByLabelText("Create") as Element);
+});
 
-  expect(createDocument.mock.calls).toHaveLength(1);
+expect(createDocument.mock.calls).toHaveLength(1);
 });
 
 it("updates a document", async () => {
-  const updateDocument = jest.fn(async () => {});
+  const updateDocument = vi.fn(async () => { });
   let result: RenderResult | undefined;
 
   act(() => {
     result = render(
       <Home
-        createDocument={async () => {}}
+        createDocument={async () => { }}
         documents={[{ id: "", text: "" }]}
         insertFiles={async () => ""}
-        listDocuments={async () => {}}
-        listMoreDocuments={async () => {}}
-        signOut={async () => {}}
+        listDocuments={async () => { }}
+        listMoreDocuments={async () => { }}
+        signOut={async () => { }}
         updateDocument={updateDocument}
       />
     );

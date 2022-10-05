@@ -1,5 +1,5 @@
-import { it } from "vitest";
 import { create } from "react-test-renderer";
+import { expect, it } from "vitest";
 import { SignIn } from "./SignIn";
 
 it("renders", () => {

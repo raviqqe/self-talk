@@ -1,12 +1,13 @@
-import { fireEvent, render } from "@testing-library/react";
-import { TextArea } from "../TextArea";
+import { act, fireEvent, render, RenderResult } from "@testing-library/react";
+import { describe, beforeEach, afterEach, expect, it, vi } from "vitest";
+import { TextArea } from "./TextArea";
 
 it("renders", () => {
   expect(render(<TextArea onSubmit={() => {}} />).container).toMatchSnapshot();
 });
 
 it("triggers a submit callback on Shift + Enter", () => {
-  const onSubmit = jest.fn();
+  const onSubmit = vi.fn();
   const { container } = render(<TextArea onSubmit={onSubmit} />);
 
   fireEvent.keyDown(container.firstElementChild as Element, {
@@ -18,7 +19,7 @@ it("triggers a submit callback on Shift + Enter", () => {
 });
 
 it("triggers a submit callback on Ctrl + Enter", () => {
-  const onSubmit = jest.fn();
+  const onSubmit = vi.fn();
   const { container } = render(<TextArea onSubmit={onSubmit} />);
 
   fireEvent.keyDown(container.firstElementChild as Element, {
@@ -30,10 +31,12 @@ it("triggers a submit callback on Ctrl + Enter", () => {
 });
 
 it("does not trigger a submit callback on Enter", () => {
-  const onSubmit = jest.fn();
+  const onSubmit = vi.fn();
   const { container } = render(<TextArea onSubmit={onSubmit} />);
 
-  fireEvent.keyDown(container.firstElementChild as Element, { keyCode: 13 });
+  fireEvent.keyDown(container.firstElementChild as Element, {
+    keyCode: 13,
+  });
 
   expect(onSubmit.mock.calls).toHaveLength(0);
 });

@@ -1,8 +1,11 @@
 import { render, fireEvent } from "@testing-library/react";
 import { create } from "react-test-renderer";
-import { Markdown } from "../Markdown";
+import { describe, beforeEach, afterEach, expect, it, vi } from "vitest";
+import { Markdown } from "./Markdown";
 
-afterEach(() => jest.restoreAllMocks());
+afterEach(() => {
+  vi.restoreAllMocks();
+});
 
 it("renders", () => {
   expect(create(<Markdown># Foo</Markdown>).toJSON()).toMatchSnapshot();
@@ -25,7 +28,7 @@ it("renders a table", () => {
 });
 
 it("opens an image when it is clicked", () => {
-  const spy = jest.spyOn(window, "open");
+  const spy = vi.spyOn(window, "open");
   spy.mockReturnValue(null);
 
   const { container } = render(<Markdown>![foo](http://bar/baz.png)</Markdown>);
@@ -35,7 +38,7 @@ it("opens an image when it is clicked", () => {
 });
 
 it("does not open a linked image even when it is clicked", () => {
-  const spy = jest.spyOn(window, "open");
+  const spy = vi.spyOn(window, "open");
   spy.mockReturnValue(null);
 
   const { container } = render(

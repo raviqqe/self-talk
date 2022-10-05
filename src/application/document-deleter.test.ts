@@ -1,24 +1,25 @@
-import { IConfirmationController } from "../confirmation-controller";
-import { DocumentDeleter } from "../document-deleter";
-import { IDocumentPresenter } from "../document-presenter";
-import { IDocumentRepository } from "../document-repository";
+import { expect, beforeEach, it, Mock, vi, Mocked } from "vitest";
+import { IConfirmationController } from "./confirmation-controller";
+import { DocumentDeleter } from "./document-deleter";
+import { IDocumentPresenter } from "./document-presenter";
+import { IDocumentRepository } from "./document-repository";
 
-let documentRepository: jest.Mocked<IDocumentRepository>;
-let documentPresenter: jest.Mocked<IDocumentPresenter>;
-let confirmationController: jest.Mocked<IConfirmationController>;
+let documentRepository: Mocked<IDocumentRepository>;
+let documentPresenter: Mocked<IDocumentPresenter>;
+let confirmationController: Mocked<IConfirmationController>;
 let documentDeleter: DocumentDeleter;
 
 beforeEach(() => {
   documentRepository = {
-    create: jest.fn(),
-    delete: jest.fn(),
-    list: jest.fn(),
-    update: jest.fn(),
+    create: vi.fn(),
+    delete: vi.fn(),
+    list: vi.fn(),
+    update: vi.fn(),
   };
   documentPresenter = {
-    presentDeletedDocument: jest.fn(),
-  } as unknown as jest.Mocked<IDocumentPresenter>;
-  confirmationController = { confirm: jest.fn() };
+    presentDeletedDocument: vi.fn(),
+  } as unknown as Mocked<IDocumentPresenter>;
+  confirmationController = { confirm: vi.fn() };
   documentDeleter = new DocumentDeleter(
     documentRepository,
     documentPresenter,

@@ -1,28 +1,29 @@
-import { IDocument } from "../../domain/document";
-import { DocumentLister } from "../document-lister";
-import { IDocumentPresenter } from "../document-presenter";
-import { IDocumentRepository } from "../document-repository";
+import { expect, beforeEach, vi, it, Mocked } from "vitest";
+import { IDocument } from "../domain/document";
+import { DocumentLister } from "./document-lister";
+import { IDocumentPresenter } from "./document-presenter";
+import { IDocumentRepository } from "./document-repository";
 
 const dummyDocument: IDocument = { id: "", text: "" };
 
-let documentRepository: jest.Mocked<IDocumentRepository>;
-let documentPresenter: jest.Mocked<IDocumentPresenter>;
+let documentRepository: Mocked<IDocumentRepository>;
+let documentPresenter: Mocked<IDocumentPresenter>;
 let documentLister: DocumentLister;
 
 beforeEach(() => {
   documentRepository = {
-    create: jest.fn(),
-    delete: jest.fn(),
-    list: jest.fn(async function* (_: number) {
+    create: vi.fn(),
+    delete: vi.fn(),
+    list: vi.fn(async function* (_: number) {
       yield [dummyDocument];
       yield [dummyDocument];
     }),
-    update: jest.fn(),
+    update: vi.fn(),
   };
   documentPresenter = {
-    presentDocuments: jest.fn(),
-    presentMoreDocuments: jest.fn(),
-  } as unknown as jest.Mocked<IDocumentPresenter>;
+    presentDocuments: vi.fn(),
+    presentMoreDocuments: vi.fn(),
+  } as unknown as Mocked<IDocumentPresenter>;
   documentLister = new DocumentLister(documentRepository, documentPresenter);
 });
 
@@ -34,7 +35,7 @@ it("lists documents", async () => {
 });
 
 it("lists no documents", async () => {
-  documentRepository.list = jest.fn(async function* (_: number) {});
+  documentRepository.list = vi.fn(async function* (_: number) {});
   await documentLister.list();
   expect(documentPresenter.presentDocuments.mock.calls).toEqual([[[]]]);
 });
@@ -48,7 +49,7 @@ it("lists more documents", async () => {
 });
 
 it("lists no more documents", async () => {
-  documentRepository.list = jest.fn(async function* (_: number) {});
+  documentRepository.list = vi.fn(async function* (_: number) {});
   await documentLister.list();
   await documentLister.listMore();
   expect(documentPresenter.presentMoreDocuments).toHaveBeenCalledTimes(0);

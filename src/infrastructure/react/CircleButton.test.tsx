@@ -1,5 +1,6 @@
 import { create } from "react-test-renderer";
-import { CircleButton } from "../CircleButton";
+import { describe, expect, it } from "vitest";
+import { CircleButton } from "./CircleButton";
 
 it("renders", () => {
   expect(create(<CircleButton>foo</CircleButton>).toJSON()).toMatchSnapshot();

@@ -1,5 +1,6 @@
 import { create } from "react-test-renderer";
-import { TextButton } from "../TextButton";
+import { describe, beforeEach, afterEach, expect, it, vi } from "vitest";
+import { TextButton } from "./TextButton";
 
 it("renders", () => {
   expect(create(<TextButton>foo</TextButton>).toJSON()).toMatchSnapshot();
