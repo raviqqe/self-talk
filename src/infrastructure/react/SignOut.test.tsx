@@ -1,6 +1,9 @@
+import { describe, expect, it } from "vitest";
 import { create } from "react-test-renderer";
-import { SignOut } from "../SignOut";
+import { SignOut } from "./SignOut";
 
-it("renders", () => {
-  expect(create(<SignOut signOut={() => {}} />).toJSON()).toMatchSnapshot();
+describe(SignOut.name, () => {
+  it("renders", () => {
+    expect(create(<SignOut signOut={() => {}} />).toJSON()).toMatchSnapshot();
+  });
 });
