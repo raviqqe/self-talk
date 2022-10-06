@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 <div
-  className="sc-bcXHqe iogSyR"
+  class="sc-bcXHqe iogSyR"
 >
   <h1>
     Foo
@@ -12,7 +12,7 @@ exports[`renders 1`] = `
 
 exports[`renders a link with an ampersand 1`] = `
 <div
-  className="sc-bcXHqe iogSyR"
+  class="sc-bcXHqe iogSyR"
 >
   <p>
     <a
@@ -24,7 +24,7 @@ exports[`renders a link with an ampersand 1`] = `
 
 exports[`renders a table 1`] = `
 <div
-  className="sc-bcXHqe iogSyR"
+  class="sc-bcXHqe iogSyR"
 >
   <table>
     <thead>
@@ -53,35 +53,12 @@ exports[`renders a table 1`] = `
 
 exports[`renders an image 1`] = `
 <div
-  className="sc-bcXHqe iogSyR"
+  class="sc-bcXHqe iogSyR"
 >
   <p>
     <img
       alt="foo"
-      node={
-        {
-          "children": [],
-          "position": {
-            "end": {
-              "column": 27,
-              "line": 1,
-              "offset": 26,
-            },
-            "start": {
-              "column": 1,
-              "line": 1,
-              "offset": 0,
-            },
-          },
-          "properties": {
-            "alt": "foo",
-            "src": "http://bar/baz.png",
-          },
-          "tagName": "img",
-          "type": "element",
-        }
-      }
-      onClick={[Function]}
+      node="[object Object]"
       src="http://bar/baz.png"
     />
   </p>

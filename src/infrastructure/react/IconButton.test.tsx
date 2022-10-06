@@ -1,9 +1,9 @@
-import { create } from "react-test-renderer";
+import { render } from "@testing-library/react";
 import { expect, it } from "vitest";
 import { IconButton } from "./IconButton";
 
 it("renders", () => {
   expect(
-    create(<IconButton onClick={() => {}}>+</IconButton>).toJSON()
+    render(<IconButton onClick={() => {}}>+</IconButton>).container.firstChild
   ).toMatchSnapshot();
 });
