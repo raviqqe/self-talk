@@ -1,13 +1,13 @@
-import { create } from "react-test-renderer";
+import { render } from "@testing-library/react";
 import { expect, it } from "vitest";
 import { Button } from "./Button";
 
 it("renders", () => {
-  expect(create(<Button>foo</Button>).toJSON()).toMatchSnapshot();
+  expect(render(<Button>foo</Button>).container.firstChild).toMatchSnapshot();
 });
 
 it("renders as a secondary button", () => {
   expect(
-    create(<Button secondary={true}>foo</Button>).toJSON()
+    render(<Button secondary={true}>foo</Button>).container.firstChild
   ).toMatchSnapshot();
 });
