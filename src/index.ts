@@ -71,8 +71,6 @@ async function main() {
   // Disable default behavior on drop events.
   window.ondragover = (event: DragEvent) => event.preventDefault();
   window.ondrop = (event: DragEvent) => event.preventDefault();
-
-  await navigator.serviceWorker.register("/service-worker.js");
 }
 
 main().catch((error: Error) => errorReporter.report(error));
