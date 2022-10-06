@@ -7,7 +7,7 @@
     "rules": "storage.rules"
   },
   "hosting": {
-    "public": "build",
+    "public": "dist",
     "headers": [
       {
         "source": "**/*",

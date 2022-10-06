@@ -1,7 +1,21 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    VitePWA({
+      manifest: {
+        short_name: "SelfTalk",
+        name: "SelfTalk",
+        icons: [{ src: "icon.svg", sizes: "any" }],
+        start_url: ".",
+        display: "standalone",
+        theme_color: "khaki",
+        background_color: "darkkhaki",
+      },
+    }),
+  ],
   test: { environment: "jsdom" },
 });
