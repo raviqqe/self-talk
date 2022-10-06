@@ -1,13 +1,15 @@
-import { create } from "react-test-renderer";
+import { render } from "@testing-library/react";
 import { expect, it } from "vitest";
 import { TextButton } from "./TextButton";
 
 it("renders", () => {
-  expect(create(<TextButton>foo</TextButton>).toJSON()).toMatchSnapshot();
+  expect(
+    render(<TextButton>foo</TextButton>).container.firstChild
+  ).toMatchSnapshot();
 });
 
 it("renders as a secondary button", () => {
   expect(
-    create(<TextButton secondary={true}>foo</TextButton>).toJSON()
+    render(<TextButton secondary={true}>foo</TextButton>).container.firstChild
   ).toMatchSnapshot();
 });
