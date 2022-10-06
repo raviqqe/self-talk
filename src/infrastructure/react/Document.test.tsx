@@ -1,15 +1,15 @@
-import { create } from "react-test-renderer";
+import { render } from "@testing-library/react";
 import { expect, it } from "vitest";
 import { Document } from "./Document";
 
 it("renders", () => {
   expect(
-    create(
+    render(
       <Document
         document={{ id: "id", text: "text" }}
         insertFiles={async () => "url"}
         updateDocument={async () => {}}
       />
-    ).toJSON()
+    ).container.firstChild
   ).toMatchSnapshot();
 });
