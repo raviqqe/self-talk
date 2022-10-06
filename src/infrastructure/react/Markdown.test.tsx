@@ -1,5 +1,4 @@
 import { render, fireEvent } from "@testing-library/react";
-import { create } from "react-test-renderer";
 import { afterEach, expect, it, vi } from "vitest";
 import { Markdown } from "./Markdown";
 
@@ -8,12 +7,14 @@ afterEach(() => {
 });
 
 it("renders", () => {
-  expect(create(<Markdown># Foo</Markdown>).toJSON()).toMatchSnapshot();
+  expect(
+    render(<Markdown># Foo</Markdown>).container.firstChild
+  ).toMatchSnapshot();
 });
 
 it("renders an image", () => {
   expect(
-    create(<Markdown>![foo](http://bar/baz.png)</Markdown>).toJSON()
+    render(<Markdown>![foo](http://bar/baz.png)</Markdown>).container.firstChild
   ).toMatchSnapshot();
 });
 
@@ -24,7 +25,9 @@ it("renders a table", () => {
 |123 |456 |
   `;
 
-  expect(create(<Markdown>{markdown}</Markdown>).toJSON()).toMatchSnapshot();
+  expect(
+    render(<Markdown>{markdown}</Markdown>).container.firstChild
+  ).toMatchSnapshot();
 });
 
 it("opens an image when it is clicked", () => {
@@ -51,6 +54,7 @@ it("does not open a linked image even when it is clicked", () => {
 
 it("renders a link with an ampersand", () => {
   expect(
-    create(<Markdown>[](http://foo.com?foo=bar&baz=blah)</Markdown>).toJSON()
+    render(<Markdown>[](http://foo.com?foo=bar&baz=blah)</Markdown>).container
+      .firstChild
   ).toMatchSnapshot();
 });
