@@ -8,8 +8,8 @@ jobs:
       - uses: actions/checkout@main
       - run: npm install
       - run: npm run build
-      - run: npm run lint
       - run: npm run test
+      - run: npm run lint
       - uses: codecov/codecov-action@v3
       - run: npm run --silent deploy -- --token $FIREBASE_TOKEN
         env:
