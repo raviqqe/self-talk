@@ -15,6 +15,9 @@ export default defineConfig({
         theme_color: "khaki",
         background_color: "darkkhaki",
       },
+      workbox: {
+        navigateFallbackDenylist: [/^\/__/],
+      },
     }),
   ],
   test: { environment: "jsdom" },
