@@ -14,7 +14,7 @@
         "headers": [
           {
             "key": "Access-Control-Allow-Origin",
-            "value": "https://self-talk.code2d.org"
+            "value": "https://notes.code2d.org"
           },
           {
             "key": "Content-Security-Policy",
