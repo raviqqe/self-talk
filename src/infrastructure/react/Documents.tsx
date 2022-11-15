@@ -19,6 +19,7 @@ const LoaderContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
 `;
 
 const StyledInfiniteScroll = styled((props: Props) => (
@@ -56,11 +57,15 @@ export const Documents = ({
         dataLength={documents.length}
         hasMore={true}
         inverse={true}
-        loader={null}
+        loader={
+          <LoaderContainer>
+            <PulseLoader color={white} />
+          </LoaderContainer>
+        }
         next={listMoreDocuments}
         scrollableTarget={documentsContainerId}
       >
-        {documents.map((document: IDocument) => (
+        {documents.map((document) => (
           <StyledDocument
             document={document}
             insertFiles={insertFiles}
