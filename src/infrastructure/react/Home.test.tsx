@@ -17,7 +17,7 @@ afterEach(() => {
 it("renders", async () => {
   let result: RenderResult | undefined;
 
-  act(() => {
+  await act(() => {
     result = render(
       <Home
         createDocument={async () => {}}
@@ -42,7 +42,7 @@ it("creates a document", async () => {
   const createDocument = vi.fn(async () => {});
   let result: RenderResult | undefined;
 
-  act(() => {
+  await act(() => {
     result = render(
       <Home
         createDocument={createDocument}
@@ -60,7 +60,7 @@ it("creates a document", async () => {
     expect(result?.container.querySelector("textarea")).toBeTruthy()
   );
 
-  act(() => {
+  await act(() => {
     fireEvent.change(
       result?.container.querySelector("textarea") as HTMLTextAreaElement,
       { target: { value: "foo" } }
@@ -76,7 +76,7 @@ it("updates a document", async () => {
   const updateDocument = vi.fn(async () => {});
   let result: RenderResult | undefined;
 
-  act(() => {
+  await act(() => {
     result = render(
       <Home
         createDocument={async () => {}}
@@ -92,7 +92,7 @@ it("updates a document", async () => {
 
   await waitFor(() => expect(result?.getByLabelText("Edit")).toBeTruthy());
 
-  act(() => {
+  await act(() => {
     fireEvent.click(result?.getByLabelText("Edit") as Element);
 
     fireEvent.change(
