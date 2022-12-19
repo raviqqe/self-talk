@@ -32,7 +32,7 @@ export class ReactRenderer implements IRenderer {
     private readonly signInManager: SignInManager,
     private readonly signOutManager: SignOutManager,
     private readonly textFileInserter: TextFileInserter,
-    private readonly repositoryURL: string
+    private readonly repositoryUrl: string
   ) {
     for (const presenter of presenters) {
       presenter.setRenderer(this);
@@ -71,7 +71,7 @@ export class ReactRenderer implements IRenderer {
           }
           listDocuments={() => this.documentLister.list()}
           listMoreDocuments={() => this.documentLister.listMore()}
-          repositoryURL={this.repositoryURL}
+          repositoryUrl={this.repositoryUrl}
           signIn={() => this.signInManager.signIn()}
           signOut={() => this.signOutManager.signOut()}
           updateDocument={(document: IDocument) =>
