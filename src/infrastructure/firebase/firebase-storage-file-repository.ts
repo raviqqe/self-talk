@@ -6,7 +6,7 @@ import {
   getStorage,
   StorageReference,
   updateMetadata,
-  getDownloadURL,
+  getDownloadUrl,
   uploadBytes,
 } from "firebase/storage";
 import UUID from "pure-uuid";
@@ -29,7 +29,7 @@ export class FirebaseStorageFileRepository implements IFileRepository {
       cacheControl: `max-age=${60 * 60 * 24 * 365}`,
     });
 
-    return getDownloadURL(child);
+    return getDownloadUrl(child);
   }
 
   private files(): StorageReference {
