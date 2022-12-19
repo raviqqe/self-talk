@@ -17,7 +17,7 @@ const props: IProps = {
   insertFiles: async () => "",
   listDocuments,
   listMoreDocuments: async () => {},
-  repositoryURL: "",
+  repositoryUrl: "",
   signIn: async () => {},
   signOut: async () => {},
   signedIn: null,
