@@ -12,7 +12,7 @@ beforeEach(() => {
 it("renders", async () => {
   let result: RenderResult | undefined;
 
-  await act(() => {
+  act(() => {
     result = render(
       <Documents
         documents={[{ id: "id", text: "text" }]}
@@ -32,7 +32,7 @@ it("renders", async () => {
 it("renders with no documents", async () => {
   let result: RenderResult | undefined;
 
-  await act(() => {
+  act(() => {
     result = render(
       <Documents
         documents={[]}
@@ -52,7 +52,7 @@ it("renders with no documents", async () => {
 it("renders with documents not loaded yet", async () => {
   let result: RenderResult | undefined;
 
-  await act(() => {
+  act(() => {
     result = render(
       <Documents
         documents={null}
