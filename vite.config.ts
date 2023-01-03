@@ -13,7 +13,7 @@ export default defineConfig({
         start_url: ".",
         display: "standalone",
         theme_color: "darkkhaki",
-        background_color: "khaki",
+        background_color: "darkkhaki",
       },
       workbox: {
         navigateFallbackDenylist: [/^\/__/],
