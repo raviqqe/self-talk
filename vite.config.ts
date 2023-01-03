@@ -12,8 +12,8 @@ export default defineConfig({
         icons: [{ src: "icon.svg", sizes: "any" }],
         start_url: ".",
         display: "standalone",
-        theme_color: "khaki",
-        background_color: "darkkhaki",
+        theme_color: "darkkhaki",
+        background_color: "khaki",
       },
       workbox: {
         navigateFallbackDenylist: [/^\/__/],
