@@ -31,7 +31,7 @@
     "@raviqqe/eslint-config": "git://github.com/raviqqe/eslint-config",
     "@raviqqe/react-tsconfig": "git://github.com/raviqqe/react-tsconfig",
     "@testing-library/react": "^13.4.0",
-    "@types/jest": "^29.2.6",
+    "@types/jest": "^29.4.0",
     "@types/lodash": "^4.14.191",
     "@types/prettier": "^2.7.2",
     "@types/react": "^18.0.27",
