@@ -36,7 +36,7 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
   public async create(document: IDocument): Promise<void> {
     await setDoc(doc(this.collection(), document.id), {
       ...document,
-      createdAt: Math.floor(Date.now() / 1000), // Unix timestam as numberp
+      createdAt: Math.floor(Date.now() / 1000), // Unix timestamp as number
     });
   }
 
