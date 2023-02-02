@@ -1,3 +1,4 @@
+import { useId } from "react";
 import InfiniteScroll, { Props } from "react-infinite-scroll-component";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
@@ -6,8 +7,6 @@ import { IDocument } from "../../domain/document";
 import { Document } from "./Document";
 import { white } from "./style/colors";
 import { InsertFilesFunction } from "./utilities";
-
-const documentsContainerId = "documents-container";
 
 const Container = styled.div`
   display: flex;
@@ -49,6 +48,7 @@ export const Documents = ({
   listMoreDocuments,
   updateDocument,
 }: IProps): JSX.Element => {
+  const documentsContainerId = useId();
   useAsync(listDocuments, []);
 
   return documents ? (
