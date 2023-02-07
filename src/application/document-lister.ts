@@ -13,7 +13,9 @@ export class DocumentLister {
   ) {}
 
   public async list(): Promise<void> {
-    this.iterator = this.documentRepository.list(defaultLimit);
+    this.iterator = this.documentRepository
+      .list(defaultLimit)
+      [Symbol.asyncIterator]();
     this.documentPresenter.presentDocuments(
       (await this.iterator.next()).value || []
     );
