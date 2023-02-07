@@ -62,7 +62,7 @@ async function main() {
       documentPresenter,
       messagePresenter
     ),
-    new SignInManager(authenticationController),
+    new SignInManager(authenticationController, authenticationPresenter),
     new SignOutManager(authenticationController, authenticationPresenter),
     new TextFileInserter(new FirebaseStorageFileRepository(firebaseApp)),
     configuration.repositoryUrl
