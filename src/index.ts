@@ -6,7 +6,7 @@ import { DocumentUpdater } from "./application/document-updater";
 import { SignInManager } from "./application/sign-in-manager";
 import { SignOutManager } from "./application/sign-out-manager";
 import { TextFileInserter } from "./application/text-file-inserter";
-import * as configuration from "./configuration.json";
+import configuration from "./configuration.json";
 import { AlertMessagePresenter } from "./infrastructure/alert-message-presenter";
 import { AuthenticationPresenter } from "./infrastructure/authentication-presenter";
 import { BuiltinConfirmationController } from "./infrastructure/builtin-confirmation-controller";
