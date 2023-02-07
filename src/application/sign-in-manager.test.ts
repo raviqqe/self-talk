@@ -1,18 +1,15 @@
-import { expect, beforeEach, it, Mock, vi } from "vitest";
-import { IAuthenticationController } from "./authentication-controller";
+import { expect, it } from "vitest";
 import { SignInManager } from "./sign-in-manager";
-
-let signInMock: Mock;
-let signInManager: SignInManager;
-
-beforeEach(() => {
-  signInMock = vi.fn();
-  signInManager = new SignInManager({
-    signIn: signInMock,
-  } as unknown as IAuthenticationController);
-});
+import { authenticationController, authenticationPresenter } from "./test";
 
 it("signs in", async () => {
+  const signInManager = new SignInManager(
+    authenticationController,
+    authenticationPresenter
+  );
+
   await signInManager.signIn();
-  expect(signInMock.mock.calls).toHaveLength(1);
+
+  expect(authenticationController.signIn).toHaveBeenCalledOnce();
+  expect(authenticationPresenter.presentSignedIn).toHaveBeenCalledOnce();
 });
