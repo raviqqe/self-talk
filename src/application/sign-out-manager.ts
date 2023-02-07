@@ -8,6 +8,8 @@ export class SignOutManager {
   ) {}
 
   public async signOut(): Promise<void> {
+    await this.authenticationController.signOut();
+
     this.authenticationPresenter.presentSignedIn(
       await this.authenticationController.isSignedIn()
     );
