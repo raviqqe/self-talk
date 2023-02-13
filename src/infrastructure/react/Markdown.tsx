@@ -1,3 +1,4 @@
+import { DetailedHTMLProps, ImgHTMLAttributes } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import styled, { css } from "styled-components";
@@ -81,7 +82,14 @@ const Container = styled.div`
   }
 `;
 
-const Image = (props: { node: unknown; src?: string }) => (
+// TODO Fix accessibility.
+/* eslint-disable jsx-a11y/alt-text, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */
+const Image = (
+  props: DetailedHTMLProps<
+    ImgHTMLAttributes<HTMLImageElement>,
+    HTMLImageElement
+  >
+) => (
   <img
     onClick={(event) => {
       if (event.currentTarget.parentElement?.tagName !== "A" && props.src) {
@@ -91,6 +99,7 @@ const Image = (props: { node: unknown; src?: string }) => (
     {...props}
   />
 );
+/* eslint-enable */
 
 interface IProps {
   children: string;
