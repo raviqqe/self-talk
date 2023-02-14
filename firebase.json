@@ -13,10 +13,6 @@
         "source": "**/*",
         "headers": [
           {
-            "key": "Access-Control-Allow-Origin",
-            "value": "https://notes.code2d.org"
-          },
-          {
             "key": "Content-Security-Policy",
             "value": "default-src 'self' self-talk-3097a.firebaseapp.com *.google.com *.googleapis.com *.gstatic.com sentry.io; style-src 'self' 'unsafe-inline' *.googleapis.com; img-src *; frame-ancestors 'none'"
           },
