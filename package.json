@@ -30,7 +30,7 @@
   "devDependencies": {
     "@raviqqe/eslint-config": "^1.0.21",
     "@raviqqe/react-tsconfig": "^1.0.0",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.4.0",
     "@types/lodash": "^4.14.191",
     "@types/prettier": "^2.7.2",
