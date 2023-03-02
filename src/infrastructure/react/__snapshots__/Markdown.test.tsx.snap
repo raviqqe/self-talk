@@ -1,8 +1,8 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders 1`] = `
 <div
-  class="sc-bcXHqe iogSyR"
+  class="sc-beySbM bIjTAQ"
 >
   <h1>
     Foo
@@ -12,7 +12,7 @@ exports[`renders 1`] = `
 
 exports[`renders a link with an ampersand 1`] = `
 <div
-  class="sc-bcXHqe iogSyR"
+  class="sc-beySbM bIjTAQ"
 >
   <p>
     <a
@@ -24,7 +24,7 @@ exports[`renders a link with an ampersand 1`] = `
 
 exports[`renders a table 1`] = `
 <div
-  class="sc-bcXHqe iogSyR"
+  class="sc-beySbM bIjTAQ"
 >
   <table>
     <thead>
@@ -53,7 +53,7 @@ exports[`renders a table 1`] = `
 
 exports[`renders an image 1`] = `
 <div
-  class="sc-bcXHqe iogSyR"
+  class="sc-beySbM bIjTAQ"
 >
   <p>
     <img

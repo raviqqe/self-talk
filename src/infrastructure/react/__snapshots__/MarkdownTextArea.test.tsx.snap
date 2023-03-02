@@ -1,9 +1,9 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders 1`] = `
 <div>
   <textarea
-    class="sc-bcXHqe hpPa-dS"
+    class="sc-beySbM crEanD"
     placeholder="Write in Markdown ..."
   >
     foo

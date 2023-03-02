@@ -1,22 +1,22 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders 1`] = `
 <div
-  class="sc-ftTHYK ebfSnj"
+  class="sc-fsYeqs eILdom"
 >
   <div
-    class="sc-gswNZR dIoQnh"
+    class="sc-guDLRT fMpztW"
   >
     <p>
       text
     </p>
   </div>
   <div
-    class="sc-pyfCe eZVdAB"
+    class="sc-qZqnM fXZaov"
   >
     <div
       aria-label="Edit"
-      class="sc-bcXHqe jUftXb"
+      class="sc-beySbM lkAuAe"
     >
       <svg
         fill="currentColor"
