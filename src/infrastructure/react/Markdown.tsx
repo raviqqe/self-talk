@@ -1,8 +1,11 @@
+import { defaultImport } from "default-import";
 import { type DetailedHTMLProps, type ImgHTMLAttributes } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import styled, { css } from "styled-components";
+import defaultStyled, { css } from "styled-components";
 import { darkGrey, grey, red, white } from "./style/colors.js";
+
+const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   cursor: text;
