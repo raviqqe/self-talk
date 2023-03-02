@@ -25,7 +25,7 @@
     "react-textarea-autosize": "^8.4.0",
     "react-use": "^17.4.0",
     "remark-gfm": "^3.0.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.8"
   },
   "devDependencies": {
     "@raviqqe/eslint-config": "^1.0.22",
