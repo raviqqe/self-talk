@@ -12,7 +12,7 @@ import TextareaAutosize, {
 } from "react-textarea-autosize";
 import styled from "styled-components";
 import { grey } from "./style/colors.js";
-import { boxShadow } from "./style.js";
+import { boxShadow } from "./style/index.js";
 
 const NoStyleTextareaAutosize = forwardRef(
   (

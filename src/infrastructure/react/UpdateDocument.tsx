@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MdSave } from "react-icons/md";
+import { MdSave } from "react-icons/md/index.js";
 import styled from "styled-components";
 import { type IDocument } from "../../domain/document.js";
 import { CircleButton } from "./CircleButton.js";

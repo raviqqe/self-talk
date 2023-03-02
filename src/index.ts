@@ -6,7 +6,7 @@ import { DocumentUpdater } from "./application/document-updater.js";
 import { SignInManager } from "./application/sign-in-manager.js";
 import { SignOutManager } from "./application/sign-out-manager.js";
 import { TextFileInserter } from "./application/text-file-inserter.js";
-import configuration from "./configuration.json.js";
+import configuration from "./configuration.json";
 import { AlertMessagePresenter } from "./infrastructure/alert-message-presenter.js";
 import { AuthenticationPresenter } from "./infrastructure/authentication-presenter.js";
 import { BuiltinConfirmationController } from "./infrastructure/builtin-confirmation-controller.js";
@@ -15,7 +15,7 @@ import { FirebaseAuthenticationController } from "./infrastructure/firebase/fire
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer.js";
 import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebase-storage-file-repository.js";
 import { FirestoreDocumentRepository } from "./infrastructure/firebase/firestore-document-repository.js";
-import { ReactRenderer } from "./infrastructure/react.js";
+import { ReactRenderer } from "./infrastructure/react/index.js";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter.js";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.

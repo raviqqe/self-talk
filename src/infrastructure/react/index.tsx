@@ -10,7 +10,7 @@ import { type TextFileInserter } from "../../application/text-file-inserter.js";
 import { type IDocument } from "../../domain/document.js";
 import { type IRenderer } from "../renderer.js";
 import { App, type IProps as IAppProps } from "./App.js";
-import { GlobalStyle } from "./style.js";
+import { GlobalStyle } from "./style/index.js";
 
 interface IPresenter {
   setRenderer(renderer: IRenderer): void;

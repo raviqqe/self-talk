@@ -1,5 +1,5 @@
 import markdownParser from "prettier/parser-markdown";
-import prettier from "prettier/standalone";
+import { format } from "prettier/standalone";
 
 export interface IDocument {
   id: string;
@@ -9,8 +9,10 @@ export interface IDocument {
 export function formatDocument(document: IDocument): IDocument {
   return {
     ...document,
-    text: prettier
-      .format(document.text, { parser: "markdown", plugins: [markdownParser] })
+    text: format(document.text, {
+      parser: "markdown",
+      plugins: [markdownParser],
+    })
       .trim()
       // https://github.com/prettier/prettier/issues/6213
       .replace(/\\*\$/g, "$"),
