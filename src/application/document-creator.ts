@@ -1,4 +1,3 @@
-import UUID from "pure-uuid";
 import { formatDocument, validateDocument } from "../domain/document.js";
 import { formatErrorMessage } from "../domain/error.js";
 import { type IDocumentPresenter } from "./document-presenter.js";
@@ -13,7 +12,7 @@ export class DocumentCreator {
   ) {}
 
   public async create(text: string): Promise<void> {
-    const document = formatDocument({ id: new UUID(4).format(), text });
+    const document = formatDocument({ id: window.crypto.randomUUID(), text });
 
     try {
       validateDocument(document);

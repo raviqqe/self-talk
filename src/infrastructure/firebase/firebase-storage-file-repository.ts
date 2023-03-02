@@ -9,7 +9,6 @@ import {
   getDownloadURL,
   uploadBytes,
 } from "firebase/storage";
-import UUID from "pure-uuid";
 import { type IFileRepository } from "../../application/file-repository.js";
 
 export class FirebaseStorageFileRepository implements IFileRepository {
@@ -22,7 +21,7 @@ export class FirebaseStorageFileRepository implements IFileRepository {
   }
 
   public async create(file: Blob): Promise<string> {
-    const child = ref(this.files(), new UUID(4).format());
+    const child = ref(this.files(), window.crypto.randomUUID());
 
     await uploadBytes(child, file);
     await updateMetadata(child, {
