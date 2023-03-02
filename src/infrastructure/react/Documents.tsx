@@ -3,10 +3,10 @@ import InfiniteScroll, { type Props } from "react-infinite-scroll-component";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import styled from "styled-components";
-import { type IDocument } from "../../domain/document";
-import { Document } from "./Document";
-import { white } from "./style/colors";
-import { type InsertFilesFunction } from "./utilities";
+import { type IDocument } from "../../domain/document.js";
+import { Document } from "./Document.js";
+import { white } from "./style/colors.js";
+import { type InsertFilesFunction } from "./utilities.js";
 
 const Container = styled.div`
   display: flex;

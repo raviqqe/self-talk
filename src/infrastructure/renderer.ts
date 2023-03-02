@@ -1,4 +1,4 @@
-import { type IDocument } from "../domain/document";
+import { type IDocument } from "../domain/document.js";
 
 export interface IRenderer {
   renderDocuments(documents: IDocument[] | null): void;

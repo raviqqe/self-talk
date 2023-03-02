@@ -10,7 +10,7 @@ import {
   uploadBytes,
 } from "firebase/storage";
 import UUID from "pure-uuid";
-import { type IFileRepository } from "../../application/file-repository";
+import { type IFileRepository } from "../../application/file-repository.js";
 
 export class FirebaseStorageFileRepository implements IFileRepository {
   private readonly auth: Auth;

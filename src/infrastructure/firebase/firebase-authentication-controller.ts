@@ -6,8 +6,8 @@ import {
   signInWithPopup,
   type User,
 } from "firebase/auth";
-import { type IAuthenticationController } from "../../application/authentication-controller";
-import { sleep } from "../../domain/utilities";
+import { type IAuthenticationController } from "../../application/authentication-controller.js";
+import { sleep } from "../../domain/utilities.js";
 
 export class FirebaseAuthenticationController
   implements IAuthenticationController

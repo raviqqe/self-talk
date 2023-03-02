@@ -1,6 +1,6 @@
 import { render, fireEvent } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
-import { Markdown } from "./Markdown";
+import { Markdown } from "./Markdown.js";
 
 afterEach(() => {
   vi.restoreAllMocks();

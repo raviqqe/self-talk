@@ -1,4 +1,4 @@
-import { type IFileRepository } from "./file-repository";
+import { type IFileRepository } from "./file-repository.js";
 
 export class TextFileInserter {
   constructor(private readonly fileRepository: IFileRepository) {}

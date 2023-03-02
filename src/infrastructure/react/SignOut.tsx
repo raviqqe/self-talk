@@ -1,5 +1,5 @@
 import { MdExitToApp } from "react-icons/md";
-import { CircleButton } from "./CircleButton";
+import { CircleButton } from "./CircleButton.js";
 
 interface IProps {
   signOut: () => void;

@@ -5,7 +5,7 @@ import {
   waitFor,
 } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
-import { App, type IProps } from "./App";
+import { App, type IProps } from "./App.js";
 
 const initialize = vi.fn();
 const listDocuments = vi.fn();

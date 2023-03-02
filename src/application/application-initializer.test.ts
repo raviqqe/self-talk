@@ -1,6 +1,6 @@
 import { it, expect, vi } from "vitest";
-import { ApplicationInitializer } from "./application-initializer";
-import { type IAuthenticationController } from "./authentication-controller";
+import { ApplicationInitializer } from "./application-initializer.js";
+import { type IAuthenticationController } from "./authentication-controller.js";
 
 it("initializes an application state", async () => {
   const authenticationController = { isSignedIn: vi.fn(async () => true) };

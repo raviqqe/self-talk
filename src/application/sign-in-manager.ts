@@ -1,5 +1,5 @@
-import { type IAuthenticationController } from "./authentication-controller";
-import { type IAuthenticationPresenter } from "./authentication-presenter";
+import { type IAuthenticationController } from "./authentication-controller.js";
+import { type IAuthenticationPresenter } from "./authentication-presenter.js";
 
 export class SignInManager {
   constructor(

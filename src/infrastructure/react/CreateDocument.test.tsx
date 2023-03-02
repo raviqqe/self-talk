@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { it, expect } from "vitest";
-import { CreateDocument } from "./CreateDocument";
+import { CreateDocument } from "./CreateDocument.js";
 
 it("renders", () => {
   expect(

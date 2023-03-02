@@ -17,8 +17,8 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { last } from "lodash";
-import { type IDocumentRepository } from "../../application/document-repository";
-import { type IDocument } from "../../domain/document";
+import { type IDocumentRepository } from "../../application/document-repository.js";
+import { type IDocument } from "../../domain/document.js";
 
 interface ITimestampedDocument extends IDocument {
   createdAt: number;

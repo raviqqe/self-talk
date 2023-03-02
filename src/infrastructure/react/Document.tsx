@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { MdEdit } from "react-icons/md";
 import styled from "styled-components";
-import { IconButton } from "./IconButton";
-import { Markdown } from "./Markdown";
+import { IconButton } from "./IconButton.js";
+import { Markdown } from "./Markdown.js";
 import {
   UpdateDocument,
   type IProps as IUpdateDocumentProps,
-} from "./UpdateDocument";
-import { boxShadow } from "./style";
-import { white } from "./style/colors";
+} from "./UpdateDocument.js";
+import { boxShadow } from "./style.js";
+import { white } from "./style/colors.js";
 
 const Container = styled.div`
   ${boxShadow};

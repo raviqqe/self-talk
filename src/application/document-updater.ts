@@ -2,12 +2,12 @@ import {
   type IDocument,
   formatDocument,
   validateDocument,
-} from "../domain/document";
-import { formatErrorMessage } from "../domain/error";
-import { type DocumentDeleter } from "./document-deleter";
-import { type IDocumentPresenter } from "./document-presenter";
-import { type IDocumentRepository } from "./document-repository";
-import { type IMessagePresenter } from "./message-presenter";
+} from "../domain/document.js";
+import { formatErrorMessage } from "../domain/error.js";
+import { type DocumentDeleter } from "./document-deleter.js";
+import { type IDocumentPresenter } from "./document-presenter.js";
+import { type IDocumentRepository } from "./document-repository.js";
+import { type IMessagePresenter } from "./message-presenter.js";
 
 export class DocumentUpdater {
   constructor(

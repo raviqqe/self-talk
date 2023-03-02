@@ -11,8 +11,8 @@ import TextareaAutosize, {
   type TextareaAutosizeProps,
 } from "react-textarea-autosize";
 import styled from "styled-components";
-import { boxShadow } from "./style";
-import { grey } from "./style/colors";
+import { boxShadow } from "./style.js";
+import { grey } from "./style/colors.js";
 
 const NoStyleTextareaAutosize = forwardRef(
   (
