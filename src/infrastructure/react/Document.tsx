@@ -7,8 +7,8 @@ import {
   UpdateDocument,
   type IProps as IUpdateDocumentProps,
 } from "./UpdateDocument.js";
-import { boxShadow } from "./style.js";
 import { white } from "./style/colors.js";
+import { boxShadow } from "./style.js";
 
 const Container = styled.div`
   ${boxShadow};
