@@ -1,11 +1,11 @@
 import { it } from "vitest";
-import { ApplicationInitializer } from "../../application/application-initializer";
-import { DocumentCreator } from "../../application/document-creator";
-import { DocumentLister } from "../../application/document-lister";
-import { DocumentUpdater } from "../../application/document-updater";
-import { SignInManager } from "../../application/sign-in-manager";
-import { SignOutManager } from "../../application/sign-out-manager";
-import { TextFileInserter } from "../../application/text-file-inserter";
+import { type ApplicationInitializer } from "../../application/application-initializer.js";
+import { type DocumentCreator } from "../../application/document-creator.js";
+import { type DocumentLister } from "../../application/document-lister.js";
+import { type DocumentUpdater } from "../../application/document-updater.js";
+import { type SignInManager } from "../../application/sign-in-manager.js";
+import { type SignOutManager } from "../../application/sign-out-manager.js";
+import { type TextFileInserter } from "../../application/text-file-inserter.js";
 import { ReactRenderer } from ".";
 
 it("renders", () => {

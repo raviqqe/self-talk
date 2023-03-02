@@ -1,18 +1,18 @@
 import {
-  ForwardedRef,
+  type ForwardedRef,
   forwardRef,
-  InputHTMLAttributes,
-  KeyboardEvent,
+  type InputHTMLAttributes,
+  type KeyboardEvent,
   useEffect,
   useRef,
   useState,
 } from "react";
 import TextareaAutosize, {
-  TextareaAutosizeProps,
+  type TextareaAutosizeProps,
 } from "react-textarea-autosize";
 import styled from "styled-components";
-import { boxShadow } from "./style";
-import { grey } from "./style/colors";
+import { grey } from "./style/colors.js";
+import { boxShadow } from "./style/index.js";
 
 const NoStyleTextareaAutosize = forwardRef(
   (

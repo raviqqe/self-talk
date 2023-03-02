@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { MdAdd } from "react-icons/md";
+import { MdAdd } from "react-icons/md/index.js";
 import styled from "styled-components";
-import { CircleButton } from "./CircleButton";
-import { MarkdownTextArea } from "./MarkdownTextArea";
-import { InsertFilesFunction } from "./utilities";
+import { CircleButton } from "./CircleButton.js";
+import { MarkdownTextArea } from "./MarkdownTextArea.js";
+import { type InsertFilesFunction } from "./utilities.js";
 
 const Container = styled.div`
   display: flex;

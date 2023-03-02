@@ -1,6 +1,6 @@
-import { IConfirmationController } from "./confirmation-controller";
-import { IDocumentPresenter } from "./document-presenter";
-import { IDocumentRepository } from "./document-repository";
+import { type IConfirmationController } from "./confirmation-controller.js";
+import { type IDocumentPresenter } from "./document-presenter.js";
+import { type IDocumentRepository } from "./document-repository.js";
 
 export class DocumentDeleter {
   constructor(

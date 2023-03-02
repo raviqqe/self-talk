@@ -2,11 +2,11 @@ import {
   act,
   fireEvent,
   render,
-  RenderResult,
+  type RenderResult,
   waitFor,
 } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
-import { Home } from "./Home";
+import { Home } from "./Home.js";
 
 afterEach(() => {
   for (const element of document.getElementsByTagName("html")) {

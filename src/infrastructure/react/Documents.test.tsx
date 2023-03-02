@@ -1,6 +1,11 @@
-import { act, render, RenderResult, waitFor } from "@testing-library/react";
+import {
+  act,
+  render,
+  type RenderResult,
+  waitFor,
+} from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
-import { Documents } from "./Documents";
+import { Documents } from "./Documents.js";
 
 const listDocuments = vi.fn();
 const wait = () => waitFor(() => expect(listDocuments).toHaveBeenCalled());

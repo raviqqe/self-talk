@@ -1,24 +1,24 @@
-import { FirebaseApp } from "firebase/app";
-import { Auth, getAuth } from "firebase/auth";
+import { type FirebaseApp } from "firebase/app";
+import { type Auth, getAuth } from "firebase/auth";
 import {
   collection,
-  CollectionReference,
+  type CollectionReference,
   deleteDoc,
   doc,
-  Firestore,
+  type Firestore,
   getDocs,
   getFirestore,
   limit,
   orderBy,
   query,
-  Query,
+  type Query,
   setDoc,
   startAfter,
   updateDoc,
 } from "firebase/firestore";
 import { last } from "lodash";
-import { IDocumentRepository } from "../../application/document-repository";
-import { IDocument } from "../../domain/document";
+import { type IDocumentRepository } from "../../application/document-repository.js";
+import { type IDocument } from "../../domain/document.js";
 
 interface ITimestampedDocument extends IDocument {
   createdAt: number;

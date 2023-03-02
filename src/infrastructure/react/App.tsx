@@ -1,9 +1,9 @@
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import styled from "styled-components";
-import { Home, IProps as IHomeProps } from "./Home";
-import { IProps as ILandingProps, Landing } from "./Landing";
-import { white } from "./style/colors";
+import { Home, type IProps as IHomeProps } from "./Home.js";
+import { type IProps as ILandingProps, Landing } from "./Landing.js";
+import { white } from "./style/colors.js";
 
 const LoaderContainer = styled.div`
   display: flex;

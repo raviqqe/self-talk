@@ -1,6 +1,6 @@
 import { fireEvent, render } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
-import { TextArea } from "./TextArea";
+import { TextArea } from "./TextArea.js";
 
 it("renders", () => {
   expect(render(<TextArea onSubmit={() => {}} />).container).toMatchSnapshot();
