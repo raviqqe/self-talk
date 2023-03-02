@@ -1,5 +1,5 @@
 import * as sentry from "@sentry/browser";
-import { IErrorReporter } from "./error-reporter";
+import { type IErrorReporter } from "./error-reporter";
 
 export class SentryErrorReporter implements IErrorReporter {
   constructor(dsn: string) {

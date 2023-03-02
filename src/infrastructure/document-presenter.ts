@@ -1,6 +1,6 @@
-import { IDocumentPresenter } from "../application/document-presenter";
-import { IDocument } from "../domain/document";
-import { IRenderer } from "./renderer";
+import { type IDocumentPresenter } from "../application/document-presenter";
+import { type IDocument } from "../domain/document";
+import { type IRenderer } from "./renderer";
 
 export class DocumentPresenter implements IDocumentPresenter {
   private renderer: IRenderer | null = null;

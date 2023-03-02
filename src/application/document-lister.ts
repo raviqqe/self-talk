@@ -1,6 +1,6 @@
-import { IDocument } from "../domain/document";
-import { IDocumentPresenter } from "./document-presenter";
-import { IDocumentRepository } from "./document-repository";
+import { type IDocument } from "../domain/document";
+import { type IDocumentPresenter } from "./document-presenter";
+import { type IDocumentRepository } from "./document-repository";
 
 const defaultLimit = 20;
 

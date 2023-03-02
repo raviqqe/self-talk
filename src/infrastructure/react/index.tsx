@@ -1,15 +1,15 @@
 import { StrictMode } from "react";
-import { createRoot, Root } from "react-dom/client";
-import { ApplicationInitializer } from "../../application/application-initializer";
-import { DocumentCreator } from "../../application/document-creator";
-import { DocumentLister } from "../../application/document-lister";
-import { DocumentUpdater } from "../../application/document-updater";
-import { SignInManager } from "../../application/sign-in-manager";
-import { SignOutManager } from "../../application/sign-out-manager";
-import { TextFileInserter } from "../../application/text-file-inserter";
-import { IDocument } from "../../domain/document";
-import { IRenderer } from "../renderer";
-import { App, IProps as IAppProps } from "./App";
+import { createRoot, type Root } from "react-dom/client";
+import { type ApplicationInitializer } from "../../application/application-initializer";
+import { type DocumentCreator } from "../../application/document-creator";
+import { type DocumentLister } from "../../application/document-lister";
+import { type DocumentUpdater } from "../../application/document-updater";
+import { type SignInManager } from "../../application/sign-in-manager";
+import { type SignOutManager } from "../../application/sign-out-manager";
+import { type TextFileInserter } from "../../application/text-file-inserter";
+import { type IDocument } from "../../domain/document";
+import { type IRenderer } from "../renderer";
+import { App, type IProps as IAppProps } from "./App";
 import { GlobalStyle } from "./style";
 
 interface IPresenter {

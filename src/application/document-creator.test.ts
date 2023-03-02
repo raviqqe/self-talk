@@ -1,8 +1,8 @@
-import { it, expect, vi, Mocked, beforeEach } from "vitest";
+import { it, expect, vi, type Mocked, beforeEach } from "vitest";
 import { DocumentCreator } from "./document-creator";
-import { IDocumentPresenter } from "./document-presenter";
-import { IDocumentRepository } from "./document-repository";
-import { IMessagePresenter } from "./message-presenter";
+import { type IDocumentPresenter } from "./document-presenter";
+import { type IDocumentRepository } from "./document-repository";
+import { type IMessagePresenter } from "./message-presenter";
 
 let documentRepository: Mocked<IDocumentRepository>;
 let documentPresenter: Mocked<IDocumentPresenter>;

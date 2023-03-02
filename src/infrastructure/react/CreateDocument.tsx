@@ -3,7 +3,7 @@ import { MdAdd } from "react-icons/md";
 import styled from "styled-components";
 import { CircleButton } from "./CircleButton";
 import { MarkdownTextArea } from "./MarkdownTextArea";
-import { InsertFilesFunction } from "./utilities";
+import { type InsertFilesFunction } from "./utilities";
 
 const Container = styled.div`
   display: flex;

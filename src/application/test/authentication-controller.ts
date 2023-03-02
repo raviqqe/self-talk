@@ -1,5 +1,5 @@
-import { Mocked, vi } from "vitest";
-import { IAuthenticationController } from "../authentication-controller";
+import { type Mocked, vi } from "vitest";
+import { type IAuthenticationController } from "../authentication-controller";
 
 export const authenticationController: Mocked<IAuthenticationController> = {
   isSignedIn: vi.fn(async () => false),

@@ -1,13 +1,13 @@
 import {
-  IDocument,
+  type IDocument,
   formatDocument,
   validateDocument,
 } from "../domain/document";
 import { formatErrorMessage } from "../domain/error";
-import { DocumentDeleter } from "./document-deleter";
-import { IDocumentPresenter } from "./document-presenter";
-import { IDocumentRepository } from "./document-repository";
-import { IMessagePresenter } from "./message-presenter";
+import { type DocumentDeleter } from "./document-deleter";
+import { type IDocumentPresenter } from "./document-presenter";
+import { type IDocumentRepository } from "./document-repository";
+import { type IMessagePresenter } from "./message-presenter";
 
 export class DocumentUpdater {
   constructor(

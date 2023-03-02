@@ -1,8 +1,8 @@
-import { expect, beforeEach, it, vi, Mocked } from "vitest";
-import { IConfirmationController } from "./confirmation-controller";
+import { expect, beforeEach, it, vi, type Mocked } from "vitest";
+import { type IConfirmationController } from "./confirmation-controller";
 import { DocumentDeleter } from "./document-deleter";
-import { IDocumentPresenter } from "./document-presenter";
-import { IDocumentRepository } from "./document-repository";
+import { type IDocumentPresenter } from "./document-presenter";
+import { type IDocumentRepository } from "./document-repository";
 
 let documentRepository: Mocked<IDocumentRepository>;
 let documentPresenter: Mocked<IDocumentPresenter>;

@@ -1,4 +1,4 @@
-import { IDocument } from "../domain/document";
+import { type IDocument } from "../domain/document";
 
 export interface IDocumentRepository {
   create(document: IDocument): Promise<void>;

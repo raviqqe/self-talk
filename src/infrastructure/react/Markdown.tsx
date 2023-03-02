@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, ImgHTMLAttributes } from "react";
+import { type DetailedHTMLProps, type ImgHTMLAttributes } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import styled, { css } from "styled-components";

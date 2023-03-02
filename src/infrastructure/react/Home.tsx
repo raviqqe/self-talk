@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { CreateDocument } from "./CreateDocument";
-import { Documents, IProps as IDocumentsProps } from "./Documents";
+import { Documents, type IProps as IDocumentsProps } from "./Documents";
 import { SignOut } from "./SignOut";
 import { darkYellow } from "./style/colors";
 

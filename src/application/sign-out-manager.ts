@@ -1,5 +1,5 @@
-import { IAuthenticationController } from "./authentication-controller";
-import { IAuthenticationPresenter } from "./authentication-presenter";
+import { type IAuthenticationController } from "./authentication-controller";
+import { type IAuthenticationPresenter } from "./authentication-presenter";
 
 export class SignOutManager {
   constructor(

@@ -1,9 +1,9 @@
-import { useState, SyntheticEvent } from "react";
+import { useState, type SyntheticEvent } from "react";
 import { PulseLoader } from "react-spinners";
 import styled from "styled-components";
 import { TextArea } from "./TextArea";
 import { white } from "./style/colors";
-import { InsertFilesFunction } from "./utilities";
+import { type InsertFilesFunction } from "./utilities";
 
 const LoaderContainer = styled.div`
   display: flex;

@@ -2,7 +2,7 @@ import {
   act,
   fireEvent,
   render,
-  RenderResult,
+  type RenderResult,
   waitFor,
 } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";

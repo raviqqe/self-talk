@@ -5,7 +5,7 @@ import { IconButton } from "./IconButton";
 import { Markdown } from "./Markdown";
 import {
   UpdateDocument,
-  IProps as IUpdateDocumentProps,
+  type IProps as IUpdateDocumentProps,
 } from "./UpdateDocument";
 import { boxShadow } from "./style";
 import { white } from "./style/colors";
