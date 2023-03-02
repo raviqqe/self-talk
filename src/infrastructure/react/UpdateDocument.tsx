@@ -1,10 +1,13 @@
+import { defaultImport } from "default-import";
 import { useState } from "react";
 import { MdSave } from "react-icons/md/index.js";
-import styled from "styled-components";
+import defaultStyled from "styled-components";
 import { type IDocument } from "../../domain/document.js";
 import { CircleButton } from "./CircleButton.js";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
 import { type InsertFilesFunction } from "./utilities.js";
+
+const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   display: flex;

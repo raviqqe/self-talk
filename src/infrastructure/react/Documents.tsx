@@ -1,12 +1,18 @@
+import { defaultImport } from "default-import";
 import { useId } from "react";
-import InfiniteScroll, { type Props } from "react-infinite-scroll-component";
+import defaultInfiniteScroll, {
+  type Props,
+} from "react-infinite-scroll-component";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
-import styled from "styled-components";
+import defaultStyled from "styled-components";
 import { type IDocument } from "../../domain/document.js";
 import { Document } from "./Document.js";
 import { white } from "./style/colors.js";
 import { type InsertFilesFunction } from "./utilities.js";
+
+const InfiniteScroll = defaultImport(defaultInfiniteScroll);
+const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   display: flex;

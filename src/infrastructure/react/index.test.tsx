@@ -6,7 +6,7 @@ import { type DocumentUpdater } from "../../application/document-updater.js";
 import { type SignInManager } from "../../application/sign-in-manager.js";
 import { type SignOutManager } from "../../application/sign-out-manager.js";
 import { type TextFileInserter } from "../../application/text-file-inserter.js";
-import { ReactRenderer } from ".";
+import { ReactRenderer } from "./index.js";
 
 it("renders", () => {
   new ReactRenderer(

@@ -1,8 +1,11 @@
-import styled from "styled-components";
+import { defaultImport } from "default-import";
+import defaultStyled from "styled-components";
 import { CreateDocument } from "./CreateDocument.js";
 import { Documents, type IProps as IDocumentsProps } from "./Documents.js";
 import { SignOut } from "./SignOut.js";
 import { darkYellow } from "./style/colors.js";
+
+const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   display: flex;

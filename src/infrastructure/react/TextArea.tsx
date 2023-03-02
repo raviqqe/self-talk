@@ -1,3 +1,4 @@
+import { defaultImport } from "default-import";
 import {
   type ForwardedRef,
   forwardRef,
@@ -7,12 +8,15 @@ import {
   useRef,
   useState,
 } from "react";
-import TextareaAutosize, {
+import defaultTextareaAutosize, {
   type TextareaAutosizeProps,
 } from "react-textarea-autosize";
-import styled from "styled-components";
+import defaultStyled from "styled-components";
 import { grey } from "./style/colors.js";
 import { boxShadow } from "./style/index.js";
+
+const TextareaAutosize = defaultImport(defaultTextareaAutosize);
+const styled = defaultImport(defaultStyled);
 
 const NoStyleTextareaAutosize = forwardRef(
   (

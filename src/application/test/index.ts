@@ -1,2 +1,2 @@
-export * from "./authentication-presenter";
-export * from "./authentication-controller";
+export * from "./authentication-presenter.js";
+export * from "./authentication-controller.js";
