@@ -1,3 +1,4 @@
+import { defaultImport } from "default-import";
 import { useState } from "react";
 import { MdEdit } from "react-icons/md/index.js";
 import defaultStyled from "styled-components";
@@ -9,7 +10,6 @@ import {
 } from "./UpdateDocument.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style/index.js";
-import { defaultImport } from "default-import";
 
 const styled = defaultImport(defaultStyled);
 

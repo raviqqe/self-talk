@@ -1,10 +1,10 @@
+import { defaultImport } from "default-import";
 import { useState, type SyntheticEvent } from "react";
 import { PulseLoader } from "react-spinners";
 import defaultStyled from "styled-components";
 import { TextArea } from "./TextArea.js";
 import { white } from "./style/colors.js";
 import { type InsertFilesFunction } from "./utilities.js";
-import { defaultImport } from "default-import";
 
 const styled = defaultImport(defaultStyled);
 
