@@ -1,16 +1,16 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders 1`] = `
 <div
-  class="sc-eDvSVe dSKcyM"
+  class="sc-eDLJxc bJFRkR"
 >
   <textarea
-    class="sc-dkrFOg bOiUUM sc-jSUZER JcOjq"
+    class="sc-dmyDGi ietozf sc-jTQDnj cwNdrG"
     placeholder="Write in Markdown ..."
   />
   <button
     aria-label="Create"
-    class="sc-bcXHqe sc-gswNZR eTvdtE gWKlTj"
+    class="sc-beySbM sc-guDLRT hqxQTF cHSgNE"
   >
     <svg
       fill="currentColor"

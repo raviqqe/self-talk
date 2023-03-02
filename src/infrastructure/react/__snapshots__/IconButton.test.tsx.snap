@@ -1,8 +1,8 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders 1`] = `
 <div
-  class="sc-bcXHqe jUftXb"
+  class="sc-beySbM lkAuAe"
 >
   +
 </div>

@@ -1,8 +1,8 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders 1`] = `
 <button
-  class="sc-bcXHqe sc-gswNZR eTvdtE gCUrWJ"
+  class="sc-beySbM sc-guDLRT hqxQTF fHBXRy"
 >
   Sign in
 </button>

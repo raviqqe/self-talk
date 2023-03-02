@@ -1,33 +1,33 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`renders 1`] = `
 <div
-  class="sc-jrcTuL kILoZz"
+  class="sc-jsEegt dFkZEF"
   id=":r0:"
 >
   <div
     class="infinite-scroll-component__outerdiv"
   >
     <div
-      class="infinite-scroll-component sc-ipEyDJ iLJXoO"
+      class="infinite-scroll-component sc-irLwvL gWhkOV"
       style="height: auto; overflow: auto;"
     >
       <div
-        class="sc-ftTHYK ebfSnj sc-csuSiG yCuJG"
+        class="sc-fsYeqs eILdom sc-csKIKE iZLkbI"
       >
         <div
-          class="sc-gswNZR dIoQnh"
+          class="sc-guDLRT fMpztW"
         >
           <p>
             text
           </p>
         </div>
         <div
-          class="sc-pyfCe eZVdAB"
+          class="sc-qZqnM fXZaov"
         >
           <div
             aria-label="Edit"
-            class="sc-bcXHqe jUftXb"
+            class="sc-beySbM lkAuAe"
           >
             <svg
               fill="currentColor"
@@ -56,7 +56,7 @@ exports[`renders 1`] = `
 
 exports[`renders with documents not loaded yet 1`] = `
 <div
-  class="sc-kDvujY OmLnc"
+  class="sc-kFCsca fHTaPK"
 >
   <span
     style="display: inherit;"
@@ -76,18 +76,18 @@ exports[`renders with documents not loaded yet 1`] = `
 
 exports[`renders with no documents 1`] = `
 <div
-  class="sc-jrcTuL kILoZz"
+  class="sc-jsEegt dFkZEF"
   id=":r1:"
 >
   <div
     class="infinite-scroll-component__outerdiv"
   >
     <div
-      class="infinite-scroll-component sc-ipEyDJ iLJXoO"
+      class="infinite-scroll-component sc-irLwvL gWhkOV"
       style="height: auto; overflow: auto;"
     >
       <div
-        class="sc-kDvujY OmLnc"
+        class="sc-kFCsca fHTaPK"
       >
         <span
           style="display: inherit;"
