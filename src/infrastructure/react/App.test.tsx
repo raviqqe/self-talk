@@ -45,7 +45,7 @@ it("renders after a user signs in", async () => {
   let result: RenderResult | undefined;
 
   act(() => {
-    result = render(<App {...props} signedIn={true} />);
+    result = render(<App {...props} signedIn />);
   });
 
   expect(result?.container).toMatchSnapshot();
