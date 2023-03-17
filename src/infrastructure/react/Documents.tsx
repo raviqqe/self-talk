@@ -61,8 +61,8 @@ export const Documents = ({
     <Container id={documentsContainerId}>
       <StyledInfiniteScroll
         dataLength={documents.length}
-        hasMore={true}
-        inverse={true}
+        hasMore
+        inverse
         loader={
           <LoaderContainer>
             <PulseLoader color={white} />
