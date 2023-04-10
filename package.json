@@ -23,7 +23,7 @@
     "react-infinite-scroll-component": "^6.1.0",
     "react-markdown": "^8.0.6",
     "react-spinners": "^0.13.8",
-    "react-textarea-autosize": "^8.4.0",
+    "react-textarea-autosize": "^8.4.1",
     "react-use": "^17.4.0",
     "remark-gfm": "^3.0.1",
     "styled-components": "^5.3.9"
