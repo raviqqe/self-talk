@@ -1,16 +1,16 @@
 import { StrictMode } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import { type ApplicationInitializer } from "../../application/application-initializer.js";
-import { type DocumentCreator } from "../../application/document-creator.js";
-import { type DocumentLister } from "../../application/document-lister.js";
-import { type DocumentUpdater } from "../../application/document-updater.js";
-import { type SignInManager } from "../../application/sign-in-manager.js";
-import { type SignOutManager } from "../../application/sign-out-manager.js";
-import { type TextFileInserter } from "../../application/text-file-inserter.js";
-import { type IDocument } from "../../domain/document.js";
-import { type IRenderer } from "../renderer.js";
-import { App, type IProps as IAppProps } from "./App.js";
-import { GlobalStyle } from "./style/index.js";
+import { type ApplicationInitializer } from "../application/application-initializer.js";
+import { type DocumentCreator } from "../application/document-creator.js";
+import { type DocumentLister } from "../application/document-lister.js";
+import { type DocumentUpdater } from "../application/document-updater.js";
+import { type SignInManager } from "../application/sign-in-manager.js";
+import { type SignOutManager } from "../application/sign-out-manager.js";
+import { type TextFileInserter } from "../application/text-file-inserter.js";
+import { type IDocument } from "../domain/document.js";
+import { type IRenderer } from "./renderer.js";
+import { App, type IProps as IAppProps } from "./react/App.js";
+import { GlobalStyle } from "./react/style.js";
 
 interface IPresenter {
   setRenderer(renderer: IRenderer): void;

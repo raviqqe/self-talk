@@ -9,7 +9,7 @@ import {
   type IProps as IUpdateDocumentProps,
 } from "./UpdateDocument.js";
 import { white } from "./style/colors.js";
-import { boxShadow } from "./style/index.js";
+import { boxShadow } from "./style.js";
 
 const styled = defaultImport(defaultStyled);
 

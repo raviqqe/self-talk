@@ -13,7 +13,7 @@ import defaultTextareaAutosize, {
 } from "react-textarea-autosize";
 import defaultStyled from "styled-components";
 import { grey } from "./style/colors.js";
-import { boxShadow } from "./style/index.js";
+import { boxShadow } from "./style.js";
 
 const TextareaAutosize = defaultImport(defaultTextareaAutosize);
 const styled = defaultImport(defaultStyled);

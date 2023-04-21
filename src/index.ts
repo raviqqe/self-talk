@@ -15,7 +15,7 @@ import { FirebaseAuthenticationController } from "./infrastructure/firebase/fire
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer.js";
 import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebase-storage-file-repository.js";
 import { FirestoreDocumentRepository } from "./infrastructure/firebase/firestore-document-repository.js";
-import { ReactRenderer } from "./infrastructure/react/index.js";
+import { ReactRenderer } from "./infrastructure/react.js";
 import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter.js";
 
 // Instantiate this at the very beginning to initialize Firebase's default app.
