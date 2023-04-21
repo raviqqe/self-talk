@@ -8,9 +8,9 @@ import { type SignInManager } from "../application/sign-in-manager.js";
 import { type SignOutManager } from "../application/sign-out-manager.js";
 import { type TextFileInserter } from "../application/text-file-inserter.js";
 import { type IDocument } from "../domain/document.js";
-import { type IRenderer } from "./renderer.js";
 import { App, type IProps as IAppProps } from "./react/App.js";
 import { GlobalStyle } from "./react/style.js";
+import { type IRenderer } from "./renderer.js";
 
 interface IPresenter {
   setRenderer(renderer: IRenderer): void;

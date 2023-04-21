@@ -1,9 +1,6 @@
 import { it, expect } from "vitest";
 import { SignOutManager } from "./sign-out-manager.js";
-import {
-  authenticationController,
-  authenticationPresenter,
-} from "./test.js";
+import { authenticationController, authenticationPresenter } from "./test.js";
 
 it("signs out", async () => {
   const signOutManager = new SignOutManager(
