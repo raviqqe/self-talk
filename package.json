@@ -12,7 +12,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "@sentry/browser": "^7.49.0",
+    "@sentry/browser": "^7.50.0",
     "default-import": "^1.1.5",
     "firebase": "^9.20.0",
     "lodash": "^4.17.21",
@@ -36,14 +36,14 @@
     "@types/lodash": "^4.14.194",
     "@types/prettier": "^2.7.2",
     "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
     "@types/styled-components": "^5.1.26",
     "@vitejs/plugin-react": "^4.0.0",
     "@vitest/coverage-c8": "^0.30.1",
-    "firebase-tools": "^11.28.0",
+    "firebase-tools": "^11.29.1",
     "jsdom": "^21.1.1",
     "typescript": "^5.0.4",
-    "vite": "^4.3.1",
+    "vite": "^4.3.3",
     "vite-plugin-pwa": "^0.14.7",
     "vitest": "^0.30.1"
   }
