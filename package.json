@@ -12,11 +12,11 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "@sentry/browser": "^7.48.0",
+    "@sentry/browser": "^7.50.0",
     "default-import": "^1.1.5",
-    "firebase": "^9.20.0",
+    "firebase": "^9.21.0",
     "lodash": "^4.17.21",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "react": "^18.1.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
@@ -26,7 +26,7 @@
     "react-textarea-autosize": "^8.4.1",
     "react-use": "^17.4.0",
     "remark-gfm": "^3.0.1",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.10"
   },
   "devDependencies": {
     "@raviqqe/eslint-config": "^1.2.7",
@@ -35,15 +35,15 @@
     "@types/jest": "^29.5.1",
     "@types/lodash": "^4.14.194",
     "@types/prettier": "^2.7.2",
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.1",
     "@types/styled-components": "^5.1.26",
-    "@vitejs/plugin-react": "^3.1.0",
+    "@vitejs/plugin-react": "^4.0.0",
     "@vitest/coverage-c8": "^0.30.1",
-    "firebase-tools": "^11.28.0",
-    "jsdom": "^21.1.1",
+    "firebase-tools": "^11.29.1",
+    "jsdom": "^22.0.0",
     "typescript": "^5.0.4",
-    "vite": "^4.3.0",
+    "vite": "^4.3.3",
     "vite-plugin-pwa": "^0.14.7",
     "vitest": "^0.30.1"
   }
