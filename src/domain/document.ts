@@ -6,16 +6,15 @@ export interface IDocument {
   text: string; // in Markdown
 }
 
-export function formatDocument(document: IDocument): IDocument {
+export async function formatDocument(document: IDocument): Promise<IDocument> {
   return {
     ...document,
-    text: format(document.text, {
-      parser: "markdown",
-      plugins: [markdownParser],
-    })
-      .trim()
-      // https://github.com/prettier/prettier/issues/6213
-      .replace(/\\*\$/g, "$"),
+    text: (
+      await format(document.text, {
+        parser: "markdown",
+        plugins: [markdownParser],
+      })
+    ).trim(),
   };
 }
 

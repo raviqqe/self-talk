@@ -14,11 +14,11 @@ export class DocumentUpdater {
     private readonly documentDeleter: DocumentDeleter,
     private readonly documentRepository: IDocumentRepository,
     private readonly documentPresenter: IDocumentPresenter,
-    private readonly messagePresenter: IMessagePresenter
+    private readonly messagePresenter: IMessagePresenter,
   ) {}
 
   public async update(document: IDocument): Promise<void> {
-    document = formatDocument(document);
+    document = await formatDocument(document);
 
     if (!document.text) {
       await this.documentDeleter.delete(document.id);
