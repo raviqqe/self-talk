@@ -6,28 +6,27 @@ import {
 } from "./document.js";
 
 describe("formatDocument", () => {
-  it("removes extra spaces", () => {
-    expect(formatDocument({ id: "", text: " foo\n" })).toEqual({
+  it("removes extra spaces", async () => {
+    expect(await formatDocument({ id: "", text: " foo\n" })).toEqual({
       id: "",
       text: "foo",
     });
   });
 
-  it("formats a document as Markdown", () => {
-    expect(formatDocument({ id: "", text: "# foo \n\nbar" })).toEqual({
+  it("formats a document as Markdown", async () => {
+    expect(await formatDocument({ id: "", text: "# foo \n\nbar" })).toEqual({
       id: "",
       text: "# foo\n\nbar",
     });
   });
 
-  it("does not escape any dollar signs", () => {
+  it("does not escape any dollar signs", async () => {
     for (const [source, target] of [
       ["$", "$"],
-      ["\\$", "$"],
-      ["\\\\$", "$"],
-      ["\\$\\$", "$$"],
+      ["\\$", "\\$"],
+      ["\\\\$", "\\\\$"],
     ] as [string, string][]) {
-      expect(formatDocument({ id: "", text: source })).toEqual({
+      expect(await formatDocument({ id: "", text: source })).toEqual({
         id: "",
         text: target,
       });
