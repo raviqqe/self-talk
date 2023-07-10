@@ -57,7 +57,7 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
   }
 
   public async update(document: IDocument): Promise<void> {
-    await updateDoc(doc(this.collection(), document.id), document);
+    await updateDoc(doc(this.collection(), document.id), { ...document });
   }
 
   private query(): Query {
