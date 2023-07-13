@@ -29,7 +29,7 @@
     "styled-components": "^6.0.3"
   },
   "devDependencies": {
-    "@raviqqe/eslint-config": "^1.2.13",
+    "@raviqqe/eslint-config": "^1.2.15",
     "@raviqqe/react-tsconfig": "^1.0.17",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.2",
