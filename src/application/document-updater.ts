@@ -18,7 +18,7 @@ export class DocumentUpdater {
   ) {}
 
   public async update(document: IDocument): Promise<void> {
-    document = formatDocument(document);
+    document = await formatDocument(document);
 
     if (!document.text) {
       await this.documentDeleter.delete(document.id);

@@ -12,7 +12,10 @@ export class DocumentCreator {
   ) {}
 
   public async create(text: string): Promise<void> {
-    const document = formatDocument({ id: window.crypto.randomUUID(), text });
+    const document = await formatDocument({
+      id: window.crypto.randomUUID(),
+      text,
+    });
 
     try {
       validateDocument(document);
@@ -22,6 +25,6 @@ export class DocumentCreator {
     }
 
     this.documentPresenter.presentNewDocument(document);
-    await this.documentRepository.create(formatDocument(document));
+    await this.documentRepository.create(await formatDocument(document));
   }
 }

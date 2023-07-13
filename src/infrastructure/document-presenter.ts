@@ -37,7 +37,7 @@ export class DocumentPresenter implements IDocumentPresenter {
   }
 
   private renderDocuments(documents: IDocument[] | null | undefined): void {
-    this.documents = documents || null;
+    this.documents = documents ?? null;
 
     this.renderer?.renderDocuments(this.documents);
   }
