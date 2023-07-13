@@ -8,13 +8,14 @@ afterEach(() => {
 
 it("renders", () => {
   expect(
-    render(<Markdown># Foo</Markdown>).container.firstChild
+    render(<Markdown># Foo</Markdown>).container.firstChild,
   ).toMatchSnapshot();
 });
 
 it("renders an image", () => {
   expect(
-    render(<Markdown>![foo](http://bar/baz.png)</Markdown>).container.firstChild
+    render(<Markdown>![foo](http://bar/baz.png)</Markdown>).container
+      .firstChild,
   ).toMatchSnapshot();
 });
 
@@ -26,7 +27,7 @@ it("renders a table", () => {
   `;
 
   expect(
-    render(<Markdown>{markdown}</Markdown>).container.firstChild
+    render(<Markdown>{markdown}</Markdown>).container.firstChild,
   ).toMatchSnapshot();
 });
 
@@ -45,7 +46,7 @@ it("does not open a linked image even when it is clicked", () => {
   spy.mockReturnValue(null);
 
   const { container } = render(
-    <Markdown>[![foo](http://bar/baz.png)](http://bar/blah)</Markdown>
+    <Markdown>[![foo](http://bar/baz.png)](http://bar/blah)</Markdown>,
   );
   fireEvent.click(container.querySelector("img") as Element);
 
@@ -55,6 +56,6 @@ it("does not open a linked image even when it is clicked", () => {
 it("renders a link with an ampersand", () => {
   expect(
     render(<Markdown>[](http://foo.com?foo=bar&baz=blah)</Markdown>).container
-      .firstChild
+      .firstChild,
   ).toMatchSnapshot();
 });

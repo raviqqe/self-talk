@@ -8,7 +8,7 @@ export class DocumentCreator {
   constructor(
     private readonly documentRepository: IDocumentRepository,
     private readonly documentPresenter: IDocumentPresenter,
-    private readonly messagePresenter: IMessagePresenter
+    private readonly messagePresenter: IMessagePresenter,
   ) {}
 
   public async create(text: string): Promise<void> {

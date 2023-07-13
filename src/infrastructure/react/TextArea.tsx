@@ -20,8 +20,8 @@ const styled = defaultImport(defaultStyled);
 const NoStyleTextareaAutosize = forwardRef(
   (
     props: Omit<TextareaAutosizeProps, "style">,
-    ref: ForwardedRef<HTMLTextAreaElement>
-  ) => <TextareaAutosize ref={ref} {...props} />
+    ref: ForwardedRef<HTMLTextAreaElement>,
+  ) => <TextareaAutosize ref={ref} {...props} />,
 );
 NoStyleTextareaAutosize.displayName = "NoStyleTextareaAutosize";
 

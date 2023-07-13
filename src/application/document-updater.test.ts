@@ -31,7 +31,7 @@ beforeEach(() => {
     }),
     documentRepository,
     documentPresenter,
-    messagePresenter
+    messagePresenter,
   );
 });
 

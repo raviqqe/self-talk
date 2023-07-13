@@ -8,7 +8,7 @@ it("renders", () => {
       <CreateDocument
         createDocument={async () => {}}
         insertFiles={async () => "url"}
-      />
-    ).container.firstChild
+      />,
+    ).container.firstChild,
   ).toMatchSnapshot();
 });

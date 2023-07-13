@@ -25,7 +25,7 @@ it("renders", async () => {
         listDocuments={listDocuments}
         listMoreDocuments={async () => {}}
         updateDocument={async () => {}}
-      />
+      />,
     );
   });
 
@@ -45,7 +45,7 @@ it("renders with no documents", async () => {
         listDocuments={listDocuments}
         listMoreDocuments={async () => {}}
         updateDocument={async () => {}}
-      />
+      />,
     );
   });
 
@@ -65,7 +65,7 @@ it("renders with documents not loaded yet", async () => {
         listDocuments={listDocuments}
         listMoreDocuments={async () => {}}
         updateDocument={async () => {}}
-      />
+      />,
     );
   });
 

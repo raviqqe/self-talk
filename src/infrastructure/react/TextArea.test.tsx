@@ -10,7 +10,7 @@ it("triggers a submit callback on Shift + Enter", () => {
   const onSubmit = vi.fn();
   const { container } = render(<TextArea onSubmit={onSubmit} />);
 
-  fireEvent.keyDown(container.firstElementChild as Element, {
+  fireEvent.keyDown(container.firstElementChild!, {
     key: "Enter",
     shiftKey: true,
   });
@@ -22,7 +22,7 @@ it("triggers a submit callback on Ctrl + Enter", () => {
   const onSubmit = vi.fn();
   const { container } = render(<TextArea onSubmit={onSubmit} />);
 
-  fireEvent.keyDown(container.firstElementChild as Element, {
+  fireEvent.keyDown(container.firstElementChild!, {
     ctrlKey: true,
     key: "Enter",
   });
@@ -34,7 +34,7 @@ it("does not trigger a submit callback on Enter", () => {
   const onSubmit = vi.fn();
   const { container } = render(<TextArea onSubmit={onSubmit} />);
 
-  fireEvent.keyDown(container.firstElementChild as Element, {
+  fireEvent.keyDown(container.firstElementChild!, {
     keyCode: 13,
   });
 

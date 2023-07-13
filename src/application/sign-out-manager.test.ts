@@ -5,7 +5,7 @@ import { authenticationController, authenticationPresenter } from "./test.js";
 it("signs out", async () => {
   const signOutManager = new SignOutManager(
     authenticationController,
-    authenticationPresenter
+    authenticationPresenter,
   );
 
   await signOutManager.signOut();

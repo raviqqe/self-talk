@@ -27,12 +27,12 @@ it("renders", async () => {
         listMoreDocuments={async () => {}}
         signOut={async () => {}}
         updateDocument={async () => {}}
-      />
+      />,
     );
   });
 
   await waitFor(() =>
-    expect(result?.container.querySelector("textarea")).toBeTruthy()
+    expect(result?.container.querySelector("textarea")).toBeTruthy(),
   );
 
   expect(result?.container.firstChild).toMatchSnapshot();
@@ -52,19 +52,18 @@ it("creates a document", async () => {
         listMoreDocuments={async () => {}}
         signOut={async () => {}}
         updateDocument={async () => {}}
-      />
+      />,
     );
   });
 
   await waitFor(() =>
-    expect(result?.container.querySelector("textarea")).toBeTruthy()
+    expect(result?.container.querySelector("textarea")).toBeTruthy(),
   );
 
   act(() => {
-    fireEvent.change(
-      result?.container.querySelector("textarea") as HTMLTextAreaElement,
-      { target: { value: "foo" } }
-    );
+    fireEvent.change(result?.container.querySelector("textarea")!, {
+      target: { value: "foo" },
+    });
 
     fireEvent.click(result?.getByLabelText("Create") as Element);
   });
@@ -86,7 +85,7 @@ it("updates a document", async () => {
         listMoreDocuments={async () => {}}
         signOut={async () => {}}
         updateDocument={updateDocument}
-      />
+      />,
     );
   });
 
@@ -95,10 +94,9 @@ it("updates a document", async () => {
   act(() => {
     fireEvent.click(result?.getByLabelText("Edit") as Element);
 
-    fireEvent.change(
-      result?.container.querySelector("textarea") as HTMLTextAreaElement,
-      { target: { value: "foo" } }
-    );
+    fireEvent.change(result?.container.querySelector("textarea")!, {
+      target: { value: "foo" },
+    });
 
     fireEvent.click(result?.getByLabelText("Save") as Element);
   });

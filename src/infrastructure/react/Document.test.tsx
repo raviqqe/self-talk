@@ -9,7 +9,7 @@ it("renders", () => {
         document={{ id: "id", text: "text" }}
         insertFiles={async () => "url"}
         updateDocument={async () => {}}
-      />
-    ).container.firstChild
+      />,
+    ).container.firstChild,
   ).toMatchSnapshot();
 });

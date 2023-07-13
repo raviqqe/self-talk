@@ -9,7 +9,7 @@ export class DocumentLister {
 
   constructor(
     private readonly documentRepository: IDocumentRepository,
-    private readonly documentPresenter: IDocumentPresenter
+    private readonly documentPresenter: IDocumentPresenter,
   ) {}
 
   public async list(): Promise<void> {
@@ -17,7 +17,7 @@ export class DocumentLister {
       .list(defaultLimit)
       [Symbol.asyncIterator]();
     this.documentPresenter.presentDocuments(
-      (await this.iterator.next()).value || []
+      (await this.iterator.next()).value || [],
     );
   }
 

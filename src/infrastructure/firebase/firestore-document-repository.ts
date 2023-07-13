@@ -51,7 +51,7 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
       yield result.docs.map((snapshot) => snapshot.data() as IDocument);
 
       result = await getDocs(
-        query(this.query(), startAfter(last(result.docs)), limit(count))
+        query(this.query(), startAfter(last(result.docs)), limit(count)),
       );
     }
   }
@@ -73,7 +73,7 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
 
     return collection(
       doc(collection(this.firestore, "users"), user.uid),
-      "documents"
+      "documents",
     ) as CollectionReference<ITimestampedDocument>;
   }
 }

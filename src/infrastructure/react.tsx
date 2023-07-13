@@ -32,7 +32,7 @@ export class ReactRenderer implements IRenderer {
     private readonly signInManager: SignInManager,
     private readonly signOutManager: SignOutManager,
     private readonly textFileInserter: TextFileInserter,
-    private readonly repositoryUrl: string
+    private readonly repositoryUrl: string,
   ) {
     for (const presenter of presenters) {
       presenter.setRenderer(this);
@@ -65,7 +65,7 @@ export class ReactRenderer implements IRenderer {
           insertFiles={(
             text: string,
             position: number,
-            files: File[]
+            files: File[],
           ): Promise<string> =>
             this.textFileInserter.insert(text, position, files)
           }
@@ -79,7 +79,7 @@ export class ReactRenderer implements IRenderer {
           }
         />
         <GlobalStyle />
-      </StrictMode>
+      </StrictMode>,
     );
   }
 }

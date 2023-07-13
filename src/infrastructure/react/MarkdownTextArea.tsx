@@ -34,7 +34,7 @@ export const MarkdownTextArea = ({
 
   const uploadFiles = async (
     event: SyntheticEvent<HTMLTextAreaElement>,
-    files: (File | null)[]
+    files: (File | null)[],
   ) => {
     const validFiles = files.filter((file): file is File => !!file);
 
@@ -45,7 +45,7 @@ export const MarkdownTextArea = ({
     setUploadingFiles(true);
 
     setText(
-      await insertFiles(text, event.currentTarget.selectionStart, validFiles)
+      await insertFiles(text, event.currentTarget.selectionStart, validFiles),
     );
 
     setUploadingFiles(false);
@@ -68,7 +68,7 @@ export const MarkdownTextArea = ({
       onPaste={(event) =>
         uploadFiles(
           event,
-          Array.from(event.clipboardData.items).map((item) => item.getAsFile())
+          Array.from(event.clipboardData.items).map((item) => item.getAsFile()),
         )
       }
       onSubmit={onSubmit}

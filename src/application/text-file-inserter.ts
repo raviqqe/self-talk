@@ -6,7 +6,7 @@ export class TextFileInserter {
   public async insert(
     text: string,
     position: number,
-    files: File[]
+    files: File[],
   ): Promise<string> {
     return (
       text.slice(0, position) +
@@ -18,7 +18,7 @@ export class TextFileInserter {
             return file.type.startsWith("image/")
               ? `![](${url})`
               : `[${file.name}](${url})`;
-          })
+          }),
         )
       ).join("\n\n") +
       text.slice(position)

@@ -19,6 +19,6 @@ it("renders", () => {
     {} as SignInManager,
     {} as SignOutManager,
     {} as TextFileInserter,
-    "url"
+    "url",
   ).render();
 });
