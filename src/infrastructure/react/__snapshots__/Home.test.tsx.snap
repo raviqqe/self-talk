@@ -2,21 +2,21 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-ksdynI dycDZz"
+  class="sc-ksRdGr fUfCiB"
 >
   <div
-    class="sc-iqsfQQ kVsvAJ"
+    class="sc-ipUqZP cbkRFk"
     id=":r0:"
   >
     <div
       class="infinite-scroll-component__outerdiv"
     >
       <div
-        class="infinite-scroll-component sc-egifa FdNKc"
+        class="infinite-scroll-component sc-eodsR jbLqqM"
         style="height: auto; overflow: auto;"
       >
         <div
-          class="sc-crHkVz fQODmc"
+          class="sc-cseZMA xyuYW"
         >
           <span
             style="display: inherit;"
@@ -36,18 +36,18 @@ exports[`renders 1`] = `
     </div>
   </div>
   <div
-    class="sc-hBURej lddEXI"
+    class="sc-hBhlLA jKXYPC"
   >
     <div
-      class="sc-eCIlHX kHwnih"
+      class="sc-eDgayY dAsyES"
     >
       <textarea
-        class="sc-dkPulx eVJnWY sc-jRQBzY gfHavu"
+        class="sc-dkHyXG iApxSA sc-jTkTEj jphRtn"
         placeholder="Write in Markdown ..."
       />
       <button
         aria-label="Create"
-        class="sc-bdvumH sc-gsDKeI chOlGn ecqtEY"
+        class="sc-bcHOTY sc-gsMHZj giMMzD fayzeR"
       >
         <svg
           fill="currentColor"
@@ -69,14 +69,14 @@ exports[`renders 1`] = `
       </button>
     </div>
     <div
-      class="sc-fotOnK llTBXB"
+      class="sc-fnqprR iNPhOw"
     />
   </div>
   <div
-    class="sc-fFeiqI ejRJpG"
+    class="sc-fFnglj cpTEpu"
   >
     <button
-      class="sc-bdvumH sc-gsDKeI gMOzyQ ecqtEY"
+      class="sc-bcHOTY sc-gsMHZj etVWCg fayzeR"
     >
       <svg
         fill="currentColor"
