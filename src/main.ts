@@ -32,7 +32,7 @@ async function main() {
   const firebaseApp = await firebaseInitializer.initialize();
   const authenticationPresenter = new AuthenticationPresenter();
   const authenticationController = new FirebaseAuthenticationController(
-    firebaseApp
+    firebaseApp,
   );
   const documentRepository = new FirestoreDocumentRepository(firebaseApp);
   const messagePresenter = new AlertMessagePresenter();
@@ -44,28 +44,28 @@ async function main() {
     [authenticationPresenter, documentPresenter],
     new ApplicationInitializer(
       authenticationController,
-      authenticationPresenter
+      authenticationPresenter,
     ),
     new DocumentCreator(
       documentRepository,
       documentPresenter,
-      messagePresenter
+      messagePresenter,
     ),
     new DocumentLister(documentRepository, documentPresenter),
     new DocumentUpdater(
       new DocumentDeleter(
         documentRepository,
         documentPresenter,
-        confirmationController
+        confirmationController,
       ),
       documentRepository,
       documentPresenter,
-      messagePresenter
+      messagePresenter,
     ),
     new SignInManager(authenticationController, authenticationPresenter),
     new SignOutManager(authenticationController, authenticationPresenter),
     new TextFileInserter(new FirebaseStorageFileRepository(firebaseApp)),
-    configuration.repositoryUrl
+    configuration.repositoryUrl,
   ).render();
 
   // Disable default behavior on drop events.

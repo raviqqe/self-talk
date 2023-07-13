@@ -7,7 +7,7 @@ it("initializes an application state", async () => {
   const authenticationPresenter = { presentSignedIn: vi.fn() };
   const applicationInitializer = new ApplicationInitializer(
     authenticationController as unknown as IAuthenticationController,
-    authenticationPresenter
+    authenticationPresenter,
   );
 
   await applicationInitializer.initialize();

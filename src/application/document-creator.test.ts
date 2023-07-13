@@ -23,7 +23,7 @@ beforeEach(() => {
   documentCreator = new DocumentCreator(
     documentRepository,
     documentPresenter,
-    messagePresenter
+    messagePresenter,
   );
 });
 

@@ -32,7 +32,7 @@ const Container = styled.div`
           content: "${"#".repeat(level)} ";
         }
       }
-    `
+    `,
   )};
 
   a {
@@ -91,7 +91,7 @@ const Image = (
   props: DetailedHTMLProps<
     ImgHTMLAttributes<HTMLImageElement>,
     HTMLImageElement
-  >
+  >,
 ) => (
   <img
     onClick={(event) => {

@@ -23,7 +23,7 @@ beforeEach(() => {
   documentDeleter = new DocumentDeleter(
     documentRepository,
     documentPresenter,
-    confirmationController
+    confirmationController,
   );
 });
 

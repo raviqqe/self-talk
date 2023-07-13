@@ -10,8 +10,8 @@ it("renders", () => {
         onSubmit={async () => {}}
         setText={() => {}}
         text="foo"
-      />
-    ).container
+      />,
+    ).container,
   ).toMatchSnapshot();
 });
 
@@ -24,19 +24,16 @@ it("pastes an image as a link", async () => {
       onSubmit={async () => {}}
       setText={setText}
       text="foo"
-    />
+    />,
   );
 
-  fireEvent.paste(
-    container.firstElementChild as Element,
-    {
-      clipboardData: {
-        items: [
-          { getAsFile: () => new File([], "foo.png", { type: "image/png" }) },
-        ],
-      },
-    } as never
-  );
+  fireEvent.paste(container.firstElementChild!, {
+    clipboardData: {
+      items: [
+        { getAsFile: () => new File([], "foo.png", { type: "image/png" }) },
+      ],
+    },
+  } as never);
 
   await waitFor(() => expect(setText.mock.calls).toEqual([["result"]]));
 });
@@ -50,10 +47,10 @@ it("does not paste anything if there is no files in clipboard data", async () =>
       onSubmit={async () => {}}
       setText={setText}
       text="foo"
-    />
+    />,
   );
 
-  fireEvent.paste(container.firstElementChild as Element, {
+  fireEvent.paste(container.firstElementChild!, {
     clipboardData: { items: [] },
   });
 
@@ -69,10 +66,10 @@ it("drops an image as a link", async () => {
       onSubmit={async () => {}}
       setText={setText}
       text="foo"
-    />
+    />,
   );
 
-  fireEvent.drop(container.firstElementChild as Element, {
+  fireEvent.drop(container.firstElementChild!, {
     dataTransfer: {
       files: [new File([], "foo.png", { type: "image/png" })],
     },

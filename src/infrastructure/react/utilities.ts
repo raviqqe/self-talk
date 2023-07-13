@@ -1,5 +1,5 @@
 export type InsertFilesFunction = (
   text: string,
   position: number,
-  files: File[]
+  files: File[],
 ) => Promise<string>;
