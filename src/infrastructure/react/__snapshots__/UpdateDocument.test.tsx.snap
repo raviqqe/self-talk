@@ -2,15 +2,15 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-eDgayY elqwxB"
+  class="sc-eCYdKt fxuxpP"
 >
   <textarea
-    class="sc-dkHyXG iApxSA sc-jTkTEj dkUaXo"
+    class="sc-dkzCjb kCPDTq sc-jSMdHm eMpuWy"
     placeholder="Write in Markdown ..."
   />
   <button
     aria-label="Save"
-    class="sc-bcHOTY sc-gsMHZj giMMzD fayzeR"
+    class="sc-bczSft sc-gsnScm jurrAP gKlRMe"
   >
     <svg
       fill="currentColor"
