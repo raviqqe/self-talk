@@ -12,7 +12,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "@sentry/browser": "^7.63.0",
+    "@sentry/browser": "^7.64.0",
     "default-import": "^1.1.5",
     "firebase": "^10.1.0",
     "lodash": "^4.17.21",
