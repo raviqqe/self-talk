@@ -21,7 +21,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-infinite-scroll-component": "^6.1.0",
-    "react-markdown": "^8.0.7",
+    "react-markdown": "^9.0.0",
     "react-spinners": "^0.13.8",
     "react-textarea-autosize": "^8.5.3",
     "react-use": "^17.4.0",
