@@ -2,32 +2,32 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-jsMboI eVBDYu"
+  class="sc-jrsKJM kIGfZN"
   id=":r0:"
 >
   <div
     class="infinite-scroll-component__outerdiv"
   >
     <div
-      class="infinite-scroll-component sc-irTsdm fxCSpf"
+      class="infinite-scroll-component sc-iqAbyq dILObR"
       style="height: auto; overflow: auto;"
     >
       <div
-        class="sc-fsQiIR hwgMhq sc-csCNdd hHVZeg"
+        class="sc-fujznN jnqJGr sc-crzpnZ dEXEtG"
       >
         <div
-          class="sc-gueWre dOhCbI"
+          class="sc-gtsqUy gAuIsS"
         >
           <p>
             text
           </p>
         </div>
         <div
-          class="sc-qRuGl iMfeqy"
+          class="sc-pNWRh mPPMw"
         >
           <div
             aria-label="Edit"
-            class="sc-beqWul ihEPxi"
+            class="sc-bdnyFh iDEQAJ"
           >
             <svg
               fill="currentColor"
@@ -56,7 +56,7 @@ exports[`renders 1`] = `
 
 exports[`renders with documents not loaded yet 1`] = `
 <div
-  class="sc-kFuuTL eGDPAl"
+  class="sc-kEqXeH inJvWK"
 >
   <span
     style="display: inherit;"
@@ -76,18 +76,18 @@ exports[`renders with documents not loaded yet 1`] = `
 
 exports[`renders with no documents 1`] = `
 <div
-  class="sc-jsMboI eVBDYu"
+  class="sc-jrsKJM kIGfZN"
   id=":r1:"
 >
   <div
     class="infinite-scroll-component__outerdiv"
   >
     <div
-      class="infinite-scroll-component sc-irTsdm fxCSpf"
+      class="infinite-scroll-component sc-iqAbyq dILObR"
       style="height: auto; overflow: auto;"
     >
       <div
-        class="sc-kFuuTL eGDPAl"
+        class="sc-kEqXeH inJvWK"
       >
         <span
           style="display: inherit;"
