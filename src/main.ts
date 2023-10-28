@@ -22,14 +22,14 @@ import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter.js";
 const firebaseInitializer = new FirebaseInitializer(configuration.firebase);
 const errorReporter = new SentryErrorReporter(configuration.sentry.dsn);
 
-async function main() {
+const main = () => {
   const element = document.getElementById("root");
 
   if (!element) {
     throw new Error("no root element");
   }
 
-  const firebaseApp = await firebaseInitializer.initialize();
+  const firebaseApp = firebaseInitializer.initialize();
   const authenticationPresenter = new AuthenticationPresenter();
   const authenticationController = new FirebaseAuthenticationController(
     firebaseApp,
@@ -71,6 +71,10 @@ async function main() {
   // Disable default behavior on drop events.
   window.ondragover = (event: DragEvent) => event.preventDefault();
   window.ondrop = (event: DragEvent) => event.preventDefault();
-}
+};
 
-main().catch((error: Error) => errorReporter.report(error));
+try {
+  main();
+} catch (error) {
+  errorReporter.report(error);
+}
