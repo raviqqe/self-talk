@@ -32,7 +32,7 @@
     "@raviqqe/eslint-config": "^1.2.20",
     "@raviqqe/react-tsconfig": "^1.0.18",
     "@testing-library/react": "^14.1.2",
-    "@types/jest": "^29.5.8",
+    "@types/jest": "^29.5.9",
     "@types/lodash": "^4.14.201",
     "@types/prettier": "^3.0.0",
     "@types/react": "^18.2.37",
