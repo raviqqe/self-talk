@@ -35,7 +35,7 @@
     "@types/jest": "^29.5.9",
     "@types/lodash": "^4.14.201",
     "@types/prettier": "^3.0.0",
-    "@types/react": "^18.2.37",
+    "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.16",
     "@types/styled-components": "^5.1.30",
     "@vitejs/plugin-react": "^4.2.0",
