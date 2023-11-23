@@ -10,6 +10,7 @@ import { type IDocument } from "../../domain/document.js";
 import { Document } from "./Document.js";
 import { white } from "./style/colors.js";
 import { type InsertFilesFunction } from "./utilities.js";
+import useInfiniteScroll from "react-infinite-scroll-hook";
 
 const InfiniteScroll = defaultImport(defaultInfiniteScroll);
 const styled = defaultImport(defaultStyled);
@@ -57,6 +58,12 @@ export const Documents = ({
   const documentsContainerId = useId();
   useAsync(listDocuments, []);
 
+  const [ref] = useInfiniteScroll({
+    hasNextPage: !done,
+    loading,
+    onLoadMore: listMoreDocuments,
+  });
+
   return documents ? (
     <Container id={documentsContainerId}>
       <StyledInfiniteScroll
@@ -82,7 +89,7 @@ export const Documents = ({
       </StyledInfiniteScroll>
     </Container>
   ) : (
-    <LoaderContainer>
+    <LoaderContainer ref={ref}>
       <PulseLoader color={white} />
     </LoaderContainer>
   );
