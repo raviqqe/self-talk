@@ -16,7 +16,7 @@ import {
   startAfter,
   updateDoc,
 } from "firebase/firestore";
-import { last } from "lodash";
+import { last } from "@raviqqe/loscore";
 import { type IDocumentRepository } from "../../application/document-repository.js";
 import { type IDocument } from "../../domain/document.js";
 
