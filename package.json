@@ -12,10 +12,10 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
+    "@raviqqe/loscore": "^0.1.7",
     "@sentry/browser": "^7.81.1",
     "default-import": "^1.1.5",
     "firebase": "^10.6.0",
-    "lodash": "^4.17.21",
     "prettier": "^3.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.2.0",
@@ -33,7 +33,6 @@
     "@raviqqe/react-tsconfig": "^1.0.18",
     "@testing-library/react": "^14.1.2",
     "@types/jest": "^29.5.10",
-    "@types/lodash": "^4.14.202",
     "@types/prettier": "^3.0.0",
     "@types/react": "^18.2.38",
     "@types/react-dom": "^18.2.17",
