@@ -1,3 +1,4 @@
+import { last } from "@raviqqe/loscore";
 import { type FirebaseApp } from "firebase/app";
 import { type Auth, getAuth } from "firebase/auth";
 import {
@@ -16,7 +17,6 @@ import {
   startAfter,
   updateDoc,
 } from "firebase/firestore";
-import { last } from "@raviqqe/loscore";
 import { type IDocumentRepository } from "../../application/document-repository.js";
 import { type IDocument } from "../../domain/document.js";
 
