@@ -3,7 +3,7 @@
     "apiKey": "AIzaSyCp_dI0Z2ZfyhlFkvdoH7uvXshwlG6wTTw",
     "authDomain": "self-talk-3097a.firebaseapp.com",
     "projectId": "self-talk-3097a",
-    "storageBucket": "self-talk-3097a.appspot.com",
+    "storageBucket": "self-talk-3097a.appspot.com"
   },
   "repositoryUrl": "https://github.com/raviqqe/self-talk",
   "sentry": {
