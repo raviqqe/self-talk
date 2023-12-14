@@ -15,7 +15,7 @@ const LoaderContainer = styled.div`
   width: 100%;
 `;
 
-interface IProps {
+interface Props {
   className?: string;
   insertFiles: InsertFilesFunction;
   onSubmit: () => Promise<void>;
@@ -29,7 +29,7 @@ export const MarkdownTextArea = ({
   setText,
   text,
   ...restProps
-}: IProps): JSX.Element => {
+}: Props): JSX.Element => {
   const [uploadingFiles, setUploadingFiles] = useState(false);
 
   const uploadFiles = async (

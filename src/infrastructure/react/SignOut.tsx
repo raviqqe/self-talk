@@ -1,11 +1,11 @@
 import { MdExitToApp } from "react-icons/md/index.js";
 import { CircleButton } from "./CircleButton.js";
 
-interface IProps {
+interface Props {
   signOut: () => void;
 }
 
-export const SignOut = ({ signOut }: IProps): JSX.Element => (
+export const SignOut = ({ signOut }: Props): JSX.Element => (
   <CircleButton onClick={signOut} secondary>
     <MdExitToApp />
   </CircleButton>

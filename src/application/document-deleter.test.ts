@@ -1,12 +1,12 @@
 import { expect, beforeEach, it, vi, type Mocked } from "vitest";
-import { type IConfirmationController } from "./confirmation-controller.js";
+import { type ConfirmationController } from "./confirmation-controller.js";
 import { DocumentDeleter } from "./document-deleter.js";
-import { type IDocumentPresenter } from "./document-presenter.js";
-import { type IDocumentRepository } from "./document-repository.js";
+import { type DocumentPresenter } from "./document-presenter.js";
+import { type DocumentRepository } from "./document-repository.js";
 
-let documentRepository: Mocked<IDocumentRepository>;
-let documentPresenter: Mocked<IDocumentPresenter>;
-let confirmationController: Mocked<IConfirmationController>;
+let documentRepository: Mocked<DocumentRepository>;
+let documentPresenter: Mocked<DocumentPresenter>;
+let confirmationController: Mocked<ConfirmationController>;
 let documentDeleter: DocumentDeleter;
 
 beforeEach(() => {
@@ -18,7 +18,7 @@ beforeEach(() => {
   };
   documentPresenter = {
     presentDeletedDocument: vi.fn(),
-  } as unknown as Mocked<IDocumentPresenter>;
+  } as unknown as Mocked<DocumentPresenter>;
   confirmationController = { confirm: vi.fn() };
   documentDeleter = new DocumentDeleter(
     documentRepository,

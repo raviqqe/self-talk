@@ -1,3 +1,3 @@
-export interface IFileRepository {
+export interface FileRepository {
   create(file: Blob): Promise<string>;
 }

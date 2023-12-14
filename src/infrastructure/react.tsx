@@ -7,24 +7,24 @@ import { type DocumentUpdater } from "../application/document-updater.js";
 import { type SignInManager } from "../application/sign-in-manager.js";
 import { type SignOutManager } from "../application/sign-out-manager.js";
 import { type TextFileInserter } from "../application/text-file-inserter.js";
-import { type IDocument } from "../domain/document.js";
-import { App, type IProps as IAppProps } from "./react/App.js";
+import { type Document } from "../domain/document.js";
+import { App, type Props as AppProps } from "./react/App.js";
 import { GlobalStyle } from "./react/style.js";
-import { type IRenderer } from "./renderer.js";
+import { type Renderer } from "./renderer.js";
 
-interface IPresenter {
-  setRenderer(renderer: IRenderer): void;
+interface Presenter {
+  setRenderer(renderer: Renderer): void;
 }
 
-interface IProps extends Pick<IAppProps, "documents" | "signedIn"> {}
+interface Props extends Pick<AppProps, "documents" | "signedIn"> {}
 
-export class ReactRenderer implements IRenderer {
+export class ReactRenderer implements Renderer {
   private readonly root: Root;
-  private props: IProps = { documents: null, signedIn: null };
+  private props: Props = { documents: null, signedIn: null };
 
   constructor(
     element: HTMLElement,
-    presenters: IPresenter[],
+    presenters: Presenter[],
     private readonly applicationInitializer: ApplicationInitializer,
     private readonly documentCreator: DocumentCreator,
     private readonly documentLister: DocumentLister,
@@ -45,7 +45,7 @@ export class ReactRenderer implements IRenderer {
     this.renderProps({});
   }
 
-  public renderDocuments(documents: IDocument[] | null): void {
+  public renderDocuments(documents: Document[] | null): void {
     this.renderProps({ documents });
   }
 
@@ -53,7 +53,7 @@ export class ReactRenderer implements IRenderer {
     this.renderProps({ signedIn });
   }
 
-  private renderProps(props: Partial<IProps>): void {
+  private renderProps(props: Partial<Props>): void {
     this.props = { ...this.props, ...props };
 
     this.root.render(
@@ -74,7 +74,7 @@ export class ReactRenderer implements IRenderer {
           repositoryUrl={this.repositoryUrl}
           signIn={() => this.signInManager.signIn()}
           signOut={() => this.signOutManager.signOut()}
-          updateDocument={(document: IDocument) =>
+          updateDocument={(document: Document) =>
             this.documentUpdater.update(document)
           }
         />

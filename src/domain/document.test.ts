@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-  type IDocument,
+  type Document,
   formatDocument,
   validateDocument,
 } from "./document.js";
@@ -37,6 +37,6 @@ describe("formatDocument", () => {
 
 describe("validateDocument", () => {
   it("validates texts", () => {
-    expect(() => validateDocument({ text: "" } as IDocument)).toThrow();
+    expect(() => validateDocument({ text: "" } as Document)).toThrow();
   });
 });

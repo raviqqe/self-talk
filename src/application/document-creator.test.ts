@@ -1,12 +1,12 @@
 import { it, expect, vi, type Mocked, beforeEach } from "vitest";
 import { DocumentCreator } from "./document-creator.js";
-import { type IDocumentPresenter } from "./document-presenter.js";
-import { type IDocumentRepository } from "./document-repository.js";
-import { type IMessagePresenter } from "./message-presenter.js";
+import { type DocumentPresenter } from "./document-presenter.js";
+import { type DocumentRepository } from "./document-repository.js";
+import { type MessagePresenter } from "./message-presenter.js";
 
-let documentRepository: Mocked<IDocumentRepository>;
-let documentPresenter: Mocked<IDocumentPresenter>;
-let messagePresenter: Mocked<IMessagePresenter>;
+let documentRepository: Mocked<DocumentRepository>;
+let documentPresenter: Mocked<DocumentPresenter>;
+let messagePresenter: Mocked<MessagePresenter>;
 let documentCreator: DocumentCreator;
 
 beforeEach(() => {
@@ -18,7 +18,7 @@ beforeEach(() => {
   };
   documentPresenter = {
     presentNewDocument: vi.fn(),
-  } as unknown as Mocked<IDocumentPresenter>;
+  } as unknown as Mocked<DocumentPresenter>;
   messagePresenter = { present: vi.fn() };
   documentCreator = new DocumentCreator(
     documentRepository,

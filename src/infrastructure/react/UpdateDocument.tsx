@@ -2,7 +2,7 @@ import { defaultImport } from "default-import";
 import { useState } from "react";
 import { MdSave } from "react-icons/md/index.js";
 import defaultStyled from "styled-components";
-import { type IDocument } from "../../domain/document.js";
+import { type Document } from "../../domain/document.js";
 import { CircleButton } from "./CircleButton.js";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
 import { type InsertFilesFunction } from "./utilities.js";
@@ -18,11 +18,11 @@ const StyledMarkdownTextArea = styled(MarkdownTextArea)`
   margin-right: -1em;
 `;
 
-export interface IProps {
+export interface Props {
   className?: string;
-  document: IDocument;
+  document: Document;
   insertFiles: InsertFilesFunction;
-  updateDocument: (document: IDocument) => Promise<void>;
+  updateDocument: (document: Document) => Promise<void>;
 }
 
 export const UpdateDocument = ({
@@ -30,7 +30,7 @@ export const UpdateDocument = ({
   insertFiles,
   updateDocument,
   ...restProps
-}: IProps): JSX.Element => {
+}: Props): JSX.Element => {
   const [text, setText] = useState(document.text);
   const onSubmit = () => updateDocument({ ...document, text });
 

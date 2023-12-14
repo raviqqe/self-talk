@@ -6,7 +6,7 @@ import { IconButton } from "./IconButton.js";
 import { Markdown } from "./Markdown.js";
 import {
   UpdateDocument,
-  type IProps as IUpdateDocumentProps,
+  type Props as UpdateDocumentProps,
 } from "./UpdateDocument.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
@@ -29,14 +29,14 @@ const ButtonContainer = styled.div`
   right: 0.4em;
 `;
 
-interface IProps extends IUpdateDocumentProps {}
+interface Props extends UpdateDocumentProps {}
 
 export const Document = ({
   document,
   insertFiles,
   updateDocument,
   ...restProps
-}: IProps): JSX.Element => {
+}: Props): JSX.Element => {
   const [editing, setEditing] = useState(false);
 
   return editing ? (
