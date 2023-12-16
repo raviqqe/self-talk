@@ -1,12 +1,12 @@
 import { defaultImport } from "default-import";
 import { useId } from "react";
 import defaultInfiniteScroll, {
-  type Props,
+  type Props as ScrollProps,
 } from "react-infinite-scroll-component";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import defaultStyled from "styled-components";
-import { type Document } from "../../domain/document.js";
+import type * as domain from "../../domain.js";
 import { Document } from "./Document.js";
 import { white } from "./style/colors.js";
 import { type InsertFilesFunction } from "./utilities.js";
@@ -27,7 +27,7 @@ const LoaderContainer = styled.div`
   padding: 1rem;
 `;
 
-const StyledInfiniteScroll = styled((props: Props) => (
+const StyledInfiniteScroll = styled((props: ScrollProps) => (
   <InfiniteScroll {...props} />
 ))`
   display: flex;
@@ -40,11 +40,11 @@ const StyledDocument = styled(Document)`
 `;
 
 export interface Props {
-  documents: Document[] | null;
+  documents: domain.Document[] | null;
   insertFiles: InsertFilesFunction;
   listDocuments: () => Promise<void>;
   listMoreDocuments: () => Promise<void>;
-  updateDocument: (document: Document) => Promise<void>;
+  updateDocument: (document: domain.Document) => Promise<void>;
 }
 
 export const Documents = ({

@@ -2,7 +2,7 @@ import { type DocumentPresenter } from "../application/document-presenter.js";
 import { type Document } from "../domain/document.js";
 import { type Renderer } from "./renderer.js";
 
-export class DocumentPresenter implements DocumentPresenter {
+export class DocumentRenderer implements DocumentPresenter {
   private renderer: Renderer | null = null;
   private documents: Document[] | null = null;
 
