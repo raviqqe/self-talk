@@ -12,7 +12,7 @@ exports[`renders 1`] = `
       class="infinite-scroll-component__outerdiv"
     >
       <div
-        class="infinite-scroll-component sc-dQpV bUPhop"
+        class="infinite-scroll-component sc-dQpIV bUPhop"
         style="height: auto; overflow: auto;"
       >
         <div
