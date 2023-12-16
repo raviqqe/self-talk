@@ -47,7 +47,7 @@ export interface Props {
   updateDocument: (document: domain.Document) => Promise<void>;
 }
 
-export const Documents = ({
+export const DocumentList = ({
   documents,
   insertFiles,
   listDocuments,

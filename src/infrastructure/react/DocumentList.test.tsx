@@ -5,7 +5,7 @@ import {
   waitFor,
 } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
-import { Documents } from "./Documents.js";
+import { DocumentList } from "./DocumentList.js";
 
 const listDocuments = vi.fn();
 const wait = () => waitFor(() => expect(listDocuments).toHaveBeenCalled());
@@ -19,7 +19,7 @@ it("renders", async () => {
 
   act(() => {
     result = render(
-      <Documents
+      <DocumentList
         documents={[{ id: "id", text: "text" }]}
         insertFiles={async () => ""}
         listDocuments={listDocuments}
@@ -39,7 +39,7 @@ it("renders with no documents", async () => {
 
   act(() => {
     result = render(
-      <Documents
+      <DocumentList
         documents={[]}
         insertFiles={async () => ""}
         listDocuments={listDocuments}
@@ -59,7 +59,7 @@ it("renders with documents not loaded yet", async () => {
 
   act(() => {
     result = render(
-      <Documents
+      <DocumentList
         documents={null}
         insertFiles={async () => ""}
         listDocuments={listDocuments}

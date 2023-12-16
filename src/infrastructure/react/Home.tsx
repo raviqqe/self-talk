@@ -1,7 +1,7 @@
 import { defaultImport } from "default-import";
 import defaultStyled from "styled-components";
 import { CreateDocument } from "./CreateDocument.js";
-import { Documents, type Props as DocumentsProps } from "./Documents.js";
+import { DocumentList, type Props as DocumentsProps } from "./DocumentList.js";
 import { SignOut } from "./SignOut.js";
 import { darkYellow } from "./style/colors.js";
 
@@ -60,7 +60,7 @@ export const Home = ({
   updateDocument,
 }: Props): JSX.Element => (
   <Container>
-    <Documents
+    <DocumentList
       documents={documents}
       insertFiles={insertFiles}
       listDocuments={listDocuments}
