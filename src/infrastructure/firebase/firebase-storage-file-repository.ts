@@ -9,9 +9,9 @@ import {
   getDownloadURL,
   uploadBytes,
 } from "firebase/storage";
-import { type IFileRepository } from "../../application/file-repository.js";
+import { type FileRepository } from "../../application/file-repository.js";
 
-export class FirebaseStorageFileRepository implements IFileRepository {
+export class FirebaseStorageFileRepository implements FileRepository {
   private readonly auth: Auth;
   private readonly storage: FirebaseStorage;
 

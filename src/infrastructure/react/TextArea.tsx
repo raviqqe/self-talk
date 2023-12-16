@@ -43,14 +43,14 @@ const StyledTextArea = styled(NoStyleTextareaAutosize)`
   }
 `;
 
-interface IProps extends InputHTMLAttributes<HTMLTextAreaElement> {
+interface Props extends InputHTMLAttributes<HTMLTextAreaElement> {
   onSubmit: () => void;
 }
 
 export const TextArea = ({
   onSubmit,
   ...textAreaProps
-}: IProps): JSX.Element => {
+}: Props): JSX.Element => {
   const ref = useRef<HTMLTextAreaElement | null>(null);
   const [focused, setFocused] = useState(false);
 

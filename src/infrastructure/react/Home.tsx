@@ -1,7 +1,7 @@
 import { defaultImport } from "default-import";
 import defaultStyled from "styled-components";
 import { CreateDocument } from "./CreateDocument.js";
-import { Documents, type IProps as IDocumentsProps } from "./Documents.js";
+import { DocumentList, type Props as DocumentsProps } from "./DocumentList.js";
 import { SignOut } from "./SignOut.js";
 import { darkYellow } from "./style/colors.js";
 
@@ -45,7 +45,7 @@ const SignOutContainer = styled.div`
   right: 0.5em;
 `;
 
-export interface IProps extends IDocumentsProps {
+export interface Props extends DocumentsProps {
   createDocument: (text: string) => Promise<void>;
   signOut: () => void;
 }
@@ -58,9 +58,9 @@ export const Home = ({
   listMoreDocuments,
   signOut,
   updateDocument,
-}: IProps): JSX.Element => (
+}: Props): JSX.Element => (
   <Container>
-    <Documents
+    <DocumentList
       documents={documents}
       insertFiles={insertFiles}
       listDocuments={listDocuments}

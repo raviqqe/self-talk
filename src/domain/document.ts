@@ -1,12 +1,12 @@
 import markdownParser from "prettier/parser-markdown.js";
 import { format } from "prettier/standalone.js";
 
-export interface IDocument {
+export interface Document {
   id: string;
   text: string; // in Markdown
 }
 
-export async function formatDocument(document: IDocument): Promise<IDocument> {
+export async function formatDocument(document: Document): Promise<Document> {
   return {
     ...document,
     text: (
@@ -21,7 +21,7 @@ export async function formatDocument(document: IDocument): Promise<IDocument> {
   };
 }
 
-export function validateDocument(document: IDocument): void {
+export function validateDocument(document: Document): void {
   if (!document.text) {
     throw new Error("document cannot be empty");
   }

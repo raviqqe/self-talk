@@ -1,16 +1,16 @@
 import { expect, beforeEach, afterEach, vi, it, type Mocked } from "vitest";
 import * as documentModule from "../domain/document.js";
 import { DocumentDeleter } from "./document-deleter.js";
-import { type IDocumentPresenter } from "./document-presenter.js";
-import { type IDocumentRepository } from "./document-repository.js";
+import { type DocumentPresenter } from "./document-presenter.js";
+import { type DocumentRepository } from "./document-repository.js";
 import { DocumentUpdater } from "./document-updater.js";
-import { type IMessagePresenter } from "./message-presenter.js";
+import { type MessagePresenter } from "./message-presenter.js";
 
-const dummyDocument: documentModule.IDocument = { id: "", text: "foo" };
+const dummyDocument: documentModule.Document = { id: "", text: "foo" };
 
-let documentRepository: Mocked<IDocumentRepository>;
-let documentPresenter: Mocked<IDocumentPresenter>;
-let messagePresenter: Mocked<IMessagePresenter>;
+let documentRepository: Mocked<DocumentRepository>;
+let documentPresenter: Mocked<DocumentPresenter>;
+let messagePresenter: Mocked<MessagePresenter>;
 let documentUpdater: DocumentUpdater;
 
 beforeEach(() => {
@@ -23,7 +23,7 @@ beforeEach(() => {
   documentPresenter = {
     presentDeletedDocument: vi.fn(),
     presentUpdatedDocument: vi.fn(),
-  } as unknown as Mocked<IDocumentPresenter>;
+  } as unknown as Mocked<DocumentPresenter>;
   messagePresenter = { present: vi.fn() };
   documentUpdater = new DocumentUpdater(
     new DocumentDeleter(documentRepository, documentPresenter, {

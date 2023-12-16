@@ -104,11 +104,11 @@ const Image = (
 );
 /* eslint-enable */
 
-interface IProps {
+interface Props {
   children: string;
 }
 
-export const Markdown = ({ children }: IProps): JSX.Element => (
+export const Markdown = ({ children }: Props): JSX.Element => (
   <Container>
     <ReactMarkdown components={{ img: Image }} remarkPlugins={[remarkGfm]}>
       {children}

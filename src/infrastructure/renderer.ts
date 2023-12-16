@@ -1,6 +1,6 @@
-import { type IDocument } from "../domain/document.js";
+import { type Document } from "../domain/document.js";
 
-export interface IRenderer {
-  renderDocuments(documents: IDocument[] | null): void;
+export interface Renderer {
+  renderDocuments(documents: Document[] | null): void;
   renderSignedIn(signedIn: boolean): void;
 }

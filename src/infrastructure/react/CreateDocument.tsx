@@ -19,7 +19,7 @@ const StyledMarkdownTextArea = styled(MarkdownTextArea)`
   max-height: 80vh;
 `;
 
-interface IProps {
+interface Props {
   createDocument: (text: string) => Promise<void>;
   insertFiles: InsertFilesFunction;
 }
@@ -27,7 +27,7 @@ interface IProps {
 export const CreateDocument = ({
   createDocument,
   insertFiles,
-}: IProps): JSX.Element => {
+}: Props): JSX.Element => {
   const [text, setText] = useState("");
   const onSubmit = async (): Promise<void> => {
     setText("");

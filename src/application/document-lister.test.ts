@@ -1,13 +1,13 @@
 import { expect, beforeEach, vi, it, type Mocked } from "vitest";
-import { type IDocument } from "../domain/document.js";
+import { type Document } from "../domain/document.js";
 import { DocumentLister } from "./document-lister.js";
-import { type IDocumentPresenter } from "./document-presenter.js";
-import { type IDocumentRepository } from "./document-repository.js";
+import { type DocumentPresenter } from "./document-presenter.js";
+import { type DocumentRepository } from "./document-repository.js";
 
-const dummyDocument: IDocument = { id: "", text: "" };
+const dummyDocument: Document = { id: "", text: "" };
 
-let documentRepository: Mocked<IDocumentRepository>;
-let documentPresenter: Mocked<IDocumentPresenter>;
+let documentRepository: Mocked<DocumentRepository>;
+let documentPresenter: Mocked<DocumentPresenter>;
 let documentLister: DocumentLister;
 
 beforeEach(() => {
@@ -23,7 +23,7 @@ beforeEach(() => {
   documentPresenter = {
     presentDocuments: vi.fn(),
     presentMoreDocuments: vi.fn(),
-  } as unknown as Mocked<IDocumentPresenter>;
+  } as unknown as Mocked<DocumentPresenter>;
   documentLister = new DocumentLister(documentRepository, documentPresenter);
 });
 

@@ -8,9 +8,9 @@ import { SignOutManager } from "./application/sign-out-manager.js";
 import { TextFileInserter } from "./application/text-file-inserter.js";
 import configuration from "./configuration.json";
 import { AlertMessagePresenter } from "./infrastructure/alert-message-presenter.js";
-import { AuthenticationPresenter } from "./infrastructure/authentication-presenter.js";
+import { AuthenticationRenderer } from "./infrastructure/authentication-renderer.js";
 import { BuiltinConfirmationController } from "./infrastructure/builtin-confirmation-controller.js";
-import { DocumentPresenter } from "./infrastructure/document-presenter.js";
+import { DocumentRenderer } from "./infrastructure/document-renderer.js";
 import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller.js";
 import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer.js";
 import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebase-storage-file-repository.js";
@@ -30,14 +30,14 @@ const main = () => {
   }
 
   const firebaseApp = firebaseInitializer.initialize();
-  const authenticationPresenter = new AuthenticationPresenter();
+  const authenticationPresenter = new AuthenticationRenderer();
   const authenticationController = new FirebaseAuthenticationController(
     firebaseApp,
   );
   const documentRepository = new FirestoreDocumentRepository(firebaseApp);
   const messagePresenter = new AlertMessagePresenter();
   const confirmationController = new BuiltinConfirmationController();
-  const documentPresenter = new DocumentPresenter();
+  const documentPresenter = new DocumentRenderer();
 
   new ReactRenderer(
     element,

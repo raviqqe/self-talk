@@ -17,14 +17,14 @@ import {
   startAfter,
   updateDoc,
 } from "firebase/firestore";
-import { type IDocumentRepository } from "../../application/document-repository.js";
-import { type IDocument } from "../../domain/document.js";
+import { type DocumentRepository } from "../../application/document-repository.js";
+import { type Document } from "../../domain/document.js";
 
-interface ITimestampedDocument extends IDocument {
+interface TimestampedDocument extends Document {
   createdAt: number;
 }
 
-export class FirestoreDocumentRepository implements IDocumentRepository {
+export class FirestoreDocumentRepository implements DocumentRepository {
   private readonly auth: Auth;
   private readonly firestore: Firestore;
 
@@ -33,7 +33,7 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
     this.firestore = getFirestore(app);
   }
 
-  public async create(document: IDocument): Promise<void> {
+  public async create(document: Document): Promise<void> {
     await setDoc(doc(this.collection(), document.id), {
       ...document,
       createdAt: Math.floor(Date.now() / 1000), // Unix timestamp as number
@@ -44,11 +44,11 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
     await deleteDoc(doc(this.collection(), documentId));
   }
 
-  public async *list(count: number): AsyncIterable<IDocument[]> {
+  public async *list(count: number): AsyncIterable<Document[]> {
     let result = await getDocs(query(this.query(), limit(count)));
 
     while (result.docs.length > 0) {
-      yield result.docs.map((snapshot) => snapshot.data() as IDocument);
+      yield result.docs.map((snapshot) => snapshot.data() as Document);
 
       result = await getDocs(
         query(this.query(), startAfter(last(result.docs)), limit(count)),
@@ -56,7 +56,7 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
     }
   }
 
-  public async update(document: IDocument): Promise<void> {
+  public async update(document: Document): Promise<void> {
     await updateDoc(doc(this.collection(), document.id), { ...document });
   }
 
@@ -64,7 +64,7 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
     return query(this.collection(), orderBy("createdAt", "desc"));
   }
 
-  private collection(): CollectionReference<ITimestampedDocument> {
+  private collection(): CollectionReference<TimestampedDocument> {
     const user = this.auth.currentUser;
 
     if (!user) {
@@ -74,6 +74,6 @@ export class FirestoreDocumentRepository implements IDocumentRepository {
     return collection(
       doc(collection(this.firestore, "users"), user.uid),
       "documents",
-    ) as CollectionReference<ITimestampedDocument>;
+    ) as CollectionReference<TimestampedDocument>;
   }
 }

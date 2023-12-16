@@ -6,11 +6,11 @@ import {
   signInWithPopup,
   type User,
 } from "firebase/auth";
-import { type IAuthenticationController } from "../../application/authentication-controller.js";
+import { type AuthenticationController } from "../../application/authentication-controller.js";
 import { sleep } from "../../domain/utilities.js";
 
 export class FirebaseAuthenticationController
-  implements IAuthenticationController
+  implements AuthenticationController
 {
   private readonly auth: Auth;
   private signedIn: boolean | null = null;

@@ -1,9 +1,9 @@
-import { type IDocument } from "../domain/document.js";
+import { type Document } from "../domain/document.js";
 
-export interface IDocumentPresenter {
-  presentDocuments(documents: IDocument[]): void;
-  presentMoreDocuments(documents: IDocument[]): void;
-  presentNewDocument(document: IDocument): void;
-  presentUpdatedDocument(document: IDocument): void;
+export interface DocumentPresenter {
+  presentDocuments(documents: Document[]): void;
+  presentMoreDocuments(documents: Document[]): void;
+  presentNewDocument(document: Document): void;
+  presentUpdatedDocument(document: Document): void;
   presentDeletedDocument(documentId: string): void;
 }
