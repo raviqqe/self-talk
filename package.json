@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@raviqqe/loscore": "^0.2.1",
-    "@sentry/browser": "^7.88.0",
+    "@sentry/browser": "^7.89.0",
     "default-import": "^1.1.5",
     "firebase": "^10.7.1",
     "prettier": "^3.1.1",
