@@ -2,21 +2,21 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-fubDmA gRRWOA"
+  class="sc-fuzrqj eGqVnS"
 >
   <div
-    class="sc-gsTDqH cYMvEn"
+    class="sc-gtcySc ddaIbE"
   >
     <p>
       text
     </p>
   </div>
   <div
-    class="sc-pGaPU jbJmiF"
+    class="sc-qdOTD bPPbzb"
   >
     <div
       aria-label="Edit"
-      class="sc-bdfCDU ecoOih"
+      class="sc-bdDqHD eTzjHf"
     >
       <svg
         fill="currentColor"
