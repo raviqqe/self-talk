@@ -68,11 +68,9 @@ export const DocumentList = ({
   const [length, setLength] = useState(0);
 
   useEffect(() => {
-    console.log({ oldLoading, loading, length: documents?.length, done });
     if (!oldLoading && loading) {
       setLength(documents?.length ?? 0);
     } else if (oldLoading && !loading && documents?.length === length) {
-      console.log("DONE!");
       setDone(true);
     }
   }, [documents, loading, oldLoading]);
