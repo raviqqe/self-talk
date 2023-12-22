@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 <button
-  class="sc-bdDqHD sc-gtcySc jICGPD ddkfak"
+  class="sc-bdDqHD sc-gtcySc cBHwZt ddkfak"
 >
   foo
 </button>
