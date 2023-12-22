@@ -1,4 +1,6 @@
 import { defaultImport } from "default-import";
+import { useEffect, useState } from "react";
+import defaultUseInfiniteScroll from "react-infinite-scroll-hook";
 import { PulseLoader } from "react-spinners";
 import { useAsync, usePrevious } from "react-use";
 import defaultStyled from "styled-components";
@@ -6,8 +8,6 @@ import type * as domain from "../../domain.js";
 import { Document } from "./Document.js";
 import { white } from "./style/colors.js";
 import { type InsertFilesFunction } from "./utilities.js";
-import defaultUseInfiniteScroll from "react-infinite-scroll-hook";
-import { useEffect, useState } from "react";
 
 const useInfiniteScroll = defaultImport(defaultUseInfiniteScroll);
 const styled = defaultImport(defaultStyled);
@@ -55,8 +55,8 @@ export const DocumentList = ({
   }, []);
 
   const [ref] = useInfiniteScroll({
-    loading,
     hasNextPage: !done,
+    loading,
     onLoadMore: async () => {
       setLoading(true);
       await listMoreDocuments();
@@ -73,7 +73,7 @@ export const DocumentList = ({
     } else if (oldLoading && !loading && documents?.length === length) {
       setDone(true);
     }
-  }, [documents, loading, oldLoading]);
+  }, [documents, length, loading, oldLoading]);
 
   return (
     <Container>
