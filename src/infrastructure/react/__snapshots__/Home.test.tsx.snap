@@ -2,41 +2,13 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-krVBSM HwVUm"
+  class="sc-bqqOah kZZXKd"
 >
   <div
-    class="sc-iqkjvU qYNoK"
-    id=":r0:"
-  >
-    <div
-      class="infinite-scroll-component__outerdiv"
-    >
-      <div
-        class="infinite-scroll-component sc-dYlKe iYMTGb"
-        style="height: auto; overflow: auto;"
-      >
-        <div
-          class="sc-crPhqv bJIdtg"
-        >
-          <span
-            style="display: inherit;"
-          >
-            <span
-              style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-            />
-            <span
-              style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-            />
-            <span
-              style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-            />
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
+    class="sc-iqkjvU jkvsXy"
+  />
   <div
-    class="sc-hCcNzf bvLPKo"
+    class="sc-krVBSM hPBKgp"
   >
     <div
       class="sc-eCQicT xiAtX"
@@ -69,11 +41,11 @@ exports[`renders 1`] = `
       </button>
     </div>
     <div
-      class="sc-folRSO hauTNN"
+      class="sc-hCcNzf iIescQ"
     />
   </div>
   <div
-    class="sc-fFCXec cVAHUn"
+    class="sc-folRSO iliuzV"
   >
     <button
       class="sc-bdDqHD sc-gtcySc egIUhk chmBy"

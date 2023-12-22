@@ -1,23 +1,22 @@
 import { defaultImport } from "default-import";
-import { useId } from "react";
-import defaultInfiniteScroll, {
-  type Props as ScrollProps,
-} from "react-infinite-scroll-component";
+import { useEffect, useState } from "react";
+import defaultUseInfiniteScroll from "react-infinite-scroll-hook";
 import { PulseLoader } from "react-spinners";
-import { useAsync } from "react-use";
+import { useAsync, usePrevious } from "react-use";
 import defaultStyled from "styled-components";
 import type * as domain from "../../domain.js";
 import { Document } from "./Document.js";
 import { white } from "./style/colors.js";
 import { type InsertFilesFunction } from "./utilities.js";
 
-const InfiniteScroll = defaultImport(defaultInfiniteScroll);
+const useInfiniteScroll = defaultImport(defaultUseInfiniteScroll);
 const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   display: flex;
   flex-direction: column-reverse;
   overflow: auto;
+  padding: 1em 0.5em;
 `;
 
 const LoaderContainer = styled.div`
@@ -25,14 +24,6 @@ const LoaderContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-`;
-
-const StyledInfiniteScroll = styled((props: ScrollProps) => (
-  <InfiniteScroll {...props} />
-))`
-  display: flex;
-  flex-direction: column-reverse;
-  padding: 1em 0.5em;
 `;
 
 const StyledDocument = styled(Document)`
@@ -54,36 +45,51 @@ export const DocumentList = ({
   listMoreDocuments,
   updateDocument,
 }: Props): JSX.Element => {
-  const documentsContainerId = useId();
-  useAsync(listDocuments, []);
+  const [loading, setLoading] = useState(false);
+  const [done, setDone] = useState(false);
 
-  return documents ? (
-    <Container id={documentsContainerId}>
-      <StyledInfiniteScroll
-        dataLength={documents.length}
-        hasMore
-        inverse
-        loader={
-          <LoaderContainer>
-            <PulseLoader color={white} />
-          </LoaderContainer>
-        }
-        next={listMoreDocuments}
-        scrollableTarget={documentsContainerId}
-      >
-        {documents.map((document) => (
-          <StyledDocument
-            document={document}
-            insertFiles={insertFiles}
-            key={document.id}
-            updateDocument={updateDocument}
-          />
-        ))}
-      </StyledInfiniteScroll>
+  useAsync(async () => {
+    setLoading(true);
+    await listDocuments();
+    setLoading(false);
+  }, []);
+
+  const [ref] = useInfiniteScroll({
+    hasNextPage: !done,
+    loading,
+    onLoadMore: async () => {
+      setLoading(true);
+      await listMoreDocuments();
+      setLoading(false);
+    },
+  });
+
+  const oldLoading = usePrevious(loading);
+  const [length, setLength] = useState(0);
+
+  useEffect(() => {
+    if (!oldLoading && loading) {
+      setLength(documents?.length ?? 0);
+    } else if (oldLoading && !loading && documents?.length === length) {
+      setDone(true);
+    }
+  }, [documents, length, loading, oldLoading]);
+
+  return (
+    <Container>
+      {documents?.map((document) => (
+        <StyledDocument
+          document={document}
+          insertFiles={insertFiles}
+          key={document.id}
+          updateDocument={updateDocument}
+        />
+      ))}
+      {!done && (
+        <LoaderContainer ref={ref}>
+          <PulseLoader color={white} />
+        </LoaderContainer>
+      )}
     </Container>
-  ) : (
-    <LoaderContainer>
-      <PulseLoader color={white} />
-    </LoaderContainer>
   );
 };

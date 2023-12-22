@@ -2,108 +2,109 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-jrICMi jAtYiG"
-  id=":r0:"
+  class="sc-jrICMi kKjDhK"
 >
   <div
-    class="infinite-scroll-component__outerdiv"
+    class="sc-fuzrqj eGqVnS sc-iqkjvU hKuOl"
   >
     <div
-      class="infinite-scroll-component sc-iqkjvU kEPume"
-      style="height: auto; overflow: auto;"
+      class="sc-gtcySc fVrLpw"
+    >
+      <p>
+        text
+      </p>
+    </div>
+    <div
+      class="sc-qdOTD bPPbzb"
     >
       <div
-        class="sc-fuzrqj eGqVnS sc-crPhqv gWvQXR"
+        aria-label="Edit"
+        class="sc-bdDqHD eTzjHf"
       >
-        <div
-          class="sc-gtcySc fVrLpw"
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <p>
-            text
-          </p>
-        </div>
-        <div
-          class="sc-qdOTD bPPbzb"
-        >
-          <div
-            aria-label="Edit"
-            class="sc-bdDqHD eTzjHf"
-          >
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 0h24v24H0z"
-                fill="none"
-              />
-              <path
-                d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
-              />
-            </svg>
-          </div>
-        </div>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 000-1.41l-2.34-2.34a.996.996 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+          />
+        </svg>
       </div>
     </div>
+  </div>
+  <div
+    class="sc-kEbfcl kDXakX"
+  >
+    <span
+      style="display: inherit;"
+    >
+      <span
+        style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+      />
+      <span
+        style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+      />
+      <span
+        style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+      />
+    </span>
   </div>
 </div>
 `;
 
 exports[`renders with documents not loaded yet 1`] = `
 <div
-  class="sc-kEbfcl kDXakX"
+  class="sc-jrICMi kKjDhK"
 >
-  <span
-    style="display: inherit;"
+  <div
+    class="sc-kEbfcl kDXakX"
   >
     <span
-      style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-    />
-    <span
-      style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-    />
-    <span
-      style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-    />
-  </span>
+      style="display: inherit;"
+    >
+      <span
+        style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+      />
+      <span
+        style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+      />
+      <span
+        style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+      />
+    </span>
+  </div>
 </div>
 `;
 
 exports[`renders with no documents 1`] = `
 <div
-  class="sc-jrICMi jAtYiG"
-  id=":r1:"
+  class="sc-jrICMi kKjDhK"
 >
   <div
-    class="infinite-scroll-component__outerdiv"
+    class="sc-kEbfcl kDXakX"
   >
-    <div
-      class="infinite-scroll-component sc-iqkjvU kEPume"
-      style="height: auto; overflow: auto;"
+    <span
+      style="display: inherit;"
     >
-      <div
-        class="sc-kEbfcl kDXakX"
-      >
-        <span
-          style="display: inherit;"
-        >
-          <span
-            style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-          />
-          <span
-            style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-          />
-          <span
-            style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-          />
-        </span>
-      </div>
-    </div>
+      <span
+        style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+      />
+      <span
+        style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+      />
+      <span
+        style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+      />
+    </span>
   </div>
 </div>
 `;

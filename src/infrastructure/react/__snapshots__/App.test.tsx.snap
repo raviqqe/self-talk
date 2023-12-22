@@ -3,27 +3,31 @@
 exports[`renders after a user signs in 1`] = `
 <div>
   <div
-    class="sc-krVBSM HwVUm"
+    class="sc-bqqOah kZZXKd"
   >
     <div
-      class="sc-crPhqv bJIdtg"
+      class="sc-iqkjvU jkvsXy"
     >
-      <span
-        style="display: inherit;"
+      <div
+        class="sc-crPhqv bJIdtg"
       >
         <span
-          style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-        />
-        <span
-          style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-        />
-        <span
-          style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
-        />
-      </span>
+          style="display: inherit;"
+        >
+          <span
+            style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+          />
+          <span
+            style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+          />
+          <span
+            style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+          />
+        </span>
+      </div>
     </div>
     <div
-      class="sc-hCcNzf bvLPKo"
+      class="sc-krVBSM hPBKgp"
     >
       <div
         class="sc-eCQicT xiAtX"
@@ -56,11 +60,11 @@ exports[`renders after a user signs in 1`] = `
         </button>
       </div>
       <div
-        class="sc-folRSO hauTNN"
+        class="sc-hCcNzf iIescQ"
       />
     </div>
     <div
-      class="sc-fFCXec cVAHUn"
+      class="sc-folRSO iliuzV"
     >
       <button
         class="sc-bdDqHD sc-gtcySc egIUhk chmBy"
@@ -91,29 +95,29 @@ exports[`renders after a user signs in 1`] = `
 exports[`renders after a user signs out 1`] = `
 <div>
   <div
-    class="sc-ieCPsO gTDPAx"
+    class="sc-bjLrTV kGMxtm"
   >
     <div
-      class="sc-dILkiH duzKdG"
+      class="sc-ieCPsO Htnzq"
     >
       <span
-        class="sc-hHopAU iciQCn"
+        class="sc-dILkiH jzgQgL"
       >
         Self
       </span>
       <span
-        class="sc-dlwKqN ieOmQo"
+        class="sc-hHopAU iWFflQ"
       >
         Talk
       </span>
     </div>
     <button
-      class="sc-bdDqHD sc-bjLrTV cBHwZt hqPZaN"
+      class="sc-bdDqHD sc-fFCXec cBHwZt hgWytI"
     >
       Sign in
     </button>
     <a
-      class="sc-kgohPG VcEnV"
+      class="sc-dlwKqN epCDfW"
       href=""
       target="_blank"
     >
@@ -138,7 +142,7 @@ exports[`renders after a user signs out 1`] = `
 exports[`renders before a user signs in 1`] = `
 <div>
   <div
-    class="sc-fKwCFz kfHwsg"
+    class="sc-kgohPG kNRAWx"
   >
     <span
       style="display: inherit;"
