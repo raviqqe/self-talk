@@ -10,7 +10,7 @@ exports[`renders 1`] = `
   />
   <button
     aria-label="Save"
-    class="sc-bdDqHD sc-gtcySc jICGPD chmBy"
+    class="sc-bdDqHD sc-gtcySc cBHwZt chmBy"
   >
     <svg
       fill="currentColor"
