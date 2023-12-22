@@ -46,6 +46,7 @@ export const DocumentList = ({
   updateDocument,
 }: Props): JSX.Element => {
   useAsync(listDocuments, []);
+
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
 
