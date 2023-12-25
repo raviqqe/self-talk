@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import defaultUseInfiniteScroll from "react-infinite-scroll-hook";
 import { PulseLoader } from "react-spinners";
 import { useAsync, usePrevious } from "react-use";
-import defaultStyled from "styled-components";
+import { styled } from "@linaria/react";
 import type * as domain from "../../domain.js";
 import { Document } from "./Document.js";
 import { white } from "./style/colors.js";

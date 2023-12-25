@@ -1,5 +1,5 @@
 import { defaultImport } from "default-import";
-import defaultStyled from "styled-components";
+import { styled } from "@linaria/react";
 import { CreateDocument } from "./CreateDocument.js";
 import { DocumentList, type Props as DocumentsProps } from "./DocumentList.js";
 import { SignOut } from "./SignOut.js";

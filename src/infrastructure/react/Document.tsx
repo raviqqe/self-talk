@@ -1,7 +1,7 @@
 import { defaultImport } from "default-import";
 import { useState } from "react";
 import { MdEdit } from "react-icons/md/index.js";
-import defaultStyled from "styled-components";
+import { styled } from "@linaria/react";
 import { IconButton } from "./IconButton.js";
 import { Markdown } from "./Markdown.js";
 import {

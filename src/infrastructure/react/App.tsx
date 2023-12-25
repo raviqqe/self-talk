@@ -1,7 +1,7 @@
 import { defaultImport } from "default-import";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
-import defaultStyled from "styled-components";
+import { styled } from "@linaria/react";
 import { Home, type Props as HomeProps } from "./Home.js";
 import { type Props as LandingProps, Landing } from "./Landing.js";
 import { white } from "./style/colors.js";

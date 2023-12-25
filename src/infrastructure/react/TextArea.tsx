@@ -11,7 +11,7 @@ import {
 import TextareaAutosize, {
   type TextareaAutosizeProps,
 } from "react-textarea-autosize";
-import defaultStyled from "styled-components";
+import { styled } from "@linaria/react";
 import { grey } from "./style/colors.js";
 import { boxShadow } from "./style.js";
 
