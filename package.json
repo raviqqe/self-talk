@@ -31,6 +31,8 @@
     "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
     "@raviqqe/eslint-config": "^2.0.4",
     "@raviqqe/react-tsconfig": "^1.0.19",
     "@testing-library/react": "^14.1.2",
