@@ -1,5 +1,5 @@
-import { black, yellow } from "./style/colors.js";
 import css from "noop-tag";
+import { black, yellow } from "./style/colors.js";
 
 export const globalStyle = css`
   body {
