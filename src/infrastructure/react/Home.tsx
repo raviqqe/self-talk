@@ -1,11 +1,8 @@
-import { defaultImport } from "default-import";
 import { styled } from "@linaria/react";
 import { CreateDocument } from "./CreateDocument.js";
 import { DocumentList, type Props as DocumentsProps } from "./DocumentList.js";
 import { SignOut } from "./SignOut.js";
 import { darkYellow } from "./style/colors.js";
-
-const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   display: flex;

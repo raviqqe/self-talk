@@ -9,7 +9,7 @@ import { type SignOutManager } from "../application/sign-out-manager.js";
 import { type TextFileInserter } from "../application/text-file-inserter.js";
 import { type Document } from "../domain/document.js";
 import { App, type Props as AppProps } from "./react/App.js";
-import { GlobalStyle } from "./react/style.js";
+import { globalStyle } from "./react/style.js";
 import { type Renderer } from "./renderer.js";
 
 interface Presenter {
@@ -58,6 +58,7 @@ export class ReactRenderer implements Renderer {
 
     this.root.render(
       <StrictMode>
+        <style>{globalStyle}</style>
         <App
           {...this.props}
           createDocument={(text: string) => this.documentCreator.create(text)}
@@ -78,7 +79,6 @@ export class ReactRenderer implements Renderer {
             this.documentUpdater.update(document)
           }
         />
-        <GlobalStyle />
       </StrictMode>,
     );
   }

@@ -1,4 +1,3 @@
-import { defaultImport } from "default-import";
 import {
   type ForwardedRef,
   forwardRef,
@@ -14,8 +13,6 @@ import TextareaAutosize, {
 import { styled } from "@linaria/react";
 import { grey } from "./style/colors.js";
 import { boxShadow } from "./style.js";
-
-const styled = defaultImport(defaultStyled);
 
 const NoStyleTextareaAutosize = forwardRef(
   (

@@ -1,4 +1,3 @@
-import { defaultImport } from "default-import";
 import { useEffect, useState } from "react";
 import defaultUseInfiniteScroll from "react-infinite-scroll-hook";
 import { PulseLoader } from "react-spinners";
@@ -8,9 +7,9 @@ import type * as domain from "../../domain.js";
 import { Document } from "./Document.js";
 import { white } from "./style/colors.js";
 import { type InsertFilesFunction } from "./utilities.js";
+import { defaultImport } from "default-import";
 
 const useInfiniteScroll = defaultImport(defaultUseInfiniteScroll);
-const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   display: flex;

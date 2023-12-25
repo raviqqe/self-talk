@@ -1,9 +1,6 @@
-import { defaultImport } from "default-import";
 import { type AriaAttributes, type ReactNode } from "react";
 import { styled } from "@linaria/react";
 import { grey } from "./style/colors.js";
-
-const styled = defaultImport(defaultStyled);
 
 const Button = styled.div`
   color: ${grey};

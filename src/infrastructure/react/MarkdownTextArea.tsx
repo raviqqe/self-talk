@@ -1,12 +1,9 @@
-import { defaultImport } from "default-import";
 import { useState, type SyntheticEvent } from "react";
 import { PulseLoader } from "react-spinners";
 import { styled } from "@linaria/react";
 import { TextArea } from "./TextArea.js";
 import { white } from "./style/colors.js";
 import { type InsertFilesFunction } from "./utilities.js";
-
-const styled = defaultImport(defaultStyled);
 
 const LoaderContainer = styled.div`
   display: flex;

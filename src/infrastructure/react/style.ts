@@ -1,7 +1,7 @@
-import { styled } from "@linaria/react";
 import { black, yellow } from "./style/colors.js";
+import css from "noop-tag";
 
-export const GlobalStyle = createGlobalStyle`
+export const globalStyle = css`
   body {
     background: ${yellow};
     margin: 0;
