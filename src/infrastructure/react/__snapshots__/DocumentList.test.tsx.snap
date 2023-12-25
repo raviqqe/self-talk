@@ -2,24 +2,24 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-jrICMi kKjDhK"
+  class="mocked-styled-10 c8wguls"
 >
   <div
-    class="sc-fuzrqj eGqVnS sc-iqkjvU hKuOl"
+    class="mocked-styled-12 s1em95ec c1m9orp7"
   >
     <div
-      class="sc-gtcySc fVrLpw"
+      class="mocked-styled-1 c1psrgc5"
     >
       <p>
         text
       </p>
     </div>
     <div
-      class="sc-qdOTD bPPbzb"
+      class="mocked-styled-9 b1jip2ep"
     >
       <div
         aria-label="Edit"
-        class="sc-bdDqHD eTzjHf"
+        class="mocked-styled-0 b1bs8ozj"
       >
         <svg
           fill="currentColor"
@@ -42,7 +42,7 @@ exports[`renders 1`] = `
     </div>
   </div>
   <div
-    class="sc-kEbfcl kDXakX"
+    class="mocked-styled-11 l1b8gspm"
   >
     <span
       style="display: inherit;"
@@ -63,10 +63,10 @@ exports[`renders 1`] = `
 
 exports[`renders with documents not loaded yet 1`] = `
 <div
-  class="sc-jrICMi kKjDhK"
+  class="mocked-styled-10 c8wguls"
 >
   <div
-    class="sc-kEbfcl kDXakX"
+    class="mocked-styled-11 l1b8gspm"
   >
     <span
       style="display: inherit;"
@@ -87,10 +87,10 @@ exports[`renders with documents not loaded yet 1`] = `
 
 exports[`renders with no documents 1`] = `
 <div
-  class="sc-jrICMi kKjDhK"
+  class="mocked-styled-10 c8wguls"
 >
   <div
-    class="sc-kEbfcl kDXakX"
+    class="mocked-styled-11 l1b8gspm"
   >
     <span
       style="display: inherit;"

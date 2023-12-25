@@ -2,24 +2,25 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-bqqOah kZZXKd"
+  class="mocked-styled-15 c2c63xu"
 >
   <div
-    class="sc-iqkjvU jkvsXy"
+    class="mocked-styled-12 c8wguls"
   />
   <div
-    class="sc-krVBSM hPBKgp"
+    class="mocked-styled-16 c7s45km"
   >
     <div
-      class="sc-eCQicT xiAtX"
+      class="mocked-styled-4 cfb4dry"
     >
       <textarea
-        class="sc-dkXqGt jpBMND sc-jSpqns fjXCeL"
+        class="mocked-styled-5 s67jl2c s1ont3o7"
         placeholder="Write in Markdown ..."
       />
       <button
         aria-label="Create"
-        class="sc-bdDqHD sc-gtcySc cBHwZt chmBy"
+        class="mocked-styled-1 bunojaf cki2aja bunojaf"
+        style="--bunojaf-0: tomato;"
       >
         <svg
           fill="currentColor"
@@ -41,14 +42,15 @@ exports[`renders 1`] = `
       </button>
     </div>
     <div
-      class="sc-hCcNzf iIescQ"
+      class="mocked-styled-17 c1vy458d"
     />
   </div>
   <div
-    class="sc-folRSO iliuzV"
+    class="mocked-styled-18 s1cidxnd"
   >
     <button
-      class="sc-bdDqHD sc-gtcySc egIUhk chmBy"
+      class="mocked-styled-1 bunojaf cki2aja bunojaf"
+      style="--bunojaf-0: darkgrey;"
     >
       <svg
         fill="currentColor"

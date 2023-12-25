@@ -2,7 +2,7 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-bdDqHD eRTisS"
+  class="mocked-styled-0 c1psrgc5"
 >
   <h1>
     Foo
@@ -12,7 +12,7 @@ exports[`renders 1`] = `
 
 exports[`renders a link with an ampersand 1`] = `
 <div
-  class="sc-bdDqHD eRTisS"
+  class="mocked-styled-0 c1psrgc5"
 >
   <p>
     <a
@@ -24,7 +24,7 @@ exports[`renders a link with an ampersand 1`] = `
 
 exports[`renders a table 1`] = `
 <div
-  class="sc-bdDqHD eRTisS"
+  class="mocked-styled-0 c1psrgc5"
 >
   <table>
     <thead>
@@ -53,7 +53,7 @@ exports[`renders a table 1`] = `
 
 exports[`renders an image 1`] = `
 <div
-  class="sc-bdDqHD eRTisS"
+  class="mocked-styled-0 c1psrgc5"
 >
   <p>
     <img

@@ -2,7 +2,8 @@
 
 exports[`renders 1`] = `
 <button
-  class="sc-bdDqHD sc-gtcySc egIUhk chmBy"
+  class="mocked-styled-1 bunojaf cki2aja bunojaf"
+  style="--bunojaf-0: darkgrey;"
 >
   <svg
     fill="currentColor"
