@@ -1,7 +1,7 @@
-import { createGlobalStyle, css } from "styled-components";
+import css from "noop-tag";
 import { black, yellow } from "./style/colors.js";
 
-export const GlobalStyle = createGlobalStyle`
+export const globalStyle = css`
   body {
     background: ${yellow};
     margin: 0;

@@ -1,7 +1,6 @@
-import { defaultImport } from "default-import";
+import { styled } from "@linaria/react";
 import { useState } from "react";
 import { MdEdit } from "react-icons/md/index.js";
-import defaultStyled from "styled-components";
 import { IconButton } from "./IconButton.js";
 import { Markdown } from "./Markdown.js";
 import {
@@ -10,8 +9,6 @@ import {
 } from "./UpdateDocument.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
-
-const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   ${boxShadow};

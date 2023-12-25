@@ -2,15 +2,16 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-eCQicT xiAtX"
+  class="mocked-styled-4 cfb4dry"
 >
   <textarea
-    class="sc-dkXqGt jpBMND sc-jSpqns fjXCeL"
+    class="mocked-styled-5 s67jl2c s1ont3o7"
     placeholder="Write in Markdown ..."
   />
   <button
     aria-label="Create"
-    class="sc-bdDqHD sc-gtcySc cBHwZt chmBy"
+    class="mocked-styled-1 bunojaf cki2aja bunojaf"
+    style="--bunojaf-0: tomato;"
   >
     <svg
       fill="currentColor"

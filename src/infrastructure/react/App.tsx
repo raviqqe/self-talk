@@ -1,12 +1,9 @@
-import { defaultImport } from "default-import";
+import { styled } from "@linaria/react";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
-import defaultStyled from "styled-components";
 import { Home, type Props as HomeProps } from "./Home.js";
 import { type Props as LandingProps, Landing } from "./Landing.js";
 import { white } from "./style/colors.js";
-
-const styled = defaultImport(defaultStyled);
 
 const LoaderContainer = styled.div`
   display: flex;

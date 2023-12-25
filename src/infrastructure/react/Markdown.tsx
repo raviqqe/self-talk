@@ -1,11 +1,9 @@
-import { defaultImport } from "default-import";
+import { styled } from "@linaria/react";
+import css from "noop-tag";
 import { type DetailedHTMLProps, type ImgHTMLAttributes } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import defaultStyled, { css } from "styled-components";
 import { darkGrey, grey, red, white } from "./style/colors.js";
-
-const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   cursor: text;
@@ -23,17 +21,19 @@ const Container = styled.div`
     word-wrap: break-word;
   }
 
-  ${[1, 2, 3, 4, 5, 6].map(
-    (level) => css`
-      h${level} {
-        font-size: 1em;
+  ${[1, 2, 3, 4, 5, 6]
+    .map(
+      (level) => css`
+        h${level} {
+          font-size: 1em;
 
-        &::before {
-          content: "${"#".repeat(level)} ";
+          &::before {
+            content: "${"#".repeat(level)} ";
+          }
         }
-      }
-    `,
-  )};
+      `,
+    )
+    .join("\n")};
 
   a {
     color: ${red};

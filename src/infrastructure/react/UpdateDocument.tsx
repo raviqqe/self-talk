@@ -1,13 +1,10 @@
-import { defaultImport } from "default-import";
+import { styled } from "@linaria/react";
 import { useState } from "react";
 import { MdSave } from "react-icons/md/index.js";
-import defaultStyled from "styled-components";
 import { type Document } from "../../domain/document.js";
 import { CircleButton } from "./CircleButton.js";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
 import { type InsertFilesFunction } from "./utilities.js";
-
-const styled = defaultImport(defaultStyled);
 
 const Container = styled.div`
   display: flex;

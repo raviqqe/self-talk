@@ -2,29 +2,30 @@
 
 exports[`renders 1`] = `
 <div
-  class="sc-dkXqGt rQYSj"
+  class="mocked-styled-2 c3ap7hf"
 >
   <div
-    class="sc-hKVqoC gyMlBt"
+    class="mocked-styled-3 t1xgehma"
   >
     <span
-      class="sc-eCQicT gbQZgx"
+      class="mocked-styled-4 wim0e6u"
     >
       Self
     </span>
     <span
-      class="sc-jSpqns irqWAW"
+      class="mocked-styled-5 rm1lq52"
     >
       Talk
     </span>
   </div>
   <button
-    class="sc-bdDqHD sc-gtcySc cBHwZt ddkfak"
+    class="mocked-styled-1 bunojaf tn2f353 bunojaf"
+    style="--bunojaf-0: tomato;"
   >
     Sign in
   </button>
   <a
-    class="sc-gKkibJ kCRqDf"
+    class="mocked-styled-6 g1qnybl0"
     href="url"
     target="_blank"
   >
