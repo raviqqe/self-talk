@@ -1,6 +1,6 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
-import { MdEdit } from "react-icons/md/index.js";
+import { MdEdit } from "react-icons/md";
 import { IconButton } from "./IconButton.js";
 import { Markdown } from "./Markdown.js";
 import {
