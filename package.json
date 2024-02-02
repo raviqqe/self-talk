@@ -35,7 +35,7 @@
     "@babel/preset-typescript": "^7.23.3",
     "@raviqqe/eslint-config": "^2.0.6",
     "@raviqqe/react-tsconfig": "^1.0.19",
-    "@testing-library/react": "^14.2.0",
+    "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
     "@types/prettier": "^3.0.0",
     "@types/react": "^18.2.51",
