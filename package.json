@@ -12,7 +12,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
-    "@linaria/core": "^6.0.0",
+    "@linaria/core": "^6.1.0",
     "@linaria/react": "^6.0.0",
     "@raviqqe/loscore": "^0.2.1",
     "@sentry/browser": "^7.100.1",
