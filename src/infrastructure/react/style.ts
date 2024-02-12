@@ -2,7 +2,7 @@ import { css } from "@linaria/core";
 import { black, yellow } from "./style/colors.js";
 
 export const globalStyle = css`
-  :global {
+  :global() {
     body {
       background: ${yellow};
       margin: 0;
