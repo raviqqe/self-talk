@@ -1,4 +1,4 @@
-import css from "noop-tag";
+import { css } from "@linaria/core";
 import { black, yellow } from "./style/colors.js";
 
 export const globalStyle = css`
