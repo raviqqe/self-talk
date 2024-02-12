@@ -58,7 +58,7 @@ export class ReactRenderer implements Renderer {
 
     this.root.render(
       <StrictMode>
-        <style>{globalStyle}</style>
+        <style className={globalStyle} />
         <App
           {...this.props}
           createDocument={(text: string) => this.documentCreator.create(text)}
