@@ -14,7 +14,9 @@ beforeEach(() => {
   documentRepository = {
     create: vi.fn(),
     delete: vi.fn(),
-    list: vi.fn(async function* (_: number) {
+    list: vi.fn<[number], AsyncIterable<Document[]>>(async function* (
+      _: number,
+    ) {
       yield [dummyDocument];
       yield [dummyDocument];
     }),
@@ -35,7 +37,9 @@ it("lists documents", async () => {
 });
 
 it("lists no documents", async () => {
-  documentRepository.list = vi.fn(async function* (_: number) {});
+  documentRepository.list = vi.fn<[number], AsyncIterable<Document[]>>(
+    async function* (_: number) {},
+  );
   await documentLister.list();
   expect(documentPresenter.presentDocuments.mock.calls).toEqual([[[]]]);
 });
@@ -49,7 +53,9 @@ it("lists more documents", async () => {
 });
 
 it("lists no more documents", async () => {
-  documentRepository.list = vi.fn(async function* (_: number) {});
+  documentRepository.list = vi.fn<[number], AsyncIterable<Document[]>>(
+    async function* (_: number) {},
+  );
   await documentLister.list();
   await documentLister.listMore();
   expect(documentPresenter.presentMoreDocuments).toHaveBeenCalledTimes(0);
