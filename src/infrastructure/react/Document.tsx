@@ -26,7 +26,7 @@ const ButtonContainer = styled.div`
   right: 0.4em;
 `;
 
-interface Props extends UpdateDocumentProps {}
+type Props = UpdateDocumentProps;
 
 export const Document = ({
   document,
