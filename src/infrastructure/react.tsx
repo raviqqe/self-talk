@@ -16,7 +16,7 @@ interface Presenter {
   setRenderer(renderer: Renderer): void;
 }
 
-interface Props extends Pick<AppProps, "documents" | "signedIn"> {}
+type Props = Pick<AppProps, "documents" | "signedIn">;
 
 export class ReactRenderer implements Renderer {
   private readonly root: Root;
