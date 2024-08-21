@@ -1,28 +1,15 @@
 import { styled } from "@linaria/react";
 import {
-  type ForwardedRef,
-  forwardRef,
   type InputHTMLAttributes,
   type KeyboardEvent,
   useEffect,
   useRef,
   useState,
 } from "react";
-import TextareaAutosize, {
-  type TextareaAutosizeProps,
-} from "react-textarea-autosize";
 import { grey } from "./style/colors.js";
 import { boxShadow } from "./style.js";
 
-const NoStyleTextareaAutosize = forwardRef(
-  (
-    props: Omit<TextareaAutosizeProps, "style">,
-    ref: ForwardedRef<HTMLTextAreaElement>,
-  ) => <TextareaAutosize ref={ref} {...props} />,
-);
-NoStyleTextareaAutosize.displayName = "NoStyleTextareaAutosize";
-
-const StyledTextArea = styled(NoStyleTextareaAutosize)`
+const StyledTextArea = styled.textarea`
   ${boxShadow};
   box-sizing: border-box;
   border: none;
@@ -34,6 +21,7 @@ const StyledTextArea = styled(NoStyleTextareaAutosize)`
   resize: none;
   padding: 1em;
   border-radius: 0.5em;
+  field-sizing: content;
 
   &::placeholder {
     color: ${grey};
