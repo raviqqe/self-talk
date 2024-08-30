@@ -17,7 +17,7 @@
     "@raviqqe/loscore": "^0.2.5",
     "@sentry/browser": "^8.27.0",
     "default-import": "^2.0.1",
-    "firebase": "^10.13.0",
+    "firebase": "^10.13.1",
     "noop-tag": "^2.0.0",
     "prettier": "^3.3.3",
     "react": "^18.1.0",
