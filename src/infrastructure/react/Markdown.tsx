@@ -85,8 +85,6 @@ const Container = styled.div`
   }
 `;
 
-// TODO Fix accessibility.
-/* eslint-disable jsx-a11y/alt-text, jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */
 const Image = (
   props: DetailedHTMLProps<
     ImgHTMLAttributes<HTMLImageElement>,
