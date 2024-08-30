@@ -100,7 +100,6 @@ const Image = (
     {...props}
   />
 );
-/* eslint-enable */
 
 interface Props {
   children: string;
