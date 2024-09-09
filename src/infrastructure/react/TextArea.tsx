@@ -39,7 +39,7 @@ const StyledTextArea = styled(NoStyleTextareaAutosize)`
   }
 `;
 
-interface Props extends Parameters<typeof TextareaAutosize> {
+interface Props extends TextareaAutosizeProps {
   onSubmit: () => void;
 }
 
