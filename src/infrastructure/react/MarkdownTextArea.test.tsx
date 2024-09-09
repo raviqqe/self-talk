@@ -1,5 +1,5 @@
 import { fireEvent, render, waitFor } from "@testing-library/react";
-import { it, expect, vi } from "vitest";
+import { expect, it, vi } from "vitest";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
 
 it("renders", () => {

@@ -1,4 +1,4 @@
-import { it, expect, vi } from "vitest";
+import { expect, it, vi } from "vitest";
 import { ApplicationInitializer } from "./application-initializer.js";
 import { type AuthenticationController } from "./authentication-controller.js";
 

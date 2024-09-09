@@ -1,5 +1,5 @@
 import { styled } from "@linaria/react";
-import { useState, type SyntheticEvent } from "react";
+import { type SyntheticEvent, useState } from "react";
 import { PulseLoader } from "react-spinners";
 import { TextArea } from "./TextArea.js";
 import { white } from "./style/colors.js";

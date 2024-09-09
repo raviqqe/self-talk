@@ -1,12 +1,12 @@
 import { type FirebaseApp } from "firebase/app";
 import { type Auth, getAuth } from "firebase/auth";
 import {
-  ref,
   type FirebaseStorage,
+  getDownloadURL,
   getStorage,
+  ref,
   type StorageReference,
   updateMetadata,
-  getDownloadURL,
   uploadBytes,
 } from "firebase/storage";
 import { type FileRepository } from "../../application/file-repository.js";

@@ -1,4 +1,4 @@
-import { it, expect } from "vitest";
+import { expect, it } from "vitest";
 import { SignOutManager } from "./sign-out-manager.js";
 import { authenticationController, authenticationPresenter } from "./test.js";
 
