@@ -2,7 +2,6 @@ import { styled } from "@linaria/react";
 import {
   type ForwardedRef,
   forwardRef,
-  type InputHTMLAttributes,
   type KeyboardEvent,
   useEffect,
   useRef,
@@ -40,7 +39,7 @@ const StyledTextArea = styled(NoStyleTextareaAutosize)`
   }
 `;
 
-interface Props extends InputHTMLAttributes<HTMLTextAreaElement> {
+interface Props extends Parameters<typeof TextareaAutosize> {
   onSubmit: () => void;
 }
 
