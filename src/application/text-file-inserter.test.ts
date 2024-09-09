@@ -1,4 +1,4 @@
-import { it, expect, beforeEach, vi, type Mock } from "vitest";
+import { beforeEach, expect, it, type Mock, vi } from "vitest";
 import { TextFileInserter } from "./text-file-inserter.js";
 
 const dummyFileUrl = "https://foo.com/bar";

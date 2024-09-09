@@ -1,4 +1,4 @@
-import { expect, beforeEach, vi, it, type Mocked } from "vitest";
+import { beforeEach, expect, it, type Mocked, vi } from "vitest";
 import { type Document } from "../domain/document.js";
 import { DocumentLister } from "./document-lister.js";
 import { type DocumentPresenter } from "./document-presenter.js";

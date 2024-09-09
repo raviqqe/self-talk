@@ -1,4 +1,4 @@
-import { expect, beforeEach, it, vi, type Mocked } from "vitest";
+import { beforeEach, expect, it, type Mocked, vi } from "vitest";
 import { type ConfirmationController } from "./confirmation-controller.js";
 import { DocumentDeleter } from "./document-deleter.js";
 import { type DocumentPresenter } from "./document-presenter.js";

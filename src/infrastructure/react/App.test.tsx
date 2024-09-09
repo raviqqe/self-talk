@@ -23,9 +23,9 @@ const props: Props = {
   listDocuments,
   listMoreDocuments: async () => {},
   repositoryUrl: "",
+  signedIn: null,
   signIn: async () => {},
   signOut: async () => {},
-  signedIn: null,
   updateDocument: async () => {},
 };
 
