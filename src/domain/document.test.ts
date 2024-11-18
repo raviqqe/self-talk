@@ -1,9 +1,5 @@
 import { describe, expect, it } from "vitest";
-import {
-  type Document,
-  formatDocument,
-  validateDocument,
-} from "./document.js";
+import { type Document, formatDocument, validateDocument } from "./document.js";
 
 describe("formatDocument", () => {
   it("removes extra spaces", async () => {
