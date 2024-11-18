@@ -14,7 +14,7 @@
   "dependencies": {
     "@linaria/core": "^6.0.0",
     "@linaria/react": "^6.2.1",
-    "@raviqqe/loscore": "^0.2.6",
+    "@raviqqe/loscore": "^0.2.7",
     "@sentry/browser": "^8.38.0",
     "default-import": "^2.0.4",
     "firebase": "^11.0.2",
