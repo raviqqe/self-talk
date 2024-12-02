@@ -6,7 +6,7 @@ exports[`renders 1`] = `
 >
   <textarea
     class="mocked-styled-5 s120cfdn s1ont3o7"
-    placeholder="Write in Markdown ..."
+    placeholder="Write in Markdown..."
   />
   <button
     aria-label="Save"

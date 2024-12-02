@@ -4,7 +4,7 @@ exports[`renders 1`] = `
 <div>
   <textarea
     class="mocked-styled-0 s1ont3o7"
-    placeholder="Write in Markdown ..."
+    placeholder="Write in Markdown..."
   >
     foo
   </textarea>
