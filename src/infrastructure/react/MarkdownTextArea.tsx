@@ -69,7 +69,7 @@ export const MarkdownTextArea = ({
         )
       }
       onSubmit={onSubmit}
-      placeholder="Write in Markdown ..."
+      placeholder="Write in Markdown..."
       value={text}
       {...restProps}
     />
