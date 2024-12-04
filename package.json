@@ -19,7 +19,7 @@
     "default-import": "^2.0.4",
     "firebase": "^11.0.2",
     "noop-tag": "^2.0.0",
-    "prettier": "^3.4.1",
+    "prettier": "^3.4.2",
     "react": "^18.1.0",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
