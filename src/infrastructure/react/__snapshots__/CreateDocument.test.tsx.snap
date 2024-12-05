@@ -2,15 +2,48 @@
 
 exports[`renders 1`] = `
 <div
-  class="mocked-styled-4 cfb4dry"
+  class="mocked-styled-8 cfb4dry"
 >
-  <textarea
-    class="mocked-styled-5 s67jl2c s1ont3o7"
-    placeholder="Write in Markdown..."
-  />
+  <div
+    class="mocked-styled-5 c1jw3o7c"
+  >
+    <textarea
+      class="mocked-styled-9 s67jl2c s1ont3o7"
+      placeholder="Write in Markdown..."
+    />
+    <div
+      class="mocked-styled-6 ba6h1ks"
+    >
+      <div
+        class="mocked-styled-2 c145ei9r"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"
+          />
+        </svg>
+        <input
+          class="mocked-styled-3 i1oy71hn"
+          type="file"
+        />
+      </div>
+    </div>
+  </div>
   <button
     aria-label="Create"
-    class="mocked-styled-1 bunojaf cki2aja bunojaf"
+    class="mocked-styled-10 cki2aja szqdour cki2aja bunojaf"
     style="--bunojaf-0: tomato;"
   >
     <svg

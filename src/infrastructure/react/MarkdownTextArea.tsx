@@ -78,13 +78,15 @@ export const MarkdownTextArea = ({
         onChange={(event) => setText(event.target.value)}
         onDrop={(event) =>
           uploadFiles(
-            [...event.dataTransfer.files],
+            Array.from(event.dataTransfer.files),
             event.currentTarget.selectionStart,
           )
         }
         onPaste={(event) =>
           uploadFiles(
-            [...event.clipboardData.items].map((item) => item.getAsFile()),
+            Array.from(event.clipboardData.items).map((item) =>
+              item.getAsFile(),
+            ),
             event.currentTarget.selectionStart,
           )
         }

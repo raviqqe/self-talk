@@ -1,4 +1,5 @@
-import { beforeAll, vi } from "vitest";
+import { cleanup } from "@testing-library/react";
+import { afterEach, beforeAll, vi } from "vitest";
 
 beforeAll(() => {
   Object.defineProperty(document, "fonts", {
@@ -14,4 +15,8 @@ beforeAll(() => {
       unobserve: vi.fn(),
     })),
   );
+});
+
+afterEach(() => {
+  cleanup();
 });

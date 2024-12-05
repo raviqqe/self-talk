@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
 
@@ -18,7 +18,7 @@ it("renders", () => {
 it("pastes an image as a link", async () => {
   const setText = vi.fn();
 
-  const { container } = render(
+  render(
     <MarkdownTextArea
       insertFiles={async () => "result"}
       onSubmit={async () => {}}
@@ -27,7 +27,7 @@ it("pastes an image as a link", async () => {
     />,
   );
 
-  fireEvent.paste(container.firstElementChild!, {
+  fireEvent.paste(screen.queryByRole("textbox")!, {
     clipboardData: {
       items: [
         { getAsFile: () => new File([], "foo.png", { type: "image/png" }) },
@@ -41,7 +41,7 @@ it("pastes an image as a link", async () => {
 it("does not paste anything if there is no files in clipboard data", async () => {
   const setText = vi.fn();
 
-  const { container } = render(
+  render(
     <MarkdownTextArea
       insertFiles={async () => "result"}
       onSubmit={async () => {}}
@@ -50,7 +50,7 @@ it("does not paste anything if there is no files in clipboard data", async () =>
     />,
   );
 
-  fireEvent.paste(container.firstElementChild!, {
+  fireEvent.paste(screen.queryByRole("textbox")!, {
     clipboardData: { items: [] },
   });
 
@@ -60,7 +60,7 @@ it("does not paste anything if there is no files in clipboard data", async () =>
 it("drops an image as a link", async () => {
   const setText = vi.fn();
 
-  const { container } = render(
+  render(
     <MarkdownTextArea
       insertFiles={async () => "result"}
       onSubmit={async () => {}}
@@ -69,7 +69,7 @@ it("drops an image as a link", async () => {
     />,
   );
 
-  fireEvent.drop(container.firstElementChild!, {
+  fireEvent.drop(screen.queryByRole("textbox")!, {
     dataTransfer: {
       files: [new File([], "foo.png", { type: "image/png" })],
     },
