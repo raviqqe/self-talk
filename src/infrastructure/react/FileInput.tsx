@@ -2,7 +2,7 @@ import { styled } from "@linaria/react";
 import { type AriaAttributes, type ReactNode } from "react";
 import { grey } from "./style/colors.js";
 
-const Button = styled.button`
+const Input = styled.input`
   color: ${grey};
   cursor: pointer;
   font-size: 1.5rem;
@@ -14,15 +14,23 @@ const Button = styled.button`
 interface Props extends AriaAttributes {
   className?: string;
   children: ReactNode;
-  onClick: () => void;
+  onChange: (files: File[]) => void;
 }
 
-export const IconButton = ({
+export const FileInput = ({
   children,
-  onClick,
+  onChange,
   ...restProps
 }: Props): JSX.Element => (
-  <Button onClick={onClick} {...restProps}>
+  <Input
+    type="file"
+    onChange={({ target: { files } }) => {
+      if (files?.length) {
+        onChange([...files]);
+      }
+    }}
+    {...restProps}
+  >
     {children}
-  </Button>
+  </Input>
 );

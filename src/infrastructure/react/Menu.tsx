@@ -4,6 +4,7 @@ import { styled } from "@linaria/react";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
 import { useState } from "react";
+import { FileInput } from "./FileInput.js";
 
 const OuterButton = styled(IconButton)`
   position: relative;
@@ -36,14 +37,9 @@ export const Menu = ({ onEdit, onPasteImages }: Props): JSX.Element => {
           <IconButton aria-label="Edit" onClick={() => onEdit()}>
             <MdEdit />
           </IconButton>
-          <IconButton
-            aria-label="Paste image"
-            onClick={() => {
-              onPasteImages(true);
-            }}
-          >
+          <FileInput aria-label="Paste image" onSubmit={() => onPasteImages()}>
             <MdImage />
-          </IconButton>
+          </FileInput>
         </Box>
       )}
     </OuterButton>

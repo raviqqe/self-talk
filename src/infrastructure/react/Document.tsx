@@ -49,10 +49,7 @@ export const Document = ({
     <Container {...restProps}>
       <Markdown>{document.text}</Markdown>
       <ButtonContainer>
-        <Menu
-          onEdit={() => setEditing(true)}
-          onPasteImages={(files) => uploadFiles(file)}
-        />
+        <Menu onEdit={() => setEditing(true)} onPasteImages={() => {}} />
       </ButtonContainer>
     </Container>
   );
