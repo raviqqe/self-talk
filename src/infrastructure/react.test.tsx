@@ -1,5 +1,4 @@
 import { it } from "vitest";
-import { type DocumentCreator } from "../application/document-creator.js";
 import { type DocumentLister } from "../application/document-lister.js";
 import { type DocumentUpdater } from "../application/document-updater.js";
 import { type SignInManager } from "../application/sign-in-manager.js";
@@ -11,7 +10,6 @@ it("renders", () => {
   new ReactRenderer(
     document.createElement("div"),
     [],
-    {} as DocumentCreator,
     {} as DocumentLister,
     {} as DocumentUpdater,
     {} as SignInManager,

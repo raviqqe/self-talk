@@ -1,6 +1,5 @@
 import { StrictMode } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import { type DocumentCreator } from "../application/document-creator.js";
 import { type DocumentLister } from "../application/document-lister.js";
 import { type DocumentUpdater } from "../application/document-updater.js";
 import { type SignInManager } from "../application/sign-in-manager.js";
@@ -24,7 +23,6 @@ export class ReactRenderer implements Renderer {
   constructor(
     element: HTMLElement,
     presenters: Presenter[],
-    private readonly documentCreator: DocumentCreator,
     private readonly documentLister: DocumentLister,
     private readonly documentUpdater: DocumentUpdater,
     private readonly signInManager: SignInManager,

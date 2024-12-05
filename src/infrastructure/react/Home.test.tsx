@@ -3,10 +3,12 @@ import {
   fireEvent,
   render,
   type RenderResult,
+  screen,
   waitFor,
 } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { Home } from "./Home.js";
+import { documentCreator } from "../../main/document-creator.js";
 
 afterEach(() => {
   for (const element of document.getElementsByTagName("html")) {
@@ -20,7 +22,6 @@ it("renders", async () => {
   act(() => {
     result = render(
       <Home
-        createDocument={async () => {}}
         documents={[]}
         insertFiles={async () => ""}
         listDocuments={async () => {}}
@@ -39,13 +40,15 @@ it("renders", async () => {
 });
 
 it("creates a document", async () => {
-  const createDocument = vi.fn(async () => {});
+  const createDocument = vi
+    .spyOn(documentCreator, "create")
+    .mockImplementation(async () => {});
+
   let result: RenderResult | undefined;
 
   act(() => {
     result = render(
       <Home
-        createDocument={createDocument}
         documents={[]}
         insertFiles={async () => ""}
         listDocuments={async () => {}}
@@ -56,12 +59,10 @@ it("creates a document", async () => {
     );
   });
 
-  await waitFor(() =>
-    expect(result?.container.querySelector("textarea")).toBeTruthy(),
-  );
+  await waitFor(() => expect(screen.getByRole("textbox")).toBeTruthy());
 
   act(() => {
-    fireEvent.change(result?.container.querySelector("textarea")!, {
+    fireEvent.change(screen.getByRole("textbox")!, {
       target: { value: "foo" },
     });
 
@@ -78,7 +79,6 @@ it("updates a document", async () => {
   act(() => {
     result = render(
       <Home
-        createDocument={async () => {}}
         documents={[{ id: "", text: "" }]}
         insertFiles={async () => ""}
         listDocuments={async () => {}}

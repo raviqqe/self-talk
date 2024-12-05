@@ -17,7 +17,6 @@ beforeEach(() => {
 });
 
 const props: Props = {
-  createDocument: async () => {},
   documents: null,
   insertFiles: async () => "",
   listDocuments,
