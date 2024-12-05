@@ -10,7 +10,7 @@ import { documentCreator } from "../../main/document-creator.js";
 import { Home } from "./Home.js";
 
 it("renders", async () => {
-  const result = await act(() =>
+  const result = await act(async () =>
     render(
       <Home
         documents={[]}
@@ -64,7 +64,7 @@ it("creates a document", async () => {
 it("updates a document", async () => {
   const updateDocument = vi.fn(async () => {});
 
-  const result = await act(() =>
+  const result = await act(async () =>
     render(
       <Home
         documents={[{ id: "", text: "" }]}
