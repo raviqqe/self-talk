@@ -22,7 +22,7 @@ import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter.js";
 const firebaseInitializer = new FirebaseInitializer(configuration.firebase);
 const errorReporter = new SentryErrorReporter(configuration.sentry.dsn);
 
-const main = () => {
+try {
   const element = document.getElementById("root");
 
   if (!element) {
@@ -71,10 +71,6 @@ const main = () => {
   // Disable default behavior on drop events.
   window.ondragover = (event: DragEvent) => event.preventDefault();
   window.ondrop = (event: DragEvent) => event.preventDefault();
-};
-
-try {
-  main();
 } catch (error) {
   errorReporter.report(error);
 }
