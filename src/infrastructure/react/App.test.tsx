@@ -6,19 +6,19 @@ import {
 } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
 import { App, type Props } from "./App.js";
+import { applicationInitializer } from "../../main/application-initializer.js";
 
-const initialize = vi.fn();
+const initialize = vi.spyOn(applicationInitializer, "initialize");
 const listDocuments = vi.fn();
 
 beforeEach(() => {
-  initialize.mockReset().mockResolvedValue(undefined);
+  initialize.mockImplementation(async () => {});
   listDocuments.mockReset().mockResolvedValue(undefined);
 });
 
 const props: Props = {
   createDocument: async () => {},
   documents: null,
-  initialize,
   insertFiles: async () => "",
   listDocuments,
   listMoreDocuments: async () => {},
