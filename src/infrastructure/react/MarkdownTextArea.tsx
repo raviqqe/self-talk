@@ -13,7 +13,7 @@ const Container = styled.div`
   flex: 1;
   display: flex;
   justify-content: space-between;
-  gap: -0.5rem;
+  gap: 0.5rem;
   border-radius: 0.5em;
   background-color: ${white};
   overflow: hidden;

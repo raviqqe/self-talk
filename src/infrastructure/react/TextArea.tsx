@@ -27,6 +27,7 @@ const StyledTextArea = styled(NoStyleTextareaAutosize)`
   font-family: monospace;
   font-size: 0.95em;
   resize: none;
+  padding: 0;
   flex: 1;
 
   &::placeholder {
