@@ -12,15 +12,9 @@ import { AuthenticationRenderer } from "./infrastructure/authentication-renderer
 import { BuiltinConfirmationController } from "./infrastructure/builtin-confirmation-controller.js";
 import { DocumentRenderer } from "./infrastructure/document-renderer.js";
 import { FirebaseAuthenticationController } from "./infrastructure/firebase/firebase-authentication-controller.js";
-import { FirebaseInitializer } from "./infrastructure/firebase/firebase-initializer.js";
 import { FirebaseStorageFileRepository } from "./infrastructure/firebase/firebase-storage-file-repository.js";
 import { FirestoreDocumentRepository } from "./infrastructure/firebase/firestore-document-repository.js";
 import { ReactRenderer } from "./infrastructure/react.js";
-import { SentryErrorReporter } from "./infrastructure/sentry-error-reporter.js";
-
-// Instantiate this at the very beginning to initialize Firebase's default app.
-const firebaseInitializer = new FirebaseInitializer(configuration.firebase);
-const errorReporter = new SentryErrorReporter(configuration.sentry.dsn);
 
 try {
   const element = document.getElementById("root");
@@ -29,7 +23,6 @@ try {
     throw new Error("no root element");
   }
 
-  const firebaseApp = firebaseInitializer.initialize();
   const authenticationPresenter = new AuthenticationRenderer();
   const authenticationController = new FirebaseAuthenticationController(
     firebaseApp,
