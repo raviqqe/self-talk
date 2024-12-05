@@ -1,5 +1,5 @@
 import { styled } from "@linaria/react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { MdImage } from "react-icons/md";
 import { PulseLoader } from "react-spinners";
 import { FileInput } from "./FileInput.js";
@@ -49,29 +49,26 @@ export const MarkdownTextArea = ({
   text,
   ...restProps
 }: Props): JSX.Element => {
-  const [uploadingFiles, setUploadingFiles] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const uploadFiles = async (files: File[], offset: number) => {
-    if (!files.length) {
-      return;
-    }
+  const uploadFiles = useCallback(
+    async (files: File[], offset: number) => {
+      if (!files.length) {
+        return;
+      }
 
-    setUploadingFiles(true);
+      setLoading(true);
+      setText(await insertFiles(text, offset, files));
+      setLoading(false);
+    },
+    [text, insertFiles, setText],
+  );
 
-    setText(await insertFiles(text, offset, files));
-
-    setUploadingFiles(false);
-  };
-
-  if (uploadingFiles) {
-    return (
-      <LoaderContainer>
-        <PulseLoader color={white} />
-      </LoaderContainer>
-    );
-  }
-
-  return (
+  return loading ? (
+    <LoaderContainer>
+      <PulseLoader color={white} />
+    </LoaderContainer>
+  ) : (
     <Container>
       <TextArea
         onChange={({ target }) => setText(target.value)}
