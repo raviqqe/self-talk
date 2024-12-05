@@ -3,6 +3,7 @@ import { IconButton } from "./IconButton.js";
 import { styled } from "@linaria/react";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
+import { useState } from "react";
 
 const Box = styled.div`
   position: absolute;
@@ -13,15 +14,22 @@ const Box = styled.div`
   ${boxShadow};
 `;
 
-export const Menu = (): JSX.Element => {
+interface Props {
+  onEdit: () => void;
+  onImage: (file: File) => void;
+}
+
+export const Menu = ({ onEdit, onImage }: Props): JSX.Element => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <IconButton aria-label="Menu" onClick={() => setEditing(true)}>
+    <IconButton aria-label="Menu" onClick={() => setOpen(true)}>
       <MdOutlineMoreVert />
-      <Box>
-        <IconButton aria-label="Menu" onClick={() => setEditing(true)}>
+      <Box onMouseOut={() => setOpen(false)}>
+        <IconButton aria-label="Edit" onClick={() => onEdit()}>
           <MdEdit />
         </IconButton>
-        <IconButton aria-label="Menu" onClick={() => setEditing(true)}>
+        <IconButton aria-label="Paste image" onClick={() => on(true)}>
           <MdImage />
         </IconButton>
       </Box>
