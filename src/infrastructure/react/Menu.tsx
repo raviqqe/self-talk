@@ -5,8 +5,14 @@ import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
 import { useState } from "react";
 
+const OuterButton = styled(IconButton)`
+  position: relative;
+`;
+
 const Box = styled.div`
   position: absolute;
+  right: 0;
+  top: 0;
   background: ${white};
   padding: 1em;
   border-radius: 0.5em;
@@ -23,7 +29,7 @@ export const Menu = ({ onEdit, onPasteImages }: Props): JSX.Element => {
   const [open, setOpen] = useState(false);
 
   return (
-    <IconButton aria-label="Menu" onClick={() => setOpen(true)}>
+    <OuterButton aria-label="Menu" onClick={() => setOpen(true)}>
       <MdOutlineMoreVert />
       {open && (
         <Box onMouseOut={() => setOpen(false)}>
@@ -32,12 +38,14 @@ export const Menu = ({ onEdit, onPasteImages }: Props): JSX.Element => {
           </IconButton>
           <IconButton
             aria-label="Paste image"
-            onClick={() => onPasteImages(true)}
+            onClick={() => {
+              onPasteImages(true);
+            }}
           >
             <MdImage />
           </IconButton>
         </Box>
       )}
-    </IconButton>
+    </OuterButton>
   );
 };
