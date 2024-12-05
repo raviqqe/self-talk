@@ -13,14 +13,10 @@ beforeEach(() => {
 
 const props: Props = {
   documents: null,
-  insertFiles: async () => "",
-  listDocuments,
-  listMoreDocuments: async () => {},
   repositoryUrl: "",
   signedIn: null,
   signIn: async () => {},
   signOut: async () => {},
-  updateDocument: async () => {},
 };
 
 it("renders before a user signs in", async () => {

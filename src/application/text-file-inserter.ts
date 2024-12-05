@@ -5,11 +5,11 @@ export class TextFileInserter {
 
   public async insert(
     text: string,
-    position: number,
+    offset: number,
     files: File[],
   ): Promise<string> {
     return (
-      text.slice(0, position) +
+      text.slice(0, offset) +
       (
         await Promise.all(
           files.map(async (file: File) => {
@@ -21,7 +21,7 @@ export class TextFileInserter {
           }),
         )
       ).join("\n\n") +
-      text.slice(position)
+      text.slice(offset)
     );
   }
 }

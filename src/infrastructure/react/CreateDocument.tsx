@@ -4,7 +4,6 @@ import { MdAdd } from "react-icons/md";
 import { documentCreator } from "../../main/document-creator.js";
 import { CircleButton } from "./CircleButton.js";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
-import { type InsertFilesFunction } from "./utilities.js";
 
 const Container = styled.div`
   display: flex;
@@ -20,11 +19,7 @@ const StyledCircleButton = styled(CircleButton)`
   margin-left: -0.5rem;
 `;
 
-interface Props {
-  insertFiles: InsertFilesFunction;
-}
-
-export const CreateDocument = ({ insertFiles }: Props): JSX.Element => {
+export const CreateDocument = (): JSX.Element => {
   const [text, setText] = useState("");
   const onSubmit = async (): Promise<void> => {
     setText("");
@@ -34,7 +29,6 @@ export const CreateDocument = ({ insertFiles }: Props): JSX.Element => {
   return (
     <Container>
       <StyledMarkdownTextArea
-        insertFiles={insertFiles}
         onSubmit={onSubmit}
         setText={setText}
         text={text}

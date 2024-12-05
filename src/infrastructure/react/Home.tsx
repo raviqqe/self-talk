@@ -46,24 +46,11 @@ export interface Props extends DocumentsProps {
   signOut: () => void;
 }
 
-export const Home = ({
-  documents,
-  insertFiles,
-  listDocuments,
-  listMoreDocuments,
-  signOut,
-  updateDocument,
-}: Props): JSX.Element => (
+export const Home = ({ documents, signOut }: Props): JSX.Element => (
   <Container>
-    <DocumentList
-      documents={documents}
-      insertFiles={insertFiles}
-      listDocuments={listDocuments}
-      listMoreDocuments={listMoreDocuments}
-      updateDocument={updateDocument}
-    />
+    <DocumentList documents={documents} />
     <CreateDocumentContainer>
-      <CreateDocument insertFiles={insertFiles} />
+      <CreateDocument />
       <CreateDocumentBackground />
     </CreateDocumentContainer>
     <SignOutContainer>

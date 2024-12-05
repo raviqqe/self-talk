@@ -1,9 +1,4 @@
-import {
-  act,
-  render,
-  type RenderResult,
-  waitFor,
-} from "@testing-library/react";
+import { act, render, waitFor } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
 import { DocumentList } from "./DocumentList.js";
 
@@ -15,61 +10,31 @@ beforeEach(() => {
 });
 
 it("renders", async () => {
-  let result: RenderResult | undefined;
-
-  act(() => {
-    result = render(
-      <DocumentList
-        documents={[{ id: "id", text: "text" }]}
-        insertFiles={async () => ""}
-        listDocuments={listDocuments}
-        listMoreDocuments={async () => {}}
-        updateDocument={async () => {}}
-      />,
-    );
+  const result = await act(async () => {
+    return render(<DocumentList documents={[{ id: "id", text: "text" }]} />);
   });
 
-  expect(result?.container.firstChild).toMatchSnapshot();
+  expect(result.container.firstChild).toMatchSnapshot();
 
   await wait();
 });
 
 it("renders with no documents", async () => {
-  let result: RenderResult | undefined;
-
-  act(() => {
-    result = render(
-      <DocumentList
-        documents={[]}
-        insertFiles={async () => ""}
-        listDocuments={listDocuments}
-        listMoreDocuments={async () => {}}
-        updateDocument={async () => {}}
-      />,
-    );
+  const result = await act(async () => {
+    return render(<DocumentList documents={[]} />);
   });
 
-  expect(result?.container.firstChild).toMatchSnapshot();
+  expect(result.container.firstChild).toMatchSnapshot();
 
   await wait();
 });
 
 it("renders with documents not loaded yet", async () => {
-  let result: RenderResult | undefined;
-
-  act(() => {
-    result = render(
-      <DocumentList
-        documents={null}
-        insertFiles={async () => ""}
-        listDocuments={listDocuments}
-        listMoreDocuments={async () => {}}
-        updateDocument={async () => {}}
-      />,
-    );
+  const result = await act(async () => {
+    return render(<DocumentList documents={null} />);
   });
 
-  expect(result?.container.firstChild).toMatchSnapshot();
+  expect(result.container.firstChild).toMatchSnapshot();
 
   await wait();
 });

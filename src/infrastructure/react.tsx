@@ -1,10 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import { type DocumentLister } from "../application/document-lister.js";
-import { type DocumentUpdater } from "../application/document-updater.js";
 import { type SignInManager } from "../application/sign-in-manager.js";
 import { type SignOutManager } from "../application/sign-out-manager.js";
-import { type TextFileInserter } from "../application/text-file-inserter.js";
 import { type Document } from "../domain/document.js";
 import { App, type Props as AppProps } from "./react/App.js";
 import { globalStyle } from "./react/style.js";
@@ -23,11 +20,8 @@ export class ReactRenderer implements Renderer {
   constructor(
     element: HTMLElement,
     presenters: Presenter[],
-    private readonly documentLister: DocumentLister,
-    private readonly documentUpdater: DocumentUpdater,
     private readonly signInManager: SignInManager,
     private readonly signOutManager: SignOutManager,
-    private readonly textFileInserter: TextFileInserter,
     private readonly repositoryUrl: string,
   ) {
     for (const presenter of presenters) {
@@ -57,21 +51,9 @@ export class ReactRenderer implements Renderer {
         <style className={globalStyle} />
         <App
           {...this.props}
-          insertFiles={(
-            text: string,
-            position: number,
-            files: File[],
-          ): Promise<string> =>
-            this.textFileInserter.insert(text, position, files)
-          }
-          listDocuments={() => this.documentLister.list()}
-          listMoreDocuments={() => this.documentLister.listMore()}
           repositoryUrl={this.repositoryUrl}
           signIn={() => this.signInManager.signIn()}
           signOut={() => this.signOutManager.signOut()}
-          updateDocument={(document: Document) =>
-            this.documentUpdater.update(document)
-          }
         />
       </StrictMode>,
     );

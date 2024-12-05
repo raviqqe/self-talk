@@ -11,16 +11,7 @@ import { Home } from "./Home.js";
 
 it("renders", async () => {
   const result = await act(async () =>
-    render(
-      <Home
-        documents={[]}
-        insertFiles={async () => ""}
-        listDocuments={async () => {}}
-        listMoreDocuments={async () => {}}
-        signOut={async () => {}}
-        updateDocument={async () => {}}
-      />,
-    ),
+    render(<Home documents={[]} signOut={async () => {}} />),
   );
 
   await waitFor(() =>
@@ -36,16 +27,7 @@ it("creates a document", async () => {
     .mockImplementation(async () => {});
 
   act(() => {
-    render(
-      <Home
-        documents={[]}
-        insertFiles={async () => ""}
-        listDocuments={async () => {}}
-        listMoreDocuments={async () => {}}
-        signOut={async () => {}}
-        updateDocument={async () => {}}
-      />,
-    );
+    render(<Home documents={[]} signOut={async () => {}} />);
   });
 
   await waitFor(() => expect(screen.getByRole("textbox")).toBeTruthy());
@@ -66,14 +48,7 @@ it("updates a document", async () => {
 
   const result = await act(async () =>
     render(
-      <Home
-        documents={[{ id: "", text: "" }]}
-        insertFiles={async () => ""}
-        listDocuments={async () => {}}
-        listMoreDocuments={async () => {}}
-        signOut={async () => {}}
-        updateDocument={updateDocument}
-      />,
+      <Home documents={[{ id: "", text: "" }]} signOut={async () => {}} />,
     ),
   );
 

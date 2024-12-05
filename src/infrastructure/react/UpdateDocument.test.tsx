@@ -7,8 +7,7 @@ it("renders", () => {
     render(
       <UpdateDocument
         document={{ id: "", text: "" }}
-        insertFiles={async () => ""}
-        updateDocument={async () => {}}
+        onSubmit={async () => {}}
       />,
     ).container.firstChild,
   ).toMatchSnapshot();

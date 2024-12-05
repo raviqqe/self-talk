@@ -1,12 +1,16 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
+import { textFileInserter } from "../../main/text-file-inserter.js";
+
+beforeEach(() => {
+  vi.spyOn(textFileInserter, "insert").mockResolvedValue("result");
+});
 
 it("renders", () => {
   expect(
     render(
       <MarkdownTextArea
-        insertFiles={async () => ""}
         onSubmit={async () => {}}
         setText={() => {}}
         text="foo"
@@ -19,12 +23,7 @@ it("pastes an image as a link", async () => {
   const setText = vi.fn();
 
   render(
-    <MarkdownTextArea
-      insertFiles={async () => "result"}
-      onSubmit={async () => {}}
-      setText={setText}
-      text="foo"
-    />,
+    <MarkdownTextArea onSubmit={async () => {}} setText={setText} text="foo" />,
   );
 
   fireEvent.paste(screen.queryByRole("textbox")!, {
@@ -42,12 +41,7 @@ it("does not paste anything if there is no files in clipboard data", async () =>
   const setText = vi.fn();
 
   render(
-    <MarkdownTextArea
-      insertFiles={async () => "result"}
-      onSubmit={async () => {}}
-      setText={setText}
-      text="foo"
-    />,
+    <MarkdownTextArea onSubmit={async () => {}} setText={setText} text="foo" />,
   );
 
   fireEvent.paste(screen.queryByRole("textbox")!, {
@@ -61,12 +55,7 @@ it("drops an image as a link", async () => {
   const setText = vi.fn();
 
   render(
-    <MarkdownTextArea
-      insertFiles={async () => "result"}
-      onSubmit={async () => {}}
-      setText={setText}
-      text="foo"
-    />,
+    <MarkdownTextArea onSubmit={async () => {}} setText={setText} text="foo" />,
   );
 
   fireEvent.drop(screen.queryByRole("textbox")!, {

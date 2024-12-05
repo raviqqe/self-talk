@@ -6,8 +6,5 @@ import { CreateDocument } from "./CreateDocument.js";
 it("renders", () => {
   vi.spyOn(documentCreator, "create").mockImplementation(async () => {});
 
-  expect(
-    render(<CreateDocument insertFiles={async () => "url"} />).container
-      .firstChild,
-  ).toMatchSnapshot();
+  expect(render(<CreateDocument />).container.firstChild).toMatchSnapshot();
 });

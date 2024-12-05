@@ -4,12 +4,7 @@ import { Document } from "./Document.js";
 
 it("renders", () => {
   expect(
-    render(
-      <Document
-        document={{ id: "id", text: "text" }}
-        insertFiles={async () => "url"}
-        updateDocument={async () => {}}
-      />,
-    ).container.firstChild,
+    render(<Document document={{ id: "id", text: "text" }} />).container
+      .firstChild,
   ).toMatchSnapshot();
 });

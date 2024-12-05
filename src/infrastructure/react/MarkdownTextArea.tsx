@@ -7,7 +7,7 @@ import { FileInput } from "./FileInput.js";
 import { TextArea } from "./TextArea.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
-import { type InsertFilesFunction } from "./utilities.js";
+import { textFileInserter } from "../../main/text-file-inserter.js";
 
 const Container = styled.div`
   flex: 1;
@@ -36,14 +36,12 @@ const LoaderContainer = styled.div`
 
 interface Props {
   className?: string;
-  insertFiles: InsertFilesFunction;
   onSubmit: () => Promise<void>;
   setText: (text: string) => void;
   text: string;
 }
 
 export const MarkdownTextArea = ({
-  insertFiles,
   onSubmit,
   setText,
   text,
@@ -58,10 +56,10 @@ export const MarkdownTextArea = ({
       }
 
       setLoading(true);
-      setText(await insertFiles(text, offset, files));
+      setText(await textFileInserter.insert(text, offset, files));
       setLoading(false);
     },
-    [text, insertFiles, setText],
+    [text, setText],
   );
 
   return loading ? (
