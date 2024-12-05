@@ -21,7 +21,6 @@ const NoStyleTextareaAutosize = forwardRef(
 NoStyleTextareaAutosize.displayName = "NoStyleTextareaAutosize";
 
 const StyledTextArea = styled(NoStyleTextareaAutosize)`
-  box-sizing: border-box;
   border: none;
   outline: none;
   color: inherit;
