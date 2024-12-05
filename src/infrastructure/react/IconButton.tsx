@@ -9,6 +9,7 @@ const Button = styled.button`
   display: flex;
   background: transparent;
   border: none;
+  padding: 0;
 `;
 
 interface Props extends AriaAttributes {

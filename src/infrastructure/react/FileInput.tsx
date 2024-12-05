@@ -2,17 +2,23 @@ import { styled } from "@linaria/react";
 import { type AriaAttributes, type ReactNode } from "react";
 import { grey } from "./style/colors.js";
 
-const Input = styled.input`
+const Container = styled.div`
+  position: relative;
   color: ${grey};
-  cursor: pointer;
   font-size: 1.5rem;
-  display: flex;
-  background: transparent;
-  border: none;
+  line-height: 0;
+`;
+
+const Input = styled.input`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 `;
 
 interface Props extends AriaAttributes {
-  className?: string;
   children: ReactNode;
   onChange: (files: File[]) => void;
 }
@@ -22,15 +28,16 @@ export const FileInput = ({
   onChange,
   ...restProps
 }: Props): JSX.Element => (
-  <Input
-    type="file"
-    onChange={({ target: { files } }) => {
-      if (files?.length) {
-        onChange([...files]);
-      }
-    }}
-    {...restProps}
-  >
+  <Container>
     {children}
-  </Input>
+    <Input
+      type="file"
+      onChange={({ target: { files } }) => {
+        if (files?.length) {
+          onChange([...files]);
+        }
+      }}
+      {...restProps}
+    />
+  </Container>
 );

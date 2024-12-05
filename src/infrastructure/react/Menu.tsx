@@ -6,7 +6,7 @@ import { boxShadow } from "./style.js";
 import { useState } from "react";
 import { FileInput } from "./FileInput.js";
 
-const OuterButton = styled(IconButton)`
+const Container = styled.div`
   position: relative;
 `;
 
@@ -17,7 +17,10 @@ const Box = styled.div`
   background: ${white};
   padding: 1em;
   border-radius: 0.5em;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   ${boxShadow};
 `;
 
@@ -30,18 +33,20 @@ export const Menu = ({ onEdit, onPasteImages }: Props): JSX.Element => {
   const [open, setOpen] = useState(false);
 
   return (
-    <OuterButton aria-label="Menu" onClick={() => setOpen(true)}>
-      <MdOutlineMoreVert />
+    <Container>
+      <IconButton aria-label="Menu" onClick={() => setOpen(true)}>
+        <MdOutlineMoreVert />
+      </IconButton>
       {open && (
-        <Box onMouseOut={() => setOpen(false)}>
+        <Box onMouseLeave={() => setOpen(false)}>
           <IconButton aria-label="Edit" onClick={() => onEdit()}>
             <MdEdit />
           </IconButton>
-          <FileInput aria-label="Paste image" onSubmit={() => onPasteImages()}>
+          <FileInput aria-label="Paste image" onChange={onPasteImages}>
             <MdImage />
           </FileInput>
         </Box>
       )}
-    </OuterButton>
+    </Container>
   );
 };
