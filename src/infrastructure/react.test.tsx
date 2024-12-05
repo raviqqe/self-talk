@@ -1,5 +1,4 @@
 import { it } from "vitest";
-import { type ApplicationInitializer } from "../application/application-initializer.js";
 import { type DocumentCreator } from "../application/document-creator.js";
 import { type DocumentLister } from "../application/document-lister.js";
 import { type DocumentUpdater } from "../application/document-updater.js";
@@ -12,7 +11,6 @@ it("renders", () => {
   new ReactRenderer(
     document.createElement("div"),
     [],
-    { initialize: async () => {} } as ApplicationInitializer,
     {} as DocumentCreator,
     {} as DocumentLister,
     {} as DocumentUpdater,
