@@ -1,9 +1,30 @@
 import { styled } from "@linaria/react";
-import { type SyntheticEvent, useState } from "react";
+import { useState } from "react";
 import { PulseLoader } from "react-spinners";
 import { TextArea } from "./TextArea.js";
 import { white } from "./style/colors.js";
 import { type InsertFilesFunction } from "./utilities.js";
+import { FileInput } from "./FileInput.js";
+import { MdImage } from "react-icons/md";
+import { boxShadow } from "./style.js";
+
+const Container = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: -0.5rem;
+  border-radius: 0.5em;
+  background-color: ${white};
+  overflow: hidden;
+  padding: 1rem;
+  ${boxShadow};
+`;
+
+const ButtonGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -29,10 +50,7 @@ export const MarkdownTextArea = ({
 }: Props): JSX.Element => {
   const [uploadingFiles, setUploadingFiles] = useState(false);
 
-  const uploadFiles = async (
-    event: SyntheticEvent<HTMLTextAreaElement>,
-    files: (File | null)[],
-  ) => {
+  const uploadFiles = async (files: (File | null)[], offset: number) => {
     const validFiles = files.filter((file): file is File => !!file);
 
     if (validFiles.length === 0) {
@@ -41,9 +59,7 @@ export const MarkdownTextArea = ({
 
     setUploadingFiles(true);
 
-    setText(
-      await insertFiles(text, event.currentTarget.selectionStart, validFiles),
-    );
+    setText(await insertFiles(text, offset, validFiles));
 
     setUploadingFiles(false);
   };
@@ -57,21 +73,31 @@ export const MarkdownTextArea = ({
   }
 
   return (
-    <TextArea
-      onChange={(event) => setText(event.target.value)}
-      onDrop={(event) =>
-        uploadFiles(event, Array.from(event.dataTransfer.files))
-      }
-      onPaste={(event) =>
-        uploadFiles(
-          event,
-          Array.from(event.clipboardData.items).map((item) => item.getAsFile()),
-        )
-      }
-      onSubmit={onSubmit}
-      placeholder="Write in Markdown..."
-      value={text}
-      {...restProps}
-    />
+    <Container>
+      <TextArea
+        onChange={(event) => setText(event.target.value)}
+        onDrop={(event) =>
+          uploadFiles(
+            [...event.dataTransfer.files],
+            event.currentTarget.selectionStart,
+          )
+        }
+        onPaste={(event) =>
+          uploadFiles(
+            [...event.clipboardData.items].map((item) => item.getAsFile()),
+            event.currentTarget.selectionStart,
+          )
+        }
+        onSubmit={onSubmit}
+        placeholder="Write in Markdown..."
+        value={text}
+        {...restProps}
+      />
+      <ButtonGroup>
+        <FileInput onChange={(files) => uploadFiles(files, text.length)}>
+          <MdImage />
+        </FileInput>
+      </ButtonGroup>
+    </Container>
   );
 };

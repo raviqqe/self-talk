@@ -12,8 +12,11 @@ const Container = styled.div`
 `;
 
 const StyledMarkdownTextArea = styled(MarkdownTextArea)`
-  margin-right: -1em;
   max-height: 80vh;
+`;
+
+const StyledCircleButton = styled(CircleButton)`
+  margin-left: -0.5rem;
 `;
 
 interface Props {
@@ -39,9 +42,9 @@ export const CreateDocument = ({
         setText={setText}
         text={text}
       />
-      <CircleButton aria-label="Create" onClick={onSubmit}>
+      <StyledCircleButton aria-label="Create" onClick={onSubmit}>
         <MdAdd />
-      </CircleButton>
+      </StyledCircleButton>
     </Container>
   );
 };
