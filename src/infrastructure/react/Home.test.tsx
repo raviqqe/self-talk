@@ -6,15 +6,9 @@ import {
   screen,
   waitFor,
 } from "@testing-library/react";
-import { afterEach, expect, it, vi } from "vitest";
+import { expect, it, vi } from "vitest";
 import { Home } from "./Home.js";
 import { documentCreator } from "../../main/document-creator.js";
-
-afterEach(() => {
-  for (const element of document.getElementsByTagName("html")) {
-    element.innerHTML = "";
-  }
-});
 
 it("renders", async () => {
   let result: RenderResult | undefined;
