@@ -7,7 +7,8 @@ import {
 } from "./UpdateDocument.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
-import { Menu } from "./Menu.js";
+import { IconButton } from "./IconButton.js";
+import { MdEdit } from "react-icons/md";
 
 const Container = styled.div`
   ${boxShadow};
@@ -49,7 +50,9 @@ export const Document = ({
     <Container {...restProps}>
       <Markdown>{document.text}</Markdown>
       <ButtonContainer>
-        <Menu onEdit={() => setEditing(true)} onPasteImages={() => {}} />
+        <IconButton aria-label="Edit" onClick={() => setEditing(true)}>
+          <MdEdit />
+        </IconButton>
       </ButtonContainer>
     </Container>
   );
