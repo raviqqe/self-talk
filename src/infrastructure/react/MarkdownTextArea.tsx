@@ -75,7 +75,7 @@ export const MarkdownTextArea = ({
   return (
     <Container>
       <TextArea
-        onChange={(event) => setText(event.target.value)}
+        onChange={({ target }) => setText(target.value)}
         onDrop={(event) =>
           uploadFiles(
             Array.from(event.dataTransfer.files),
