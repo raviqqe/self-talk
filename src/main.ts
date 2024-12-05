@@ -1,6 +1,5 @@
 import configuration from "./configuration.json" with { type: "json" };
 import { ReactRenderer } from "./infrastructure/react.js";
-import { applicationInitializer } from "./main/application-initializer.js";
 import { authenticationPresenter } from "./main/authentication-presenter.js";
 import { documentCreator } from "./main/document-creator.js";
 import { documentLister } from "./main/document-lister.js";
@@ -21,7 +20,6 @@ try {
   new ReactRenderer(
     element,
     [authenticationPresenter, documentPresenter],
-    applicationInitializer,
     documentCreator,
     documentLister,
     documentUpdater,

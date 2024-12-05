@@ -1,6 +1,5 @@
 import { StrictMode } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import { type ApplicationInitializer } from "../application/application-initializer.js";
 import { type DocumentCreator } from "../application/document-creator.js";
 import { type DocumentLister } from "../application/document-lister.js";
 import { type DocumentUpdater } from "../application/document-updater.js";
@@ -25,7 +24,6 @@ export class ReactRenderer implements Renderer {
   constructor(
     element: HTMLElement,
     presenters: Presenter[],
-    private readonly applicationInitializer: ApplicationInitializer,
     private readonly documentCreator: DocumentCreator,
     private readonly documentLister: DocumentLister,
     private readonly documentUpdater: DocumentUpdater,
@@ -62,7 +60,6 @@ export class ReactRenderer implements Renderer {
         <App
           {...this.props}
           createDocument={(text: string) => this.documentCreator.create(text)}
-          initialize={() => this.applicationInitializer.initialize()}
           insertFiles={(
             text: string,
             position: number,

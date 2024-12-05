@@ -4,6 +4,7 @@ import { useAsync } from "react-use";
 import { Home, type Props as HomeProps } from "./Home.js";
 import { Landing, type Props as LandingProps } from "./Landing.js";
 import { white } from "./style/colors.js";
+import { applicationInitializer } from "../../main/application-initializer.js";
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -14,20 +15,18 @@ const LoaderContainer = styled.div`
 `;
 
 export interface Props extends HomeProps, LandingProps {
-  initialize: () => Promise<void>;
   signedIn: boolean | null;
 }
 
 export const App = ({
   documents,
-  initialize,
   repositoryUrl,
   signedIn,
   signIn,
   signOut,
   ...props
 }: Props): JSX.Element => {
-  useAsync(initialize, []);
+  useAsync(() => applicationInitializer.initialize(), []);
 
   return signedIn === null ? (
     <LoaderContainer>
