@@ -18,7 +18,6 @@ const Box = styled.div`
   padding: 1em;
   border-radius: 0.5em;
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   ${boxShadow};
@@ -39,12 +38,12 @@ export const Menu = ({ onEdit, onPasteImages }: Props): JSX.Element => {
       </IconButton>
       {open && (
         <Box onMouseLeave={() => setOpen(false)}>
-          <IconButton aria-label="Edit" onClick={() => onEdit()}>
-            <MdEdit />
-          </IconButton>
           <FileInput aria-label="Paste image" onChange={onPasteImages}>
             <MdImage />
           </FileInput>
+          <IconButton aria-label="Edit" onClick={() => onEdit()}>
+            <MdEdit />
+          </IconButton>
         </Box>
       )}
     </Container>
