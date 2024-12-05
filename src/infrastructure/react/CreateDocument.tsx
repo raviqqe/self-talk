@@ -1,10 +1,10 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
 import { MdAdd } from "react-icons/md";
+import { documentCreator } from "../../main/document-creator.js";
 import { CircleButton } from "./CircleButton.js";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
 import { type InsertFilesFunction } from "./utilities.js";
-import { documentCreator } from "../../main/document-creator.js";
 
 const Container = styled.div`
   display: flex;

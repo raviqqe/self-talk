@@ -2,19 +2,16 @@ import {
   act,
   fireEvent,
   render,
-  type RenderResult,
   screen,
   waitFor,
 } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
-import { Home } from "./Home.js";
 import { documentCreator } from "../../main/document-creator.js";
+import { Home } from "./Home.js";
 
 it("renders", async () => {
-  let result: RenderResult | undefined;
-
-  act(() => {
-    result = render(
+  const result = await act(() =>
+    render(
       <Home
         documents={[]}
         insertFiles={async () => ""}
@@ -23,14 +20,14 @@ it("renders", async () => {
         signOut={async () => {}}
         updateDocument={async () => {}}
       />,
-    );
-  });
-
-  await waitFor(() =>
-    expect(result?.container.querySelector("textarea")).toBeTruthy(),
+    ),
   );
 
-  expect(result?.container.firstChild).toMatchSnapshot();
+  await waitFor(() =>
+    expect(result.container.querySelector("textarea")).toBeTruthy(),
+  );
+
+  expect(result.container.firstChild).toMatchSnapshot();
 });
 
 it("creates a document", async () => {
@@ -38,10 +35,8 @@ it("creates a document", async () => {
     .spyOn(documentCreator, "create")
     .mockImplementation(async () => {});
 
-  let result: RenderResult | undefined;
-
   act(() => {
-    result = render(
+    render(
       <Home
         documents={[]}
         insertFiles={async () => ""}
@@ -56,11 +51,11 @@ it("creates a document", async () => {
   await waitFor(() => expect(screen.getByRole("textbox")).toBeTruthy());
 
   act(() => {
-    fireEvent.change(screen.getByRole("textbox")!, {
+    fireEvent.change(screen.getByRole("textbox"), {
       target: { value: "foo" },
     });
 
-    fireEvent.click(result?.getByLabelText("Create") as Element);
+    fireEvent.click(screen.getByLabelText("Create"));
   });
 
   expect(createDocument.mock.calls).toHaveLength(1);
@@ -68,10 +63,9 @@ it("creates a document", async () => {
 
 it("updates a document", async () => {
   const updateDocument = vi.fn(async () => {});
-  let result: RenderResult | undefined;
 
-  act(() => {
-    result = render(
+  const result = await act(() =>
+    render(
       <Home
         documents={[{ id: "", text: "" }]}
         insertFiles={async () => ""}
@@ -80,19 +74,19 @@ it("updates a document", async () => {
         signOut={async () => {}}
         updateDocument={updateDocument}
       />,
-    );
-  });
+    ),
+  );
 
-  await waitFor(() => expect(result?.getByLabelText("Edit")).toBeTruthy());
+  await waitFor(() => expect(result.getByLabelText("Edit")).toBeTruthy());
 
   act(() => {
-    fireEvent.click(result?.getByLabelText("Edit") as Element);
+    fireEvent.click(result.getByLabelText("Edit") as Element);
 
-    fireEvent.change(result?.container.querySelector("textarea")!, {
+    fireEvent.change(result.container.querySelector("textarea")!, {
       target: { value: "foo" },
     });
 
-    fireEvent.click(result?.getByLabelText("Save") as Element);
+    fireEvent.click(result.getByLabelText("Save") as Element);
   });
 
   expect(updateDocument.mock.calls).toHaveLength(1);
