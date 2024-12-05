@@ -7,6 +7,7 @@ import { TextArea } from "./TextArea.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
 import { type InsertFilesFunction } from "./utilities.js";
+import { compact } from "es-toolkit";
 
 const Container = styled.div`
   flex: 1;
@@ -51,9 +52,9 @@ export const MarkdownTextArea = ({
   const [uploadingFiles, setUploadingFiles] = useState(false);
 
   const uploadFiles = async (files: (File | null)[], offset: number) => {
-    const validFiles = files.filter((file): file is File => !!file);
+    const validFiles = compact(files);
 
-    if (validFiles.length === 0) {
+    if (!validFiles.length) {
       return;
     }
 
@@ -78,15 +79,13 @@ export const MarkdownTextArea = ({
         onChange={({ target }) => setText(target.value)}
         onDrop={(event) =>
           uploadFiles(
-            Array.from(event.dataTransfer.files),
+            [...event.dataTransfer.files],
             event.currentTarget.selectionStart,
           )
         }
         onPaste={(event) =>
           uploadFiles(
-            Array.from(event.clipboardData.items).map((item) =>
-              item.getAsFile(),
-            ),
+            [...event.clipboardData.items].map((item) => item.getAsFile()),
             event.currentTarget.selectionStart,
           )
         }
