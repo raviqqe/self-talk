@@ -1,7 +1,5 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
-import { MdOutlineMoreVert } from "react-icons/md";
-import { IconButton } from "./IconButton.js";
 import { Markdown } from "./Markdown.js";
 import {
   UpdateDocument,
@@ -9,6 +7,7 @@ import {
 } from "./UpdateDocument.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
+import { Menu } from "./Menu.js";
 
 const Container = styled.div`
   ${boxShadow};
@@ -50,9 +49,10 @@ export const Document = ({
     <Container {...restProps}>
       <Markdown>{document.text}</Markdown>
       <ButtonContainer>
-        <IconButton aria-label="Menu" onClick={() => setEditing(true)}>
-          <MdOutlineMoreVert />
-        </IconButton>
+        <Menu
+          onEdit={() => setEditing(true)}
+          onPasteImages={(files) => uploadFiles(file)}
+        />
       </ButtonContainer>
     </Container>
   );

@@ -16,23 +16,28 @@ const Box = styled.div`
 
 interface Props {
   onEdit: () => void;
-  onImage: (file: File) => void;
+  onPasteImages: (files: File[]) => void;
 }
 
-export const Menu = ({ onEdit, onImage }: Props): JSX.Element => {
+export const Menu = ({ onEdit, onPasteImages }: Props): JSX.Element => {
   const [open, setOpen] = useState(false);
 
   return (
     <IconButton aria-label="Menu" onClick={() => setOpen(true)}>
       <MdOutlineMoreVert />
-      <Box onMouseOut={() => setOpen(false)}>
-        <IconButton aria-label="Edit" onClick={() => onEdit()}>
-          <MdEdit />
-        </IconButton>
-        <IconButton aria-label="Paste image" onClick={() => on(true)}>
-          <MdImage />
-        </IconButton>
-      </Box>
+      {open && (
+        <Box onMouseOut={() => setOpen(false)}>
+          <IconButton aria-label="Edit" onClick={() => onEdit()}>
+            <MdEdit />
+          </IconButton>
+          <IconButton
+            aria-label="Paste image"
+            onClick={() => onPasteImages(true)}
+          >
+            <MdImage />
+          </IconButton>
+        </Box>
+      )}
     </IconButton>
   );
 };
