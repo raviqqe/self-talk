@@ -31,12 +31,12 @@ export const FileInput = ({
   <Container>
     {children}
     <Input
-      type="file"
       onChange={({ target: { files } }) => {
         if (files?.length) {
           onChange([...files]);
         }
       }}
+      type="file"
       {...restProps}
     />
   </Container>

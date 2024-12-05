@@ -1,12 +1,12 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
+import { MdImage } from "react-icons/md";
 import { PulseLoader } from "react-spinners";
+import { FileInput } from "./FileInput.js";
 import { TextArea } from "./TextArea.js";
 import { white } from "./style/colors.js";
-import { type InsertFilesFunction } from "./utilities.js";
-import { FileInput } from "./FileInput.js";
-import { MdImage } from "react-icons/md";
 import { boxShadow } from "./style.js";
+import { type InsertFilesFunction } from "./utilities.js";
 
 const Container = styled.div`
   flex: 1;

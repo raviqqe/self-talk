@@ -1,5 +1,7 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
+import { MdEdit } from "react-icons/md";
+import { IconButton } from "./IconButton.js";
 import { Markdown } from "./Markdown.js";
 import {
   UpdateDocument,
@@ -7,8 +9,6 @@ import {
 } from "./UpdateDocument.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
-import { IconButton } from "./IconButton.js";
-import { MdEdit } from "react-icons/md";
 
 const Container = styled.div`
   ${boxShadow};
