@@ -51,16 +51,14 @@ export const MarkdownTextArea = ({
 }: Props): JSX.Element => {
   const [uploadingFiles, setUploadingFiles] = useState(false);
 
-  const uploadFiles = async (files: (File | null)[], offset: number) => {
-    const validFiles = compact(files);
-
-    if (!validFiles.length) {
+  const uploadFiles = async (files: File[], offset: number) => {
+    if (!files.length) {
       return;
     }
 
     setUploadingFiles(true);
 
-    setText(await insertFiles(text, offset, validFiles));
+    setText(await insertFiles(text, offset, files));
 
     setUploadingFiles(false);
   };
@@ -79,13 +77,15 @@ export const MarkdownTextArea = ({
         onChange={({ target }) => setText(target.value)}
         onDrop={(event) =>
           uploadFiles(
-            [...event.dataTransfer.files],
+            compact([...event.dataTransfer.files]),
             event.currentTarget.selectionStart,
           )
         }
         onPaste={(event) =>
           uploadFiles(
-            [...event.clipboardData.items].map((item) => item.getAsFile()),
+            compact(
+              [...event.clipboardData.items].map((item) => item.getAsFile()),
+            ),
             event.currentTarget.selectionStart,
           )
         }
