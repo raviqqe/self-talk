@@ -16,6 +16,7 @@ const Input = styled.input`
   width: 100%;
   height: 100%;
   opacity: 0;
+  cursor: pointer;
 `;
 
 interface Props extends AriaAttributes {
