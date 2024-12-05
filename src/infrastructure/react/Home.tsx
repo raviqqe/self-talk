@@ -43,12 +43,10 @@ const SignOutContainer = styled.div`
 `;
 
 export interface Props extends DocumentsProps {
-  createDocument: (text: string) => Promise<void>;
   signOut: () => void;
 }
 
 export const Home = ({
-  createDocument,
   documents,
   insertFiles,
   listDocuments,
@@ -65,10 +63,7 @@ export const Home = ({
       updateDocument={updateDocument}
     />
     <CreateDocumentContainer>
-      <CreateDocument
-        createDocument={createDocument}
-        insertFiles={insertFiles}
-      />
+      <CreateDocument insertFiles={insertFiles} />
       <CreateDocumentBackground />
     </CreateDocumentContainer>
     <SignOutContainer>

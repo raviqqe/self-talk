@@ -59,7 +59,6 @@ export class ReactRenderer implements Renderer {
         <style className={globalStyle} />
         <App
           {...this.props}
-          createDocument={(text: string) => this.documentCreator.create(text)}
           insertFiles={(
             text: string,
             position: number,

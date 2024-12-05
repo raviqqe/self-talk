@@ -4,6 +4,7 @@ import { MdAdd } from "react-icons/md";
 import { CircleButton } from "./CircleButton.js";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
 import { type InsertFilesFunction } from "./utilities.js";
+import { documentCreator } from "../../main/document-creator.js";
 
 const Container = styled.div`
   display: flex;
@@ -20,18 +21,14 @@ const StyledCircleButton = styled(CircleButton)`
 `;
 
 interface Props {
-  createDocument: (text: string) => Promise<void>;
   insertFiles: InsertFilesFunction;
 }
 
-export const CreateDocument = ({
-  createDocument,
-  insertFiles,
-}: Props): JSX.Element => {
+export const CreateDocument = ({ insertFiles }: Props): JSX.Element => {
   const [text, setText] = useState("");
   const onSubmit = async (): Promise<void> => {
     setText("");
-    await createDocument(text);
+    await documentCreator.create(text);
   };
 
   return (
