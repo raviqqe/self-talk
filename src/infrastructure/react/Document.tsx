@@ -1,6 +1,6 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
-import { MdEdit } from "react-icons/md";
+import { MdOutlineMoreVert } from "react-icons/md";
 import { IconButton } from "./IconButton.js";
 import { Markdown } from "./Markdown.js";
 import {
@@ -50,8 +50,8 @@ export const Document = ({
     <Container {...restProps}>
       <Markdown>{document.text}</Markdown>
       <ButtonContainer>
-        <IconButton aria-label="Edit" onClick={() => setEditing(true)}>
-          <MdEdit />
+        <IconButton aria-label="Menu" onClick={() => setEditing(true)}>
+          <MdOutlineMoreVert />
         </IconButton>
       </ButtonContainer>
     </Container>
