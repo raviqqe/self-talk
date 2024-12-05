@@ -1,4 +1,5 @@
 import { styled } from "@linaria/react";
+import { compact } from "es-toolkit";
 import { useCallback, useState } from "react";
 import { MdImage } from "react-icons/md";
 import { PulseLoader } from "react-spinners";
@@ -7,7 +8,6 @@ import { TextArea } from "./TextArea.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
 import { type InsertFilesFunction } from "./utilities.js";
-import { compact } from "es-toolkit";
 
 const Container = styled.div`
   flex: 1;
