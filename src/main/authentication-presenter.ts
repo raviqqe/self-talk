@@ -1,4 +1,4 @@
-import { AuthenticationPresenter } from "../application/authentication-presenter.js";
+import { type AuthenticationPresenter } from "../application/authentication-presenter.js";
 import { AuthenticationRenderer } from "../infrastructure/authentication-renderer.js";
 
 export const authenticationPresenter =

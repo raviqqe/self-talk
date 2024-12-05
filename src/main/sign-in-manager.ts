@@ -1,8 +1,8 @@
-import { ApplicationInitializer } from "../application/application-initializer.js";
+import { SignInManager } from "../application/sign-in-manager.js";
 import { authenticationController } from "./authentication-controller.js";
 import { authenticationPresenter } from "./authentication-presenter.js";
 
-export const applicationInitializer = new ApplicationInitializer(
+export const signInManager = new SignInManager(
   authenticationController,
   authenticationPresenter,
 );
