@@ -11,8 +11,8 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const StyledMarkdownTextArea = styled(MarkdownTextArea)`
-  margin-right: -1em;
+const StyledCircleButton = styled(CircleButton)`
+  margin-left: -0.5rem;
 `;
 
 export interface Props {
@@ -33,15 +33,15 @@ export const UpdateDocument = ({
 
   return (
     <Container {...restProps}>
-      <StyledMarkdownTextArea
+      <MarkdownTextArea
         insertFiles={insertFiles}
         onSubmit={onSubmit}
         setText={setText}
         text={text}
       />
-      <CircleButton aria-label="Save" onClick={onSubmit}>
+      <StyledCircleButton aria-label="Save" onClick={onSubmit}>
         <MdSave />
-      </CircleButton>
+      </StyledCircleButton>
     </Container>
   );
 };

@@ -11,7 +11,6 @@ import TextareaAutosize, {
   type TextareaAutosizeProps,
 } from "react-textarea-autosize";
 import { grey } from "./style/colors.js";
-import { boxShadow } from "./style.js";
 
 const NoStyleTextareaAutosize = forwardRef(
   (
@@ -22,17 +21,14 @@ const NoStyleTextareaAutosize = forwardRef(
 NoStyleTextareaAutosize.displayName = "NoStyleTextareaAutosize";
 
 const StyledTextArea = styled(NoStyleTextareaAutosize)`
-  ${boxShadow};
-  box-sizing: border-box;
   border: none;
   outline: none;
-  width: 100%;
   color: inherit;
   font-family: monospace;
   font-size: 0.95em;
   resize: none;
-  padding: 1em;
-  border-radius: 0.5em;
+  padding: 0;
+  flex: 1;
 
   &::placeholder {
     color: ${grey};
