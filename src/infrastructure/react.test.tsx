@@ -2,5 +2,5 @@ import { it } from "vitest";
 import { ReactRenderer } from "./react.js";
 
 it("renders", () => {
-  new ReactRenderer(document.createElement("div"), [], "url").render();
+  new ReactRenderer(document.createElement("div"), []).render();
 });
