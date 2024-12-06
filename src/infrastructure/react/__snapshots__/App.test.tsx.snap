@@ -3,13 +3,13 @@
 exports[`renders after a user signs in 1`] = `
 <div>
   <div
-    class="mocked-styled-20 c2c63xu"
+    class="mocked-styled-20"
   >
     <div
-      class="mocked-styled-17 c8wguls"
+      class="mocked-styled-17"
     >
       <div
-        class="mocked-styled-18 l1b8gspm"
+        class="mocked-styled-18"
       >
         <span
           style="display: inherit;"
@@ -27,23 +27,23 @@ exports[`renders after a user signs in 1`] = `
       </div>
     </div>
     <div
-      class="mocked-styled-21 c7s45km"
+      class="mocked-styled-21"
     >
       <div
-        class="mocked-styled-8 cfb4dry"
+        class="mocked-styled-8"
       >
         <div
-          class="mocked-styled-5 c1jw3o7c"
+          class="mocked-styled-5"
         >
           <textarea
-            class="mocked-styled-9 s67jl2c s1ont3o7"
+            class="mocked-styled-9"
             placeholder="Write in Markdown..."
           />
           <div
-            class="mocked-styled-6 ba6h1ks"
+            class="mocked-styled-6"
           >
             <div
-              class="mocked-styled-2 c145ei9r"
+              class="mocked-styled-2"
             >
               <svg
                 fill="currentColor"
@@ -63,7 +63,7 @@ exports[`renders after a user signs in 1`] = `
                 />
               </svg>
               <input
-                class="mocked-styled-3 i1oy71hn"
+                class="mocked-styled-3"
                 type="file"
               />
             </div>
@@ -71,8 +71,7 @@ exports[`renders after a user signs in 1`] = `
         </div>
         <button
           aria-label="Create"
-          class="mocked-styled-10 cki2aja szqdour cki2aja bunojaf"
-          style="--bunojaf-0: tomato;"
+          class="mocked-styled-10 mocked-styled-1 mocked-styled-0"
         >
           <svg
             fill="currentColor"
@@ -94,15 +93,14 @@ exports[`renders after a user signs in 1`] = `
         </button>
       </div>
       <div
-        class="mocked-styled-22 c1vy458d"
+        class="mocked-styled-22"
       />
     </div>
     <div
-      class="mocked-styled-23 s1cidxnd"
+      class="mocked-styled-23"
     >
       <button
-        class="mocked-styled-1 bunojaf cki2aja bunojaf"
-        style="--bunojaf-0: darkgrey;"
+        class="mocked-styled-1 mocked-styled-0"
       >
         <svg
           fill="currentColor"
@@ -130,30 +128,29 @@ exports[`renders after a user signs in 1`] = `
 exports[`renders after a user signs out 1`] = `
 <div>
   <div
-    class="mocked-styled-25 c3ap7hf"
+    class="mocked-styled-25"
   >
     <div
-      class="mocked-styled-26 t1xgehma"
+      class="mocked-styled-26"
     >
       <span
-        class="mocked-styled-27 wim0e6u"
+        class="mocked-styled-27"
       >
         Self
       </span>
       <span
-        class="mocked-styled-28 rm1lq52"
+        class="mocked-styled-28"
       >
         Talk
       </span>
     </div>
     <button
-      class="mocked-styled-24 bunojaf tn2f353 bunojaf"
-      style="--bunojaf-0: tomato;"
+      class="mocked-styled-24 mocked-styled-0"
     >
       Sign in
     </button>
     <a
-      class="mocked-styled-29 g1qnybl0"
+      class="mocked-styled-29"
       href=""
       target="_blank"
     >
@@ -178,7 +175,7 @@ exports[`renders after a user signs out 1`] = `
 exports[`renders before a user signs in 1`] = `
 <div>
   <div
-    class="mocked-styled-30 lmlxdpd"
+    class="mocked-styled-30"
   >
     <span
       style="display: inherit;"

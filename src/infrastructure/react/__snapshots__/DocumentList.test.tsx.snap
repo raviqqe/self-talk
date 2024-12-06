@@ -2,24 +2,24 @@
 
 exports[`renders 1`] = `
 <div
-  class="mocked-styled-14 c8wguls"
+  class="mocked-styled-14"
 >
   <div
-    class="mocked-styled-16 s1em95ec c1m9orp7"
+    class="mocked-styled-16"
   >
     <div
-      class="mocked-styled-1 c1psrgc5"
+      class="mocked-styled-1"
     >
       <p>
         text
       </p>
     </div>
     <div
-      class="mocked-styled-13 b1jip2ep"
+      class="mocked-styled-13"
     >
       <button
         aria-label="Edit"
-        class="mocked-styled-0 b1bs8ozj"
+        class="mocked-styled-0"
       >
         <svg
           fill="currentColor"
@@ -46,10 +46,10 @@ exports[`renders 1`] = `
 
 exports[`renders with documents not loaded yet 1`] = `
 <div
-  class="mocked-styled-14 c8wguls"
+  class="mocked-styled-14"
 >
   <div
-    class="mocked-styled-15 l1b8gspm"
+    class="mocked-styled-15"
   >
     <span
       style="display: inherit;"
@@ -70,6 +70,6 @@ exports[`renders with documents not loaded yet 1`] = `
 
 exports[`renders with no documents 1`] = `
 <div
-  class="mocked-styled-14 c8wguls"
+  class="mocked-styled-14"
 />
 `;

@@ -2,20 +2,20 @@
 
 exports[`renders 1`] = `
 <div
-  class="mocked-styled-8 c1g3lnty"
+  class="mocked-styled-8"
 >
   <div
-    class="mocked-styled-5 c1jw3o7c"
+    class="mocked-styled-5"
   >
     <textarea
-      class="mocked-styled-4 s1ont3o7"
+      class="mocked-styled-4"
       placeholder="Write in Markdown..."
     />
     <div
-      class="mocked-styled-6 ba6h1ks"
+      class="mocked-styled-6"
     >
       <div
-        class="mocked-styled-2 c145ei9r"
+        class="mocked-styled-2"
       >
         <svg
           fill="currentColor"
@@ -35,7 +35,7 @@ exports[`renders 1`] = `
           />
         </svg>
         <input
-          class="mocked-styled-3 i1oy71hn"
+          class="mocked-styled-3"
           type="file"
         />
       </div>
@@ -43,8 +43,7 @@ exports[`renders 1`] = `
   </div>
   <button
     aria-label="Save"
-    class="mocked-styled-9 cki2aja s120cfdn cki2aja bunojaf"
-    style="--bunojaf-0: tomato;"
+    class="mocked-styled-9 mocked-styled-1 mocked-styled-0"
   >
     <svg
       fill="currentColor"
