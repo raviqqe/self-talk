@@ -5,6 +5,7 @@ import defaultUseInfiniteScroll from "react-infinite-scroll-hook";
 import { PulseLoader } from "react-spinners";
 import { useAsync, usePrevious } from "react-use";
 import type * as domain from "../../domain.js";
+import { documentLister } from "../../main/document-lister.js";
 import { Document } from "./Document.js";
 import { white } from "./style/colors.js";
 
@@ -38,6 +39,7 @@ export const DocumentList = ({ documents }: Props): JSX.Element => {
 
   useAsync(async () => {
     setLoading(true);
+    await documentLister.list();
     setLoading(false);
   }, []);
 
@@ -46,6 +48,7 @@ export const DocumentList = ({ documents }: Props): JSX.Element => {
     loading,
     onLoadMore: async () => {
       setLoading(true);
+      await documentLister.listMore();
       setLoading(false);
     },
   });

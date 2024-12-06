@@ -3,11 +3,11 @@ import { compact } from "es-toolkit";
 import { useCallback, useState } from "react";
 import { MdImage } from "react-icons/md";
 import { PulseLoader } from "react-spinners";
+import { textFileInserter } from "../../main/text-file-inserter.js";
 import { FileInput } from "./FileInput.js";
 import { TextArea } from "./TextArea.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
-import { textFileInserter } from "../../main/text-file-inserter.js";
 
 const Container = styled.div`
   flex: 1;

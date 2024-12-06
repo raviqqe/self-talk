@@ -1,7 +1,7 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { expect, it, vi } from "vitest";
-import { MarkdownTextArea } from "./MarkdownTextArea.js";
+import { beforeEach, expect, it, vi } from "vitest";
 import { textFileInserter } from "../../main/text-file-inserter.js";
+import { MarkdownTextArea } from "./MarkdownTextArea.js";
 
 beforeEach(() => {
   vi.spyOn(textFileInserter, "insert").mockResolvedValue("result");

@@ -7,6 +7,7 @@ import {
 } from "@testing-library/react";
 import { expect, it, vi } from "vitest";
 import { documentCreator } from "../../main/document-creator.js";
+import { documentUpdater } from "../../main/document-updater.js";
 import { Home } from "./Home.js";
 
 it("renders", async () => {
@@ -14,9 +15,7 @@ it("renders", async () => {
     render(<Home documents={[]} signOut={async () => {}} />),
   );
 
-  await waitFor(() =>
-    expect(result.container.querySelector("textarea")).toBeTruthy(),
-  );
+  await waitFor(() => expect(screen.getByRole("textbox")).toBeTruthy());
 
   expect(result.container.firstChild).toMatchSnapshot();
 });
@@ -44,7 +43,9 @@ it("creates a document", async () => {
 });
 
 it("updates a document", async () => {
-  const updateDocument = vi.fn(async () => {});
+  const updateDocument = vi
+    .spyOn(documentUpdater, "update")
+    .mockImplementation(async () => {});
 
   const result = await act(async () =>
     render(
