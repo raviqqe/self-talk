@@ -92,9 +92,7 @@ export const MarkdownTextArea = ({
         {...restProps}
       />
       <ButtonGroup>
-        <FileInput onChange={(files) => uploadFiles(files, text.length)}>
-          <MdImage />
-        </FileInput>
+        <FileInput onChange={(files) => uploadFiles(files, text.length)} />
       </ButtonGroup>
     </Container>
   );

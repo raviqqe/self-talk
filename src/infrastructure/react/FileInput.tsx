@@ -1,6 +1,7 @@
 import { styled } from "@linaria/react";
-import { type AriaAttributes, type ReactNode } from "react";
+import { type AriaAttributes } from "react";
 import { grey } from "./style/colors.js";
+import { MdAttachFile } from "react-icons/md";
 
 const Container = styled.div`
   position: relative;
@@ -20,17 +21,12 @@ const Input = styled.input`
 `;
 
 interface Props extends AriaAttributes {
-  children: ReactNode;
   onChange: (files: File[]) => void;
 }
 
-export const FileInput = ({
-  children,
-  onChange,
-  ...restProps
-}: Props): JSX.Element => (
+export const FileInput = ({ onChange, ...props }: Props): JSX.Element => (
   <Container>
-    {children}
+    <MdAttachFile />
     <Input
       onChange={({ target: { files } }) => {
         if (files?.length) {
@@ -38,7 +34,7 @@ export const FileInput = ({
         }
       }}
       type="file"
-      {...restProps}
+      {...props}
     />
   </Container>
 );
