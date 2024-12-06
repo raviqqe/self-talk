@@ -1,6 +1,6 @@
 import { reactRouter } from "@react-router/dev/vite";
 import wywInJs from "@wyw-in-js/vite";
-import { defineConfig, type UserConfigExport } from "vitest/config";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [
@@ -12,9 +12,4 @@ export default defineConfig({
       },
     }),
   ],
-  test: {
-    environment: "jsdom",
-    include: ["src/**/*.test.ts{,x}"],
-    setupFiles: "src/test.ts",
-  },
 });
