@@ -36,14 +36,14 @@ const LoaderContainer = styled.div`
 
 interface Props {
   className?: string;
-  onSubmit: () => Promise<void>;
   onChange: (text: string) => void;
+  onSubmit: () => Promise<void>;
   text: string;
 }
 
 export const MarkdownTextArea = ({
-  onSubmit,
   onChange,
+  onSubmit,
   text,
   ...restProps
 }: Props): JSX.Element => {

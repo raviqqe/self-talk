@@ -29,8 +29,8 @@ export const CreateDocument = (): JSX.Element => {
   return (
     <Container>
       <StyledMarkdownTextArea
-        onSubmit={onSubmit}
         onChange={setText}
+        onSubmit={onSubmit}
         text={text}
       />
       <StyledCircleButton aria-label="Create" onClick={onSubmit}>

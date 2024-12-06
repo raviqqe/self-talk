@@ -11,8 +11,8 @@ it("renders", () => {
   expect(
     render(
       <MarkdownTextArea
-        onSubmit={async () => {}}
         onChange={() => {}}
+        onSubmit={async () => {}}
         text="foo"
       />,
     ).container,
@@ -24,8 +24,8 @@ it("pastes an image as a link", async () => {
 
   render(
     <MarkdownTextArea
-      onSubmit={async () => {}}
       onChange={setText}
+      onSubmit={async () => {}}
       text="foo"
     />,
   );
@@ -46,8 +46,8 @@ it("does not paste anything if there is no files in clipboard data", async () =>
 
   render(
     <MarkdownTextArea
-      onSubmit={async () => {}}
       onChange={setText}
+      onSubmit={async () => {}}
       text="foo"
     />,
   );
@@ -64,8 +64,8 @@ it("drops an image as a link", async () => {
 
   render(
     <MarkdownTextArea
-      onSubmit={async () => {}}
       onChange={setText}
+      onSubmit={async () => {}}
       text="foo"
     />,
   );

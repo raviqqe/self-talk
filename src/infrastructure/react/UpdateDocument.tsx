@@ -30,7 +30,7 @@ export const UpdateDocument = ({
 
   return (
     <Container {...props}>
-      <MarkdownTextArea onSubmit={onSubmit} onChange={setText} text={text} />
+      <MarkdownTextArea onChange={setText} onSubmit={onSubmit} text={text} />
       <StyledCircleButton aria-label="Save" onClick={onSubmit}>
         <MdSave />
       </StyledCircleButton>
