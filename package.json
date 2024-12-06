@@ -36,6 +36,7 @@
     "@babel/preset-typescript": "^7.26.0",
     "@raviqqe/eslint-config": "^4.1.5",
     "@raviqqe/react-tsconfig": "^1.2.0",
+    "@react-router/dev": "^7.0.2",
     "@testing-library/react": "^16.1.0",
     "@types/jest": "^29.5.14",
     "@types/prettier": "^3.0.0",
@@ -47,7 +48,7 @@
     "firebase-tools": "^13.28.0",
     "jsdom": "^25.0.1",
     "typescript": "^5.7.2",
-    "vite": "^6.0.3",
+    "vite": "^5.4.11",
     "vite-plugin-pwa": "^0.21.1",
     "vitest": "^2.0.0"
   }
