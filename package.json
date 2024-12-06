@@ -12,6 +12,7 @@
     "deploy": "firebase deploy"
   },
   "dependencies": {
+    "@fontsource/chelsea-market": "^5.1.0",
     "@linaria/core": "^6.0.0",
     "@linaria/react": "^6.2.1",
     "@sentry/browser": "^8.42.0",
