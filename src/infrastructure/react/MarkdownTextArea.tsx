@@ -1,7 +1,6 @@
 import { styled } from "@linaria/react";
 import { compact } from "es-toolkit";
 import { useCallback, useState } from "react";
-import { MdImage } from "react-icons/md";
 import { PulseLoader } from "react-spinners";
 import { FileInput } from "./FileInput.js";
 import { TextArea } from "./TextArea.js";
