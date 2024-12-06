@@ -1,3 +1,5 @@
+import "@fontsource/chelsea-market";
+import "@fontsource/roboto";
 import { ReactRenderer } from "./infrastructure/react.js";
 import { authenticationPresenter } from "./main/authentication-presenter.js";
 import { documentPresenter } from "./main/document-presenter.js";
