@@ -7,9 +7,9 @@ import {
 } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
 import { documentCreator } from "../../main/document-creator.js";
+import { documentLister } from "../../main/document-lister.js";
 import { documentUpdater } from "../../main/document-updater.js";
 import { Home } from "./Home.js";
-import { documentLister } from "../../main/document-lister.js";
 
 beforeEach(() => {
   vi.spyOn(documentLister, "list").mockImplementation(async () => {});
