@@ -12,7 +12,7 @@ it("renders", () => {
     render(
       <MarkdownTextArea
         onSubmit={async () => {}}
-        setText={() => {}}
+        onChange={() => {}}
         text="foo"
       />,
     ).container,
@@ -23,7 +23,11 @@ it("pastes an image as a link", async () => {
   const setText = vi.fn();
 
   render(
-    <MarkdownTextArea onSubmit={async () => {}} setText={setText} text="foo" />,
+    <MarkdownTextArea
+      onSubmit={async () => {}}
+      onChange={setText}
+      text="foo"
+    />,
   );
 
   fireEvent.paste(screen.queryByRole("textbox")!, {
@@ -41,7 +45,11 @@ it("does not paste anything if there is no files in clipboard data", async () =>
   const setText = vi.fn();
 
   render(
-    <MarkdownTextArea onSubmit={async () => {}} setText={setText} text="foo" />,
+    <MarkdownTextArea
+      onSubmit={async () => {}}
+      onChange={setText}
+      text="foo"
+    />,
   );
 
   fireEvent.paste(screen.queryByRole("textbox")!, {
@@ -55,7 +63,11 @@ it("drops an image as a link", async () => {
   const setText = vi.fn();
 
   render(
-    <MarkdownTextArea onSubmit={async () => {}} setText={setText} text="foo" />,
+    <MarkdownTextArea
+      onSubmit={async () => {}}
+      onChange={setText}
+      text="foo"
+    />,
   );
 
   fireEvent.drop(screen.queryByRole("textbox")!, {

@@ -30,7 +30,7 @@ export const CreateDocument = (): JSX.Element => {
     <Container>
       <StyledMarkdownTextArea
         onSubmit={onSubmit}
-        setText={setText}
+        onChange={setText}
         text={text}
       />
       <StyledCircleButton aria-label="Create" onClick={onSubmit}>

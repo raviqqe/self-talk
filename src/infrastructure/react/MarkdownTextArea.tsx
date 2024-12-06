@@ -37,13 +37,13 @@ const LoaderContainer = styled.div`
 interface Props {
   className?: string;
   onSubmit: () => Promise<void>;
-  setText: (text: string) => void;
+  onChange: (text: string) => void;
   text: string;
 }
 
 export const MarkdownTextArea = ({
   onSubmit,
-  setText,
+  onChange,
   text,
   ...restProps
 }: Props): JSX.Element => {
@@ -56,10 +56,10 @@ export const MarkdownTextArea = ({
       }
 
       setLoading(true);
-      setText(await textFileInserter.insert(text, offset, files));
+      onChange(await textFileInserter.insert(text, offset, files));
       setLoading(false);
     },
-    [text, setText],
+    [text, onChange],
   );
 
   return loading ? (
@@ -69,7 +69,7 @@ export const MarkdownTextArea = ({
   ) : (
     <Container>
       <TextArea
-        onChange={({ target }) => setText(target.value)}
+        onChange={({ target }) => onChange(target.value)}
         onDrop={(event) =>
           uploadFiles(
             compact([...event.dataTransfer.files]),
