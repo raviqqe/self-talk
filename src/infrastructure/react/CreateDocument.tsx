@@ -1,9 +1,9 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
 import { MdAdd } from "react-icons/md";
+import { documentCreator } from "../../main/document-creator.js";
 import { CircleButton } from "./CircleButton.js";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
-import { type InsertFilesFunction } from "./utilities.js";
 
 const Container = styled.div`
   display: flex;
@@ -19,27 +19,18 @@ const StyledCircleButton = styled(CircleButton)`
   margin-left: -0.5rem;
 `;
 
-interface Props {
-  createDocument: (text: string) => Promise<void>;
-  insertFiles: InsertFilesFunction;
-}
-
-export const CreateDocument = ({
-  createDocument,
-  insertFiles,
-}: Props): JSX.Element => {
+export const CreateDocument = (): JSX.Element => {
   const [text, setText] = useState("");
   const onSubmit = async (): Promise<void> => {
     setText("");
-    await createDocument(text);
+    await documentCreator.create(text);
   };
 
   return (
     <Container>
       <StyledMarkdownTextArea
-        insertFiles={insertFiles}
+        onChange={setText}
         onSubmit={onSubmit}
-        setText={setText}
         text={text}
       />
       <StyledCircleButton aria-label="Create" onClick={onSubmit}>

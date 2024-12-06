@@ -1,75 +1,42 @@
-import {
-  act,
-  render,
-  type RenderResult,
-  waitFor,
-} from "@testing-library/react";
+import { act, render, waitFor } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
+import { documentLister } from "../../main/document-lister.js";
 import { DocumentList } from "./DocumentList.js";
 
-const listDocuments = vi.fn();
-const wait = () => waitFor(() => expect(listDocuments).toHaveBeenCalled());
+let wait = async () => {};
 
 beforeEach(() => {
-  listDocuments.mockReset().mockResolvedValue(undefined);
+  const list = vi
+    .spyOn(documentLister, "list")
+    .mockImplementation(async () => {});
+  vi.spyOn(documentLister, "listMore").mockImplementation(async () => {});
+  wait = () => waitFor(() => expect(list).toHaveBeenCalled());
 });
 
 it("renders", async () => {
-  let result: RenderResult | undefined;
+  const result = await act(async () =>
+    render(<DocumentList documents={[{ id: "id", text: "text" }]} />),
+  );
 
-  act(() => {
-    result = render(
-      <DocumentList
-        documents={[{ id: "id", text: "text" }]}
-        insertFiles={async () => ""}
-        listDocuments={listDocuments}
-        listMoreDocuments={async () => {}}
-        updateDocument={async () => {}}
-      />,
-    );
-  });
-
-  expect(result?.container.firstChild).toMatchSnapshot();
+  expect(result.container.firstChild).toMatchSnapshot();
 
   await wait();
 });
 
 it("renders with no documents", async () => {
-  let result: RenderResult | undefined;
+  const result = await act(async () => render(<DocumentList documents={[]} />));
 
-  act(() => {
-    result = render(
-      <DocumentList
-        documents={[]}
-        insertFiles={async () => ""}
-        listDocuments={listDocuments}
-        listMoreDocuments={async () => {}}
-        updateDocument={async () => {}}
-      />,
-    );
-  });
-
-  expect(result?.container.firstChild).toMatchSnapshot();
+  expect(result.container.firstChild).toMatchSnapshot();
 
   await wait();
 });
 
 it("renders with documents not loaded yet", async () => {
-  let result: RenderResult | undefined;
+  const result = await act(async () =>
+    render(<DocumentList documents={null} />),
+  );
 
-  act(() => {
-    result = render(
-      <DocumentList
-        documents={null}
-        insertFiles={async () => ""}
-        listDocuments={listDocuments}
-        listMoreDocuments={async () => {}}
-        updateDocument={async () => {}}
-      />,
-    );
-  });
-
-  expect(result?.container.firstChild).toMatchSnapshot();
+  expect(result.container.firstChild).toMatchSnapshot();
 
   await wait();
 });

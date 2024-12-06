@@ -4,7 +4,6 @@ import { MdSave } from "react-icons/md";
 import { type Document } from "../../domain/document.js";
 import { CircleButton } from "./CircleButton.js";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
-import { type InsertFilesFunction } from "./utilities.js";
 
 const Container = styled.div`
   display: flex;
@@ -18,27 +17,20 @@ const StyledCircleButton = styled(CircleButton)`
 export interface Props {
   className?: string;
   document: Document;
-  insertFiles: InsertFilesFunction;
-  updateDocument: (document: Document) => Promise<void>;
+  onSubmit: (document: Document) => Promise<void>;
 }
 
 export const UpdateDocument = ({
   document,
-  insertFiles,
-  updateDocument,
-  ...restProps
+  onSubmit: onParentSubmit,
+  ...props
 }: Props): JSX.Element => {
   const [text, setText] = useState(document.text);
-  const onSubmit = () => updateDocument({ ...document, text });
+  const onSubmit = () => onParentSubmit({ ...document, text });
 
   return (
-    <Container {...restProps}>
-      <MarkdownTextArea
-        insertFiles={insertFiles}
-        onSubmit={onSubmit}
-        setText={setText}
-        text={text}
-      />
+    <Container {...props}>
+      <MarkdownTextArea onChange={setText} onSubmit={onSubmit} text={text} />
       <StyledCircleButton aria-label="Save" onClick={onSubmit}>
         <MdSave />
       </StyledCircleButton>

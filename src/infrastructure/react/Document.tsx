@@ -1,12 +1,11 @@
 import { styled } from "@linaria/react";
 import { useState } from "react";
 import { MdEdit } from "react-icons/md";
+import type * as domain from "../../domain.js";
+import { documentUpdater } from "../../main/document-updater.js";
 import { IconButton } from "./IconButton.js";
 import { Markdown } from "./Markdown.js";
-import {
-  UpdateDocument,
-  type Props as UpdateDocumentProps,
-} from "./UpdateDocument.js";
+import { UpdateDocument } from "./UpdateDocument.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
 
@@ -26,28 +25,25 @@ const ButtonContainer = styled.div`
   right: 0.4em;
 `;
 
-type Props = UpdateDocumentProps;
+interface Props {
+  className?: string;
+  document: domain.Document;
+}
 
-export const Document = ({
-  document,
-  insertFiles,
-  updateDocument,
-  ...restProps
-}: Props): JSX.Element => {
+export const Document = ({ document, ...rest }: Props): JSX.Element => {
   const [editing, setEditing] = useState(false);
 
   return editing ? (
     <UpdateDocument
       document={document}
-      insertFiles={insertFiles}
-      updateDocument={async (document) => {
+      onSubmit={async (document) => {
         setEditing(false);
-        await updateDocument(document);
+        await documentUpdater.update(document);
       }}
-      {...restProps}
+      {...rest}
     />
   ) : (
-    <Container {...restProps}>
+    <Container {...rest}>
       <Markdown>{document.text}</Markdown>
       <ButtonContainer>
         <IconButton aria-label="Edit" onClick={() => setEditing(true)}>

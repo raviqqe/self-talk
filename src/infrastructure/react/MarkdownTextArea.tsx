@@ -3,11 +3,11 @@ import { compact } from "es-toolkit";
 import { useCallback, useState } from "react";
 import { MdImage } from "react-icons/md";
 import { PulseLoader } from "react-spinners";
+import { textFileInserter } from "../../main/text-file-inserter.js";
 import { FileInput } from "./FileInput.js";
 import { TextArea } from "./TextArea.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
-import { type InsertFilesFunction } from "./utilities.js";
 
 const Container = styled.div`
   flex: 1;
@@ -36,16 +36,14 @@ const LoaderContainer = styled.div`
 
 interface Props {
   className?: string;
-  insertFiles: InsertFilesFunction;
+  onChange: (text: string) => void;
   onSubmit: () => Promise<void>;
-  setText: (text: string) => void;
   text: string;
 }
 
 export const MarkdownTextArea = ({
-  insertFiles,
+  onChange,
   onSubmit,
-  setText,
   text,
   ...restProps
 }: Props): JSX.Element => {
@@ -58,10 +56,10 @@ export const MarkdownTextArea = ({
       }
 
       setLoading(true);
-      setText(await insertFiles(text, offset, files));
+      onChange(await textFileInserter.insert(text, offset, files));
       setLoading(false);
     },
-    [text, insertFiles, setText],
+    [text, onChange],
   );
 
   return loading ? (
@@ -71,7 +69,7 @@ export const MarkdownTextArea = ({
   ) : (
     <Container>
       <TextArea
-        onChange={({ target }) => setText(target.value)}
+        onChange={({ target }) => onChange(target.value)}
         onDrop={(event) =>
           uploadFiles(
             compact([...event.dataTransfer.files]),

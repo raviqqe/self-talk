@@ -5,9 +5,9 @@ import defaultUseInfiniteScroll from "react-infinite-scroll-hook";
 import { PulseLoader } from "react-spinners";
 import { useAsync, usePrevious } from "react-use";
 import type * as domain from "../../domain.js";
+import { documentLister } from "../../main/document-lister.js";
 import { Document } from "./Document.js";
 import { white } from "./style/colors.js";
-import { type InsertFilesFunction } from "./utilities.js";
 
 const useInfiniteScroll = defaultImport(defaultUseInfiniteScroll);
 
@@ -31,25 +31,15 @@ const StyledDocument = styled(Document)`
 
 export interface Props {
   documents: domain.Document[] | null;
-  insertFiles: InsertFilesFunction;
-  listDocuments: () => Promise<void>;
-  listMoreDocuments: () => Promise<void>;
-  updateDocument: (document: domain.Document) => Promise<void>;
 }
 
-export const DocumentList = ({
-  documents,
-  insertFiles,
-  listDocuments,
-  listMoreDocuments,
-  updateDocument,
-}: Props): JSX.Element => {
+export const DocumentList = ({ documents }: Props): JSX.Element => {
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
 
   useAsync(async () => {
     setLoading(true);
-    await listDocuments();
+    await documentLister.list();
     setLoading(false);
   }, []);
 
@@ -58,7 +48,7 @@ export const DocumentList = ({
     loading,
     onLoadMore: async () => {
       setLoading(true);
-      await listMoreDocuments();
+      await documentLister.listMore();
       setLoading(false);
     },
   });
@@ -77,12 +67,7 @@ export const DocumentList = ({
   return (
     <Container>
       {documents?.map((document) => (
-        <StyledDocument
-          document={document}
-          insertFiles={insertFiles}
-          key={document.id}
-          updateDocument={updateDocument}
-        />
+        <StyledDocument document={document} key={document.id} />
       ))}
       {!done && (
         <LoaderContainer ref={ref}>

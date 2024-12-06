@@ -1,14 +1,10 @@
 import { render } from "@testing-library/react";
-import { expect, it } from "vitest";
+import { expect, it, vi } from "vitest";
+import { documentCreator } from "../../main/document-creator.js";
 import { CreateDocument } from "./CreateDocument.js";
 
 it("renders", () => {
-  expect(
-    render(
-      <CreateDocument
-        createDocument={async () => {}}
-        insertFiles={async () => "url"}
-      />,
-    ).container.firstChild,
-  ).toMatchSnapshot();
+  vi.spyOn(documentCreator, "create").mockImplementation(async () => {});
+
+  expect(render(<CreateDocument />).container.firstChild).toMatchSnapshot();
 });

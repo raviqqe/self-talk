@@ -1,14 +1,18 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { expect, it, vi } from "vitest";
+import { beforeEach, expect, it, vi } from "vitest";
+import { textFileInserter } from "../../main/text-file-inserter.js";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
+
+beforeEach(() => {
+  vi.spyOn(textFileInserter, "insert").mockResolvedValue("result");
+});
 
 it("renders", () => {
   expect(
     render(
       <MarkdownTextArea
-        insertFiles={async () => ""}
+        onChange={() => {}}
         onSubmit={async () => {}}
-        setText={() => {}}
         text="foo"
       />,
     ).container,
@@ -20,9 +24,8 @@ it("pastes an image as a link", async () => {
 
   render(
     <MarkdownTextArea
-      insertFiles={async () => "result"}
+      onChange={setText}
       onSubmit={async () => {}}
-      setText={setText}
       text="foo"
     />,
   );
@@ -43,9 +46,8 @@ it("does not paste anything if there is no files in clipboard data", async () =>
 
   render(
     <MarkdownTextArea
-      insertFiles={async () => "result"}
+      onChange={setText}
       onSubmit={async () => {}}
-      setText={setText}
       text="foo"
     />,
   );
@@ -62,9 +64,8 @@ it("drops an image as a link", async () => {
 
   render(
     <MarkdownTextArea
-      insertFiles={async () => "result"}
+      onChange={setText}
       onSubmit={async () => {}}
-      setText={setText}
       text="foo"
     />,
   );

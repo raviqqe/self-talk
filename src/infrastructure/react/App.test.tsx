@@ -1,15 +1,11 @@
-import {
-  act,
-  render,
-  type RenderResult,
-  waitFor,
-} from "@testing-library/react";
+import { act, render, waitFor } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
 import { applicationInitializer } from "../../main/application-initializer.js";
+import { documentLister } from "../../main/document-lister.js";
 import { App, type Props } from "./App.js";
 
 const initialize = vi.spyOn(applicationInitializer, "initialize");
-const listDocuments = vi.fn();
+const listDocuments = vi.spyOn(documentLister, "list");
 
 beforeEach(() => {
   initialize.mockImplementation(async () => {});
@@ -17,51 +13,34 @@ beforeEach(() => {
 });
 
 const props: Props = {
-  createDocument: async () => {},
   documents: null,
-  insertFiles: async () => "",
-  listDocuments,
-  listMoreDocuments: async () => {},
   repositoryUrl: "",
   signedIn: null,
   signIn: async () => {},
   signOut: async () => {},
-  updateDocument: async () => {},
 };
 
 it("renders before a user signs in", async () => {
-  let result: RenderResult | undefined;
+  const result = await act(() => render(<App {...props} signedIn={null} />));
 
-  act(() => {
-    result = render(<App {...props} signedIn={null} />);
-  });
-
-  expect(result?.container).toMatchSnapshot();
+  expect(result.container).toMatchSnapshot();
 
   await waitFor(() => expect(initialize).toHaveBeenCalled());
 });
 
 it("renders after a user signs in", async () => {
-  let result: RenderResult | undefined;
+  const result = await act(() => render(<App {...props} signedIn />));
 
-  act(() => {
-    result = render(<App {...props} signedIn />);
-  });
-
-  expect(result?.container).toMatchSnapshot();
+  expect(result.container).toMatchSnapshot();
 
   await waitFor(() => expect(initialize).toHaveBeenCalled());
   await waitFor(() => expect(listDocuments).toHaveBeenCalled());
 });
 
 it("renders after a user signs out", async () => {
-  let result: RenderResult | undefined;
+  const result = await act(() => render(<App {...props} signedIn={false} />));
 
-  act(() => {
-    result = render(<App {...props} signedIn={false} />);
-  });
-
-  expect(result?.container).toMatchSnapshot();
+  expect(result.container).toMatchSnapshot();
 
   await waitFor(() => expect(initialize).toHaveBeenCalled());
 });

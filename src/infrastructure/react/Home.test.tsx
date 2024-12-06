@@ -2,103 +2,73 @@ import {
   act,
   fireEvent,
   render,
-  type RenderResult,
+  screen,
   waitFor,
 } from "@testing-library/react";
-import { afterEach, expect, it, vi } from "vitest";
+import { beforeEach, expect, it, vi } from "vitest";
+import { documentCreator } from "../../main/document-creator.js";
+import { documentLister } from "../../main/document-lister.js";
+import { documentUpdater } from "../../main/document-updater.js";
 import { Home } from "./Home.js";
 
-afterEach(() => {
-  for (const element of document.getElementsByTagName("html")) {
-    element.innerHTML = "";
-  }
+beforeEach(() => {
+  vi.spyOn(documentLister, "list").mockImplementation(async () => {});
+  vi.spyOn(documentLister, "listMore").mockImplementation(async () => {});
 });
 
 it("renders", async () => {
-  let result: RenderResult | undefined;
-
-  act(() => {
-    result = render(
-      <Home
-        createDocument={async () => {}}
-        documents={[]}
-        insertFiles={async () => ""}
-        listDocuments={async () => {}}
-        listMoreDocuments={async () => {}}
-        signOut={async () => {}}
-        updateDocument={async () => {}}
-      />,
-    );
-  });
-
-  await waitFor(() =>
-    expect(result?.container.querySelector("textarea")).toBeTruthy(),
+  const result = await act(async () =>
+    render(<Home documents={[]} signOut={async () => {}} />),
   );
 
-  expect(result?.container.firstChild).toMatchSnapshot();
+  await waitFor(() => expect(screen.getByRole("textbox")).toBeTruthy());
+
+  expect(result.container.firstChild).toMatchSnapshot();
 });
 
 it("creates a document", async () => {
-  const createDocument = vi.fn(async () => {});
-  let result: RenderResult | undefined;
+  const createDocument = vi
+    .spyOn(documentCreator, "create")
+    .mockImplementation(async () => {});
 
   act(() => {
-    result = render(
-      <Home
-        createDocument={createDocument}
-        documents={[]}
-        insertFiles={async () => ""}
-        listDocuments={async () => {}}
-        listMoreDocuments={async () => {}}
-        signOut={async () => {}}
-        updateDocument={async () => {}}
-      />,
-    );
+    render(<Home documents={[]} signOut={async () => {}} />);
   });
 
-  await waitFor(() =>
-    expect(result?.container.querySelector("textarea")).toBeTruthy(),
-  );
+  await waitFor(() => expect(screen.getByRole("textbox")).toBeTruthy());
 
   act(() => {
-    fireEvent.change(result?.container.querySelector("textarea")!, {
+    fireEvent.change(screen.getByRole("textbox"), {
       target: { value: "foo" },
     });
 
-    fireEvent.click(result?.getByLabelText("Create") as Element);
+    fireEvent.click(screen.getByLabelText("Create"));
   });
 
   expect(createDocument.mock.calls).toHaveLength(1);
 });
 
 it("updates a document", async () => {
-  const updateDocument = vi.fn(async () => {});
-  let result: RenderResult | undefined;
+  const updateDocument = vi
+    .spyOn(documentUpdater, "update")
+    .mockImplementation(async () => {});
+
+  const result = await act(async () =>
+    render(
+      <Home documents={[{ id: "", text: "" }]} signOut={async () => {}} />,
+    ),
+  );
+
+  await waitFor(() => expect(result.getByLabelText("Edit")).toBeTruthy());
 
   act(() => {
-    result = render(
-      <Home
-        createDocument={async () => {}}
-        documents={[{ id: "", text: "" }]}
-        insertFiles={async () => ""}
-        listDocuments={async () => {}}
-        listMoreDocuments={async () => {}}
-        signOut={async () => {}}
-        updateDocument={updateDocument}
-      />,
-    );
-  });
+    fireEvent.click(result.getByLabelText("Edit") as Element);
 
-  await waitFor(() => expect(result?.getByLabelText("Edit")).toBeTruthy());
-
-  act(() => {
-    fireEvent.click(result?.getByLabelText("Edit") as Element);
-
-    fireEvent.change(result?.container.querySelector("textarea")!, {
+    fireEvent.change(result.container.querySelector("textarea")!, {
       target: { value: "foo" },
     });
 
-    fireEvent.click(result?.getByLabelText("Save") as Element);
+    fireEvent.click(result.getByLabelText("Save") as Element);
   });
 
   expect(updateDocument.mock.calls).toHaveLength(1);

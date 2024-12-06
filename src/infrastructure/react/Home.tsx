@@ -43,32 +43,14 @@ const SignOutContainer = styled.div`
 `;
 
 export interface Props extends DocumentsProps {
-  createDocument: (text: string) => Promise<void>;
   signOut: () => void;
 }
 
-export const Home = ({
-  createDocument,
-  documents,
-  insertFiles,
-  listDocuments,
-  listMoreDocuments,
-  signOut,
-  updateDocument,
-}: Props): JSX.Element => (
+export const Home = ({ documents, signOut }: Props): JSX.Element => (
   <Container>
-    <DocumentList
-      documents={documents}
-      insertFiles={insertFiles}
-      listDocuments={listDocuments}
-      listMoreDocuments={listMoreDocuments}
-      updateDocument={updateDocument}
-    />
+    <DocumentList documents={documents} />
     <CreateDocumentContainer>
-      <CreateDocument
-        createDocument={createDocument}
-        insertFiles={insertFiles}
-      />
+      <CreateDocument />
       <CreateDocumentBackground />
     </CreateDocumentContainer>
     <SignOutContainer>
