@@ -8,6 +8,9 @@ export default defineConfig({
     (wywInJs as unknown as Function)({
       include: ["src/**/*.{ts,tsx}"],
       babelOptions: {
+        generatorOpts: {
+          importAttributesKeyword: "with",
+        },
         presets: ["@babel/preset-typescript", "@babel/preset-react"],
       },
     }),

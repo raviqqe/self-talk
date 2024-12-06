@@ -3,7 +3,5 @@ import { expect, it } from "vitest";
 import { Landing } from "./Landing.js";
 
 it("renders", () => {
-  expect(
-    render(<Landing repositoryUrl="url" />).container.firstChild,
-  ).toMatchSnapshot();
+  expect(render(<Landing />).container.firstChild).toMatchSnapshot();
 });

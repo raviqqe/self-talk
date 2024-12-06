@@ -14,7 +14,6 @@ beforeEach(() => {
 
 const props: Props = {
   documents: null,
-  repositoryUrl: "",
   signedIn: null,
 };
 
