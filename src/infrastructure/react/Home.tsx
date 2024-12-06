@@ -1,6 +1,7 @@
 import { styled } from "@linaria/react";
+import { signOutManager } from "../../main/sign-out-manager.js";
 import { CreateDocument } from "./CreateDocument.js";
-import { DocumentList, type Props as DocumentsProps } from "./DocumentList.js";
+import { DocumentList, type Props } from "./DocumentList.js";
 import { SignOut } from "./SignOut.js";
 import { darkYellow } from "./style/colors.js";
 
@@ -42,11 +43,9 @@ const SignOutContainer = styled.div`
   right: 0.5em;
 `;
 
-export interface Props extends DocumentsProps {
-  signOut: () => void;
-}
+export type { Props };
 
-export const Home = ({ documents, signOut }: Props): JSX.Element => (
+export const Home = ({ documents }: Props): JSX.Element => (
   <Container>
     <DocumentList documents={documents} />
     <CreateDocumentContainer>
@@ -54,7 +53,7 @@ export const Home = ({ documents, signOut }: Props): JSX.Element => (
       <CreateDocumentBackground />
     </CreateDocumentContainer>
     <SignOutContainer>
-      <SignOut signOut={signOut} />
+      <SignOut signOut={() => signOutManager.signOut()} />
     </SignOutContainer>
   </Container>
 );

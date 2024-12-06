@@ -22,8 +22,6 @@ export const App = ({
   documents,
   repositoryUrl,
   signedIn,
-  signIn,
-  signOut,
   ...props
 }: Props): JSX.Element => {
   useAsync(() => applicationInitializer.initialize(), []);
@@ -33,8 +31,8 @@ export const App = ({
       <PulseLoader color={white} />
     </LoaderContainer>
   ) : signedIn ? (
-    <Home {...props} documents={documents} signOut={signOut} />
+    <Home {...props} documents={documents} />
   ) : (
-    <Landing repositoryUrl={repositoryUrl} signIn={signIn} />
+    <Landing repositoryUrl={repositoryUrl} />
   );
 };

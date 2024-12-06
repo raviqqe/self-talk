@@ -3,8 +3,6 @@ import { ReactRenderer } from "./infrastructure/react.js";
 import { authenticationPresenter } from "./main/authentication-presenter.js";
 import { documentPresenter } from "./main/document-presenter.js";
 import { errorReporter } from "./main/error-reporter.js";
-import { signInManager } from "./main/sign-in-manager.js";
-import { signOutManager } from "./main/sign-out-manager.js";
 
 try {
   const element = document.getElementById("root");
@@ -16,8 +14,6 @@ try {
   new ReactRenderer(
     element,
     [authenticationPresenter, documentPresenter],
-    signInManager,
-    signOutManager,
     configuration.repositoryUrl,
   ).render();
 
