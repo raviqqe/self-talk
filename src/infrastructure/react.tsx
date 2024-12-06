@@ -15,11 +15,7 @@ export class ReactRenderer implements Renderer {
   private readonly root: Root;
   private props: Props = { documents: null, signedIn: null };
 
-  constructor(
-    element: HTMLElement,
-    presenters: Presenter[],
-    private readonly repositoryUrl: string,
-  ) {
+  constructor(element: HTMLElement, presenters: Presenter[]) {
     for (const presenter of presenters) {
       presenter.setRenderer(this);
     }
@@ -45,7 +41,7 @@ export class ReactRenderer implements Renderer {
     this.root.render(
       <StrictMode>
         <style className={globalStyle} />
-        <App {...this.props} repositoryUrl={this.repositoryUrl} />
+        <App {...this.props} />
       </StrictMode>,
     );
   }

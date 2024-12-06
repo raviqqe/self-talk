@@ -3,7 +3,7 @@ import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import { applicationInitializer } from "../../main/application-initializer.js";
 import { Home, type Props as HomeProps } from "./Home.js";
-import { Landing, type Props as LandingProps } from "./Landing.js";
+import { Landing } from "./Landing.js";
 import { white } from "./style/colors.js";
 
 const LoaderContainer = styled.div`
@@ -14,16 +14,11 @@ const LoaderContainer = styled.div`
   width: 100vw;
 `;
 
-export interface Props extends HomeProps, LandingProps {
+export interface Props extends HomeProps {
   signedIn: boolean | null;
 }
 
-export const App = ({
-  documents,
-  repositoryUrl,
-  signedIn,
-  ...props
-}: Props): JSX.Element => {
+export const App = ({ documents, signedIn, ...props }: Props): JSX.Element => {
   useAsync(() => applicationInitializer.initialize(), []);
 
   return signedIn === null ? (
@@ -33,6 +28,6 @@ export const App = ({
   ) : signedIn ? (
     <Home {...props} documents={documents} />
   ) : (
-    <Landing repositoryUrl={repositoryUrl} />
+    <Landing />
   );
 };
