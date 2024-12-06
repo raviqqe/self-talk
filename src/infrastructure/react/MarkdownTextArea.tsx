@@ -1,7 +1,6 @@
 import { styled } from "@linaria/react";
 import { compact } from "es-toolkit";
 import { useCallback, useState } from "react";
-import { MdImage } from "react-icons/md";
 import { PulseLoader } from "react-spinners";
 import { textFileInserter } from "../../main/text-file-inserter.js";
 import { FileInput } from "./FileInput.js";
@@ -90,9 +89,7 @@ export const MarkdownTextArea = ({
         {...restProps}
       />
       <ButtonGroup>
-        <FileInput onChange={(files) => uploadFiles(files, text.length)}>
-          <MdImage />
-        </FileInput>
+        <FileInput onChange={(files) => uploadFiles(files, text.length)} />
       </ButtonGroup>
     </Container>
   );
