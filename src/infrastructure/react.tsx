@@ -1,7 +1,5 @@
 import { StrictMode } from "react";
 import { createRoot, type Root } from "react-dom/client";
-import { type SignInManager } from "../application/sign-in-manager.js";
-import { type SignOutManager } from "../application/sign-out-manager.js";
 import { type Document } from "../domain/document.js";
 import { App, type Props as AppProps } from "./react/App.js";
 import { globalStyle } from "./react/style.js";
@@ -20,8 +18,6 @@ export class ReactRenderer implements Renderer {
   constructor(
     element: HTMLElement,
     presenters: Presenter[],
-    private readonly signInManager: SignInManager,
-    private readonly signOutManager: SignOutManager,
     private readonly repositoryUrl: string,
   ) {
     for (const presenter of presenters) {
@@ -49,12 +45,7 @@ export class ReactRenderer implements Renderer {
     this.root.render(
       <StrictMode>
         <style className={globalStyle} />
-        <App
-          {...this.props}
-          repositoryUrl={this.repositoryUrl}
-          signIn={() => this.signInManager.signIn()}
-          signOut={() => this.signOutManager.signOut()}
-        />
+        <App {...this.props} repositoryUrl={this.repositoryUrl} />
       </StrictMode>,
     );
   }

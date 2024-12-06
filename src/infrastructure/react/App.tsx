@@ -2,7 +2,7 @@ import { styled } from "@linaria/react";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import { applicationInitializer } from "../../main/application-initializer.js";
-import { Home, type Props as HomeProps } from "./Home.js";
+import { Home, type Props } from "./Home.js";
 import { Landing, type Props as LandingProps } from "./Landing.js";
 import { white } from "./style/colors.js";
 
@@ -22,8 +22,6 @@ export const App = ({
   documents,
   repositoryUrl,
   signedIn,
-  signIn,
-  signOut,
   ...props
 }: Props): JSX.Element => {
   useAsync(() => applicationInitializer.initialize(), []);
@@ -33,8 +31,8 @@ export const App = ({
       <PulseLoader color={white} />
     </LoaderContainer>
   ) : signedIn ? (
-    <Home {...props} documents={documents} signOut={signOut} />
+    <Home {...props} documents={documents} />
   ) : (
-    <Landing repositoryUrl={repositoryUrl} signIn={signIn} />
+    <Landing repositoryUrl={repositoryUrl} />
   );
 };
