@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "react-router start",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "build": "react-router typegen && tsc && react-router build",
     "lint": "eslint src",
     "test": "vitest --coverage",
     "deploy": "firebase deploy"
@@ -53,7 +52,6 @@
     "jsdom": "^25.0.1",
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
-    "vite-plugin-pwa": "^0.21.1",
     "vitest": "^2.0.0"
   }
 }
