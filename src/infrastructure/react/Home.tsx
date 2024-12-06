@@ -1,9 +1,9 @@
 import { styled } from "@linaria/react";
+import { signOutManager } from "../../main/sign-out-manager.js";
 import { CreateDocument } from "./CreateDocument.js";
 import { DocumentList, type Props } from "./DocumentList.js";
 import { SignOut } from "./SignOut.js";
 import { darkYellow } from "./style/colors.js";
-import { signOutManager } from "../../main/sign-out-manager.js";
 
 const Container = styled.div`
   display: flex;
@@ -43,7 +43,7 @@ const SignOutContainer = styled.div`
   right: 0.5em;
 `;
 
-export { Props };
+export type { Props };
 
 export const Home = ({ documents }: Props): JSX.Element => (
   <Container>
