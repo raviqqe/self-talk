@@ -151,7 +151,7 @@ exports[`renders after a user signs out 1`] = `
     </button>
     <a
       class="mocked-styled-29"
-      href=""
+      href="https://github.com/raviqqe/self-talk"
       target="_blank"
     >
       <svg
