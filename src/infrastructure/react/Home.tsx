@@ -43,6 +43,8 @@ const SignOutContainer = styled.div`
   right: 0.5em;
 `;
 
+export { Props };
+
 export const Home = ({ documents }: Props): JSX.Element => (
   <Container>
     <DocumentList documents={documents} />

@@ -2,7 +2,7 @@ import { styled } from "@linaria/react";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import { applicationInitializer } from "../../main/application-initializer.js";
-import { Home, type Props } from "./Home.js";
+import { Home, type Props as HomeProps } from "./Home.js";
 import { Landing, type Props as LandingProps } from "./Landing.js";
 import { white } from "./style/colors.js";
 

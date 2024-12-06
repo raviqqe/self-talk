@@ -16,8 +16,6 @@ const props: Props = {
   documents: null,
   repositoryUrl: "",
   signedIn: null,
-  signIn: async () => {},
-  signOut: async () => {},
 };
 
 it("renders before a user signs in", async () => {

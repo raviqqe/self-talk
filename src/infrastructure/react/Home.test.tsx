@@ -17,9 +17,7 @@ beforeEach(() => {
 });
 
 it("renders", async () => {
-  const result = await act(async () =>
-    render(<Home documents={[]} signOut={async () => {}} />),
-  );
+  const result = await act(async () => render(<Home documents={[]} />));
 
   await waitFor(() => expect(screen.getByRole("textbox")).toBeTruthy());
 
@@ -32,7 +30,7 @@ it("creates a document", async () => {
     .mockImplementation(async () => {});
 
   act(() => {
-    render(<Home documents={[]} signOut={async () => {}} />);
+    render(<Home documents={[]} />);
   });
 
   await waitFor(() => expect(screen.getByRole("textbox")).toBeTruthy());
@@ -54,9 +52,7 @@ it("updates a document", async () => {
     .mockImplementation(async () => {});
 
   const result = await act(async () =>
-    render(
-      <Home documents={[{ id: "", text: "" }]} signOut={async () => {}} />,
-    ),
+    render(<Home documents={[{ id: "", text: "" }]} />),
   );
 
   await waitFor(() => expect(result.getByLabelText("Edit")).toBeTruthy());
