@@ -1,5 +1,5 @@
 import "@fontsource/chelsea-market";
-import "@fontsource-variable/roboto";
+import "@fontsource/roboto";
 import configuration from "../configuration.json" with { type: "json" };
 import { type ReactNode } from "react";
 import {
