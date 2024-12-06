@@ -1,15 +1,15 @@
+import { reactRouter } from "@react-router/dev/vite";
 import wywInJs from "@wyw-in-js/vite";
 import { defineConfig } from "vite";
 import { UserConfigExport } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
-import { reactRouter } from "@react-router/dev/vite";
 
 export default defineConfig({
   plugins: [
     reactRouter(),
     react(),
-    wywInJs({
+    (wywInJs as unknown as Function)({
       include: ["src/**/*.{ts,tsx}"],
       babelOptions: {
         presets: ["@babel/preset-typescript", "@babel/preset-react"],
