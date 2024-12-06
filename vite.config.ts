@@ -1,13 +1,12 @@
 import wywInJs from "@wyw-in-js/vite";
 import { defineConfig } from "vite";
-import { UserConfigExport } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   plugins: [
     react(),
-    wywInJs({
+    (wywInJs as unknown as Function)({
       include: ["src/**/*.{ts,tsx}"],
       babelOptions: {
         presets: ["@babel/preset-typescript", "@babel/preset-react"],
@@ -28,9 +27,4 @@ export default defineConfig({
       },
     }),
   ],
-  test: {
-    environment: "jsdom",
-    include: ["src/**/*.test.ts{,x}"],
-    setupFiles: "src/test.ts",
-  },
-} satisfies UserConfigExport);
+});
