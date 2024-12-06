@@ -5,10 +5,16 @@ import {
   screen,
   waitFor,
 } from "@testing-library/react";
-import { expect, it, vi } from "vitest";
+import { beforeEach, expect, it, vi } from "vitest";
 import { documentCreator } from "../../main/document-creator.js";
 import { documentUpdater } from "../../main/document-updater.js";
 import { Home } from "./Home.js";
+import { documentLister } from "../../main/document-lister.js";
+
+beforeEach(() => {
+  vi.spyOn(documentLister, "list").mockImplementation(async () => {});
+  vi.spyOn(documentLister, "listMore").mockImplementation(async () => {});
+});
 
 it("renders", async () => {
   const result = await act(async () =>
