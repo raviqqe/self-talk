@@ -2,21 +2,21 @@
 
 exports[`renders 1`] = `
 <div
-  class="mocked-styled-12 c1m9orp7"
+  class="mocked-styled-12"
 >
   <div
-    class="mocked-styled-1 c1psrgc5"
+    class="mocked-styled-1"
   >
     <p>
       text
     </p>
   </div>
   <div
-    class="mocked-styled-13 b1jip2ep"
+    class="mocked-styled-13"
   >
     <button
       aria-label="Edit"
-      class="mocked-styled-0 b1bs8ozj"
+      class="mocked-styled-0"
     >
       <svg
         fill="currentColor"
