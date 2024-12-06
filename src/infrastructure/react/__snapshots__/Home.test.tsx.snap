@@ -6,7 +6,25 @@ exports[`renders 1`] = `
 >
   <div
     class="mocked-styled-17 c8wguls"
-  />
+  >
+    <div
+      class="mocked-styled-18 l1b8gspm"
+    >
+      <span
+        style="display: inherit;"
+      >
+        <span
+          style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+        />
+        <span
+          style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+        />
+        <span
+          style="background-color: white; width: 15px; height: 15px; margin: 2px; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+        />
+      </span>
+    </div>
+  </div>
   <div
     class="mocked-styled-21 c7s45km"
   >
