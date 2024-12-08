@@ -16,10 +16,6 @@ try {
     authenticationPresenter,
     documentPresenter,
   ]).render();
-
-  // Disable default behavior on drop events.
-  window.ondragover = (event: DragEvent) => event.preventDefault();
-  window.ondrop = (event: DragEvent) => event.preventDefault();
 } catch (error) {
   errorReporter.report(error);
 }
