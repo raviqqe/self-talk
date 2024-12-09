@@ -8,6 +8,8 @@ import type * as domain from "../../domain.js";
 import { documentLister } from "../../main/document-lister.js";
 import { Document } from "./Document.js";
 import { white } from "./style/colors.js";
+import { useStore } from "@nanostores/react";
+import { documentPresenter } from "../../main/document-presenter.js";
 
 const useInfiniteScroll = defaultImport(defaultUseInfiniteScroll);
 
@@ -34,6 +36,7 @@ export interface Props {
 }
 
 export const DocumentList = ({ documents }: Props): JSX.Element => {
+  const documents = useStore(documentPresenter.documents);
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
 

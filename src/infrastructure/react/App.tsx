@@ -6,6 +6,7 @@ import { Home } from "./Home.js";
 import { Landing } from "./Landing.js";
 import { white } from "./style/colors.js";
 import { useStore } from "@nanostores/react";
+import { authenticationPresenter } from "../../main/authentication-presenter.js";
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ const LoaderContainer = styled.div`
 
 export const App = (): JSX.Element => {
   useAsync(() => applicationInitializer.initialize(), []);
-  const signedIn = useStore();
+  const signedIn = useStore(authenticationPresenter.signedIn);
 
   return signedIn === null ? (
     <LoaderContainer>
