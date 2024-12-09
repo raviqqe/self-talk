@@ -30,4 +30,7 @@ export default defineConfig({
       },
     }),
   ],
+  ssr: {
+    noExternal: ["react-spinners", "react-use"],
+  },
 });

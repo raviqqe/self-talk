@@ -1,5 +1,8 @@
 import "@fontsource/chelsea-market";
 import "@fontsource/roboto";
+import { styled } from "@linaria/react";
+import { useStore } from "@nanostores/react";
+import { useAsync } from "@raviqqe/react-hooks";
 import { type ReactNode } from "react";
 import {
   Links,
@@ -9,8 +12,13 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useNavigate,
+  useNavigation,
 } from "react-router";
 import { configuration } from "../configuration.js";
+import { Loader } from "../infrastructure/react/Loader.js";
+import { applicationInitializer } from "../main/application-initializer.js";
+import { authenticationPresenter } from "../main/authentication-presenter.js";
 
 export const meta: MetaFunction = () => [
   {
@@ -64,24 +72,50 @@ export const links: LinksFunction = () => [
   },
 ];
 
-export const Layout = ({ children }: { children: ReactNode }): JSX.Element => (
-  <html lang="en">
-    <head>
-      <Meta />
-      <Links />
-      <script
-        data-domain="notes.code2d.org"
-        defer
-        src="https://plausible.io/js/script.js"
-      ></script>
-      <base target="_blank" />
-    </head>
-    <body>
-      {children}
-      <ScrollRestoration />
-      <Scripts />
-    </body>
-  </html>
-);
+const LoaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+`;
+
+export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
+  useAsync(() => applicationInitializer.initialize(), []);
+
+  const signedIn = useStore(authenticationPresenter.signedIn);
+  const navigate = useNavigate();
+  const { location } = useNavigation();
+
+  useAsync(async () => {
+    await navigate(signedIn ? "/documents" : "/");
+  }, []);
+
+  return (
+    <html lang="en">
+      <head>
+        <Meta />
+        <Links />
+        <script
+          data-domain="notes.code2d.org"
+          defer
+          src="https://plausible.io/js/script.js"
+        ></script>
+        <base target="_blank" />
+      </head>
+      <body>
+        {location ? (
+          <LoaderContainer>
+            <Loader />
+          </LoaderContainer>
+        ) : (
+          children
+        )}
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
+  );
+};
 
 export default (): JSX.Element => <Outlet />;

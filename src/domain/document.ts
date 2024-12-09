@@ -1,5 +1,5 @@
 import markdownParser from "prettier/parser-markdown.js";
-import { format } from "prettier/standalone.js";
+import { format } from "prettier/standalone";
 
 export interface Document {
   id: string;

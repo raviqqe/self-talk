@@ -1,14 +1,14 @@
 import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
+import { useAsync } from "@raviqqe/react-hooks";
 import { defaultImport } from "default-import";
 import { useEffect, useState } from "react";
 import defaultUseInfiniteScroll from "react-infinite-scroll-hook";
-import { PulseLoader } from "react-spinners";
-import { useAsync, usePrevious } from "react-use";
+import { usePrevious } from "react-use";
 import { documentLister } from "../../main/document-lister.js";
 import { documentPresenter } from "../../main/document-presenter.js";
 import { Document } from "./Document.js";
-import { white } from "./style/colors.js";
+import { Loader } from "./Loader.js";
 
 const useInfiniteScroll = defaultImport(defaultUseInfiniteScroll);
 
@@ -69,7 +69,7 @@ export const DocumentList = (): JSX.Element => {
       ))}
       {!done && (
         <LoaderContainer ref={ref}>
-          <PulseLoader color={white} />
+          <Loader />
         </LoaderContainer>
       )}
     </Container>

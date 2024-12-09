@@ -1,9 +1,9 @@
 import { styled } from "@linaria/react";
 import { compact } from "es-toolkit";
 import { useCallback, useState } from "react";
-import { PulseLoader } from "react-spinners";
 import { textFileInserter } from "../../main/text-file-inserter.js";
 import { FileInput } from "./FileInput.js";
+import { Loader } from "./Loader.js";
 import { TextArea } from "./TextArea.js";
 import { white } from "./style/colors.js";
 import { boxShadow } from "./style.js";
@@ -63,7 +63,7 @@ export const MarkdownTextArea = ({
 
   return loading ? (
     <LoaderContainer>
-      <PulseLoader color={white} />
+      <Loader />
     </LoaderContainer>
   ) : (
     <Container>
