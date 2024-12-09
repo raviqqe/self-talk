@@ -1,6 +1,5 @@
 import "@fontsource/chelsea-market";
 import "@fontsource/roboto";
-import { configuration } from "../configuration.js";
 import { type ReactNode } from "react";
 import {
   Links,
@@ -11,6 +10,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { configuration } from "../configuration.js";
 
 export const meta: MetaFunction = () => [
   {
@@ -25,28 +25,28 @@ export const meta: MetaFunction = () => [
     httpEquiv: "content-language",
   },
   {
-    property: "og:title",
     content: configuration.title,
+    property: "og:title",
   },
   {
-    property: "og:description",
     content: configuration.description,
+    property: "og:description",
   },
   {
-    property: "og:type",
     content: "website",
+    property: "og:type",
   },
   {
-    property: "og:url",
     content: "https://notes.code2d.org",
+    property: "og:url",
   },
   {
-    property: "og:image",
     content: "https://notes.code2d.org/icon.svg",
+    property: "og:image",
   },
   {
-    name: "twitter:card",
     content: "summary",
+    name: "twitter:card",
   },
   {
     title: configuration.title,
@@ -70,8 +70,8 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => (
       <Meta />
       <Links />
       <script
-        defer
         data-domain="notes.code2d.org"
+        defer
         src="https://plausible.io/js/script.js"
       ></script>
       <base target="_blank" />
