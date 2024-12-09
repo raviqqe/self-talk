@@ -46,11 +46,11 @@ export const meta: MetaFunction = () => [
     property: "og:type",
   },
   {
-    content: "https://notes.code2d.org",
+    content: `https://${configuration.domain}`,
     property: "og:url",
   },
   {
-    content: "https://notes.code2d.org/icon.svg",
+    content: `https://${configuration.domain}/icon.svg`,
     property: "og:image",
   },
   {
@@ -99,7 +99,7 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
         <Meta />
         <Links />
         <script
-          data-domain="notes.code2d.org"
+          data-domain={configuration.domain}
           defer
           src="https://plausible.io/js/script.js"
         ></script>

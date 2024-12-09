@@ -1,6 +1,7 @@
 {
   "title": "SelfTalk",
   "description": "Note-taking app that looks like the messaging app",
+  "domain": "notes.code2d.org",
   "firebase": {
     "apiKey": "AIzaSyCp_dI0Z2ZfyhlFkvdoH7uvXshwlG6wTTw",
     "authDomain": "self-talk-3097a.firebaseapp.com",
