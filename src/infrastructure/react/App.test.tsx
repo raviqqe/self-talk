@@ -1,8 +1,10 @@
 import { act, render, waitFor } from "@testing-library/react";
+import { atom } from "nanostores";
 import { beforeEach, expect, it, vi } from "vitest";
 import { applicationInitializer } from "../../main/application-initializer.js";
+import { authenticationPresenter } from "../../main/authentication-presenter.js";
 import { documentLister } from "../../main/document-lister.js";
-import { App, type Props } from "./App.js";
+import { App } from "./App.js";
 
 const initialize = vi.spyOn(applicationInitializer, "initialize");
 const listDocuments = vi.spyOn(documentLister, "list");
@@ -12,13 +14,12 @@ beforeEach(() => {
   listDocuments.mockReset().mockResolvedValue(undefined);
 });
 
-const props: Props = {
-  documents: null,
-  signedIn: null,
-};
-
 it("renders before a user signs in", async () => {
-  const result = await act(() => render(<App {...props} signedIn={null} />));
+  vi.spyOn(authenticationPresenter, "signedIn", "get").mockReturnValue(
+    atom(null),
+  );
+
+  const result = await act(() => render(<App />));
 
   expect(result.container).toMatchSnapshot();
 
@@ -26,7 +27,11 @@ it("renders before a user signs in", async () => {
 });
 
 it("renders after a user signs in", async () => {
-  const result = await act(() => render(<App {...props} signedIn />));
+  vi.spyOn(authenticationPresenter, "signedIn", "get").mockReturnValue(
+    atom(true),
+  );
+
+  const result = await act(() => render(<App />));
 
   expect(result.container).toMatchSnapshot();
 
@@ -35,7 +40,11 @@ it("renders after a user signs in", async () => {
 });
 
 it("renders after a user signs out", async () => {
-  const result = await act(() => render(<App {...props} signedIn={false} />));
+  vi.spyOn(authenticationPresenter, "signedIn", "get").mockReturnValue(
+    atom(false),
+  );
+
+  const result = await act(() => render(<App />));
 
   expect(result.container).toMatchSnapshot();
 

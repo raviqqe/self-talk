@@ -1,3 +1,3 @@
-import { DocumentRenderer } from "../infrastructure/document-renderer.js";
+import { NanostoresDocumentPresenter } from "../infrastructure/nanostores-document-presenter.js";
 
-export const documentPresenter = new DocumentRenderer();
+export const documentPresenter = new NanostoresDocumentPresenter();

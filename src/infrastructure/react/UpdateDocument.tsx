@@ -14,7 +14,7 @@ const StyledCircleButton = styled(CircleButton)`
   margin-left: -0.5rem;
 `;
 
-export interface Props {
+interface Props {
   className?: string;
   document: Document;
   onSubmit: (document: Document) => Promise<void>;

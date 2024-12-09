@@ -1,6 +1,6 @@
 import { it } from "vitest";
-import { ReactRenderer } from "./react.js";
+import { render } from "./react.js";
 
 it("renders", () => {
-  new ReactRenderer(document.createElement("div"), []).render();
+  render(document.createElement("div"));
 });
