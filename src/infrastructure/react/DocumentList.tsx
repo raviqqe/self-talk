@@ -35,9 +35,10 @@ export const DocumentList = (): JSX.Element => {
     const documents = documentPresenter.documents.get();
     await documentLister.listMore();
 
-    if (documents) {
-      setDone(documentPresenter.documents.get()?.length === documents.length);
-    }
+    setDone(
+      !!documents &&
+        documentPresenter.documents.get()?.length === documents.length,
+    );
   });
 
   return (
