@@ -3,7 +3,5 @@ import { expect, it } from "vitest";
 import { SignOut } from "./SignOut.js";
 
 it("renders", () => {
-  expect(
-    render(<SignOut signOut={() => {}} />).container.firstChild,
-  ).toMatchSnapshot();
+  expect(render(<SignOut />).container.firstChild).toMatchSnapshot();
 });

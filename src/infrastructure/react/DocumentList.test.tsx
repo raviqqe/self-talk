@@ -1,6 +1,8 @@
 import { act, render, waitFor } from "@testing-library/react";
+import { atom } from "nanostores";
 import { beforeEach, expect, it, vi } from "vitest";
 import { documentLister } from "../../main/document-lister.js";
+import { documentPresenter } from "../../main/document-presenter.js";
 import { DocumentList } from "./DocumentList.js";
 
 let wait = async () => {};
@@ -14,9 +16,11 @@ beforeEach(() => {
 });
 
 it("renders", async () => {
-  const result = await act(async () =>
-    render(<DocumentList documents={[{ id: "id", text: "text" }]} />),
+  vi.spyOn(documentPresenter, "documents", "get").mockReturnValue(
+    atom([{ id: "id", text: "text" }]),
   );
+
+  const result = await act(async () => render(<DocumentList />));
 
   expect(result.container.firstChild).toMatchSnapshot();
 
@@ -24,7 +28,9 @@ it("renders", async () => {
 });
 
 it("renders with no documents", async () => {
-  const result = await act(async () => render(<DocumentList documents={[]} />));
+  vi.spyOn(documentPresenter, "documents", "get").mockReturnValue(atom([]));
+
+  const result = await act(async () => render(<DocumentList />));
 
   expect(result.container.firstChild).toMatchSnapshot();
 
@@ -32,9 +38,9 @@ it("renders with no documents", async () => {
 });
 
 it("renders with documents not loaded yet", async () => {
-  const result = await act(async () =>
-    render(<DocumentList documents={null} />),
-  );
+  vi.spyOn(documentPresenter, "documents", "get").mockReturnValue(atom(null));
+
+  const result = await act(async () => render(<DocumentList />));
 
   expect(result.container.firstChild).toMatchSnapshot();
 

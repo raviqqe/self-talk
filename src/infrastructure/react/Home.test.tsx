@@ -5,9 +5,11 @@ import {
   screen,
   waitFor,
 } from "@testing-library/react";
+import { atom } from "nanostores";
 import { beforeEach, expect, it, vi } from "vitest";
 import { documentCreator } from "../../main/document-creator.js";
 import { documentLister } from "../../main/document-lister.js";
+import { documentPresenter } from "../../main/document-presenter.js";
 import { documentUpdater } from "../../main/document-updater.js";
 import { Home } from "./Home.js";
 
@@ -17,7 +19,9 @@ beforeEach(() => {
 });
 
 it("renders", async () => {
-  const result = await act(async () => render(<Home documents={[]} />));
+  vi.spyOn(documentPresenter, "documents", "get").mockReturnValue(atom([]));
+
+  const result = await act(async () => render(<Home />));
 
   await waitFor(() => expect(screen.getByRole("textbox")).toBeTruthy());
 
@@ -25,14 +29,12 @@ it("renders", async () => {
 });
 
 it("creates a document", async () => {
+  vi.spyOn(documentPresenter, "documents", "get").mockReturnValue(atom([]));
   const createDocument = vi
     .spyOn(documentCreator, "create")
     .mockImplementation(async () => {});
 
-  act(() => {
-    render(<Home documents={[]} />);
-  });
-
+  await act(async () => render(<Home />));
   await waitFor(() => expect(screen.getByRole("textbox")).toBeTruthy());
 
   act(() => {
@@ -47,13 +49,15 @@ it("creates a document", async () => {
 });
 
 it("updates a document", async () => {
+  vi.spyOn(documentPresenter, "documents", "get").mockReturnValue(
+    atom([{ id: "", text: "" }]),
+  );
+
   const updateDocument = vi
     .spyOn(documentUpdater, "update")
     .mockImplementation(async () => {});
 
-  const result = await act(async () =>
-    render(<Home documents={[{ id: "", text: "" }]} />),
-  );
+  const result = await act(async () => render(<Home />));
 
   await waitFor(() => expect(result.getByLabelText("Edit")).toBeTruthy());
 
