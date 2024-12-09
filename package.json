@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "react-router start",
+    "start": "react-router dev",
     "build": "react-router typegen && tsc && react-router build",
     "lint": "eslint src",
     "test": "vitest --coverage",
