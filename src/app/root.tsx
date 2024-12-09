@@ -19,6 +19,7 @@ import { configuration } from "../configuration.js";
 import { Loader } from "../infrastructure/react/Loader.js";
 import { applicationInitializer } from "../main/application-initializer.js";
 import { authenticationPresenter } from "../main/authentication-presenter.js";
+import { globalStyle } from "../infrastructure/react/style.js";
 
 export const meta: MetaFunction = () => [
   {
@@ -89,7 +90,7 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
 
   useAsync(async () => {
     await navigate(signedIn ? "/documents" : "/");
-  }, []);
+  }, [signedIn]);
 
   return (
     <html lang="en">
@@ -102,6 +103,7 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
           src="https://plausible.io/js/script.js"
         ></script>
         <base target="_blank" />
+        <style className={globalStyle} />
       </head>
       <body>
         {location ? (
