@@ -11,12 +11,22 @@ export class NanostoresDocumentPresenter implements DocumentPresenter {
 
   public presentMoreDocuments(documents: Document[]): void {
     const oldDocuments = this.documents.get();
-    this.renderDocuments(oldDocuments && [...oldDocuments, ...documents]);
+
+    if (!oldDocuments) {
+      return;
+    }
+
+    this.renderDocuments([...oldDocuments, ...documents]);
   }
 
   public presentNewDocument(document: Document): void {
     const oldDocuments = this.documents.get();
-    this.renderDocuments(oldDocuments && [document, ...oldDocuments]);
+
+    if (!oldDocuments) {
+      return;
+    }
+
+    this.renderDocuments([document, ...oldDocuments]);
   }
 
   public presentUpdatedDocument(updatedDocument: Document): void {
