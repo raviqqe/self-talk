@@ -69,12 +69,14 @@ export const MarkdownTextArea = ({
     <Container>
       <TextArea
         onChange={({ target }) => onChange(target.value)}
-        onDrop={(event) =>
-          uploadFiles(
+        onDragOver={(event) => event.preventDefault()}
+        onDrop={async (event) => {
+          event.preventDefault();
+          await uploadFiles(
             compact([...event.dataTransfer.files]),
             event.currentTarget.selectionStart,
-          )
-        }
+          );
+        }}
         onPaste={(event) =>
           uploadFiles(
             compact(
