@@ -2,9 +2,10 @@ import { styled } from "@linaria/react";
 import { PulseLoader } from "react-spinners";
 import { useAsync } from "react-use";
 import { applicationInitializer } from "../../main/application-initializer.js";
-import { Home, type Props as HomeProps } from "./Home.js";
+import { Home } from "./Home.js";
 import { Landing } from "./Landing.js";
 import { white } from "./style/colors.js";
+import { useStore } from "@nanostores/react";
 
 const LoaderContainer = styled.div`
   display: flex;
@@ -14,19 +15,16 @@ const LoaderContainer = styled.div`
   width: 100vw;
 `;
 
-export interface Props extends HomeProps {
-  signedIn: boolean | null;
-}
-
-export const App = ({ documents, signedIn, ...props }: Props): JSX.Element => {
+export const App = (): JSX.Element => {
   useAsync(() => applicationInitializer.initialize(), []);
+  const signedIn = useStore();
 
   return signedIn === null ? (
     <LoaderContainer>
       <PulseLoader color={white} />
     </LoaderContainer>
   ) : signedIn ? (
-    <Home {...props} documents={documents} />
+    <Home />
   ) : (
     <Landing />
   );
