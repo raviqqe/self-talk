@@ -1,10 +1,10 @@
 import { act, render, waitFor } from "@testing-library/react";
+import { atom } from "nanostores";
 import { beforeEach, expect, it, vi } from "vitest";
 import { applicationInitializer } from "../../main/application-initializer.js";
+import { authenticationPresenter } from "../../main/authentication-presenter.js";
 import { documentLister } from "../../main/document-lister.js";
 import { App } from "./App.js";
-import { authenticationPresenter } from "../../main/authentication-presenter.js";
-import { atom } from "nanostores";
 
 const initialize = vi.spyOn(applicationInitializer, "initialize");
 const listDocuments = vi.spyOn(documentLister, "list");

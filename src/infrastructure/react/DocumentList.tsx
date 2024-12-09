@@ -1,15 +1,14 @@
 import { styled } from "@linaria/react";
+import { useStore } from "@nanostores/react";
 import { defaultImport } from "default-import";
 import { useEffect, useState } from "react";
 import defaultUseInfiniteScroll from "react-infinite-scroll-hook";
 import { PulseLoader } from "react-spinners";
 import { useAsync, usePrevious } from "react-use";
-import type * as domain from "../../domain.js";
 import { documentLister } from "../../main/document-lister.js";
+import { documentPresenter } from "../../main/document-presenter.js";
 import { Document } from "./Document.js";
 import { white } from "./style/colors.js";
-import { useStore } from "@nanostores/react";
-import { documentPresenter } from "../../main/document-presenter.js";
 
 const useInfiniteScroll = defaultImport(defaultUseInfiniteScroll);
 
@@ -31,11 +30,7 @@ const StyledDocument = styled(Document)`
   margin: 0.5em;
 `;
 
-export interface Props {
-  documents: domain.Document[] | null;
-}
-
-export const DocumentList = ({ documents }: Props): JSX.Element => {
+export const DocumentList = (): JSX.Element => {
   const documents = useStore(documentPresenter.documents);
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
