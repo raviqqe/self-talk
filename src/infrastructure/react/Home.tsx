@@ -1,5 +1,4 @@
 import { styled } from "@linaria/react";
-import { signOutManager } from "../../main/sign-out-manager.js";
 import { CreateDocument } from "./CreateDocument.js";
 import { DocumentList } from "./DocumentList.js";
 import { SignOut } from "./SignOut.js";
@@ -51,7 +50,7 @@ export const Home = (): JSX.Element => (
       <CreateDocumentBackground />
     </CreateDocumentContainer>
     <SignOutContainer>
-      <SignOut signOut={() => signOutManager.signOut()} />
+      <SignOut />
     </SignOutContainer>
   </Container>
 );
