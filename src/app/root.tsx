@@ -74,11 +74,10 @@ export const links: LinksFunction = () => [
 ];
 
 const LoaderContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
 `;
 
 export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
