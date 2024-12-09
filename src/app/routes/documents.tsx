@@ -1,3 +1,4 @@
 import { Home } from "../../infrastructure/react/Home.js";
+import { type JSX } from "react";
 
-export default () => <Home />;
+export default (): JSX.Element => <Home />;

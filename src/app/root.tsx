@@ -17,9 +17,9 @@ import {
 } from "react-router";
 import { configuration } from "../configuration.js";
 import { Loader } from "../infrastructure/react/Loader.js";
+import { globalStyle } from "../infrastructure/react/style.js";
 import { applicationInitializer } from "../main/application-initializer.js";
 import { authenticationPresenter } from "../main/authentication-presenter.js";
-import { globalStyle } from "../infrastructure/react/style.js";
 
 export const meta: MetaFunction = () => [
   {
@@ -82,14 +82,15 @@ const LoaderContainer = styled.div`
 `;
 
 export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
-  useAsync(() => applicationInitializer.initialize(), []);
-
   const signedIn = useStore(authenticationPresenter.signedIn);
-  const navigate = useNavigate();
+  useAsync(() => applicationInitializer.initialize(), []);
   const { location } = useNavigation();
+  const navigate = useNavigate();
 
   useAsync(async () => {
-    await navigate(signedIn ? "/documents" : "/");
+    if (typeof signedIn === "boolean") {
+      await navigate(signedIn ? "/documents" : "/");
+    }
   }, [signedIn]);
 
   return (
@@ -106,7 +107,7 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
         <style className={globalStyle} />
       </head>
       <body>
-        {location ? (
+        {location || signedIn === null ? (
           <LoaderContainer>
             <Loader />
           </LoaderContainer>

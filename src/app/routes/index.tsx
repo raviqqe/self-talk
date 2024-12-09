@@ -1,3 +1,4 @@
 import { Landing } from "../../infrastructure/react/Landing.js";
+import { type JSX } from "react";
 
-export default () => <Landing />;
+export default (): JSX.Element => <Landing />;

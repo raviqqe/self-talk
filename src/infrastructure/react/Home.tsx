@@ -1,4 +1,5 @@
 import { styled } from "@linaria/react";
+import { type JSX } from "react";
 import { CreateDocument } from "./CreateDocument.js";
 import { DocumentList } from "./DocumentList.js";
 import { SignOut } from "./SignOut.js";
@@ -42,7 +43,7 @@ const SignOutContainer = styled.div`
   right: 0.5em;
 `;
 
-export const Home = (): JSX.Element => (
+export const Home = (): JSX.Element | null => (
   <Container>
     <DocumentList />
     <CreateDocumentContainer>
