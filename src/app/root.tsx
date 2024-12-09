@@ -1,6 +1,6 @@
 import "@fontsource/chelsea-market";
 import "@fontsource/roboto";
-import configuration from "../configuration.json" with { type: "json" };
+import { configuration } from "../configuration.js";
 import { type ReactNode } from "react";
 import {
   Links,
