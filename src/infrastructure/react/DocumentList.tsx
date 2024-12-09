@@ -34,10 +34,9 @@ export const DocumentList = (): JSX.Element => {
   const ref = useInfiniteScroll<HTMLDivElement>(async () => {
     const documents = documentPresenter.documents.get();
     await documentLister.listMore();
-    const newDocuments = documentPresenter.documents.get();
 
-    if (newDocuments && documents) {
-      setDone(newDocuments.length === documents.length);
+    if (documents) {
+      setDone(documentPresenter.documents.get()?.length === documents.length);
     }
   });
 
