@@ -19,7 +19,11 @@ const StyledCircleButton = styled(CircleButton)`
   margin-left: -0.5rem;
 `;
 
-export const CreateDocument = (): JSX.Element => {
+interface Props {
+  className?: string;
+}
+
+export const CreateDocument = ({ className }: Props): JSX.Element => {
   const [text, setText] = useState("");
   const onSubmit = async (): Promise<void> => {
     setText("");
@@ -27,7 +31,7 @@ export const CreateDocument = (): JSX.Element => {
   };
 
   return (
-    <Container>
+    <Container className={className}>
       <StyledMarkdownTextArea
         onChange={setText}
         onSubmit={onSubmit}

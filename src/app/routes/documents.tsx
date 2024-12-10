@@ -18,12 +18,13 @@ const Container = styled.div`
   }
 `;
 
+const StyledCreateDocument = styled(CreateDocument)`
+  position: relative;
+  z-index: 1;
+`;
+
 const CreateDocumentContainer = styled.div`
   position: relative;
-
-  > * {
-    z-index: 1;
-  }
 `;
 
 const CreateDocumentBackground = styled.div`
@@ -47,8 +48,8 @@ export default (): JSX.Element | null => (
   <Container>
     <DocumentList />
     <CreateDocumentContainer>
-      <CreateDocument />
       <CreateDocumentBackground />
+      <StyledCreateDocument />
     </CreateDocumentContainer>
     <SignOutContainer>
       <SignOut />
