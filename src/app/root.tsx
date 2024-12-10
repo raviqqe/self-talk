@@ -74,20 +74,16 @@ export const links: LinksFunction = () => [
 ];
 
 const Body = styled.body`
-  :global() {
-    body {
-      background: ${yellow};
-      margin: 0;
-      padding: 0;
-      color: ${black};
-      font-family: Roboto, sans-serif;
-      line-height: 1.4;
-      font-size: 16px;
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
-    }
-  }
+  background: ${yellow};
+  margin: 0;
+  padding: 0;
+  color: ${black};
+  font-family: Roboto, sans-serif;
+  line-height: 1.4;
+  font-size: 16px;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 `;
 
 const LoaderContainer = styled.div`
@@ -120,7 +116,6 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
           src="https://plausible.io/js/script.js"
         ></script>
         <base target="_blank" />
-        <style className={globalStyle} />
       </head>
       <Body>
         {location || signedIn === null ? (

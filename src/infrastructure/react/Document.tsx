@@ -6,8 +6,7 @@ import { documentUpdater } from "../../main/document-updater.js";
 import { IconButton } from "./IconButton.js";
 import { Markdown } from "./Markdown.js";
 import { UpdateDocument } from "./UpdateDocument.js";
-import { white } from "./style.js";
-import { boxShadow } from "./style.js";
+import { boxShadow, white } from "./style.js";
 
 const Container = styled.div`
   ${boxShadow};

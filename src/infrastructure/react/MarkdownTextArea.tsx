@@ -5,8 +5,7 @@ import { textFileInserter } from "../../main/text-file-inserter.js";
 import { FileInput } from "./FileInput.js";
 import { Loader } from "./Loader.js";
 import { TextArea } from "./TextArea.js";
-import { white } from "./style.js";
-import { boxShadow } from "./style.js";
+import { boxShadow, white } from "./style.js";
 
 const Container = styled.div`
   flex: 1;
