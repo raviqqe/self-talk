@@ -44,7 +44,7 @@ const GitHubLink = styled.a`
   line-height: 0ex;
 `;
 
-export const Landing = (): JSX.Element => (
+export default (): JSX.Element => (
   <Container>
     <Title>
       <White>Self</White>

@@ -43,7 +43,7 @@ const SignOutContainer = styled.div`
   right: 0.5em;
 `;
 
-export const Home = (): JSX.Element | null => (
+export default (): JSX.Element | null => (
   <Container>
     <DocumentList />
     <CreateDocumentContainer>
