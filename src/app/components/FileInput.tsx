@@ -1,7 +1,7 @@
 import { styled } from "@linaria/react";
 import { type AriaAttributes } from "react";
 import { MdAttachFile } from "react-icons/md";
-import { grey } from "./style.js";
+import { grey } from "../style.js";
 
 const Container = styled.div`
   position: relative;
