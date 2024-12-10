@@ -17,9 +17,9 @@ import {
 } from "react-router";
 import { configuration } from "../configuration.js";
 import { Loader } from "../infrastructure/react/Loader.js";
+import { black, yellow } from "../infrastructure/react/style.js";
 import { applicationInitializer } from "../main/application-initializer.js";
 import { authenticationPresenter } from "../main/authentication-presenter.js";
-import { black, yellow } from "../infrastructure/react/style.js";
 
 export const meta: MetaFunction = () => [
   {
