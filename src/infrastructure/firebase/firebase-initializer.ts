@@ -19,6 +19,12 @@ export class FirebaseInitializer {
   public initialize(): FirebaseApp {
     const app = initializeApp(this.configuration);
 
+    initializeFirestore(app, {
+      localCache: persistentLocalCache({
+        tabManager: persistentMultipleTabManager(),
+      }),
+    });
+
     return app;
   }
 }
