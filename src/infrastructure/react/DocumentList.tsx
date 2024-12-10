@@ -1,7 +1,7 @@
 import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
 import { useAsync, useInfiniteScroll } from "@raviqqe/react-hooks";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { documentLister } from "../../main/document-lister.js";
 import { documentPresenter } from "../../main/document-presenter.js";
 import { Document } from "./Document.js";
@@ -31,15 +31,14 @@ export const DocumentList = (): JSX.Element => {
 
   useAsync(() => documentLister.list(), []);
 
-  const ref = useInfiniteScroll<HTMLDivElement>(async () => {
-    const documents = documentPresenter.documents.get();
+  const listMore = useCallback(async () => {
     await documentLister.listMore();
 
-    setDone(
-      !!documents &&
-        documentPresenter.documents.get()?.length === documents.length,
-    );
-  });
+    if (documents) {
+      setDone(documentPresenter.documents.get()?.length === documents.length);
+    }
+  }, [documents]);
+  const ref = useInfiniteScroll<HTMLDivElement>(listMore);
 
   return (
     <Container>
