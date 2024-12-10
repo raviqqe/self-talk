@@ -1,9 +1,9 @@
 import { styled } from "@linaria/react";
 import { type JSX } from "react";
+import { darkYellow } from "../style.js";
 import { CreateDocument } from "./CreateDocument.js";
 import { DocumentList } from "./DocumentList.js";
 import { SignOut } from "./SignOut.js";
-import { darkYellow } from "../style.js";
 
 const Container = styled.div`
   display: flex;

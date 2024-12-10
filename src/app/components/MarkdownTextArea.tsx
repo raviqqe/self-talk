@@ -2,10 +2,10 @@ import { styled } from "@linaria/react";
 import { compact } from "es-toolkit";
 import { useCallback, useState } from "react";
 import { textFileInserter } from "../../main/text-file-inserter.js";
+import { boxShadow, white } from "../style.js";
 import { FileInput } from "./FileInput.js";
 import { Loader } from "./Loader.js";
 import { TextArea } from "./TextArea.js";
-import { boxShadow, white } from "../style.js";
 
 const Container = styled.div`
   flex: 1;
