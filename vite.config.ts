@@ -1,11 +1,11 @@
+import { reactRouter } from "@react-router/dev/vite";
 import wywInJs from "@wyw-in-js/vite";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
   plugins: [
-    react(),
+    reactRouter(),
     (wywInJs as unknown as Function)({
       include: ["src/**/*.{ts,tsx}"],
       babelOptions: {
@@ -30,4 +30,7 @@ export default defineConfig({
       },
     }),
   ],
+  ssr: {
+    noExternal: ["react-spinners"],
+  },
 });

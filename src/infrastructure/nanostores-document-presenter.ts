@@ -3,7 +3,7 @@ import { type DocumentPresenter } from "../application/document-presenter.js";
 import { type Document } from "../domain/document.js";
 
 export class NanostoresDocumentPresenter implements DocumentPresenter {
-  public documents = atom<Document[] | null>(null);
+  public readonly documents = atom<Document[] | null>(null);
 
   public presentDocuments(documents: Document[]): void {
     this.renderDocuments(documents);
