@@ -17,9 +17,9 @@ import {
 } from "react-router";
 import { configuration } from "../configuration.js";
 import { Loader } from "../infrastructure/react/Loader.js";
-import { globalStyle } from "../infrastructure/react/style.js";
 import { applicationInitializer } from "../main/application-initializer.js";
 import { authenticationPresenter } from "../main/authentication-presenter.js";
+import { black, yellow } from "../infrastructure/react/style/colors.js";
 
 export const meta: MetaFunction = () => [
   {
@@ -73,6 +73,23 @@ export const links: LinksFunction = () => [
   },
 ];
 
+const Body = styled.body`
+  :global() {
+    body {
+      background: ${yellow};
+      margin: 0;
+      padding: 0;
+      color: ${black};
+      font-family: Roboto, sans-serif;
+      line-height: 1.4;
+      font-size: 16px;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+    }
+  }
+`;
+
 const LoaderContainer = styled.div`
   display: grid;
   place-items: center;
@@ -105,7 +122,7 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
         <base target="_blank" />
         <style className={globalStyle} />
       </head>
-      <body>
+      <Body>
         {location || signedIn === null ? (
           <LoaderContainer>
             <Loader />
@@ -115,7 +132,7 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
         )}
         <ScrollRestoration />
         <Scripts />
-      </body>
+      </Body>
     </html>
   );
 };
