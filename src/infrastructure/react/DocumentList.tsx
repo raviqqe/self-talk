@@ -32,11 +32,13 @@ export const DocumentList = (): JSX.Element => {
   useAsync(() => documentLister.list(), []);
 
   const listMore = useCallback(async () => {
+    if (!documents) {
+      return;
+    }
+
     await documentLister.listMore();
 
-    if (documents) {
-      setDone(documentPresenter.documents.get()?.length === documents.length);
-    }
+    setDone(documentPresenter.documents.get()?.length === documents.length);
   }, [documents]);
   const ref = useInfiniteScroll<HTMLDivElement>(listMore);
 
