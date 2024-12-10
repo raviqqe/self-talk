@@ -13,7 +13,7 @@
         "headers": [
           {
             "key": "content-security-policy",
-            "value": "default-src 'self'; font-src data: https:; connect-src plausible.io; img-src https:; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' apis.google.com plausible.io; style-src 'self' 'unsafe-inline'"
+            "value": "default-src 'self'; font-src data: https:; connect-src 'self' plausible.io; img-src https:; frame-ancestors 'none'; script-src 'self' 'unsafe-inline' apis.google.com plausible.io; style-src 'self' 'unsafe-inline'"
           },
           {
             "key": "strict-transport-security",
