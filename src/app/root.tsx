@@ -3,7 +3,7 @@ import "@fontsource/roboto";
 import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
 import { useAsync } from "@raviqqe/react-hooks";
-import { type ReactNode } from "react";
+import { type JSX, type ReactNode } from "react";
 import {
   Links,
   type LinksFunction,
