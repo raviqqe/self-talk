@@ -3,7 +3,10 @@ import { afterEach, beforeAll, vi } from "vitest";
 
 beforeAll(() => {
   Object.defineProperty(document, "fonts", {
-    value: { addEventListener() {}, removeEventListener() {} },
+    value: {
+      addEventListener() {},
+      removeEventListener() {},
+    },
   });
 
   vi.stubGlobal(
@@ -19,4 +22,5 @@ beforeAll(() => {
 
 afterEach(() => {
   cleanup();
+  vi.restoreAllMocks();
 });
