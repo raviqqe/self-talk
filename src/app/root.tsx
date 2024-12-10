@@ -3,7 +3,7 @@ import "@fontsource/roboto";
 import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
 import { useAsync } from "@raviqqe/react-hooks";
-import { type ReactNode } from "react";
+import { type JSX, type ReactNode } from "react";
 import {
   Links,
   type LinksFunction,
@@ -17,7 +17,7 @@ import {
 } from "react-router";
 import { configuration } from "../configuration.js";
 import { Loader } from "../infrastructure/react/Loader.js";
-import { globalStyle } from "../infrastructure/react/style.js";
+import { black, yellow } from "../infrastructure/react/style.js";
 import { applicationInitializer } from "../main/application-initializer.js";
 import { authenticationPresenter } from "../main/authentication-presenter.js";
 
@@ -73,6 +73,19 @@ export const links: LinksFunction = () => [
   },
 ];
 
+const Body = styled.body`
+  background: ${yellow};
+  margin: 0;
+  padding: 0;
+  color: ${black};
+  font-family: Roboto, sans-serif;
+  line-height: 1.4;
+  font-size: 16px;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+`;
+
 const LoaderContainer = styled.div`
   display: grid;
   place-items: center;
@@ -103,9 +116,8 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
           src="https://plausible.io/js/script.js"
         ></script>
         <base target="_blank" />
-        <style className={globalStyle} />
       </head>
-      <body>
+      <Body>
         {location || signedIn === null ? (
           <LoaderContainer>
             <Loader />
@@ -115,7 +127,7 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
         )}
         <ScrollRestoration />
         <Scripts />
-      </body>
+      </Body>
     </html>
   );
 };

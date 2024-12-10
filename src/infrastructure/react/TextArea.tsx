@@ -10,7 +10,7 @@ import {
 import TextareaAutosize, {
   type TextareaAutosizeProps,
 } from "react-textarea-autosize";
-import { grey } from "./style/colors.js";
+import { grey } from "./style.js";
 
 const NoStyleTextareaAutosize = forwardRef(
   (

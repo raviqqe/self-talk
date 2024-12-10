@@ -3,7 +3,7 @@ import css from "noop-tag";
 import { type DetailedHTMLProps, type ImgHTMLAttributes } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { darkGrey, grey, red, white } from "./style/colors.js";
+import { darkGrey, grey, red, white } from "./style.js";
 
 const Container = styled.div`
   cursor: text;
