@@ -8,7 +8,7 @@ const wyw = defaultImport(defaultWyw);
 
 export default defineConfig({
   esbuild: {
-    legalComments: "linked",
+    legalComments: "external",
   },
   plugins: [
     reactRouter(),
