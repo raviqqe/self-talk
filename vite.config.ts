@@ -7,6 +7,9 @@ import { defaultImport } from "default-import";
 const wyw = defaultImport(defaultWyw);
 
 export default defineConfig({
+  esbuild: {
+    legalComments: "external",
+  },
   plugins: [
     reactRouter(),
     wyw({
