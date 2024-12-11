@@ -16,7 +16,7 @@ import {
   setDoc,
   startAfter,
   updateDoc,
-} from "firebase/firestore";
+} from "firebase/firestore/lite";
 import { type DocumentRepository } from "../../application/document-repository.js";
 import { type Document } from "../../domain/document.js";
 
