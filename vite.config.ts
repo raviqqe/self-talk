@@ -1,12 +1,15 @@
 import { reactRouter } from "@react-router/dev/vite";
-import wywInJs from "@wyw-in-js/vite";
+import defaultWyw from "@wyw-in-js/vite";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
+import { defaultImport } from "default-import";
+
+const wyw = defaultImport(defaultWyw);
 
 export default defineConfig({
   plugins: [
     reactRouter(),
-    (wywInJs as unknown as Function)({
+    wyw({
       include: ["src/**/*.{ts,tsx}"],
       babelOptions: {
         generatorOpts: {
