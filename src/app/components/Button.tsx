@@ -1,9 +1,9 @@
 import { styled } from "@linaria/react";
-import { boxShadow, lightGrey, red, white } from "../style.js";
+import { boxShadow, darkGrey, red, white } from "../style.js";
 
 export const Button = styled.button<{ secondary?: boolean }>`
   ${boxShadow};
-  background: ${({ secondary }) => (secondary ? lightGrey : red)};
+  background: ${({ secondary }) => (secondary ? darkGrey : red)};
   display: flex;
   justify-content: center;
   align-items: center;
