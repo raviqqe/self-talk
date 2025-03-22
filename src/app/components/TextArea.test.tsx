@@ -30,6 +30,18 @@ it("triggers a submit callback on Ctrl + Enter", () => {
   expect(onSubmit.mock.calls).toHaveLength(1);
 });
 
+it("triggers a submit callback on Alt + Enter", () => {
+  const onSubmit = vi.fn();
+  const { container } = render(<TextArea onSubmit={onSubmit} />);
+
+  fireEvent.keyDown(container.firstElementChild!, {
+    altKey: true,
+    key: "Enter",
+  });
+
+  expect(onSubmit.mock.calls).toHaveLength(1);
+});
+
 it("does not trigger a submit callback on Enter", () => {
   const onSubmit = vi.fn();
   const { container } = render(<TextArea onSubmit={onSubmit} />);
