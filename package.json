@@ -50,7 +50,7 @@
     "jsdom": "^26.0.0",
     "typescript": "^5.8.2",
     "vite": "^6.2.3",
-    "vite-plugin-pwa": "^0.21.2",
+    "vite-plugin-pwa": "^1.0.0",
     "vitest": "^3.0.2"
   }
 }
