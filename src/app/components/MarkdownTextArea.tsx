@@ -1,6 +1,6 @@
 import { styled } from "@linaria/react";
 import { compact } from "es-toolkit";
-import { useCallback, useState } from "react";
+import { type JSX, useCallback, useState } from "react";
 import { textFileInserter } from "../../main/text-file-inserter.js";
 import { boxShadow, white } from "../style.js";
 import { FileInput } from "./FileInput.js";

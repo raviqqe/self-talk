@@ -1,5 +1,5 @@
 import { styled } from "@linaria/react";
-import { useState } from "react";
+import { type JSX, useState } from "react";
 import { MdSave } from "react-icons/md";
 import { type Document } from "../../domain/document.js";
 import { CircleButton } from "./CircleButton.js";

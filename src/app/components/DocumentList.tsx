@@ -1,7 +1,7 @@
 import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
 import { useAsync, useInfiniteScroll } from "@raviqqe/react-hooks";
-import { useCallback, useRef, useState } from "react";
+import { type JSX, useCallback, useRef, useState } from "react";
 import { documentLister } from "../../main/document-lister.js";
 import { documentPresenter } from "../../main/document-presenter.js";
 import { Document } from "./Document.js";
