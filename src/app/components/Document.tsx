@@ -1,5 +1,5 @@
 import { styled } from "@linaria/react";
-import { useState } from "react";
+import { type JSX, useState } from "react";
 import { MdEdit } from "react-icons/md";
 import type * as domain from "../../domain.js";
 import { documentUpdater } from "../../main/document-updater.js";

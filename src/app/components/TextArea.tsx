@@ -2,6 +2,7 @@ import { styled } from "@linaria/react";
 import {
   type ForwardedRef,
   forwardRef,
+  type JSX,
   type KeyboardEvent,
   useEffect,
   useRef,

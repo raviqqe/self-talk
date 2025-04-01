@@ -1,6 +1,10 @@
 import { styled } from "@linaria/react";
 import css from "noop-tag";
-import { type DetailedHTMLProps, type ImgHTMLAttributes } from "react";
+import {
+  type DetailedHTMLProps,
+  type ImgHTMLAttributes,
+  type JSX,
+} from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { darkGrey, grey, red, white } from "../style.js";
