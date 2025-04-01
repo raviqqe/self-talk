@@ -16,7 +16,7 @@
     "@linaria/core": "^6.3.0",
     "@linaria/react": "^6.3.0",
     "@nanostores/react": "^0.8.4",
-    "@raviqqe/react-hooks": "^0.6.1",
+    "@raviqqe/react-hooks": "^0.6.2",
     "@react-router/node": "^7.4.1",
     "@sentry/browser": "^9.10.0",
     "default-import": "^2.0.8",
