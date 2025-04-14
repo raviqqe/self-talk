@@ -47,7 +47,7 @@
     "@wyw-in-js/vite": "^0.6.0",
     "eslint": "^9.24.0",
     "firebase-tools": "^14.1.0",
-    "jsdom": "^26.0.0",
+    "jsdom": "^26.1.0",
     "typescript": "^5.8.3",
     "vite": "^6.2.6",
     "vite-plugin-pwa": "^1.0.0",
