@@ -22,7 +22,7 @@
     "default-import": "^2.0.8",
     "es-toolkit": "^1.37.2",
     "firebase": "^11.7.1",
-    "isbot": "^5.1.27",
+    "isbot": "^5.1.28",
     "nanostores": "^1.0.1",
     "noop-tag": "^2.0.1",
     "prettier": "^3.5.2",
