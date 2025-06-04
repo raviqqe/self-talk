@@ -5,17 +5,22 @@ import { type DocumentRepository } from "./document-repository.js";
 const defaultLimit = 20;
 
 export class DocumentLister {
+  private readonly documentRepository: DocumentRepository;
+  private readonly documentPresenter: DocumentPresenter;
   private iterator: AsyncIterator<Document[], void> | null = null;
 
   constructor(
-    private readonly documentRepository: DocumentRepository,
-    private readonly documentPresenter: DocumentPresenter,
-  ) {}
+    documentRepository: DocumentRepository,
+    documentPresenter: DocumentPresenter,
+  ) {
+    this.documentRepository = documentRepository;
+    this.documentPresenter = documentPresenter;
+  }
 
   public async list(): Promise<void> {
     this.iterator = this.documentRepository
       .list(defaultLimit)
-      [Symbol.asyncIterator]();
+    [Symbol.asyncIterator]();
     this.documentPresenter.presentDocuments(
       (await this.iterator.next()).value || [],
     );

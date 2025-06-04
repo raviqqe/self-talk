@@ -3,11 +3,19 @@ import { type DocumentPresenter } from "./document-presenter.js";
 import { type DocumentRepository } from "./document-repository.js";
 
 export class DocumentDeleter {
+  private readonly documentRepository: DocumentRepository;
+  private readonly documentPresenter: DocumentPresenter;
+  private readonly confirmationController: ConfirmationController;
+
   constructor(
-    private readonly documentRepository: DocumentRepository,
-    private readonly documentPresenter: DocumentPresenter,
-    private readonly confirmationController: ConfirmationController,
-  ) {}
+    documentRepository: DocumentRepository,
+    documentPresenter: DocumentPresenter,
+    confirmationController: ConfirmationController,
+  ) {
+    this.documentRepository = documentRepository;
+    this.documentPresenter = documentPresenter;
+    this.confirmationController = confirmationController;
+  }
 
   public async delete(documentId: string): Promise<void> {
     if (
