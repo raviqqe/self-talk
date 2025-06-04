@@ -10,12 +10,22 @@ import { type DocumentRepository } from "./document-repository.js";
 import { type MessagePresenter } from "./message-presenter.js";
 
 export class DocumentUpdater {
+  private readonly documentDeleter: DocumentDeleter;
+  private readonly documentRepository: DocumentRepository;
+  private readonly documentPresenter: DocumentPresenter;
+  private readonly messagePresenter: MessagePresenter;
+
   constructor(
-    private readonly documentDeleter: DocumentDeleter,
-    private readonly documentRepository: DocumentRepository,
-    private readonly documentPresenter: DocumentPresenter,
-    private readonly messagePresenter: MessagePresenter,
-  ) {}
+    documentDeleter: DocumentDeleter,
+    documentRepository: DocumentRepository,
+    documentPresenter: DocumentPresenter,
+    messagePresenter: MessagePresenter,
+  ) {
+    this.documentDeleter = documentDeleter;
+    this.documentRepository = documentRepository;
+    this.documentPresenter = documentPresenter;
+    this.messagePresenter = messagePresenter;
+  }
 
   public async update(document: Document): Promise<void> {
     document = await formatDocument(document);

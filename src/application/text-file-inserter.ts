@@ -1,7 +1,11 @@
 import { type FileRepository } from "./file-repository.js";
 
 export class TextFileInserter {
-  constructor(private readonly fileRepository: FileRepository) {}
+  private readonly fileRepository: FileRepository;
+
+  constructor(fileRepository: FileRepository) {
+    this.fileRepository = fileRepository;
+  }
 
   public async insert(
     text: string,
