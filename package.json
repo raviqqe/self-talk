@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@fontsource/chelsea-market": "^5.2.6",
-    "@fontsource/roboto": "^5.2.5",
+    "@fontsource/roboto": "^5.2.6",
     "@linaria/core": "^6.3.0",
     "@linaria/react": "^6.3.0",
     "@nanostores/react": "^1.0.0",
