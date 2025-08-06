@@ -44,7 +44,7 @@ export class FirestoreDocumentRepository implements DocumentRepository {
     await deleteDoc(doc(this.collection(), documentId));
   }
 
-  public async *list(count: number): AsyncIterable<Document[]> {
+  public async *list(count: number): AsyncIterable<Document[], void> {
     let result = await getDocs(query(this.query(), limit(count)));
 
     while (result.docs.length > 0) {
