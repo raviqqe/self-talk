@@ -22,7 +22,6 @@ export class DocumentLister {
       .list(defaultLimit)
       [Symbol.asyncIterator]();
     this.documentPresenter.presentDocuments(
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       (await this.iterator.next()).value ?? [],
     );
   }
