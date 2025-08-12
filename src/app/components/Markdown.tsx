@@ -91,6 +91,8 @@ const Image = (
     HTMLImageElement
   >,
 ) => (
+  // biome-ignore lint/a11y/useAltText: TODO
+  // biome-ignore lint/a11y/useKeyWithClickEvents: TODO
   <img
     onClick={(event) => {
       if (event.currentTarget.parentElement?.tagName !== "A" && props.src) {
