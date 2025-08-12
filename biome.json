@@ -6,7 +6,8 @@
         "**/entry.*.tsx",
         "**/root.tsx",
         "**/route.tsx",
-        "**/routes.ts"
+        "**/routes.ts",
+        "src/app/routes/**/*"
       ],
       "linter": {
         "rules": {
