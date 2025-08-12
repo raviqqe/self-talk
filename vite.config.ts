@@ -23,6 +23,7 @@ export default defineConfig({
     }),
     VitePWA({
       manifest: {
+        // biome-ignore-start lint/style/useNamingConvention: External API
         background_color: "darkkhaki",
         display: "standalone",
         icons: [{ sizes: "any", src: "icon.svg" }],
@@ -30,6 +31,7 @@ export default defineConfig({
         short_name: "SelfTalk",
         start_url: ".",
         theme_color: "darkkhaki",
+        // biome-ignore-end lint/style/useNamingConvention: External API
       },
       workbox: {
         navigateFallbackDenylist: [/^\/__/],
