@@ -1,9 +1,9 @@
-import { type FileRepository } from "./file-repository.js";
+import type { FileRepository } from "./file-repository.js";
 
 export class TextFileInserter {
   private readonly fileRepository: FileRepository;
 
-  constructor(fileRepository: FileRepository) {
+  public constructor(fileRepository: FileRepository) {
     this.fileRepository = fileRepository;
   }
 

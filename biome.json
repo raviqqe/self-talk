@@ -1,0 +1,21 @@
+{
+  "extends": ["./node_modules/@raviqqe/biome-config/biome.json"],
+  "overrides": [
+    {
+      "includes": [
+        "**/entry.*.tsx",
+        "**/root.tsx",
+        "**/route.tsx",
+        "**/routes.ts",
+        "src/app/routes/**/*"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    }
+  ]
+}

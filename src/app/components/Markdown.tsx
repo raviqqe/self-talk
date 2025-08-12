@@ -1,10 +1,6 @@
 import { styled } from "@linaria/react";
 import css from "noop-tag";
-import {
-  type DetailedHTMLProps,
-  type ImgHTMLAttributes,
-  type JSX,
-} from "react";
+import type { DetailedHTMLProps, ImgHTMLAttributes, JSX } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { darkGrey, grey, red, white } from "../style.js";
@@ -95,6 +91,8 @@ const Image = (
     HTMLImageElement
   >,
 ) => (
+  // biome-ignore lint/a11y/useAltText: TODO
+  // biome-ignore lint/a11y/useKeyWithClickEvents: TODO
   <img
     onClick={(event) => {
       if (event.currentTarget.parentElement?.tagName !== "A" && props.src) {

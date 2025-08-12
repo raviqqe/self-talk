@@ -3,7 +3,7 @@ import "@fontsource/roboto";
 import { styled } from "@linaria/react";
 import { useStore } from "@nanostores/react";
 import { useAsync } from "@raviqqe/react-hooks";
-import { type JSX, type ReactNode } from "react";
+import type { JSX, ReactNode } from "react";
 import {
   Links,
   type LinksFunction,
@@ -114,7 +114,7 @@ export const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
           data-domain={configuration.domain}
           defer
           src="https://plausible.io/js/script.js"
-        ></script>
+        />
         <base target="_blank" />
       </head>
       <Body>

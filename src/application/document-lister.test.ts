@@ -1,8 +1,8 @@
 import { beforeEach, expect, it, type Mocked, vi } from "vitest";
-import { type Document } from "../domain/document.js";
+import type { Document } from "../domain/document.js";
 import { DocumentLister } from "./document-lister.js";
-import { type DocumentPresenter } from "./document-presenter.js";
-import { type DocumentRepository } from "./document-repository.js";
+import type { DocumentPresenter } from "./document-presenter.js";
+import type { DocumentRepository } from "./document-repository.js";
 
 const dummyDocument: Document = { id: "", text: "" };
 

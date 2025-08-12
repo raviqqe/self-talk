@@ -4,10 +4,10 @@ import {
   validateDocument,
 } from "../domain/document.js";
 import { formatErrorMessage } from "../domain/error.js";
-import { type DocumentDeleter } from "./document-deleter.js";
-import { type DocumentPresenter } from "./document-presenter.js";
-import { type DocumentRepository } from "./document-repository.js";
-import { type MessagePresenter } from "./message-presenter.js";
+import type { DocumentDeleter } from "./document-deleter.js";
+import type { DocumentPresenter } from "./document-presenter.js";
+import type { DocumentRepository } from "./document-repository.js";
+import type { MessagePresenter } from "./message-presenter.js";
 
 export class DocumentUpdater {
   private readonly documentDeleter: DocumentDeleter;
@@ -15,7 +15,7 @@ export class DocumentUpdater {
   private readonly documentPresenter: DocumentPresenter;
   private readonly messagePresenter: MessagePresenter;
 
-  constructor(
+  public constructor(
     documentDeleter: DocumentDeleter,
     documentRepository: DocumentRepository,
     documentPresenter: DocumentPresenter,
