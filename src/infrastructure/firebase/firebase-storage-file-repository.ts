@@ -1,4 +1,4 @@
-import { type FirebaseApp } from "firebase/app";
+import type { FirebaseApp } from "firebase/app";
 import { type Auth, getAuth } from "firebase/auth";
 import {
   type FirebaseStorage,
@@ -9,13 +9,13 @@ import {
   updateMetadata,
   uploadBytes,
 } from "firebase/storage";
-import { type FileRepository } from "../../application/file-repository.js";
+import type { FileRepository } from "../../application/file-repository.js";
 
 export class FirebaseStorageFileRepository implements FileRepository {
   private readonly auth: Auth;
   private readonly storage: FirebaseStorage;
 
-  constructor(app: FirebaseApp) {
+  public constructor(app: FirebaseApp) {
     this.auth = getAuth(app);
     this.storage = getStorage(app);
   }

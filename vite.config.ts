@@ -1,8 +1,8 @@
 import { reactRouter } from "@react-router/dev/vite";
 import defaultWyw from "@wyw-in-js/vite";
+import { defaultImport } from "default-import";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
-import { defaultImport } from "default-import";
 
 const wyw = defaultImport(defaultWyw);
 
@@ -13,23 +13,23 @@ export default defineConfig({
   plugins: [
     reactRouter(),
     wyw({
-      include: ["src/**/*.{ts,tsx}"],
       babelOptions: {
         generatorOpts: {
           importAttributesKeyword: "with",
         },
         presets: ["@babel/preset-typescript", "@babel/preset-react"],
       },
+      include: ["src/**/*.{ts,tsx}"],
     }),
     VitePWA({
       manifest: {
-        short_name: "SelfTalk",
-        name: "SelfTalk",
-        icons: [{ src: "icon.svg", sizes: "any" }],
-        start_url: ".",
-        display: "standalone",
-        theme_color: "darkkhaki",
         background_color: "darkkhaki",
+        display: "standalone",
+        icons: [{ sizes: "any", src: "icon.svg" }],
+        name: "SelfTalk",
+        short_name: "SelfTalk",
+        start_url: ".",
+        theme_color: "darkkhaki",
       },
       workbox: {
         navigateFallbackDenylist: [/^\/__/],

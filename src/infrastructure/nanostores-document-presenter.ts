@@ -1,6 +1,6 @@
 import { atom } from "nanostores";
-import { type DocumentPresenter } from "../application/document-presenter.js";
-import { type Document } from "../domain/document.js";
+import type { DocumentPresenter } from "../application/document-presenter.js";
+import type { Document } from "../domain/document.js";
 
 export class NanostoresDocumentPresenter implements DocumentPresenter {
   public readonly documents = atom<Document[] | null>(null);

@@ -1,10 +1,10 @@
 import { afterEach, beforeEach, expect, it, type Mocked, vi } from "vitest";
 import * as documentModule from "../domain/document.js";
 import { DocumentDeleter } from "./document-deleter.js";
-import { type DocumentPresenter } from "./document-presenter.js";
-import { type DocumentRepository } from "./document-repository.js";
+import type { DocumentPresenter } from "./document-presenter.js";
+import type { DocumentRepository } from "./document-repository.js";
 import { DocumentUpdater } from "./document-updater.js";
-import { type MessagePresenter } from "./message-presenter.js";
+import type { MessagePresenter } from "./message-presenter.js";
 
 const dummyDocument: documentModule.Document = { id: "", text: "foo" };
 

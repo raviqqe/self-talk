@@ -1,15 +1,15 @@
 import { formatDocument, validateDocument } from "../domain/document.js";
 import { formatErrorMessage } from "../domain/error.js";
-import { type DocumentPresenter } from "./document-presenter.js";
-import { type DocumentRepository } from "./document-repository.js";
-import { type MessagePresenter } from "./message-presenter.js";
+import type { DocumentPresenter } from "./document-presenter.js";
+import type { DocumentRepository } from "./document-repository.js";
+import type { MessagePresenter } from "./message-presenter.js";
 
 export class DocumentCreator {
   private readonly documentRepository: DocumentRepository;
   private readonly documentPresenter: DocumentPresenter;
   private readonly messagePresenter: MessagePresenter;
 
-  constructor(
+  public constructor(
     documentRepository: DocumentRepository,
     documentPresenter: DocumentPresenter,
     messagePresenter: MessagePresenter,

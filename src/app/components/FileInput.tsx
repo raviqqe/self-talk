@@ -1,5 +1,5 @@
 import { styled } from "@linaria/react";
-import { type AriaAttributes, type JSX } from "react";
+import type { AriaAttributes, JSX } from "react";
 import { MdAttachFile } from "react-icons/md";
 import { grey } from "../style.js";
 

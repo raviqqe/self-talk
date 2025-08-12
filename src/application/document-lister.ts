@@ -1,6 +1,6 @@
-import { type Document } from "../domain/document.js";
-import { type DocumentPresenter } from "./document-presenter.js";
-import { type DocumentRepository } from "./document-repository.js";
+import type { Document } from "../domain/document.js";
+import type { DocumentPresenter } from "./document-presenter.js";
+import type { DocumentRepository } from "./document-repository.js";
 
 const defaultLimit = 20;
 
@@ -9,7 +9,7 @@ export class DocumentLister {
   private readonly documentPresenter: DocumentPresenter;
   private iterator: AsyncIterator<Document[], void> | null = null;
 
-  constructor(
+  public constructor(
     documentRepository: DocumentRepository,
     documentPresenter: DocumentPresenter,
   ) {

@@ -1,9 +1,9 @@
 import { last } from "es-toolkit";
-import { type FirebaseApp } from "firebase/app";
+import type { FirebaseApp } from "firebase/app";
 import { type Auth, getAuth } from "firebase/auth";
 import {
-  collection,
   type CollectionReference,
+  collection,
   deleteDoc,
   doc,
   type Firestore,
@@ -11,14 +11,14 @@ import {
   getFirestore,
   limit,
   orderBy,
-  query,
   type Query,
+  query,
   setDoc,
   startAfter,
   updateDoc,
 } from "firebase/firestore/lite";
-import { type DocumentRepository } from "../../application/document-repository.js";
-import { type Document } from "../../domain/document.js";
+import type { DocumentRepository } from "../../application/document-repository.js";
+import type { Document } from "../../domain/document.js";
 
 interface TimestampedDocument extends Document {
   createdAt: number;
@@ -28,7 +28,7 @@ export class FirestoreDocumentRepository implements DocumentRepository {
   private readonly auth: Auth;
   private readonly firestore: Firestore;
 
-  constructor(app: FirebaseApp) {
+  public constructor(app: FirebaseApp) {
     this.auth = getAuth(app);
     this.firestore = getFirestore(app);
   }
