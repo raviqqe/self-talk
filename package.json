@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=24.7.0"
+  },
   "scripts": {
     "start": "react-router dev",
     "build": "react-router typegen && tsc && react-router build",
