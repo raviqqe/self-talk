@@ -112,8 +112,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0(typescript@5.9.3)(vite@7.1.11(@types/node@24.9.1)(terser@5.44.0)(yaml@2.8.1))
       firebase-tools:
-        specifier: ^14.20.0
-        version: 14.20.0(@types/node@24.9.1)(encoding@0.1.13)(typescript@5.9.3)
+        specifier: ^14.21.0
+        version: 14.21.0(@types/node@24.9.1)(encoding@0.1.13)(typescript@5.9.3)
       jsdom:
         specifier: ^27.0.1
         version: 27.0.1(postcss@8.5.6)
@@ -2181,8 +2181,8 @@ packages:
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
 
-  bare-events@2.8.0:
-    resolution: {integrity: sha512-AOhh6Bg5QmFIXdViHbMc2tLDsBIRxdkIaIddPslJF9Z5De3APBScuqGP2uThXnIpqFrgoxMNC6km7uXNIMLHXA==}
+  bare-events@2.8.1:
+    resolution: {integrity: sha512-oxSAxTS1hRfnyit2CL5QpAOS5ixfBjj6ex3yTNvXyY/kE719jQ/IjuESJBK2w5v4wwQRAHGseVJXx9QBYOtFGQ==}
     peerDependencies:
       bare-abort-controller: '*'
     peerDependenciesMeta:
@@ -2986,8 +2986,8 @@ packages:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
 
-  firebase-tools@14.20.0:
-    resolution: {integrity: sha512-8zduD1/tpm8tEf4V6dOdveLHVttPUdnubZeZksdvRcetJuffNuU+Ugr4/JsObhxJP0n0Npb2MvPMHln6xKHMXw==}
+  firebase-tools@14.21.0:
+    resolution: {integrity: sha512-LIKDdvWiEn48y4xT3flHAdvYgeGaL/nmIcmCOJxd6cEmcxoJv3mKNKDLbCO57SbToVFXp6V5WDcRaQ+O2zEuLw==}
     engines: {node: '>=20.0.0 || >=22.0.0'}
     hasBin: true
 
@@ -8182,7 +8182,7 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  bare-events@2.8.0: {}
+  bare-events@2.8.1: {}
 
   base64-js@1.5.1: {}
 
@@ -8927,7 +8927,7 @@ snapshots:
 
   events-universal@1.0.1:
     dependencies:
-      bare-events: 2.8.0
+      bare-events: 2.8.1
     transitivePeerDependencies:
       - bare-abort-controller
 
@@ -9120,7 +9120,7 @@ snapshots:
       locate-path: 6.0.0
       path-exists: 4.0.0
 
-  firebase-tools@14.20.0(@types/node@24.9.1)(encoding@0.1.13)(typescript@5.9.3):
+  firebase-tools@14.21.0(@types/node@24.9.1)(encoding@0.1.13)(typescript@5.9.3):
     dependencies:
       '@apphosting/build': 0.1.6(@types/node@24.9.1)(typescript@5.9.3)
       '@apphosting/common': 0.0.8
