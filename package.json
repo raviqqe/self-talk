@@ -23,7 +23,7 @@
     "@react-router/node": "^7.9.4",
     "@sentry/browser": "^10.22.0",
     "default-import": "^2.0.8",
-    "es-toolkit": "^1.40.0",
+    "es-toolkit": "^1.41.0",
     "firebase": "^12.4.0",
     "isbot": "^5.1.31",
     "nanostores": "^1.0.1",

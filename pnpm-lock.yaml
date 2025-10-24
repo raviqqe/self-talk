@@ -36,8 +36,8 @@ importers:
         specifier: ^2.0.8
         version: 2.0.8
       es-toolkit:
-        specifier: ^1.40.0
-        version: 1.40.0
+        specifier: ^1.41.0
+        version: 1.41.0
       firebase:
         specifier: ^12.4.0
         version: 12.4.0
@@ -2847,8 +2847,8 @@ packages:
     resolution: {integrity: sha512-w+5mJ3GuFL+NjVtJlvydShqE1eN3h3PbI7/5LAsYJP/2qtuMXjfL2LpHSRqo4b4eSF5K/DH1JXKUAHSB2UW50g==}
     engines: {node: '>= 0.4'}
 
-  es-toolkit@1.40.0:
-    resolution: {integrity: sha512-8o6w0KFmU0CiIl0/Q/BCEOabF2IJaELM1T2PWj6e8KqzHv1gdx+7JtFnDwOx1kJH/isJ5NwlDG1nCr1HrRF94Q==}
+  es-toolkit@1.41.0:
+    resolution: {integrity: sha512-bDd3oRmbVgqZCJS6WmeQieOrzpl3URcWBUVDXxOELlUW2FuW+0glPOz1n0KnRie+PdyvUZcXz2sOn00c6pPRIA==}
 
   esbuild@0.25.11:
     resolution: {integrity: sha512-KohQwyzrKTQmhXDW1PjCv3Tyspn9n5GcY2RTDqeORIdIJY8yKIF7sTSopFmn/wpMPW4rdPXI0UE5LJLuq3bx0Q==}
@@ -3853,6 +3853,9 @@ packages:
 
   magic-string@0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
+
+  magic-string@0.30.21:
+    resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -6040,6 +6043,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@babel/helper-member-expression-to-functions@7.28.5':
+    dependencies:
+      '@babel/traverse': 7.28.5
+      '@babel/types': 7.28.5
+    transitivePeerDependencies:
+      - supports-color
+
   '@babel/helper-module-imports@7.27.1':
     dependencies:
       '@babel/traverse': 7.28.4
@@ -7588,7 +7598,7 @@ snapshots:
 
   '@raviqqe/react-hooks@0.6.8':
     dependencies:
-      es-toolkit: 1.40.0
+      es-toolkit: 1.41.0
       react: 19.2.0
 
   '@raviqqe/react-tsconfig@2.0.1':
@@ -8964,7 +8974,7 @@ snapshots:
       is-date-object: 1.1.0
       is-symbol: 1.1.1
 
-  es-toolkit@1.40.0: {}
+  es-toolkit@1.41.0: {}
 
   esbuild@0.25.11:
     optionalDependencies:
