@@ -48,14 +48,14 @@
     "@testing-library/react": "^16.3.1",
     "@types/react": "^19.2.7",
     "@vitejs/plugin-react": "^5.1.2",
-    "@vitest/coverage-v8": "^4.0.15",
+    "@vitest/coverage-v8": "^4.0.16",
     "@wyw-in-js/vite": "^0.8.0",
     "firebase-tools": "^15.0.0",
     "jsdom": "^27.3.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.0",
     "vite-plugin-pwa": "^1.1.0",
-    "vitest": "^4.0.15"
+    "vitest": "^4.0.16"
   },
   "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a"
 }
