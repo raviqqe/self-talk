@@ -12,13 +12,13 @@ import TextareaAutosize, {
 } from "react-textarea-autosize";
 import styles from "./TextArea.module.css";
 
-const NoStyleTextareaAutosize = forwardRef(
+const UnstyledTextareaAutosize = forwardRef(
   (
     props: Omit<TextareaAutosizeProps, "style">,
     ref: ForwardedRef<HTMLTextAreaElement>,
   ) => <TextareaAutosize ref={ref} {...props} />,
 );
-NoStyleTextareaAutosize.displayName = "NoStyleTextareaAutosize";
+UnstyledTextareaAutosize.displayName = "NoStyleTextareaAutosize";
 
 interface Props extends TextareaAutosizeProps {
   onSubmit: () => void;
@@ -39,7 +39,7 @@ export const TextArea = ({
   }, [focused, ref]);
 
   return (
-    <NoStyleTextareaAutosize
+    <UnstyledTextareaAutosize
       className={styles.root}
       onKeyDown={(event: KeyboardEvent<HTMLTextAreaElement>) => {
         if (
