@@ -1,0 +1,13 @@
+.root {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+}
+
+.textArea {
+  max-height: 80vh;
+}
+
+.button {
+  margin-left: -0.5rem;
+}

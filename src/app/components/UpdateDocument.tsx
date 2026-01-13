@@ -1,18 +1,10 @@
-import { styled } from "@linaria/react";
+import classNames from "classnames";
 import { type JSX, useState } from "react";
 import { MdSave } from "react-icons/md";
 import type { Document } from "../../domain/document.js";
 import { CircleButton } from "./CircleButton.js";
 import { MarkdownTextArea } from "./MarkdownTextArea.js";
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const StyledCircleButton = styled(CircleButton)`
-  margin-left: -0.5rem;
-`;
+import styles from "./UpdateDocument.module.css";
 
 interface Props {
   className?: string;
@@ -23,17 +15,21 @@ interface Props {
 export const UpdateDocument = ({
   document,
   onSubmit: onParentSubmit,
-  ...props
+  className,
 }: Props): JSX.Element => {
   const [text, setText] = useState(document.text);
   const onSubmit = () => onParentSubmit({ ...document, text });
 
   return (
-    <Container {...props}>
+    <div className={classNames(styles.root, className)}>
       <MarkdownTextArea onChange={setText} onSubmit={onSubmit} text={text} />
-      <StyledCircleButton aria-label="Save" onClick={onSubmit}>
+      <CircleButton
+        aria-label="Save"
+        className={styles.circleButton}
+        onClick={onSubmit}
+      >
         <MdSave />
-      </StyledCircleButton>
-    </Container>
+      </CircleButton>
+    </div>
   );
 };

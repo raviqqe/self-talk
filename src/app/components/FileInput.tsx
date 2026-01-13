@@ -1,33 +1,16 @@
-import { styled } from "@linaria/react";
 import type { AriaAttributes, JSX } from "react";
 import { MdAttachFile } from "react-icons/md";
-import { grey } from "../style.js";
-
-const Container = styled.div`
-  position: relative;
-  color: ${grey};
-  font-size: 1.5rem;
-  line-height: 0;
-`;
-
-const Input = styled.input`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-`;
+import styles from "./FileInput.module.css";
 
 interface Props extends AriaAttributes {
   onChange: (files: File[]) => void;
 }
 
 export const FileInput = ({ onChange, ...props }: Props): JSX.Element => (
-  <Container>
+  <div className={styles.root}>
     <MdAttachFile />
-    <Input
+    <input
+      className={styles.input}
       onChange={({ target: { files } }) => {
         if (files?.length) {
           onChange([...files]);
@@ -36,5 +19,5 @@ export const FileInput = ({ onChange, ...props }: Props): JSX.Element => (
       type="file"
       {...props}
     />
-  </Container>
+  </div>
 );

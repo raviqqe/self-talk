@@ -1,0 +1,15 @@
+.root {
+  box-shadow: var(--box-shadow);
+  background: var(--white);
+  padding: 1em;
+  padding-right: 2.1em;
+  border-radius: 0.5em;
+  position: relative;
+}
+
+.buttonContainer {
+  display: flex;
+  position: absolute;
+  top: 0.4em;
+  right: 0.4em;
+}

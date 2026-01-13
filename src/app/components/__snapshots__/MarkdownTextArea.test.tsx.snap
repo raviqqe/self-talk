@@ -3,19 +3,19 @@
 exports[`renders 1`] = `
 <div>
   <div
-    class="mocked-styled-3"
+    class="_root_88c7dc"
   >
     <textarea
-      class="mocked-styled-2"
+      class="_root_03bbb1"
       placeholder="Write in Markdown..."
     >
       foo
     </textarea>
     <div
-      class="mocked-styled-4"
+      class="_buttonGroup_88c7dc"
     >
       <div
-        class="mocked-styled-0"
+        class="_root_f02748"
       >
         <svg
           fill="currentColor"
@@ -35,7 +35,7 @@ exports[`renders 1`] = `
           />
         </svg>
         <input
-          class="mocked-styled-1"
+          class="_input_f02748"
           type="file"
         />
       </div>

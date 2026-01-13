@@ -1,0 +1,98 @@
+.root {
+  cursor: text;
+  overflow-x: auto;
+
+  > :first-child {
+    margin-top: 0em;
+  }
+
+  > :last-child {
+    margin-bottom: 0em;
+  }
+
+  * {
+    word-wrap: break-word;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1em;
+  }
+
+  h1::before {
+    content: "# ";
+  }
+
+  h2::before {
+    content: "## ";
+  }
+
+  h3::before {
+    content: "### ";
+  }
+
+  h4::before {
+    content: "#### ";
+  }
+
+  h5::before {
+    content: "##### ";
+  }
+
+  h6::before {
+    content: "###### ";
+  }
+
+  a {
+    color: var(--red);
+
+    &:visited {
+      color: var(--red);
+    }
+  }
+
+  blockquote {
+    color: var(--darkGrey);
+  }
+
+  img {
+    cursor: pointer;
+    max-width: 100%;
+  }
+
+  pre {
+    overflow-x: auto;
+  }
+
+  pre,
+  *:not(pre) > code {
+    background: var(--darkGrey);
+    border-radius: 0.2rem;
+    color: var(--white);
+    font-size: 0.95em;
+    padding: 0.4em;
+  }
+
+  *:not(pre) > code {
+    line-height: 2.5em;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  table,
+  td,
+  th {
+    border: 1px solid var(--grey);
+  }
+
+  td,
+  th {
+    padding: 0.4em 0.6em;
+  }
+}

@@ -1,0 +1,14 @@
+.root {
+  border: none;
+  outline: none;
+  color: inherit;
+  font-family: monospace;
+  font-size: 0.95em;
+  resize: none;
+  padding: 0;
+  flex: 1;
+
+  &::placeholder {
+    color: var(--grey);
+  }
+}

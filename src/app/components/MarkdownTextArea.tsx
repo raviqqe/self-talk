@@ -1,36 +1,11 @@
-import { styled } from "@linaria/react";
+import classNames from "classnames";
 import { compact } from "es-toolkit";
 import { type JSX, useCallback, useState } from "react";
 import { textFileInserter } from "../../main/text-file-inserter.js";
-import { boxShadow, white } from "../style.js";
 import { FileInput } from "./FileInput.js";
 import { Loader } from "./Loader.js";
+import styles from "./MarkdownTextArea.module.css";
 import { TextArea } from "./TextArea.js";
-
-const Container = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  border-radius: 0.5em;
-  background-color: ${white};
-  overflow: hidden;
-  padding: 1rem;
-  ${boxShadow};
-`;
-
-const ButtonGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-`;
-
-const LoaderContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`;
 
 interface Props {
   className?: string;
@@ -43,7 +18,7 @@ export const MarkdownTextArea = ({
   onChange,
   onSubmit,
   text,
-  ...restProps
+  className,
 }: Props): JSX.Element => {
   const [loading, setLoading] = useState(false);
 
@@ -61,11 +36,11 @@ export const MarkdownTextArea = ({
   );
 
   return loading ? (
-    <LoaderContainer>
+    <div className={styles.loaderContainer}>
       <Loader />
-    </LoaderContainer>
+    </div>
   ) : (
-    <Container>
+    <div className={classNames(styles.root, className)}>
       <TextArea
         onChange={({ target }) => onChange(target.value)}
         onDragOver={(event) => event.preventDefault()}
@@ -87,11 +62,10 @@ export const MarkdownTextArea = ({
         onSubmit={onSubmit}
         placeholder="Write in Markdown..."
         value={text}
-        {...restProps}
       />
-      <ButtonGroup>
+      <div className={styles.buttonGroup}>
         <FileInput onChange={(files) => uploadFiles(files, text.length)} />
-      </ButtonGroup>
-    </Container>
+      </div>
+    </div>
   );
 };
