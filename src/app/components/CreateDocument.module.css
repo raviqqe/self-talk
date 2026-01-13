@@ -4,10 +4,10 @@
   padding: 1em;
 }
 
-.markdownTextArea {
+.textArea {
   max-height: 80vh;
 }
 
-.circleButton {
+.button {
   margin-left: -0.5rem;
 }
