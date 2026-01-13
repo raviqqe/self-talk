@@ -2,7 +2,7 @@ import classNames from "classnames";
 import type { ButtonHTMLAttributes, JSX } from "react";
 import styles from "./Button.module.css";
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   secondary?: boolean;
 }
 
@@ -12,7 +12,11 @@ export const Button = ({
   ...props
 }: Props): JSX.Element => (
   <button
-    className={classNames(styles.button, secondary && styles.secondary, className)}
+    className={classNames(
+      styles.button,
+      secondary && styles.secondary,
+      className,
+    )}
     {...props}
   />
 );
