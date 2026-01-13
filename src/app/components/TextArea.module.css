@@ -7,8 +7,8 @@
   resize: none;
   padding: 0;
   flex: 1;
-}
 
-.root::placeholder {
-  color: var(--grey);
+  &::placeholder {
+    color: var(--grey);
+  }
 }
