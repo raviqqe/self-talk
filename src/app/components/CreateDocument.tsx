@@ -2,8 +2,8 @@ import { type JSX, useState } from "react";
 import { MdAdd } from "react-icons/md";
 import { documentCreator } from "../../main/document-creator.js";
 import { CircleButton } from "./CircleButton.js";
-import { MarkdownTextArea } from "./MarkdownTextArea.js";
 import styles from "./CreateDocument.module.css";
+import { MarkdownTextArea } from "./MarkdownTextArea.js";
 
 interface Props {
   className?: string;

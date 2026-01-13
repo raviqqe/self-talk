@@ -24,7 +24,10 @@ interface Props extends TextareaAutosizeProps {
   onSubmit: () => void;
 }
 
-export const TextArea = ({ onSubmit, ...textAreaProps }: Props): JSX.Element => {
+export const TextArea = ({
+  onSubmit,
+  ...textAreaProps
+}: Props): JSX.Element => {
   const ref = useRef<HTMLTextAreaElement | null>(null);
   const [focused, setFocused] = useState(false);
 

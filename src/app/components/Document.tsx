@@ -2,10 +2,10 @@ import { type JSX, useState } from "react";
 import { MdEdit } from "react-icons/md";
 import type * as domain from "../../domain.js";
 import { documentUpdater } from "../../main/document-updater.js";
+import styles from "./Document.module.css";
 import { IconButton } from "./IconButton.js";
 import { Markdown } from "./Markdown.js";
 import { UpdateDocument } from "./UpdateDocument.js";
-import styles from "./Document.module.css";
 
 interface Props {
   className?: string;

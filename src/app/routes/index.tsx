@@ -12,7 +12,11 @@ export default (): JSX.Element => (
       <span className={styles.red}>Talk</span>
     </div>
     <SignIn signIn={() => signInManager.signIn()} />
-    <a className={styles.githubLink} href={configuration.repositoryUrl} target="_blank">
+    <a
+      className={styles.githubLink}
+      href={configuration.repositoryUrl}
+      target="_blank"
+    >
       <FaGithub />
     </a>
   </div>

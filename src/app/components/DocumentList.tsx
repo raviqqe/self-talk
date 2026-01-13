@@ -4,8 +4,8 @@ import { type JSX, useCallback, useRef, useState } from "react";
 import { documentLister } from "../../main/document-lister.js";
 import { documentPresenter } from "../../main/document-presenter.js";
 import { Document } from "./Document.js";
-import { Loader } from "./Loader.js";
 import styles from "./DocumentList.module.css";
+import { Loader } from "./Loader.js";
 
 export const DocumentList = (): JSX.Element => {
   const documents = useStore(documentPresenter.documents);

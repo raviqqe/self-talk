@@ -3,8 +3,8 @@ import { type JSX, useCallback, useState } from "react";
 import { textFileInserter } from "../../main/text-file-inserter.js";
 import { FileInput } from "./FileInput.js";
 import { Loader } from "./Loader.js";
-import { TextArea } from "./TextArea.js";
 import styles from "./MarkdownTextArea.module.css";
+import { TextArea } from "./TextArea.js";
 
 interface Props {
   className?: string;
@@ -39,9 +39,7 @@ export const MarkdownTextArea = ({
       <Loader />
     </div>
   ) : (
-    <div
-      className={[styles.container, className].filter(Boolean).join(" ")}
-    >
+    <div className={[styles.container, className].filter(Boolean).join(" ")}>
       <TextArea
         onChange={({ target }) => onChange(target.value)}
         onDragOver={(event) => event.preventDefault()}
