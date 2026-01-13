@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { type JSX, useState } from "react";
 import { MdEdit } from "react-icons/md";
 import type * as domain from "../../domain.js";
@@ -25,7 +26,7 @@ export const Document = ({ document, className }: Props): JSX.Element => {
       }}
     />
   ) : (
-    <div className={[styles.container, className].filter(Boolean).join(" ")}>
+    <div className={classNames(styles.container, className)}>
       <Markdown>{document.text}</Markdown>
       <div className={styles.buttonContainer}>
         <IconButton aria-label="Edit" onClick={() => setEditing(true)}>

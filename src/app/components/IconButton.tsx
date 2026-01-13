@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import type { AriaAttributes, JSX, ReactNode } from "react";
 import styles from "./IconButton.module.css";
 
@@ -14,7 +15,7 @@ export const IconButton = ({
   ...restProps
 }: Props): JSX.Element => (
   <button
-    className={[styles.button, className].filter(Boolean).join(" ")}
+    className={classNames(styles.button, className)}
     onClick={onClick}
     type="button"
     {...restProps}

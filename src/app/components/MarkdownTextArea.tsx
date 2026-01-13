@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { compact } from "es-toolkit";
 import { type JSX, useCallback, useState } from "react";
 import { textFileInserter } from "../../main/text-file-inserter.js";
@@ -39,7 +40,7 @@ export const MarkdownTextArea = ({
       <Loader />
     </div>
   ) : (
-    <div className={[styles.container, className].filter(Boolean).join(" ")}>
+    <div className={classNames(styles.container, className)}>
       <TextArea
         onChange={({ target }) => onChange(target.value)}
         onDragOver={(event) => event.preventDefault()}

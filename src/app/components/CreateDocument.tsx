@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { type JSX, useState } from "react";
 import { MdAdd } from "react-icons/md";
 import { documentCreator } from "../../main/document-creator.js";
@@ -17,7 +18,7 @@ export const CreateDocument = ({ className }: Props): JSX.Element => {
   };
 
   return (
-    <div className={[styles.container, className].filter(Boolean).join(" ")}>
+    <div className={classNames(styles.container, className)}>
       <MarkdownTextArea
         className={styles.markdownTextArea}
         onChange={setText}

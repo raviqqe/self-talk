@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { type JSX, useState } from "react";
 import { MdSave } from "react-icons/md";
 import type { Document } from "../../domain/document.js";
@@ -20,7 +21,7 @@ export const UpdateDocument = ({
   const onSubmit = () => onParentSubmit({ ...document, text });
 
   return (
-    <div className={[styles.container, className].filter(Boolean).join(" ")}>
+    <div className={classNames(styles.container, className)}>
       <MarkdownTextArea onChange={setText} onSubmit={onSubmit} text={text} />
       <CircleButton
         aria-label="Save"

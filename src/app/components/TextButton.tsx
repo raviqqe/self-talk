@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import type { ComponentProps, JSX } from "react";
 import { Button } from "./Button.js";
 import styles from "./TextButton.module.css";
@@ -5,8 +6,5 @@ import styles from "./TextButton.module.css";
 type Props = ComponentProps<typeof Button>;
 
 export const TextButton = ({ className, ...props }: Props): JSX.Element => (
-  <Button
-    className={[styles.textButton, className].filter(Boolean).join(" ")}
-    {...props}
-  />
+  <Button className={classNames(styles.textButton, className)} {...props} />
 );

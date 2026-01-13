@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import type { ButtonHTMLAttributes, JSX } from "react";
 import styles from "./Button.module.css";
 
@@ -11,13 +12,7 @@ export const Button = ({
   ...props
 }: Props): JSX.Element => (
   <button
-    className={[
-      styles.button,
-      secondary ? styles.secondary : undefined,
-      className,
-    ]
-      .filter(Boolean)
-      .join(" ")}
+    className={classNames(styles.button, secondary && styles.secondary, className)}
     {...props}
   />
 );
