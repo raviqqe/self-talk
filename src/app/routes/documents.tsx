@@ -7,8 +7,8 @@ import styles from "./documents.module.css";
 export default (): JSX.Element | null => (
   <div className={styles.root}>
     <DocumentList />
-    <div className={styles.createDocumentContainer}>
-      <div className={styles.createDocumentBackground} />
+    <div className={styles.form}>
+      <div className={styles.background} />
       <CreateDocument className={styles.createDocument} />
     </div>
     <div className={styles.signOutContainer}>
