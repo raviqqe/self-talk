@@ -25,7 +25,7 @@ export const UpdateDocument = ({
       <MarkdownTextArea onChange={setText} onSubmit={onSubmit} text={text} />
       <CircleButton
         aria-label="Save"
-        className={styles.root}
+        className={styles.circleButton}
         onClick={onSubmit}
       >
         <MdSave />

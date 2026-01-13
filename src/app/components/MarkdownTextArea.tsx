@@ -63,7 +63,7 @@ export const MarkdownTextArea = ({
         placeholder="Write in Markdown..."
         value={text}
       />
-      <div className={styles.rootGroup}>
+      <div className={styles.buttonGroup}>
         <FileInput onChange={(files) => uploadFiles(files, text.length)} />
       </div>
     </div>

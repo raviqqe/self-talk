@@ -27,7 +27,7 @@ export const CreateDocument = ({ className }: Props): JSX.Element => {
       />
       <CircleButton
         aria-label="Create"
-        className={styles.root}
+        className={styles.circleButton}
         onClick={onSubmit}
       >
         <MdAdd />

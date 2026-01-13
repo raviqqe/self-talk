@@ -12,7 +12,7 @@ exports[`renders 1`] = `
       placeholder="Write in Markdown..."
     />
     <div
-      class="_rootGroup_88c7dc"
+      class="_buttonGroup_88c7dc"
     >
       <div
         class="_root_f02748"
@@ -43,7 +43,7 @@ exports[`renders 1`] = `
   </div>
   <button
     aria-label="Save"
-    class="_root_32b42f _root_a85137 _root_a5cae5"
+    class="_root_32b42f _root_a85137 _circleButton_a5cae5"
   >
     <svg
       fill="currentColor"
