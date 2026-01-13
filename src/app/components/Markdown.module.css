@@ -1,0 +1,98 @@
+.container {
+  cursor: text;
+  overflow-x: auto;
+}
+
+.container > :first-child {
+  margin-top: 0em;
+}
+
+.container > :last-child {
+  margin-bottom: 0em;
+}
+
+.container * {
+  word-wrap: break-word;
+}
+
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6 {
+  font-size: 1em;
+}
+
+.container h1::before {
+  content: "# ";
+}
+
+.container h2::before {
+  content: "## ";
+}
+
+.container h3::before {
+  content: "### ";
+}
+
+.container h4::before {
+  content: "#### ";
+}
+
+.container h5::before {
+  content: "##### ";
+}
+
+.container h6::before {
+  content: "###### ";
+}
+
+.container a {
+  color: var(--red);
+}
+
+.container a:visited {
+  color: var(--red);
+}
+
+.container blockquote {
+  color: var(--darkGrey);
+}
+
+.container img {
+  cursor: pointer;
+  max-width: 100%;
+}
+
+.container pre {
+  overflow-x: auto;
+}
+
+.container pre,
+.container *:not(pre) > code {
+  background: var(--darkGrey);
+  border-radius: 0.2rem;
+  color: var(--white);
+  font-size: 0.95em;
+  padding: 0.4em;
+}
+
+.container *:not(pre) > code {
+  line-height: 2.5em;
+}
+
+.container table {
+  border-collapse: collapse;
+}
+
+.container table,
+.container td,
+.container th {
+  border: 1px solid var(--grey);
+}
+
+.container td,
+.container th {
+  padding: 0.4em 0.6em;
+}

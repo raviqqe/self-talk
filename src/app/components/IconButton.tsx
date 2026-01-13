@@ -1,16 +1,5 @@
-import { styled } from "@linaria/react";
 import type { AriaAttributes, JSX, ReactNode } from "react";
-import { grey } from "../style.js";
-
-const Button = styled.button`
-  color: ${grey};
-  cursor: pointer;
-  font-size: 1.5rem;
-  display: flex;
-  background: transparent;
-  border: none;
-  padding: 0;
-`;
+import styles from "./IconButton.module.css";
 
 interface Props extends AriaAttributes {
   children: ReactNode;
@@ -21,9 +10,15 @@ interface Props extends AriaAttributes {
 export const IconButton = ({
   children,
   onClick,
+  className,
   ...restProps
 }: Props): JSX.Element => (
-  <Button onClick={onClick} {...restProps}>
+  <button
+    className={[styles.button, className].filter(Boolean).join(" ")}
+    onClick={onClick}
+    type="button"
+    {...restProps}
+  >
     {children}
-  </Button>
+  </button>
 );

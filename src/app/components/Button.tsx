@@ -1,15 +1,15 @@
-import { styled } from "@linaria/react";
-import { boxShadow, darkGrey, red, white } from "../style.js";
+import type { ButtonHTMLAttributes, JSX } from "react";
+import styles from "./Button.module.css";
 
-export const Button = styled.button<{ secondary?: boolean }>`
-  ${boxShadow};
-  background: ${({ secondary }) => (secondary ? darkGrey : red)};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: inherit;
-  color: ${white};
-  border: none;
-  cursor: pointer;
-  flex-shrink: 0;
-`;
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  secondary?: boolean;
+}
+
+export const Button = ({ secondary, className, ...props }: Props): JSX.Element => (
+  <button
+    className={[styles.button, secondary ? styles.secondary : undefined, className]
+      .filter(Boolean)
+      .join(" ")}
+    {...props}
+  />
+);

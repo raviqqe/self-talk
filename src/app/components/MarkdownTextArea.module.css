@@ -1,0 +1,24 @@
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-radius: 0.5em;
+  background-color: var(--white);
+  overflow: hidden;
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

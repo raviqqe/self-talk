@@ -1,8 +1,12 @@
-import { styled } from "@linaria/react";
+import type { ComponentProps, JSX } from "react";
 import { Button } from "./Button.js";
+import styles from "./TextButton.module.css";
 
-export const TextButton = styled(Button)`
-  padding: 0.5em 1em;
-  font-size: 1.2em;
-  border-radius: 0.5em;
-`;
+type Props = ComponentProps<typeof Button>;
+
+export const TextButton = ({ className, ...props }: Props): JSX.Element => (
+  <Button
+    className={[styles.textButton, className].filter(Boolean).join(" ")}
+    {...props}
+  />
+);

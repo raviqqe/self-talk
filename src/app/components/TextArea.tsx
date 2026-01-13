@@ -1,4 +1,3 @@
-import { styled } from "@linaria/react";
 import {
   type ForwardedRef,
   forwardRef,
@@ -11,7 +10,7 @@ import {
 import TextareaAutosize, {
   type TextareaAutosizeProps,
 } from "react-textarea-autosize";
-import { grey } from "../style.js";
+import styles from "./TextArea.module.css";
 
 const NoStyleTextareaAutosize = forwardRef(
   (
@@ -21,29 +20,11 @@ const NoStyleTextareaAutosize = forwardRef(
 );
 NoStyleTextareaAutosize.displayName = "NoStyleTextareaAutosize";
 
-const StyledTextArea = styled(NoStyleTextareaAutosize)`
-  border: none;
-  outline: none;
-  color: inherit;
-  font-family: monospace;
-  font-size: 0.95em;
-  resize: none;
-  padding: 0;
-  flex: 1;
-
-  &::placeholder {
-    color: ${grey};
-  }
-`;
-
 interface Props extends TextareaAutosizeProps {
   onSubmit: () => void;
 }
 
-export const TextArea = ({
-  onSubmit,
-  ...textAreaProps
-}: Props): JSX.Element => {
+export const TextArea = ({ onSubmit, ...textAreaProps }: Props): JSX.Element => {
   const ref = useRef<HTMLTextAreaElement | null>(null);
   const [focused, setFocused] = useState(false);
 
@@ -55,7 +36,8 @@ export const TextArea = ({
   }, [focused, ref]);
 
   return (
-    <StyledTextArea
+    <NoStyleTextareaAutosize
+      className={styles.textArea}
       onKeyDown={(event: KeyboardEvent<HTMLTextAreaElement>) => {
         if (
           event.key === "Enter" &&

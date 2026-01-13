@@ -1,10 +1,12 @@
-import { styled } from "@linaria/react";
+import type { ComponentProps, JSX } from "react";
 import { Button } from "./Button.js";
+import styles from "./CircleButton.module.css";
 
-export const CircleButton = styled(Button)`
-  font-size: 1.5em;
-  padding: 0;
-  height: 2em;
-  width: 2em;
-  border-radius: 1em;
-`;
+type Props = ComponentProps<typeof Button>;
+
+export const CircleButton = ({ className, ...props }: Props): JSX.Element => (
+  <Button
+    className={[styles.circleButton, className].filter(Boolean).join(" ")}
+    {...props}
+  />
+);
