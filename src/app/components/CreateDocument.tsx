@@ -20,7 +20,7 @@ export const CreateDocument = ({ className }: Props): JSX.Element => {
   return (
     <div className={classNames(styles.root, className)}>
       <MarkdownTextArea
-        className={styles.extArea}
+        className={styles.textArea}
         onChange={setText}
         onSubmit={onSubmit}
         text={text}
