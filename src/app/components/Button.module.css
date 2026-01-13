@@ -1,4 +1,4 @@
-.button {
+.root {
   box-shadow: var(--box-shadow);
   background: var(--red);
   display: flex;

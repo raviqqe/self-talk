@@ -1,8 +1,8 @@
-.container {
+.root {
   display: flex;
   align-items: center;
 }
 
-.circleButton {
+.root {
   margin-left: -0.5rem;
 }

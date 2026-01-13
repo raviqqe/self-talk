@@ -1,76 +1,76 @@
-.container {
+.root {
   cursor: text;
   overflow-x: auto;
 }
 
-.container > :first-child {
+.root > :first-child {
   margin-top: 0em;
 }
 
-.container > :last-child {
+.root > :last-child {
   margin-bottom: 0em;
 }
 
-.container * {
+.root * {
   word-wrap: break-word;
 }
 
-.container h1,
-.container h2,
-.container h3,
-.container h4,
-.container h5,
-.container h6 {
+.root h1,
+.root h2,
+.root h3,
+.root h4,
+.root h5,
+.root h6 {
   font-size: 1em;
 }
 
-.container h1::before {
+.root h1::before {
   content: "# ";
 }
 
-.container h2::before {
+.root h2::before {
   content: "## ";
 }
 
-.container h3::before {
+.root h3::before {
   content: "### ";
 }
 
-.container h4::before {
+.root h4::before {
   content: "#### ";
 }
 
-.container h5::before {
+.root h5::before {
   content: "##### ";
 }
 
-.container h6::before {
+.root h6::before {
   content: "###### ";
 }
 
-.container a {
+.root a {
   color: var(--red);
 }
 
-.container a:visited {
+.root a:visited {
   color: var(--red);
 }
 
-.container blockquote {
+.root blockquote {
   color: var(--darkGrey);
 }
 
-.container img {
+.root img {
   cursor: pointer;
   max-width: 100%;
 }
 
-.container pre {
+.root pre {
   overflow-x: auto;
 }
 
-.container pre,
-.container *:not(pre) > code {
+.root pre,
+.root *:not(pre) > code {
   background: var(--darkGrey);
   border-radius: 0.2rem;
   color: var(--white);
@@ -78,21 +78,21 @@
   padding: 0.4em;
 }
 
-.container *:not(pre) > code {
+.root *:not(pre) > code {
   line-height: 2.5em;
 }
 
-.container table {
+.root table {
   border-collapse: collapse;
 }
 
-.container table,
-.container td,
-.container th {
+.root table,
+.root td,
+.root th {
   border: 1px solid var(--grey);
 }
 
-.container td,
-.container th {
+.root td,
+.root th {
   padding: 0.4em 0.6em;
 }

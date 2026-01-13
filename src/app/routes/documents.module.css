@@ -1,4 +1,4 @@
-.container {
+.root {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -7,7 +7,7 @@
   margin: auto;
 }
 
-.container > :first-child {
+.root > :first-child {
   flex: 1;
 }
 

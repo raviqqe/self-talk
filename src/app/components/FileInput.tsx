@@ -7,7 +7,7 @@ interface Props extends AriaAttributes {
 }
 
 export const FileInput = ({ onChange, ...props }: Props): JSX.Element => (
-  <div className={styles.container}>
+  <div className={styles.root}>
     <MdAttachFile />
     <input
       className={styles.input}

@@ -26,7 +26,7 @@ interface Props {
 }
 
 export const Markdown = ({ children }: Props): JSX.Element => (
-  <div className={styles.container}>
+  <div className={styles.root}>
     <ReactMarkdown components={{ img: Image }} remarkPlugins={[remarkGfm]}>
       {children}
     </ReactMarkdown>

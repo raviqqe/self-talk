@@ -1,4 +1,4 @@
-.container {
+.root {
   box-shadow: var(--box-shadow);
   background: var(--white);
   padding: 1em;

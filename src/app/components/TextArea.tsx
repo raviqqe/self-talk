@@ -40,7 +40,7 @@ export const TextArea = ({
 
   return (
     <NoStyleTextareaAutosize
-      className={styles.textArea}
+      className={styles.root}
       onKeyDown={(event: KeyboardEvent<HTMLTextAreaElement>) => {
         if (
           event.key === "Enter" &&

@@ -15,7 +15,7 @@ export const IconButton = ({
   ...restProps
 }: Props): JSX.Element => (
   <button
-    className={classNames(styles.button, className)}
+    className={classNames(styles.root, className)}
     onClick={onClick}
     type="button"
     {...restProps}

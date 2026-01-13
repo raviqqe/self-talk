@@ -40,7 +40,7 @@ export const MarkdownTextArea = ({
       <Loader />
     </div>
   ) : (
-    <div className={classNames(styles.container, className)}>
+    <div className={classNames(styles.root, className)}>
       <TextArea
         onChange={({ target }) => onChange(target.value)}
         onDragOver={(event) => event.preventDefault()}
@@ -63,7 +63,7 @@ export const MarkdownTextArea = ({
         placeholder="Write in Markdown..."
         value={text}
       />
-      <div className={styles.buttonGroup}>
+      <div className={styles.rootGroup}>
         <FileInput onChange={(files) => uploadFiles(files, text.length)} />
       </div>
     </div>

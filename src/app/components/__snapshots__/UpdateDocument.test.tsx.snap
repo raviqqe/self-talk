@@ -2,20 +2,20 @@
 
 exports[`renders 1`] = `
 <div
-  class="_container_a5cae5"
+  class="_root_a5cae5"
 >
   <div
-    class="_container_88c7dc"
+    class="_root_88c7dc"
   >
     <textarea
-      class="_textArea_03bbb1"
+      class="_root_03bbb1"
       placeholder="Write in Markdown..."
     />
     <div
-      class="_buttonGroup_88c7dc"
+      class="_rootGroup_88c7dc"
     >
       <div
-        class="_container_f02748"
+        class="_root_f02748"
       >
         <svg
           fill="currentColor"
@@ -43,7 +43,7 @@ exports[`renders 1`] = `
   </div>
   <button
     aria-label="Save"
-    class="_button_32b42f _circleButton_a85137 _circleButton_a5cae5"
+    class="_root_32b42f _root_a85137 _root_a5cae5"
   >
     <svg
       fill="currentColor"

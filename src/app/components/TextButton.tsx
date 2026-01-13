@@ -6,5 +6,5 @@ import styles from "./TextButton.module.css";
 type Props = ComponentProps<typeof Button>;
 
 export const TextButton = ({ className, ...props }: Props): JSX.Element => (
-  <Button className={classNames(styles.textButton, className)} {...props} />
+  <Button className={classNames(styles.root, className)} {...props} />
 );

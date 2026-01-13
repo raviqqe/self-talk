@@ -3,19 +3,19 @@
 exports[`renders 1`] = `
 <div>
   <div
-    class="_container_88c7dc"
+    class="_root_88c7dc"
   >
     <textarea
-      class="_textArea_03bbb1"
+      class="_root_03bbb1"
       placeholder="Write in Markdown..."
     >
       foo
     </textarea>
     <div
-      class="_buttonGroup_88c7dc"
+      class="_rootGroup_88c7dc"
     >
       <div
-        class="_container_f02748"
+        class="_root_f02748"
       >
         <svg
           fill="currentColor"

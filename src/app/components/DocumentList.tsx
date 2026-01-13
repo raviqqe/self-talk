@@ -25,7 +25,7 @@ export const DocumentList = (): JSX.Element => {
   useInfiniteScroll(ref, listMore);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.root}>
       {documents?.map((document) => (
         <Document
           className={styles.document}

@@ -1,4 +1,4 @@
-.container {
+.root {
   display: flex;
   align-items: center;
   padding: 1em;
@@ -8,6 +8,6 @@
   max-height: 80vh;
 }
 
-.circleButton {
+.root {
   margin-left: -0.5rem;
 }

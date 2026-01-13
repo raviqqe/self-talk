@@ -5,7 +5,7 @@ import { SignOut } from "../components/SignOut.js";
 import styles from "./documents.module.css";
 
 export default (): JSX.Element | null => (
-  <div className={styles.container}>
+  <div className={styles.root}>
     <DocumentList />
     <div className={styles.createDocumentContainer}>
       <div className={styles.createDocumentBackground} />

@@ -26,9 +26,9 @@ export const Document = ({ document, className }: Props): JSX.Element => {
       }}
     />
   ) : (
-    <div className={classNames(styles.container, className)}>
+    <div className={classNames(styles.root, className)}>
       <Markdown>{document.text}</Markdown>
-      <div className={styles.buttonContainer}>
+      <div className={styles.rootContainer}>
         <IconButton aria-label="Edit" onClick={() => setEditing(true)}>
           <MdEdit />
         </IconButton>

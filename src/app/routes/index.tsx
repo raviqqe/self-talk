@@ -6,7 +6,7 @@ import { SignIn } from "../components/SignIn.js";
 import styles from "./index.module.css";
 
 export default (): JSX.Element => (
-  <div className={styles.container}>
+  <div className={styles.root}>
     <div className={styles.title}>
       <span className={styles.white}>Self</span>
       <span className={styles.red}>Talk</span>

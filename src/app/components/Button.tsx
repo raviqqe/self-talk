@@ -13,7 +13,7 @@ export const Button = ({
 }: Props): JSX.Element => (
   <button
     className={classNames(
-      styles.button,
+      styles.root,
       secondary && styles.secondary,
       className,
     )}

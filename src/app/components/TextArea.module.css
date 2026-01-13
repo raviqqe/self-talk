@@ -1,4 +1,4 @@
-.textArea {
+.root {
   border: none;
   outline: none;
   color: inherit;
@@ -9,6 +9,6 @@
   flex: 1;
 }
 
-.textArea::placeholder {
+.root::placeholder {
   color: var(--grey);
 }

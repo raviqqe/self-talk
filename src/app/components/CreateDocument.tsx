@@ -18,7 +18,7 @@ export const CreateDocument = ({ className }: Props): JSX.Element => {
   };
 
   return (
-    <div className={classNames(styles.container, className)}>
+    <div className={classNames(styles.root, className)}>
       <MarkdownTextArea
         className={styles.markdownTextArea}
         onChange={setText}
@@ -27,7 +27,7 @@ export const CreateDocument = ({ className }: Props): JSX.Element => {
       />
       <CircleButton
         aria-label="Create"
-        className={styles.circleButton}
+        className={styles.root}
         onClick={onSubmit}
       >
         <MdAdd />

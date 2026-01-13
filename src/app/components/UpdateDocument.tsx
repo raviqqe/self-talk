@@ -21,11 +21,11 @@ export const UpdateDocument = ({
   const onSubmit = () => onParentSubmit({ ...document, text });
 
   return (
-    <div className={classNames(styles.container, className)}>
+    <div className={classNames(styles.root, className)}>
       <MarkdownTextArea onChange={setText} onSubmit={onSubmit} text={text} />
       <CircleButton
         aria-label="Save"
-        className={styles.circleButton}
+        className={styles.root}
         onClick={onSubmit}
       >
         <MdSave />

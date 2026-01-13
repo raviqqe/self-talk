@@ -1,4 +1,4 @@
-.container {
+.root {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.container > * {
+.root > * {
   margin: 2rem;
 }
 
