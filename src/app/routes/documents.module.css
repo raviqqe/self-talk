@@ -5,10 +5,10 @@
   width: 85ex;
   max-width: 100%;
   margin: auto;
-}
 
-.root > :first-child {
-  flex: 1;
+  > :first-child {
+    flex: 1;
+  }
 }
 
 .createDocument {

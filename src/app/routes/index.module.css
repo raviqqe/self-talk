@@ -5,10 +5,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.root > * {
-  margin: 2rem;
+  > * {
+    margin: 2rem;
+  }
 }
 
 .title {
