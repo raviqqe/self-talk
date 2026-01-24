@@ -4,7 +4,7 @@ import { DocumentList } from "../components/DocumentList.js";
 import { SignOut } from "../components/SignOut.js";
 import styles from "./documents.module.css";
 
-export default (): JSX.Element | null => (
+export default (): JSX.Element => (
   <div className={styles.root}>
     <DocumentList />
     <div className={styles.form}>
