@@ -6,7 +6,7 @@
   "scripts": {
     "start": "react-router dev",
     "build": "react-router typegen && tsc && react-router build",
-    "lint": "biome ci",
+    "lint": "biome ci && knip",
     "test": "vitest --coverage",
     "deploy": "firebase deploy"
   },
@@ -43,6 +43,7 @@
     "@vitest/coverage-v8": "^4.0.18",
     "firebase-tools": "^15.4.0",
     "jsdom": "^27.4.0",
+    "knip": "^5.82.1",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-pwa": "^1.1.0",
