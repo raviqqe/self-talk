@@ -44,7 +44,7 @@
     "@vitest/coverage-v8": "^4.0.18",
     "firebase-tools": "^15.7.0",
     "jsdom": "^28.1.0",
-    "knip": "^5.83.1",
+    "knip": "^5.85.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-pwa": "^1.1.0",
