@@ -1,4 +1,5 @@
 ignoredBuiltDependencies:
+  - '@sentry/cli'
   - esbuild
   - protobufjs
   - re2
