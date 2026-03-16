@@ -1,4 +1,5 @@
 ignoredBuiltDependencies:
+  - '@firebase/util'
   - '@sentry/cli'
   - esbuild
   - protobufjs
