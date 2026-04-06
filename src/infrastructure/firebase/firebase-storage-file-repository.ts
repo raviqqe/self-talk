@@ -12,16 +12,16 @@ import {
 import type { FileRepository } from "../../application/file-repository.js";
 
 export class FirebaseStorageFileRepository implements FileRepository {
-  private readonly auth: Auth;
-  private readonly storage: FirebaseStorage;
+  readonly #auth: Auth;
+  readonly #storage: FirebaseStorage;
 
-  public constructor(app: FirebaseApp) {
-    this.auth = getAuth(app);
-    this.storage = getStorage(app);
+  constructor(app: FirebaseApp) {
+    this.#auth = getAuth(app);
+    this.#storage = getStorage(app);
   }
 
-  public async create(file: Blob): Promise<string> {
-    const child = ref(this.files(), window.crypto.randomUUID());
+  async create(file: Blob): Promise<string> {
+    const child = ref(this.#files(), window.crypto.randomUUID());
 
     await uploadBytes(child, file);
     await updateMetadata(child, {
@@ -31,13 +31,13 @@ export class FirebaseStorageFileRepository implements FileRepository {
     return getDownloadURL(child);
   }
 
-  private files(): StorageReference {
-    const user = this.auth.currentUser;
+  #files(): StorageReference {
+    const user = this.#auth.currentUser;
 
     if (!user) {
       throw new Error("user not authenticated");
     }
 
-    return ref(this.storage, `users/${user.uid}/files`);
+    return ref(this.#storage, `users/${user.uid}/files`);
   }
 }

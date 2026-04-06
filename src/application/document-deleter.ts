@@ -3,28 +3,28 @@ import type { DocumentPresenter } from "./document-presenter.js";
 import type { DocumentRepository } from "./document-repository.js";
 
 export class DocumentDeleter {
-  private readonly documentRepository: DocumentRepository;
-  private readonly documentPresenter: DocumentPresenter;
-  private readonly confirmationController: ConfirmationController;
+  readonly #documentRepository: DocumentRepository;
+  readonly #documentPresenter: DocumentPresenter;
+  readonly #confirmationController: ConfirmationController;
 
-  public constructor(
+  constructor(
     documentRepository: DocumentRepository,
     documentPresenter: DocumentPresenter,
     confirmationController: ConfirmationController,
   ) {
-    this.documentRepository = documentRepository;
-    this.documentPresenter = documentPresenter;
-    this.confirmationController = confirmationController;
+    this.#documentRepository = documentRepository;
+    this.#documentPresenter = documentPresenter;
+    this.#confirmationController = confirmationController;
   }
 
-  public async delete(documentId: string): Promise<void> {
+  async delete(documentId: string): Promise<void> {
     if (
-      await this.confirmationController.confirm(
+      await this.#confirmationController.confirm(
         "Do you want to delete the document?",
       )
     ) {
-      this.documentPresenter.presentDeletedDocument(documentId);
-      await this.documentRepository.delete(documentId);
+      this.#documentPresenter.presentDeletedDocument(documentId);
+      await this.#documentRepository.delete(documentId);
     }
   }
 }

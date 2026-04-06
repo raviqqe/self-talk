@@ -5,38 +5,38 @@ import type { DocumentRepository } from "./document-repository.js";
 const defaultLimit = 20;
 
 export class DocumentLister {
-  private readonly documentRepository: DocumentRepository;
-  private readonly documentPresenter: DocumentPresenter;
-  private iterator: AsyncIterator<Document[], void> | null = null;
+  readonly #documentRepository: DocumentRepository;
+  readonly #documentPresenter: DocumentPresenter;
+  #iterator: AsyncIterator<Document[], void> | null = null;
 
-  public constructor(
+  constructor(
     documentRepository: DocumentRepository,
     documentPresenter: DocumentPresenter,
   ) {
-    this.documentRepository = documentRepository;
-    this.documentPresenter = documentPresenter;
+    this.#documentRepository = documentRepository;
+    this.#documentPresenter = documentPresenter;
   }
 
-  public async list(): Promise<void> {
-    this.iterator = this.documentRepository
+  async list(): Promise<void> {
+    this.#iterator = this.#documentRepository
       .list(defaultLimit)
       [Symbol.asyncIterator]();
-    this.documentPresenter.presentDocuments(
-      (await this.iterator.next()).value ?? [],
+    this.#documentPresenter.presentDocuments(
+      (await this.#iterator.next()).value ?? [],
     );
   }
 
-  public async listMore(): Promise<void> {
-    if (!this.iterator) {
+  async listMore(): Promise<void> {
+    if (!this.#iterator) {
       throw new Error("iterator not initialized");
     }
 
-    const result = await this.iterator.next();
+    const result = await this.#iterator.next();
 
     if (result.done) {
       return;
     }
 
-    this.documentPresenter.presentMoreDocuments(result.value);
+    this.#documentPresenter.presentMoreDocuments(result.value);
   }
 }

@@ -1,23 +1,19 @@
 import type { FileRepository } from "./file-repository.js";
 
 export class TextFileInserter {
-  private readonly fileRepository: FileRepository;
+  readonly #fileRepository: FileRepository;
 
-  public constructor(fileRepository: FileRepository) {
-    this.fileRepository = fileRepository;
+  constructor(fileRepository: FileRepository) {
+    this.#fileRepository = fileRepository;
   }
 
-  public async insert(
-    text: string,
-    offset: number,
-    files: File[],
-  ): Promise<string> {
+  async insert(text: string, offset: number, files: File[]): Promise<string> {
     return (
       text.slice(0, offset) +
       (
         await Promise.all(
           files.map(async (file: File) => {
-            const url = await this.fileRepository.create(file);
+            const url = await this.#fileRepository.create(file);
 
             return file.type.startsWith("image/")
               ? `![](${url})`
