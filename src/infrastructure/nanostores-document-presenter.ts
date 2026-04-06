@@ -3,34 +3,34 @@ import type { DocumentPresenter } from "../application/document-presenter.js";
 import type { Document } from "../domain/document.js";
 
 export class NanostoresDocumentPresenter implements DocumentPresenter {
-  public readonly documents = atom<Document[] | null>(null);
+  readonly documents = atom<Document[] | null>(null);
 
-  public presentDocuments(documents: Document[]): void {
-    this.renderDocuments(documents);
+  presentDocuments(documents: Document[]): void {
+    this.#renderDocuments(documents);
   }
 
-  public presentMoreDocuments(documents: Document[]): void {
+  presentMoreDocuments(documents: Document[]): void {
     const oldDocuments = this.documents.get();
 
     if (!oldDocuments) {
       return;
     }
 
-    this.renderDocuments([...oldDocuments, ...documents]);
+    this.#renderDocuments([...oldDocuments, ...documents]);
   }
 
-  public presentNewDocument(document: Document): void {
+  presentNewDocument(document: Document): void {
     const oldDocuments = this.documents.get();
 
     if (!oldDocuments) {
       return;
     }
 
-    this.renderDocuments([document, ...oldDocuments]);
+    this.#renderDocuments([document, ...oldDocuments]);
   }
 
-  public presentUpdatedDocument(updatedDocument: Document): void {
-    this.renderDocuments(
+  presentUpdatedDocument(updatedDocument: Document): void {
+    this.#renderDocuments(
       this.documents
         .get()
         ?.map((document) =>
@@ -39,13 +39,13 @@ export class NanostoresDocumentPresenter implements DocumentPresenter {
     );
   }
 
-  public presentDeletedDocument(documentId: string): void {
-    this.renderDocuments(
+  presentDeletedDocument(documentId: string): void {
+    this.#renderDocuments(
       this.documents.get()?.filter((document) => document.id !== documentId),
     );
   }
 
-  private renderDocuments(documents: Document[] | null | undefined): void {
+  #renderDocuments(documents: Document[] | null | undefined): void {
     this.documents.set(documents ?? null);
   }
 }

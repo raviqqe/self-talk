@@ -25,54 +25,54 @@ interface TimestampedDocument extends Document {
 }
 
 export class FirestoreDocumentRepository implements DocumentRepository {
-  private readonly auth: Auth;
-  private readonly firestore: Firestore;
+  readonly #auth: Auth;
+  readonly #firestore: Firestore;
 
-  public constructor(app: FirebaseApp) {
-    this.auth = getAuth(app);
-    this.firestore = getFirestore(app);
+  constructor(app: FirebaseApp) {
+    this.#auth = getAuth(app);
+    this.#firestore = getFirestore(app);
   }
 
-  public async create(document: Document): Promise<void> {
-    await setDoc(doc(this.collection(), document.id), {
+  async create(document: Document): Promise<void> {
+    await setDoc(doc(this.#collection(), document.id), {
       ...document,
       createdAt: Math.floor(Date.now() / 1000), // Unix timestamp as number
     });
   }
 
-  public async delete(documentId: string): Promise<void> {
-    await deleteDoc(doc(this.collection(), documentId));
+  async delete(documentId: string): Promise<void> {
+    await deleteDoc(doc(this.#collection(), documentId));
   }
 
-  public async *list(count: number): AsyncIterable<Document[], void> {
-    let result = await getDocs(query(this.query(), limit(count)));
+  async *list(count: number): AsyncIterable<Document[], void> {
+    let result = await getDocs(query(this.#query(), limit(count)));
 
     while (result.docs.length > 0) {
       yield result.docs.map((snapshot) => snapshot.data() as Document);
 
       result = await getDocs(
-        query(this.query(), startAfter(last(result.docs)), limit(count)),
+        query(this.#query(), startAfter(last(result.docs)), limit(count)),
       );
     }
   }
 
-  public async update(document: Document): Promise<void> {
-    await updateDoc(doc(this.collection(), document.id), { ...document });
+  async update(document: Document): Promise<void> {
+    await updateDoc(doc(this.#collection(), document.id), { ...document });
   }
 
-  private query(): Query {
-    return query(this.collection(), orderBy("createdAt", "desc"));
+  #query(): Query {
+    return query(this.#collection(), orderBy("createdAt", "desc"));
   }
 
-  private collection(): CollectionReference<TimestampedDocument> {
-    const user = this.auth.currentUser;
+  #collection(): CollectionReference<TimestampedDocument> {
+    const user = this.#auth.currentUser;
 
     if (!user) {
       throw new Error("user not authenticated");
     }
 
     return collection(
-      doc(collection(this.firestore, "users"), user.uid),
+      doc(collection(this.#firestore, "users"), user.uid),
       "documents",
     ) as CollectionReference<TimestampedDocument>;
   }

@@ -10,39 +10,39 @@ import type { DocumentRepository } from "./document-repository.js";
 import type { MessagePresenter } from "./message-presenter.js";
 
 export class DocumentUpdater {
-  private readonly documentDeleter: DocumentDeleter;
-  private readonly documentRepository: DocumentRepository;
-  private readonly documentPresenter: DocumentPresenter;
-  private readonly messagePresenter: MessagePresenter;
+  readonly #documentDeleter: DocumentDeleter;
+  readonly #documentRepository: DocumentRepository;
+  readonly #documentPresenter: DocumentPresenter;
+  readonly #messagePresenter: MessagePresenter;
 
-  public constructor(
+  constructor(
     documentDeleter: DocumentDeleter,
     documentRepository: DocumentRepository,
     documentPresenter: DocumentPresenter,
     messagePresenter: MessagePresenter,
   ) {
-    this.documentDeleter = documentDeleter;
-    this.documentRepository = documentRepository;
-    this.documentPresenter = documentPresenter;
-    this.messagePresenter = messagePresenter;
+    this.#documentDeleter = documentDeleter;
+    this.#documentRepository = documentRepository;
+    this.#documentPresenter = documentPresenter;
+    this.#messagePresenter = messagePresenter;
   }
 
-  public async update(document: Document): Promise<void> {
+  async update(document: Document): Promise<void> {
     document = await formatDocument(document);
 
     if (!document.text) {
-      await this.documentDeleter.delete(document.id);
+      await this.#documentDeleter.delete(document.id);
       return;
     }
 
     try {
       validateDocument(document);
     } catch (error) {
-      this.messagePresenter.present(formatErrorMessage(error as Error));
+      this.#messagePresenter.present(formatErrorMessage(error as Error));
       return;
     }
 
-    this.documentPresenter.presentUpdatedDocument(document);
-    await this.documentRepository.update(document);
+    this.#documentPresenter.presentUpdatedDocument(document);
+    await this.#documentRepository.update(document);
   }
 }
