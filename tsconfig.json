@@ -1,4 +1,7 @@
 {
   "extends": "@raviqqe/react-tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "noUncheckedSideEffectImports": false
+  },
   "include": ["src", "*.ts"]
 }
