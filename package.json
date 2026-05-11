@@ -33,7 +33,7 @@
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.14",
+    "@biomejs/biome": "^2.4.15",
     "@raviqqe/biome-config": "^2.0.26",
     "@raviqqe/react-tsconfig": "^2.0.4",
     "@react-router/dev": "^7.15.0",
