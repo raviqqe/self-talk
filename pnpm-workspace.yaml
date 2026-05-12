@@ -1,6 +1,6 @@
-ignoredBuiltDependencies:
-  - '@firebase/util'
-  - '@sentry/cli'
-  - esbuild
-  - protobufjs
-  - re2
+allowBuilds:
+  '@firebase/util': false
+  '@sentry/cli': false
+  esbuild: false
+  protobufjs: false
+  re2: false
