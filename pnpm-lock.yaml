@@ -25,7 +25,7 @@ importers:
         version: 7.15.0(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3)
       '@sentry/react-router':
         specifier: ^10.52.0
-        version: 10.52.0(@react-router/node@7.15.0(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3))(encoding@0.1.13)(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react@19.2.6)(rollup@2.80.0)
+        version: 10.52.0(@react-router/node@7.15.0(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3))(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react@19.2.6)(rollup@2.80.0)
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -98,7 +98,7 @@ importers:
         version: 4.1.6(vitest@4.1.6)
       firebase-tools:
         specifier: ^15.17.0
-        version: 15.17.0(@types/node@25.6.2)(encoding@0.1.13)(typescript@6.0.3)
+        version: 15.17.0(@types/node@25.6.2)(typescript@6.0.3)
       jsdom:
         specifier: ^29.1.1
         version: 29.1.1
@@ -112,11 +112,11 @@ importers:
         specifier: ^7.3.2
         version: 7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)
       vite-plugin-pwa:
-        specifier: ^1.1.0
-        version: 1.1.0(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))(workbox-build@7.3.0(@types/babel__core@7.20.5))(workbox-window@7.3.0)
+        specifier: ^1.3.0
+        version: 1.3.0(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))(workbox-build@7.3.0(@types/babel__core@7.20.5))(workbox-window@7.3.0)
       vitest:
         specifier: ^4.1.6
-        version: 4.1.6(@opentelemetry/api@1.9.1)(@types/node@25.6.2)(@vitest/coverage-v8@4.1.6)(happy-dom@20.0.11)(jsdom@29.1.1)(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
+        version: 4.1.6(@opentelemetry/api@1.9.1)(@types/node@25.6.2)(@vitest/coverage-v8@4.1.6)(jsdom@29.1.1)(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
 
 packages:
 
@@ -2449,9 +2449,6 @@ packages:
   '@types/mysql@2.15.27':
     resolution: {integrity: sha512-YfWiV16IY0OeBfBCk8+hXKmdTKrKlwKN1MNKAPBu5JYxLwBEZl7QzeEpGnlZb3VMGJrrGmB84gXiH+ofs/TezA==}
 
-  '@types/node@20.19.40':
-    resolution: {integrity: sha512-xxx6M2IpSTnnKcR0cMvIiohkiCx20/oRPtWGbenFygKCGl3zqUzdNjQ/1V4solq1LU+dgv0nQzeGOuqkqZGg0Q==}
-
   '@types/node@25.6.2':
     resolution: {integrity: sha512-sokuT28dxf9JT5Kady1fsXOvI4HVpjZa95NKT5y9PNTIrs2AsobR4GFAA90ZG8M+nxVRLysCXsVj6eGC7Vbrlw==}
 
@@ -2486,9 +2483,6 @@ packages:
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
-
-  '@types/whatwg-mimetype@3.0.2':
-    resolution: {integrity: sha512-c2AKvDT8ToxLIOUlN51gTiHXflsfIFisS4pO7pDPoKouJCESkhZnEy623gwP9laCy5lnLDAw1vAzu2vM2YLOrA==}
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
@@ -3316,9 +3310,6 @@ packages:
     resolution: {integrity: sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==}
     engines: {node: '>= 0.8'}
 
-  encoding@0.1.13:
-    resolution: {integrity: sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A==}
-
   end-of-stream@1.4.5:
     resolution: {integrity: sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg==}
 
@@ -3740,10 +3731,6 @@ packages:
     resolution: {integrity: sha512-pCcEwRi+TKpMlxAQObHDQ56KawURgyAf6jtIY046fJ5tIv3zDe/LEIubckAO8fj6JnAxLdmWkUfNyulQ2iKdEw==}
     engines: {node: '>=14.0.0'}
 
-  happy-dom@20.0.11:
-    resolution: {integrity: sha512-QsCdAUHAmiDeKeaNojb1OHOPF7NjcWPBR7obdu3NwH2a/oyQaLg5d0aaCy/9My6CdPChYF07dvz5chaXBGaD4g==}
-    engines: {node: '>=20.0.0'}
-
   has-bigints@1.1.0:
     resolution: {integrity: sha512-R3pbpkcIqv2Pm3dUwgjclDRVmWpTJW2DcMzcIhEXEx1oh/CEMObMm3KLmRJOdvhM7o4uQBnwr8pzRK2sJWIqfg==}
     engines: {node: '>= 0.4'}
@@ -3827,10 +3814,6 @@ packages:
 
   iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
-    engines: {node: '>=0.10.0'}
-
-  iconv-lite@0.6.3:
-    resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
 
   iconv-lite@0.7.2:
@@ -5697,9 +5680,6 @@ packages:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
     engines: {node: '>= 0.4'}
 
-  undici-types@6.21.0:
-    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
-
   undici-types@7.19.2:
     resolution: {integrity: sha512-qYVnV5OEm2AW8cJMCpdV20CDyaN3g0AjDlOGf1OW4iaDEx8MwdtChUp4zu4H0VP3nDRF/8RKWH+IPp9uW0YGZg==}
 
@@ -5862,14 +5842,14 @@ packages:
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
 
-  vite-plugin-pwa@1.1.0:
-    resolution: {integrity: sha512-VsSpdubPzXhHWVINcSx6uHRMpOHVHQcHsef1QgkOlEoaIDAlssFEW88LBq1a59BuokAhsh2kUDJbaX1bZv4Bjw==}
+  vite-plugin-pwa@1.3.0:
+    resolution: {integrity: sha512-c5kMgN+ITrOtHXp8PAtk2uOIEea6XjP/unCGxOWWBzQ6qa65qj/awHg0wf+QF9E/2u9vh86LqxPwzEPNbM2r5A==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       '@vite-pwa/assets-generator': ^1.0.0
-      vite: ^3.1.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-      workbox-build: ^7.3.0
-      workbox-window: ^7.3.0
+      vite: ^3.1.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
+      workbox-build: ^7.4.1
+      workbox-window: ^7.4.1
     peerDependenciesMeta:
       '@vite-pwa/assets-generator':
         optional: true
@@ -5993,10 +5973,6 @@ packages:
 
   whatwg-fetch@3.6.20:
     resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
-
-  whatwg-mimetype@3.0.0:
-    resolution: {integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==}
-    engines: {node: '>=12'}
 
   whatwg-mimetype@5.0.0:
     resolution: {integrity: sha512-sXcNcHOC51uPGF0P/D4NVtrkjSU2fNsm9iog4ZvZJsL3rjoDAzXZhkm2MWt1y+PUdggKAYVoMAIYcs78wJ51Cw==}
@@ -8421,11 +8397,11 @@ snapshots:
       '@sentry-internal/replay-canvas': 10.52.0
       '@sentry/core': 10.52.0
 
-  '@sentry/bundler-plugin-core@5.2.1(encoding@0.1.13)':
+  '@sentry/bundler-plugin-core@5.2.1':
     dependencies:
       '@babel/core': 7.29.0
       '@sentry/babel-plugin-component-annotate': 5.2.1
-      '@sentry/cli': 2.58.5(encoding@0.1.13)
+      '@sentry/cli': 2.58.5
       dotenv: 16.6.1
       find-up: 5.0.0
       glob: 13.0.6
@@ -8458,10 +8434,10 @@ snapshots:
   '@sentry/cli-win32-x64@2.58.5':
     optional: true
 
-  '@sentry/cli@2.58.5(encoding@0.1.13)':
+  '@sentry/cli@2.58.5':
     dependencies:
       https-proxy-agent: 5.0.1
-      node-fetch: 2.7.0(encoding@0.1.13)
+      node-fetch: 2.7.0
       progress: 2.0.3
       proxy-from-env: 1.1.0
       which: 2.0.2
@@ -8535,7 +8511,7 @@ snapshots:
       '@opentelemetry/semantic-conventions': 1.40.0
       '@sentry/core': 10.52.0
 
-  '@sentry/react-router@10.52.0(@react-router/node@7.15.0(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3))(encoding@0.1.13)(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react@19.2.6)(rollup@2.80.0)':
+  '@sentry/react-router@10.52.0(@react-router/node@7.15.0(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3))(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(react@19.2.6)(rollup@2.80.0)':
     dependencies:
       '@opentelemetry/api': 1.9.1
       '@opentelemetry/core': 2.7.1(@opentelemetry/api@1.9.1)
@@ -8543,11 +8519,11 @@ snapshots:
       '@opentelemetry/semantic-conventions': 1.40.0
       '@react-router/node': 7.15.0(react-router@7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6))(typescript@6.0.3)
       '@sentry/browser': 10.52.0
-      '@sentry/cli': 2.58.5(encoding@0.1.13)
+      '@sentry/cli': 2.58.5
       '@sentry/core': 10.52.0
       '@sentry/node': 10.52.0
       '@sentry/react': 10.52.0(react@19.2.6)
-      '@sentry/vite-plugin': 5.2.1(encoding@0.1.13)(rollup@2.80.0)
+      '@sentry/vite-plugin': 5.2.1(rollup@2.80.0)
       glob: 13.0.6
       react: 19.2.6
       react-router: 7.15.0(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -8563,9 +8539,9 @@ snapshots:
       '@sentry/core': 10.52.0
       react: 19.2.6
 
-  '@sentry/rollup-plugin@5.2.1(encoding@0.1.13)(rollup@2.80.0)':
+  '@sentry/rollup-plugin@5.2.1(rollup@2.80.0)':
     dependencies:
-      '@sentry/bundler-plugin-core': 5.2.1(encoding@0.1.13)
+      '@sentry/bundler-plugin-core': 5.2.1
       magic-string: 0.30.21
     optionalDependencies:
       rollup: 2.80.0
@@ -8573,10 +8549,10 @@ snapshots:
       - encoding
       - supports-color
 
-  '@sentry/vite-plugin@5.2.1(encoding@0.1.13)(rollup@2.80.0)':
+  '@sentry/vite-plugin@5.2.1(rollup@2.80.0)':
     dependencies:
-      '@sentry/bundler-plugin-core': 5.2.1(encoding@0.1.13)
-      '@sentry/rollup-plugin': 5.2.1(encoding@0.1.13)(rollup@2.80.0)
+      '@sentry/bundler-plugin-core': 5.2.1
+      '@sentry/rollup-plugin': 5.2.1(rollup@2.80.0)
     transitivePeerDependencies:
       - encoding
       - rollup
@@ -8698,11 +8674,6 @@ snapshots:
     dependencies:
       '@types/node': 25.6.2
 
-  '@types/node@20.19.40':
-    dependencies:
-      undici-types: 6.21.0
-    optional: true
-
   '@types/node@25.6.2':
     dependencies:
       undici-types: 7.19.2
@@ -8739,9 +8710,6 @@ snapshots:
 
   '@types/unist@3.0.3': {}
 
-  '@types/whatwg-mimetype@3.0.2':
-    optional: true
-
   '@ungap/structured-clone@1.3.0': {}
 
   '@vitejs/plugin-react@5.2.0(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))':
@@ -8768,7 +8736,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.1.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.6(@opentelemetry/api@1.9.1)(@types/node@25.6.2)(@vitest/coverage-v8@4.1.6)(happy-dom@20.0.11)(jsdom@29.1.1)(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
+      vitest: 4.1.6(@opentelemetry/api@1.9.1)(@types/node@25.6.2)(@vitest/coverage-v8@4.1.6)(jsdom@29.1.1)(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
 
   '@vitest/expect@4.1.6':
     dependencies:
@@ -9569,11 +9537,6 @@ snapshots:
 
   encodeurl@2.0.0: {}
 
-  encoding@0.1.13:
-    dependencies:
-      iconv-lite: 0.6.3
-    optional: true
-
   end-of-stream@1.4.5:
     dependencies:
       once: 1.4.0
@@ -9939,7 +9902,7 @@ snapshots:
       locate-path: 6.0.0
       path-exists: 4.0.0
 
-  firebase-tools@15.17.0(@types/node@25.6.2)(encoding@0.1.13)(typescript@6.0.3):
+  firebase-tools@15.17.0(@types/node@25.6.2)(typescript@6.0.3):
     dependencies:
       '@apphosting/build': 0.1.7(@types/node@25.6.2)(typescript@6.0.3)
       '@apphosting/common': 0.0.8
@@ -9973,9 +9936,9 @@ snapshots:
       form-data: 4.0.5
       fs-extra: 10.1.0
       fuzzy: 0.1.3
-      gaxios: 6.7.1(encoding@0.1.13)
+      gaxios: 6.7.1
       glob: 10.5.0
-      google-auth-library: 9.15.1(encoding@0.1.13)
+      google-auth-library: 9.15.1
       ignore: 7.0.5
       js-yaml: 3.14.2
       jsonwebtoken: 9.0.3
@@ -9988,7 +9951,7 @@ snapshots:
       mime: 2.6.0
       minimatch: 3.1.5
       morgan: 1.10.1
-      node-fetch: 2.7.0(encoding@0.1.13)
+      node-fetch: 2.7.0
       open: 6.4.0
       ora: 5.4.1
       p-limit: 3.1.0
@@ -10003,13 +9966,13 @@ snapshots:
       sql-formatter: 15.7.3
       stream-chain: 2.2.5
       stream-json: 1.9.1
-      superstatic: 10.0.0(encoding@0.1.13)
+      superstatic: 10.0.0
       tar: 7.5.14
       tcp-port-used: 1.0.2
       tmp: 0.2.5
       triple-beam: 1.4.1
       universal-analytics: 0.5.3
-      update-notifier-cjs: 5.1.7(encoding@0.1.13)
+      update-notifier-cjs: 5.1.7
       uuid: 8.3.2
       winston: 3.19.0
       winston-transport: 4.9.0
@@ -10133,12 +10096,12 @@ snapshots:
 
   fuzzy@0.1.3: {}
 
-  gaxios@6.7.1(encoding@0.1.13):
+  gaxios@6.7.1:
     dependencies:
       extend: 3.0.2
       https-proxy-agent: 7.0.6
       is-stream: 2.0.1
-      node-fetch: 2.7.0(encoding@0.1.13)
+      node-fetch: 2.7.0
       uuid: 9.0.1
     transitivePeerDependencies:
       - encoding
@@ -10152,9 +10115,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  gcp-metadata@6.1.1(encoding@0.1.13):
+  gcp-metadata@6.1.1:
     dependencies:
-      gaxios: 6.7.1(encoding@0.1.13)
+      gaxios: 6.7.1
       google-logging-utils: 0.0.2
       json-bigint: 1.0.0
     transitivePeerDependencies:
@@ -10269,13 +10232,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  google-auth-library@9.15.1(encoding@0.1.13):
+  google-auth-library@9.15.1:
     dependencies:
       base64-js: 1.5.1
       ecdsa-sig-formatter: 1.0.11
-      gaxios: 6.7.1(encoding@0.1.13)
-      gcp-metadata: 6.1.1(encoding@0.1.13)
-      gtoken: 7.1.0(encoding@0.1.13)
+      gaxios: 6.7.1
+      gcp-metadata: 6.1.1
+      gtoken: 7.1.0
       jws: 4.0.1
     transitivePeerDependencies:
       - encoding
@@ -10317,20 +10280,13 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  gtoken@7.1.0(encoding@0.1.13):
+  gtoken@7.1.0:
     dependencies:
-      gaxios: 6.7.1(encoding@0.1.13)
+      gaxios: 6.7.1
       jws: 4.0.1
     transitivePeerDependencies:
       - encoding
       - supports-color
-
-  happy-dom@20.0.11:
-    dependencies:
-      '@types/node': 20.19.40
-      '@types/whatwg-mimetype': 3.0.2
-      whatwg-mimetype: 3.0.0
-    optional: true
 
   has-bigints@1.1.0: {}
 
@@ -10434,11 +10390,6 @@ snapshots:
   iconv-lite@0.4.24:
     dependencies:
       safer-buffer: 2.1.2
-
-  iconv-lite@0.6.3:
-    dependencies:
-      safer-buffer: 2.1.2
-    optional: true
 
   iconv-lite@0.7.2:
     dependencies:
@@ -10685,9 +10636,9 @@ snapshots:
   isexe@4.0.0:
     optional: true
 
-  isomorphic-fetch@3.0.0(encoding@0.1.13):
+  isomorphic-fetch@3.0.0:
     dependencies:
-      node-fetch: 2.7.0(encoding@0.1.13)
+      node-fetch: 2.7.0
       whatwg-fetch: 3.6.20
     transitivePeerDependencies:
       - encoding
@@ -11424,11 +11375,9 @@ snapshots:
       emojilib: 2.4.0
       skin-tone: 2.0.0
 
-  node-fetch@2.7.0(encoding@0.1.13):
+  node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
-    optionalDependencies:
-      encoding: 0.1.13
 
   node-fetch@3.3.2:
     dependencies:
@@ -12489,7 +12438,7 @@ snapshots:
     dependencies:
       inline-style-parser: 0.2.4
 
-  superstatic@10.0.0(encoding@0.1.13):
+  superstatic@10.0.0:
     dependencies:
       basic-auth-connect: 1.1.0
       commander: 10.0.1
@@ -12507,7 +12456,7 @@ snapshots:
       on-headers: 1.1.0
       path-to-regexp: 1.9.0
       router: 2.2.0
-      update-notifier-cjs: 5.1.7(encoding@0.1.13)
+      update-notifier-cjs: 5.1.7
     optionalDependencies:
       re2: 1.24.0
     transitivePeerDependencies:
@@ -12740,9 +12689,6 @@ snapshots:
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
 
-  undici-types@6.21.0:
-    optional: true
-
   undici-types@7.19.2: {}
 
   undici@6.25.0:
@@ -12819,7 +12765,7 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
-  update-notifier-cjs@5.1.7(encoding@0.1.13):
+  update-notifier-cjs@5.1.7:
     dependencies:
       boxen: 5.1.2
       chalk: 4.1.2
@@ -12830,7 +12776,7 @@ snapshots:
       is-installed-globally: 0.4.0
       is-npm: 5.0.0
       is-yarn-global: 0.3.0
-      isomorphic-fetch: 3.0.0(encoding@0.1.13)
+      isomorphic-fetch: 3.0.0
       pupa: 2.1.1
       registry-auth-token: 5.1.1
       registry-url: 5.1.0
@@ -12914,11 +12860,11 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-pwa@1.1.0(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))(workbox-build@7.3.0(@types/babel__core@7.20.5))(workbox-window@7.3.0):
+  vite-plugin-pwa@1.3.0(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))(workbox-build@7.3.0(@types/babel__core@7.20.5))(workbox-window@7.3.0):
     dependencies:
       debug: 4.4.3
       pretty-bytes: 6.1.1
-      tinyglobby: 0.2.15
+      tinyglobby: 0.2.16
       vite: 7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)
       workbox-build: 7.3.0(@types/babel__core@7.20.5)
       workbox-window: 7.3.0
@@ -12940,7 +12886,7 @@ snapshots:
       terser: 5.47.1
       yaml: 2.9.0
 
-  vitest@4.1.6(@opentelemetry/api@1.9.1)(@types/node@25.6.2)(@vitest/coverage-v8@4.1.6)(happy-dom@20.0.11)(jsdom@29.1.1)(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)):
+  vitest@4.1.6(@opentelemetry/api@1.9.1)(@types/node@25.6.2)(@vitest/coverage-v8@4.1.6)(jsdom@29.1.1)(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0)):
     dependencies:
       '@vitest/expect': 4.1.6
       '@vitest/mocker': 4.1.6(vite@7.3.2(@types/node@25.6.2)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))
@@ -12966,7 +12912,6 @@ snapshots:
       '@opentelemetry/api': 1.9.1
       '@types/node': 25.6.2
       '@vitest/coverage-v8': 4.1.6(vitest@4.1.6)
-      happy-dom: 20.0.11
       jsdom: 29.1.1
     transitivePeerDependencies:
       - msw
@@ -13000,9 +12945,6 @@ snapshots:
   websocket-extensions@0.1.4: {}
 
   whatwg-fetch@3.6.20: {}
-
-  whatwg-mimetype@3.0.0:
-    optional: true
 
   whatwg-mimetype@5.0.0: {}
 
