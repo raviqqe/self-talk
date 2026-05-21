@@ -1,25 +1,14 @@
 import {
-  type ForwardedRef,
-  forwardRef,
   type JSX,
   type KeyboardEvent,
+  type TextareaHTMLAttributes,
   useEffect,
   useRef,
   useState,
 } from "react";
-import TextareaAutosize, {
-  type TextareaAutosizeProps,
-} from "react-textarea-autosize";
 import styles from "./TextArea.module.css";
 
-const TextAreaWithRef = forwardRef(
-  (
-    props: Omit<TextareaAutosizeProps, "style">,
-    ref: ForwardedRef<HTMLTextAreaElement>,
-  ) => <TextareaAutosize ref={ref} {...props} />,
-);
-
-interface Props extends TextareaAutosizeProps {
+interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   onSubmit: () => void;
 }
 
@@ -38,7 +27,7 @@ export const TextArea = ({
   }, [focused, ref]);
 
   return (
-    <TextAreaWithRef
+    <textarea
       className={styles.root}
       onKeyDown={(event: KeyboardEvent<HTMLTextAreaElement>) => {
         if (
