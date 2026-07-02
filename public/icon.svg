@@ -1,6 +1,6 @@
-<svg width="1000" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <rect x="50" y="50" width="900" height="900" rx="50" style="fill:khaki;" />
-  <rect x="200" y="200" width="600" height="225" rx="50" style="fill:white;" />
-  <rect x="200" y="575" width="600" height="225" rx="50" style="fill:white;" />
+<svg height="1000" version="1.1" width="1000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <rect height="900" rx="50" style="fill:khaki;" width="900" x="50" y="50" />
+  <rect height="225" rx="50" style="fill:white;" width="600" x="200" y="200" />
+  <rect height="225" rx="50" style="fill:white;" width="600" x="200" y="575" />
   <circle cx="800" cy="688" r="200" style="fill:tomato;" />
 </svg>
