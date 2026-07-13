@@ -42,8 +42,8 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       prettier:
-        specifier: ^3.9.4
-        version: 3.9.4
+        specifier: ^3.9.5
+        version: 3.9.5
       react:
         specifier: ^19.2.7
         version: 19.2.7
@@ -4704,8 +4704,8 @@ packages:
     resolution: {integrity: sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==}
     engines: {node: '>=0.10.0'}
 
-  prettier@3.9.4:
-    resolution: {integrity: sha512-yWG/o/4oJfo036EKAfK6ACAoDOfHeRHx4tuxkfBZiauURiaSmYwlpOr5LQqKtIkRD2z1PLteme2WoxEnj4tHTg==}
+  prettier@3.9.5:
+    resolution: {integrity: sha512-/FVl766LpUfB5vXgCYOYa0MeV/441Ia99AeICQIQFTY/Nw0roZwULcXpku5i1/m5kt/baz+s4Zogspd839HSMg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -7658,7 +7658,7 @@ snapshots:
       pathe: 2.0.3
       picocolors: 1.1.1
       pkg-types: 2.3.1
-      prettier: 3.9.4
+      prettier: 3.9.5
       react-refresh: 0.18.0
       react-router: 8.2.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       semver: 7.8.5
@@ -11141,7 +11141,7 @@ snapshots:
     dependencies:
       xtend: 4.0.2
 
-  prettier@3.9.4: {}
+  prettier@3.9.5: {}
 
   pretty-bytes@5.6.0: {}
 
