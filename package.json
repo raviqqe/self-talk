@@ -19,7 +19,7 @@
     "@sentry/react-router": "^10.64.0",
     "classnames": "^2.5.1",
     "es-toolkit": "^1.49.0",
-    "firebase": "^12.15.0",
+    "firebase": "^12.16.0",
     "isbot": "^5.2.0",
     "nanostores": "^1.4.0",
     "prettier": "^3.9.4",
