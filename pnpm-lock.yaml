@@ -36,8 +36,8 @@ importers:
         specifier: ^12.16.0
         version: 12.16.0
       isbot:
-        specifier: ^5.2.0
-        version: 5.2.0
+        specifier: ^5.2.1
+        version: 5.2.1
       nanostores:
         specifier: ^1.4.0
         version: 1.4.0
@@ -3817,6 +3817,10 @@ packages:
 
   isbot@5.2.0:
     resolution: {integrity: sha512-gbZiGCb4B5xaoxg9mS7koAyRdvJnArk10VLSHOgz6rtBG93/pi1xOFaVvXMKZ7JXgyZ8zAbNRK5uIBdIUTFSqw==}
+    engines: {node: '>=18'}
+
+  isbot@5.2.1:
+    resolution: {integrity: sha512-dJ+LpKyClQZ7NG+j3OensC/mAZkGpukE9YUrgPYvAZj2doVL0edfDgywTUh5CXa0o+nW9a1V9e5+CJTX8+SxRw==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -10020,6 +10024,8 @@ snapshots:
   isarray@2.0.5: {}
 
   isbot@5.2.0: {}
+
+  isbot@5.2.1: {}
 
   isexe@2.0.0: {}
 
