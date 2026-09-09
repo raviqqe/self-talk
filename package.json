@@ -28,7 +28,7 @@
     "react-icons": "^5.7.0",
     "react-markdown": "^10.1.0",
     "react-router": "^8.3.1",
-    "react-spinners": "^0.17.0",
+    "react-spinners": "^0.17.1",
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
