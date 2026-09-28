@@ -21,7 +21,7 @@
     "es-toolkit": "^1.52.0",
     "firebase": "^12.19.0",
     "isbot": "^5.2.2",
-    "nanostores": "^1.5.3",
+    "nanostores": "^1.5.4",
     "prettier": "^3.9.9",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
