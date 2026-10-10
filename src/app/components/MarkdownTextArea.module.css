@@ -5,7 +5,7 @@
   gap: 0.5rem;
   border-radius: 0.5em;
   background-color: var(--white);
-  overflow: hidden;
+  overflow: auto;
   padding: 1rem;
   box-shadow: var(--box-shadow);
 }
